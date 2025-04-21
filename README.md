@@ -1,1 +1,1 @@
-# Web-Team
+# EduAssist Web-Team
