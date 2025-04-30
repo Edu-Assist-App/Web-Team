@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import ChatContainer from "@/components/chat/ChatContainer"
+import ChatContainer from "@/app/components/chat/ChatContainer"
 
 export const metadata: Metadata = {
   title: "Chat | Your App Name",
