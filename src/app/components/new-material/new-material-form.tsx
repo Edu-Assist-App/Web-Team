@@ -1,68 +1,74 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState, useRef } from "react"
-import { PlusCircle, X, Paperclip, Youtube, Send } from "lucide-react"
-import { Button } from "@/app/components/ui/button"
-import { FileUploadModal } from "./file-upload-modal"
-import { YoutubeLinksModal } from "./youtube-links-modal"
+import { useState, useRef } from "react";
+import { PlusCircle, X, Paperclip, Youtube, Send } from "lucide-react";
+import { Button } from "@/app/components/ui/button";
+import { FileUploadModal } from "./file-upload-modal";
+import { YoutubeLinksModal } from "./youtube-links-modal";
 
 export function NewMaterialForm() {
-  const [prompt, setPrompt] = useState("")
-  const [showOptions, setShowOptions] = useState(false)
-  const [showYoutubeModal, setShowYoutubeModal] = useState(false)
-  const [showFileModal, setShowFileModal] = useState(false)
-  const [youtubeLinks, setYoutubeLinks] = useState<string[]>([])
-  const [files, setFiles] = useState<{ name: string; size: number; type: string }[]>([])
-  const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const [prompt, setPrompt] = useState("");
+  const [showOptions, setShowOptions] = useState(false);
+  const [showYoutubeModal, setShowYoutubeModal] = useState(false);
+  const [showFileModal, setShowFileModal] = useState(false);
+  const [youtubeLinks, setYoutubeLinks] = useState<string[]>([]);
+  const [files, setFiles] = useState<
+    { name: string; size: number; type: string }[]
+  >([]);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const handleOptionClick = (option: "youtube" | "file") => {
     if (option === "youtube") {
-      setShowYoutubeModal(true)
+      setShowYoutubeModal(true);
     } else {
-      setShowFileModal(true)
+      setShowFileModal(true);
     }
-    setShowOptions(false)
-  }
+    setShowOptions(false);
+  };
 
   const handleTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setPrompt(e.target.value)
+    setPrompt(e.target.value);
 
     // Auto-resize textarea
     if (textareaRef.current) {
-      textareaRef.current.style.height = "auto"
-      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
-  }
+  };
 
   const addYoutubeLink = (link: string) => {
-    setYoutubeLinks([...youtubeLinks, link])
-  }
+    setYoutubeLinks([...youtubeLinks, link]);
+  };
 
   const removeYoutubeLink = (index: number) => {
-    setYoutubeLinks(youtubeLinks.filter((_, i) => i !== index))
-  }
+    setYoutubeLinks(youtubeLinks.filter((_, i) => i !== index));
+  };
 
-  const addFiles = (newFiles: { name: string; size: number; type: string }[]) => {
-    setFiles([...files, ...newFiles])
-  }
+  const addFiles = (
+    newFiles: { name: string; size: number; type: string }[]
+  ) => {
+    setFiles([...files, ...newFiles]);
+  };
 
   const removeFile = (index: number) => {
-    setFiles(files.filter((_, i) => i !== index))
-  }
+    setFiles(files.filter((_, i) => i !== index));
+  };
 
   const formatFileSize = (bytes: number) => {
-    if (bytes < 1024) return bytes + " bytes"
-    else if (bytes < 1048576) return (bytes / 1024).toFixed(1) + " KB"
-    else return (bytes / 1048576).toFixed(1) + " MB"
-  }
+    if (bytes < 1024) return bytes + " bytes";
+    else if (bytes < 1048576) return (bytes / 1024).toFixed(1) + " KB";
+    else return (bytes / 1048576).toFixed(1) + " MB";
+  };
 
   return (
     <>
       {/* Input Section */}
       <div className="mb-6">
-        <h2 className="text-lg font-medium mb-2">Course Description / Prompt</h2>
+        <h2 className="text-lg font-medium mb-2">
+          Course Description / Prompt
+        </h2>
         <div className="relative">
           <div className="border border-purple-700 rounded-xl bg-gray-50 overflow-hidden">
             <div className="flex items-start p-4">
@@ -71,7 +77,11 @@ export function NewMaterialForm() {
                   onClick={() => setShowOptions(!showOptions)}
                   className="p-1 rounded-full hover:bg-gray-200 transition-colors mr-2 mt-1"
                 >
-                  {showOptions ? <X className="w-5 h-5" /> : <PlusCircle className="w-5 h-5" />}
+                  {showOptions ? (
+                    <X className="w-5 h-5" />
+                  ) : (
+                    <PlusCircle className="w-5 h-5" />
+                  )}
                 </button>
 
                 {/* Dropdown Options */}
@@ -117,18 +127,30 @@ export function NewMaterialForm() {
           {/* Files Section */}
           {files.length > 0 && (
             <div className="border border-gray-200 rounded-lg p-4">
-              <h3 className="text-sm font-medium mb-2">Uploaded Files ({files.length})</h3>
+              <h3 className="text-sm font-medium mb-2">
+                Uploaded Files ({files.length})
+              </h3>
               <div className="space-y-2">
                 {files.map((file, index) => (
-                  <div key={index} className="flex items-center justify-between bg-gray-50 p-2 rounded">
+                  <div
+                    key={index}
+                    className="flex items-center justify-between bg-gray-50 p-2 rounded"
+                  >
                     <div className="flex items-center">
                       <Paperclip className="w-4 h-4 mr-2 text-gray-500" />
                       <div>
-                        <p className="text-sm text-gray-800 truncate max-w-[200px] sm:max-w-xs">{file.name}</p>
-                        <p className="text-xs text-gray-500">{formatFileSize(file.size)}</p>
+                        <p className="text-sm text-gray-800 truncate max-w-[200px] sm:max-w-xs">
+                          {file.name}
+                        </p>
+                        <p className="text-xs text-gray-500">
+                          {formatFileSize(file.size)}
+                        </p>
                       </div>
                     </div>
-                    <button onClick={() => removeFile(index)} className="text-gray-400 hover:text-red-500 p-1">
+                    <button
+                      onClick={() => removeFile(index)}
+                      className="text-gray-400 hover:text-red-500 p-1"
+                    >
                       <X className="w-4 h-4" />
                     </button>
                   </div>
@@ -140,10 +162,15 @@ export function NewMaterialForm() {
           {/* YouTube Links Section */}
           {youtubeLinks.length > 0 && (
             <div className="border border-gray-200 rounded-lg p-4">
-              <h3 className="text-sm font-medium mb-2">YouTube Links ({youtubeLinks.length})</h3>
+              <h3 className="text-sm font-medium mb-2">
+                YouTube Links ({youtubeLinks.length})
+              </h3>
               <div className="space-y-2">
                 {youtubeLinks.map((link, index) => (
-                  <div key={index} className="flex items-center justify-between bg-gray-50 p-2 rounded">
+                  <div
+                    key={index}
+                    className="flex items-center justify-between bg-gray-50 p-2 rounded"
+                  >
                     <div className="flex items-center flex-grow overflow-hidden">
                       <Youtube className="w-4 h-4 mr-2 text-red-500 flex-shrink-0" />
                       <a
@@ -178,7 +205,11 @@ export function NewMaterialForm() {
       </div>
 
       {/* Modals */}
-      <FileUploadModal isOpen={showFileModal} onClose={() => setShowFileModal(false)} onAddFiles={addFiles} />
+      <FileUploadModal
+        isOpen={showFileModal}
+        onClose={() => setShowFileModal(false)}
+        onAddFiles={addFiles}
+      />
 
       <YoutubeLinksModal
         isOpen={showYoutubeModal}
@@ -186,5 +217,5 @@ export function NewMaterialForm() {
         onAddLink={addYoutubeLink}
       />
     </>
-  )
+  );
 }

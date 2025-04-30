@@ -1,39 +1,42 @@
-import { StudyMaterialCard } from "@/app/components/study-material-card"
-import Link from "next/link"
+import { StudyMaterialCard } from "@/app/components/study-material-card";
+import Link from "next/link";
 
 const studyMaterials = [
   {
     id: 1,
     title: "Introduction to Machine Learning",
-    description: "Understand the fundamentals of machine learning.",
-    image: "/study-materials/google-analytics.png",
+    description: "Understand the fundamentals of machine learning,",
+    image: "/movie-card.png",
   },
   {
     id: 2,
     title: "Introduction to Machine Learning",
-    description: "Understand the fundamentals of machine learning.",
-    image: "/study-materials/data-literacy.png",
+    description: "Understand the fundamentals of machine learning,",
+    image: "/movie-card-1.png",
   },
   {
     id: 3,
     title: "Introduction to Machine Learning",
-    description: "Understand the fundamentals of machine learning.",
-    image: "/study-materials/excel-chart.png",
+    description: "Understand the fundamentals of machine learning,",
+    image: "/movie-card-2.png",
   },
   {
     id: 4,
     title: "Introduction to Machine Learning",
-    description: "Understand the fundamentals of machine learning.",
-    image: "/study-materials/machine-learning.png",
+    description: "Understand the fundamentals of machine learning,",
+    image: "/movie-card-3.png",
   },
-]
+];
 
 export function StudyMaterialsSection() {
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">Your Study Materials</h2>
-        <Link href="/study-materials" className="text-sm text-gray-600 hover:underline">
+        <Link
+          href="/study-materials"
+          className="text-sm text-gray-600 hover:underline"
+        >
           View All
         </Link>
       </div>
@@ -50,5 +53,5 @@ export function StudyMaterialsSection() {
         ))}
       </div>
     </div>
-  )
+  );
 }

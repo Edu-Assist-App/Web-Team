@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Input } from "@/app/components/ui/input"
-import { Avatar } from "@/app/components/ui/avatar"
-import { Search } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState } from "react";
+import { Input } from "@/app/components/ui/input";
+import { Avatar } from "@/app/components/ui/avatar";
+import { Search } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 // Mock data for chats
 const MOCK_CHATS = [
@@ -77,21 +77,24 @@ const MOCK_CHATS = [
     isGroup: true,
     avatar: "/placeholder.svg?height=40&width=40",
   },
-]
+];
 
 interface ChatSidebarProps {
-  onChatSelect: (id: string) => void
-  activeChatId: string | null
+  onChatSelect: (id: string) => void;
+  activeChatId: string | null;
 }
 
-export default function ChatSidebar({ onChatSelect, activeChatId }: ChatSidebarProps) {
-  const [searchQuery, setSearchQuery] = useState("")
+export default function ChatSidebar({
+  onChatSelect,
+  activeChatId,
+}: ChatSidebarProps) {
+  const [searchQuery, setSearchQuery] = useState("");
 
   const filteredChats = MOCK_CHATS.filter(
     (chat) =>
       chat.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      chat.lastMessage.toLowerCase().includes(searchQuery.toLowerCase()),
-  )
+      chat.lastMessage.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="flex flex-col h-full">
@@ -115,7 +118,7 @@ export default function ChatSidebar({ onChatSelect, activeChatId }: ChatSidebarP
             key={chat.id}
             className={cn(
               "flex items-center p-4 gap-3 cursor-pointer hover:bg-muted/40 transition-colors",
-              activeChatId === chat.id && "bg-muted/60",
+              activeChatId === chat.id && "bg-muted/60"
             )}
             onClick={() => onChatSelect(chat.id)}
           >
@@ -126,19 +129,25 @@ export default function ChatSidebar({ onChatSelect, activeChatId }: ChatSidebarP
             <div className="flex-1 min-w-0">
               <div className="flex justify-between items-center">
                 <h3 className="font-medium truncate">{chat.name}</h3>
-                <span className="text-xs text-muted-foreground">{chat.time}</span>
+                <span className="text-xs text-muted-foreground">
+                  {chat.time}
+                </span>
               </div>
-              <p className="text-sm text-muted-foreground truncate">{chat.lastMessage}</p>
+              <p className="text-sm text-muted-foreground truncate">
+                {chat.lastMessage}
+              </p>
             </div>
 
             {chat.unread && (
               <div className="flex-shrink-0 w-5 h-5 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-xs text-primary-foreground">{chat.unread}</span>
+                <span className="text-xs text-primary-foreground">
+                  {chat.unread}
+                </span>
               </div>
             )}
           </div>
         ))}
       </div>
     </div>
-  )
+  );
 }

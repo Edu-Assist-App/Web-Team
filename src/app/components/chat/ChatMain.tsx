@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState, useRef, useEffect } from "react"
-import { Avatar } from "@/app/components/ui/avatar"
-import { Button } from "@/app/components/ui/button"
-import { Input } from "@/app/components/ui/input"
-import { ArrowLeft, Send, Smile } from "lucide-react"
-import ChatMessage from "./ChatMessage"
-import { cn } from "@/lib/utils"
+import { useState, useRef, useEffect } from "react";
+import { Avatar } from "@/app/components/ui/avatar";
+import { Button } from "@/app/components/ui/button";
+import { Input } from "@/app/components/ui/input";
+import { ArrowLeft, Send, Smile } from "lucide-react";
+import ChatMessage from "./ChatMessage";
+import { cn } from "@/lib/utils";
 
 // Mock data for the active chat
 const MOCK_CHATS = {
@@ -20,7 +20,8 @@ const MOCK_CHATS = {
     messages: [
       {
         id: "m1",
-        content: "OMG 😮 do you remember what you did last night at the work night out?",
+        content:
+          "OMG 😮 do you remember what you did last night at the work night out?",
         timestamp: "18:12",
         sender: "them",
         status: "read",
@@ -34,52 +35,61 @@ const MOCK_CHATS = {
       },
     ],
   },
-}
+};
 
 interface ChatMainProps {
-  chatId: string
-  onBackClick: () => void
-  isMobile: boolean
+  chatId: string;
+  onBackClick: () => void;
+  isMobile: boolean;
 }
 
-export default function ChatMain({ chatId, onBackClick, isMobile }: ChatMainProps) {
-  const [message, setMessage] = useState("")
-  const [messages, setMessages] = useState(MOCK_CHATS[chatId as keyof typeof MOCK_CHATS]?.messages || [])
-  const messagesEndRef = useRef<HTMLDivElement>(null)
-  const inputRef = useRef<HTMLInputElement>(null)
-  const chat = MOCK_CHATS[chatId as keyof typeof MOCK_CHATS]
+export default function ChatMain({
+  chatId,
+  onBackClick,
+  isMobile,
+}: ChatMainProps) {
+  const [message, setMessage] = useState("");
+  const [messages, setMessages] = useState(
+    MOCK_CHATS[chatId as keyof typeof MOCK_CHATS]?.messages || []
+  );
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const chat = MOCK_CHATS[chatId as keyof typeof MOCK_CHATS];
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-  }
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
-    scrollToBottom()
-  }, [messages])
+    scrollToBottom();
+  }, [messages]);
 
   const handleSendMessage = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!message.trim()) return
+    e.preventDefault();
+    if (!message.trim()) return;
 
     const newMessage = {
       id: `m${messages.length + 1}`,
       content: message,
-      timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+      timestamp: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
       sender: "me",
       status: "sent",
-    }
+    };
 
-    setMessages([...messages, newMessage])
-    setMessage("")
-    inputRef.current?.focus()
-  }
+    setMessages([...messages, newMessage]);
+    setMessage("");
+    inputRef.current?.focus();
+  };
 
   if (!chat) {
     return (
       <div className="flex items-center justify-center w-full h-full">
         <p>Chat not found</p>
       </div>
-    )
+    );
   }
 
   return (
@@ -87,7 +97,12 @@ export default function ChatMain({ chatId, onBackClick, isMobile }: ChatMainProp
       {/* Chat Header */}
       <div className="flex items-center p-4 border-b gap-3">
         {isMobile && (
-          <Button variant="ghost" size="icon" onClick={onBackClick} className="mr-1">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onBackClick}
+            className="mr-1"
+          >
             <ArrowLeft className="h-5 w-5" />
           </Button>
         )}
@@ -120,7 +135,12 @@ export default function ChatMain({ chatId, onBackClick, isMobile }: ChatMainProp
       {/* Message Input */}
       <div className="p-4 border-t bg-background">
         <form onSubmit={handleSendMessage} className="flex items-center gap-2">
-          <Button type="button" variant="ghost" size="icon" className="flex-shrink-0">
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            className="flex-shrink-0"
+          >
             <Smile className="h-5 w-5" />
           </Button>
 
@@ -135,7 +155,10 @@ export default function ChatMain({ chatId, onBackClick, isMobile }: ChatMainProp
           <Button
             type="submit"
             size="icon"
-            className={cn("flex-shrink-0", !message.trim() && "opacity-50 cursor-not-allowed")}
+            className={cn(
+              "flex-shrink-0",
+              !message.trim() && "opacity-50 cursor-not-allowed"
+            )}
             disabled={!message.trim()}
           >
             <Send className="h-5 w-5" />
@@ -143,5 +166,5 @@ export default function ChatMain({ chatId, onBackClick, isMobile }: ChatMainProp
         </form>
       </div>
     </div>
-  )
+  );
 }

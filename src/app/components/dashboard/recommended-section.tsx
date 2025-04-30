@@ -1,4 +1,4 @@
-import { StudyMaterialCard } from "@/app/components/study-material-card"
+import { StudyMaterialCard } from "@/app/components/study-material-card";
 
 const recommendedMaterials = [
   {
@@ -25,7 +25,7 @@ const recommendedMaterials = [
     description: "Understand the fundamentals of machine learning.",
     image: "/study-materials/machine-learning.png",
   },
-]
+];
 
 export function RecommendedSection() {
   return (
@@ -44,5 +44,5 @@ export function RecommendedSection() {
         ))}
       </div>
     </div>
-  )
+  );
 }

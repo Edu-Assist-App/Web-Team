@@ -1,34 +1,34 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { X, Plus, Youtube } from "lucide-react"
-import { Button } from "@/app/components/ui/button"
+import { useState } from "react";
+import { X, Plus, Youtube } from "lucide-react";
+import { Button } from "@/app/components/ui/button";
 
 interface YoutubeLinksInputProps {
-  onClose: () => void
+  onClose: () => void;
 }
 
 export function YoutubeLinksInput({ onClose }: YoutubeLinksInputProps) {
-  const [links, setLinks] = useState<string[]>([""])
+  const [links, setLinks] = useState<string[]>([""]);
 
   const handleLinkChange = (index: number, value: string) => {
-    const newLinks = [...links]
-    newLinks[index] = value
-    setLinks(newLinks)
-  }
+    const newLinks = [...links];
+    newLinks[index] = value;
+    setLinks(newLinks);
+  };
 
   const addNewLink = () => {
-    setLinks([...links, ""])
-  }
+    setLinks([...links, ""]);
+  };
 
   const removeLink = (index: number) => {
     if (links.length === 1) {
-      setLinks([""])
+      setLinks([""]);
     } else {
-      const newLinks = links.filter((_, i) => i !== index)
-      setLinks(newLinks)
+      const newLinks = links.filter((_, i) => i !== index);
+      setLinks(newLinks);
     }
-  }
+  };
 
   return (
     <div className="space-y-4">
@@ -52,7 +52,10 @@ export function YoutubeLinksInput({ onClose }: YoutubeLinksInputProps) {
               placeholder="https://www.youtube.com/watch?v=..."
               className="flex-grow bg-gray-800 border border-gray-700 rounded-md px-3 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
             />
-            <button onClick={() => removeLink(index)} className="text-gray-400 hover:text-white p-1">
+            <button
+              onClick={() => removeLink(index)}
+              className="text-gray-400 hover:text-white p-1"
+            >
               <X className="w-4 h-4" />
             </button>
           </div>
@@ -69,8 +72,9 @@ export function YoutubeLinksInput({ onClose }: YoutubeLinksInputProps) {
       </Button>
 
       <div className="text-xs text-gray-500">
-        Add YouTube video links that contain relevant content for your study material
+        Add YouTube video links that contain relevant content for your study
+        material
       </div>
     </div>
-  )
+  );
 }

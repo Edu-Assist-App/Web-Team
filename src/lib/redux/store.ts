@@ -1,9 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit"
-import { setupListeners } from "@reduxjs/toolkit/query"
-import { authApi } from "./api/authApi"
-import { learningPathsApi } from "./api/learningPathsApi"
-import authReducer from "./features/authSlice"
-import learningPathsReducer from "./features/learningPathsSlice"
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import { authApi } from "./api/authApi";
+import { learningPathsApi } from "../../lib/redux/api/learningPathApi";
+import authReducer from "./features/authSlice";
+import learningPathsReducer from "../../lib/redux/features/learningPathSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,10 +12,14 @@ export const store = configureStore({
     auth: authReducer,
     learningPaths: learningPathsReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(authApi.middleware, learningPathsApi.middleware),
-})
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(
+      authApi.middleware,
+      learningPathsApi.middleware
+    ),
+});
 
-setupListeners(store.dispatch)
+setupListeners(store.dispatch);
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
