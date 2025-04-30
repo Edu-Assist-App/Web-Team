@@ -1,8 +1,8 @@
-import { StatsCard } from "../../../components/dashboard/stats-card"
-import { ActivityChart } from "../../../components/dashboard/activity-chart"
-import { StudyMaterialsSection } from "../../../components/dashboard/study-materials-section"
-import { RecommendedSection } from "../../../components/dashboard/recommended-section"
-import { SearchBar } from "../../../components/dashboard/search-bar"
+import { StatsCard } from "../../components/dashboard/stats-card"
+import { ActivityChart } from "../../components/dashboard/activity-chart"
+import { StudyMaterialsSection } from "../../components/dashboard/study-materials-section"
+import { RecommendedSection } from "../../components/dashboard/recommended-section"
+import { SearchBar } from "../../components/dashboard/search-bar"
 
 export default function DashboardPage() {
   return (

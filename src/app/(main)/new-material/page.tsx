@@ -1,4 +1,4 @@
-import { NewMaterialForm } from "../../../components/new-material/new-material-form"
+import { NewMaterialForm } from "../../components/new-material/new-material-form"
 
 export default function NewMaterialPage() {
   return (
