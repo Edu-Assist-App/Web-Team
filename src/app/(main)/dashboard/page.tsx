@@ -1,24 +1,22 @@
-import { StatsCard } from "../../../components/dashboard/stats-card"
-import { ActivityChart } from "../../../components/dashboard/activity-chart"
-import { StudyMaterialsSection } from "../../../components/dashboard/study-materials-section"
-import { RecommendedSection } from "../../../components/dashboard/recommended-section"
-import { SearchBar } from "../../../components/dashboard/search-bar"
+import { StatsCard } from "../../components/dashboard/stats-card";
+import { ActivityChart } from "../../components/dashboard/activity-chart";
+import { StudyMaterialsSection } from "../../components/dashboard/study-materials-section";
+import { RecommendedSection } from "../../components/dashboard/recommended-section";
+import { SearchBar } from "../../components/dashboard/search-bar";
+import CtaCard from "@/app/components/cards/CtaCard";
 
 export default function DashboardPage() {
+  const cardContent = {
+    title: "Own Your Progress. Dominate Your Goals",
+    description:
+      "Keep up the momentum! Continue your learning journey by finishing the resources you’ve started.",
+    imageUrl: "/graduation-cap.png",
+  };
   return (
-    <div className="container mx-auto px-4 py-6 space-y-8">
+    <div className="container mx-auto px-12 py-12 space-y-8">
       {/* Hero Section */}
-      <div className="bg-gray-50 rounded-xl p-6 flex items-center gap-4">
-        <div className="flex-shrink-0">
-          <img src="/graduation-cap.png" alt="Graduation Cap" className="w-16 h-16" />
-        </div>
-        <div>
-          <h1 className="text-2xl font-bold">Own Your Progress, Dominate Your Goals</h1>
-          <p className="text-gray-600">
-            Keep up the momentum! Continue your learning journey by finishing the resources you've started.
-          </p>
-        </div>
-      </div>
+
+      <CtaCard {...cardContent} />
 
       {/* Stats Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -55,5 +53,5 @@ export default function DashboardPage() {
         </button>
       </div>
     </div>
-  )
+  );
 }
