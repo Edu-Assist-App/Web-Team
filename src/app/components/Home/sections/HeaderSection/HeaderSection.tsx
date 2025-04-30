@@ -2,13 +2,13 @@
 import { GlobeIcon, Menu } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
-import { Button } from "../../../../components/ui/button";
+import { Button } from "../../../ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "../../../../components/ui/navigation-menu";
+} from "../../../ui/navigation-menu";
 
 export const HeaderSection = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

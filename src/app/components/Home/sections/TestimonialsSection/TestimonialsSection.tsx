@@ -4,7 +4,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../../../../components/ui/accordion";
+} from "../../../ui/accordion";
 
 export const TestimonialsSection = (): JSX.Element => {
   // FAQ data for mapping

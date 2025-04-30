@@ -8,9 +8,9 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../../../../components/ui/avatar";
-import { Button } from "../../../../components/ui/button";
-import { Card, CardContent } from "../../../../components/ui/card";
+} from "../../../ui/avatar";
+import { Button } from "../../../ui/button";
+import { Card, CardContent } from "../../../ui/card";
 
 export const LearningProcessSection = (): JSX.Element => {
   // Testimonial data for mapping
