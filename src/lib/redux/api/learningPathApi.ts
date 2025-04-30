@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import type {
   LearningPath,
   LearningPathCreate,
@@ -9,9 +9,11 @@ import type {
   ContentItemCreate,
   UserProgress,
   UserProgressCreate,
-} from "@/types/learning-path"
+} from "../../types/learning-path";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://eduassist-6uef.onrender.com/api/v1"
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL ||
+  "https://eduassist-6uef.onrender.com/api/v1";
 
 export const learningPathsApi = createApi({
   reducerPath: "learningPathsApi",
@@ -19,11 +21,11 @@ export const learningPathsApi = createApi({
     baseUrl: API_BASE_URL,
     prepareHeaders: (headers, { getState }) => {
       // Get token from state
-      const token = (getState() as any).auth?.token
+      const token = (getState() as any).auth?.token;
       if (token) {
-        headers.set("Authorization", `Bearer ${token}`)
+        headers.set("Authorization", `Bearer ${token}`);
       }
-      return headers
+      return headers;
     },
   }),
   tagTypes: ["LearningPath", "LearningPathStep", "ContentItem", "UserProgress"],
@@ -33,7 +35,13 @@ export const learningPathsApi = createApi({
       query: () => "/learning-paths",
       providesTags: (result) =>
         result
-          ? [...result.map(({ id }) => ({ type: "LearningPath" as const, id })), { type: "LearningPath", id: "LIST" }]
+          ? [
+              ...result.map(({ id }) => ({
+                type: "LearningPath" as const,
+                id,
+              })),
+              { type: "LearningPath", id: "LIST" },
+            ]
           : [{ type: "LearningPath", id: "LIST" }],
     }),
 
@@ -41,7 +49,13 @@ export const learningPathsApi = createApi({
       query: () => "/learning-paths/my",
       providesTags: (result) =>
         result
-          ? [...result.map(({ id }) => ({ type: "LearningPath" as const, id })), { type: "LearningPath", id: "MY" }]
+          ? [
+              ...result.map(({ id }) => ({
+                type: "LearningPath" as const,
+                id,
+              })),
+              { type: "LearningPath", id: "MY" },
+            ]
           : [{ type: "LearningPath", id: "MY" }],
     }),
 
@@ -49,7 +63,13 @@ export const learningPathsApi = createApi({
       query: () => "/learning-paths/public",
       providesTags: (result) =>
         result
-          ? [...result.map(({ id }) => ({ type: "LearningPath" as const, id })), { type: "LearningPath", id: "PUBLIC" }]
+          ? [
+              ...result.map(({ id }) => ({
+                type: "LearningPath" as const,
+                id,
+              })),
+              { type: "LearningPath", id: "PUBLIC" },
+            ]
           : [{ type: "LearningPath", id: "PUBLIC" }],
     }),
 
@@ -70,7 +90,10 @@ export const learningPathsApi = createApi({
       ],
     }),
 
-    updateLearningPath: builder.mutation<LearningPath, { pathId: string; learningPath: LearningPathUpdate }>({
+    updateLearningPath: builder.mutation<
+      LearningPath,
+      { pathId: string; learningPath: LearningPathUpdate }
+    >({
       query: ({ pathId, learningPath }) => ({
         url: `/learning-paths/${pathId}`,
         method: "PUT",
@@ -103,19 +126,27 @@ export const learningPathsApi = createApi({
       providesTags: (result, error, pathId) =>
         result
           ? [
-              ...result.map(({ id }) => ({ type: "LearningPathStep" as const, id })),
+              ...result.map(({ id }) => ({
+                type: "LearningPathStep" as const,
+                id,
+              })),
               { type: "LearningPathStep", id: pathId },
             ]
           : [{ type: "LearningPathStep", id: pathId }],
     }),
 
-    createLearningPathStep: builder.mutation<LearningPathStep, { pathId: string; step: LearningPathStepCreate }>({
+    createLearningPathStep: builder.mutation<
+      LearningPathStep,
+      { pathId: string; step: LearningPathStepCreate }
+    >({
       query: ({ pathId, step }) => ({
         url: `/learning-paths/${pathId}/steps`,
         method: "POST",
         body: step,
       }),
-      invalidatesTags: (result, error, { pathId }) => [{ type: "LearningPathStep", id: pathId }],
+      invalidatesTags: (result, error, { pathId }) => [
+        { type: "LearningPathStep", id: pathId },
+      ],
     }),
 
     // Content Items
@@ -125,13 +156,17 @@ export const learningPathsApi = createApi({
         method: "POST",
         body: contentItem,
       }),
-      invalidatesTags: (result) => [{ type: "ContentItem", id: result?.step_id }],
+      invalidatesTags: (result) => [
+        { type: "ContentItem", id: result?.step_id },
+      ],
     }),
 
     // User Progress
     getUserProgress: builder.query<UserProgress[], string>({
       query: (pathId) => `/learning-paths/progress/${pathId}`,
-      providesTags: (result, error, pathId) => [{ type: "UserProgress", id: pathId }],
+      providesTags: (result, error, pathId) => [
+        { type: "UserProgress", id: pathId },
+      ],
     }),
 
     createUserProgress: builder.mutation<UserProgress, UserProgressCreate>({
@@ -140,10 +175,12 @@ export const learningPathsApi = createApi({
         method: "POST",
         body: progress,
       }),
-      invalidatesTags: (result) => [{ type: "UserProgress", id: result?.path_id }],
+      invalidatesTags: (result) => [
+        { type: "UserProgress", id: result?.path_id },
+      ],
     }),
   }),
-})
+});
 
 export const {
   useGetLearningPathsQuery,
@@ -158,4 +195,4 @@ export const {
   useCreateContentItemMutation,
   useGetUserProgressQuery,
   useCreateUserProgressMutation,
-} = learningPathsApi
+} = learningPathsApi;

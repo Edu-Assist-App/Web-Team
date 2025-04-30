@@ -5,26 +5,26 @@ const studyMaterials = [
   {
     id: 1,
     title: "Introduction to Machine Learning",
-    description: "Understand the fundamentals of machine learning.",
-    image: "/study-materials/google-analytics.png",
+    description: "Understand the fundamentals of machine learning,",
+    image: "/movie-card.png",
   },
   {
     id: 2,
     title: "Introduction to Machine Learning",
-    description: "Understand the fundamentals of machine learning.",
-    image: "/study-materials/data-literacy.png",
+    description: "Understand the fundamentals of machine learning,",
+    image: "/movie-card-1.png",
   },
   {
     id: 3,
     title: "Introduction to Machine Learning",
-    description: "Understand the fundamentals of machine learning.",
-    image: "/study-materials/excel-chart.png",
+    description: "Understand the fundamentals of machine learning,",
+    image: "/movie-card-2.png",
   },
   {
     id: 4,
     title: "Introduction to Machine Learning",
-    description: "Understand the fundamentals of machine learning.",
-    image: "/study-materials/machine-learning.png",
+    description: "Understand the fundamentals of machine learning,",
+    image: "/movie-card-3.png",
   },
 ];
 

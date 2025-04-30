@@ -1,27 +1,54 @@
 "use client";
 
-import { Menu, Search } from "lucide-react";
+import { Menu, Search, ChevronLeft } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
+import { useRouter, usePathname } from "next/navigation";
 
 interface NavbarProps {
   onMenuClick: () => void;
 }
 
+const routeTitles: Record<string, string> = {
+  "new-material": "Materials",
+  materials: "Materials",
+  notes: "Notes",
+  settings: "Settings",
+};
+
 export function Navbar({ onMenuClick }: NavbarProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const segments = pathname.split("/").filter(Boolean);
+
+  // Fast route checks
+  const showBackBtn = segments.length > 2;
+  const mainRoute = segments[0] || "dashboard";
+  const title =
+    routeTitles[mainRoute] ||
+    mainRoute.charAt(0).toUpperCase() + mainRoute.slice(1);
+
+  const handleGoBack = () => router.push("/" + segments.slice(0, -1).join("/"));
+
   return (
     <header className="w-full gap-4 md:gap-12 px-4 md:px-12 py-4 fixed top-0 right-0 md:w-[calc(100%-300px)] bg-white border-b-[0.5px] border-[#0000001a] flex items-center z-50">
-      <Button
-        variant="ghost"
-        size="icon"
-        className="md:hidden"
-        onClick={onMenuClick}
-      >
-        <Menu className="h-6 w-6" />
-      </Button>
+      {showBackBtn ? (
+        <Button variant="ghost" size="icon" onClick={handleGoBack}>
+          <ChevronLeft className="h-6 w-6" />
+        </Button>
+      ) : (
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden"
+          onClick={onMenuClick}
+        >
+          <Menu className="h-6 w-6" />
+        </Button>
+      )}
 
       <h1 className="font-['Ubuntu',Helvetica] font-medium text-[#040303] text-xl md:text-2xl">
-        Resources
+        {title}
       </h1>
 
       <div className="hidden md:flex items-center gap-2 pl-6 pr-[50px] py-4 flex-1 bg-[#00000003] rounded-3xl">

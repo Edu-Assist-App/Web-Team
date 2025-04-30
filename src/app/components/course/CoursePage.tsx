@@ -7,6 +7,7 @@ import { Progress } from "@/app/components/ui/progress";
 import { Button } from "@/app/components/ui/button";
 import CtaCard from "../cards/CtaCard";
 import CardMaterial from "../cards/CardMaterial";
+import Link from "next/link";
 
 export default function CoursePage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -36,6 +37,7 @@ export default function CoursePage() {
       title: "Note",
       description: "A beginner-focused ",
       imageUrl: "/note.svg",
+      url: "/note",
       status: true,
     },
 
@@ -43,18 +45,23 @@ export default function CoursePage() {
       title: "Quize",
       description: "A beginner-focused ",
       imageUrl: "/quize.svg",
+      url: "/quiz",
       status: false,
     },
     {
       title: "FlashCards",
       description: "A beginner-focused ",
       imageUrl: "/flashcard.svg",
+      url: "/flashcards",
+
       status: false,
     },
     {
       title: "Q&A",
       description: "A beginner-focused ",
       imageUrl: "/q&a.svg",
+      url: "/",
+
       status: false,
     },
   ];

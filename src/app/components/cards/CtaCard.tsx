@@ -62,9 +62,7 @@ export default function CtaCard({
             )}
 
             <div>
-              <div className="text-sm font-medium mb-1">
-                {!noChapter ? "Chapter" : "Course"} Progress
-              </div>
+              <div className="text-sm font-medium mb-1">Course Progress</div>
               <div className="flex items-center gap-2">
                 <Progress
                   value={progress}

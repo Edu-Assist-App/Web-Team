@@ -5,9 +5,11 @@ import { Button } from "@/app/components/ui/button";
 import { Card } from "@/app/components/ui/card";
 import { Textarea } from "../ui/Textarea";
 import { FileUp, YoutubeIcon, Send } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function CourseCreator() {
   const [description, setDescription] = useState("");
+  const route = useRouter();
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4">
@@ -111,7 +113,12 @@ export default function CourseCreator() {
           <div className="text-gray-500 text-sm">
             {description.length}/10000
           </div>
-          <Button className="bg-purple-700 hover:bg-purple-800 rounded-full px-6">
+          <Button
+            onClick={() => {
+              route.push("/materials/4");
+            }}
+            className="bg-purple-700 hover:bg-purple-800 rounded-full px-6"
+          >
             Generate
             <Send className="ml-2 h-4 w-4" />
           </Button>
