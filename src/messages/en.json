@@ -1,0 +1,120 @@
+{
+  "Header": {
+    "logoAlt": "EduAssist Logo",
+    "brandName": "EduAssist",
+    "navigation": {
+      "home": "Home",
+      "features": "Features",
+      "howItWorks": "How It Works",
+      "testimonials": "Testimonials"
+    },
+    "language": {
+      "english": "English",
+      "french": "French",
+      "englishShort": "ENG",
+      "frenchShort": "FR"
+    },
+    "buttons": {
+      "login": "Login",
+      "getStarted": "Get Started"
+    },
+    "mobileMenu": {
+      "languageLabel": "Language",
+      "close": "Close"
+    }
+  },
+  "HomePage": {
+    "HeroSection": {
+      "topTag": "Start your journey",
+      "headline": "Unlock Personalized Learning with <span1>AI-Powered</span1> <span2>Assistance</span2>",
+      "subtitle": "EduAssist helps students, educators, and professionals learn smarter with AI-driven insights, multilingual support, and personalized study tools.",
+      "cta1": "Join For Free",
+      "cta2": "View Live Demo",
+      "cards": {
+        "card1": {
+          "title": "AI-Generated Learning Materials",
+          "subtext": "Join our growing community"
+        },
+        "card2": {
+          "title": "Smart File Management",
+          "subtext": "From beginner to advanced"
+        },
+        "card3": {
+          "title": "Personalized Learning Paths",
+          "subtext": "Learn from industry leaders"
+        },
+        "card4": {
+          "title": "Real-Time Progress Tracking",
+          "subtext": "Study at your own pace"
+        }
+      }
+    },
+    "FeatureSection": {
+      "title": "Your Smartest Study Companion",
+      "cards": [
+        {
+          "title": "AI Chatbot Assistance",
+          "subtext": "Get instant answers and explanations."
+        },
+        {
+          "title": "Smart File Management",
+          "subtext": "Upload, organize, and annotate resources."
+        },
+        {
+          "title": "AI-Generated Learning Materials",
+          "subtext": "Summaries, flashcards, and quizzes."
+        },
+        {
+          "title": "Personalized Learning Paths",
+          "subtext": "Study plans tailored to your progress."
+        },
+        {
+          "title": "Real-Time Progress Tracking",
+          "subtext": "Monitor your learning in one place."
+        }
+      ]
+    },
+    "StepsSection": {
+      "title": "Learning Made Simple – Just 3 Steps!",
+      "actionBtn": "View Live Demo",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Upload Your Learning Materials",
+          "content": "PDFs, videos, and more – all in one place."
+        },
+        {
+          "id": 2,
+          "title": "Choose Your Path",
+          "content": "Select from our curated learning tracks"
+        },
+        {
+          "id": 3,
+          "title": "Start Learning",
+          "content": "Begin your first lesson immediately"
+        }
+      ],
+      "ctaBtn": "Join Now"
+    },
+    "TestimonialSection": {
+      "title": "What Our Users Say",
+      "testimonials": [
+        {
+          "id": 1,
+          "name": "Sarah Johnson",
+          "text": "This platform completely transformed my career. The project-based approach helped me land my dream job!"
+        },
+        {
+          "id": 2,
+          "name": "Michael Chen",
+          "text": "I doubled my salary within 6 months thanks to the skills I learned here. Worth every penny."
+        },
+        {
+          "id": 3,
+          "name": "Emma Rodriguez",
+          "text": "As a busy mom, the flexible scheduling allowed me to upskill while managing family responsibilities."
+        }
+      ]
+    }
+  }
+}

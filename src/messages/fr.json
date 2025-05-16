@@ -1,0 +1,120 @@
+{
+  "Header": {
+    "logoAlt": "Logo EduAssist",
+    "brandName": "EduAssist",
+    "navigation": {
+      "home": "Accueil",
+      "features": "Fonctions",
+      "howItWorks": "Fonctionnement",
+      "testimonials": "Témoignages"
+    },
+    "language": {
+      "english": "Anglais",
+      "french": "Français",
+      "englishShort": "ANG",
+      "frenchShort": "FR"
+    },
+    "buttons": {
+      "login": "Connexion",
+      "getStarted": "Commencer"
+    },
+    "mobileMenu": {
+      "languageLabel": "Langue",
+      "close": "Fermer"
+    }
+  },
+  "HomePage": {
+    "HeroSection": {
+      "topTag": "Commencez votre parcours",
+      "headline": "Débloquez un apprentissage personnalisé avec <span1>une assistance</span1> <span2>propulsée par IA</span2>",
+      "subtitle": "EduAssist aide les étudiants, enseignants et professionnels à apprendre plus intelligemment grâce à des insights pilotés par IA, un support multilingue et des outils d'étude personnalisés.",
+      "cta1": "Rejoignez gratuitement",
+      "cta2": "Voir la démo",
+      "cards": {
+        "card1": {
+          "title": "Matériel d'apprentissage généré par IA",
+          "subtext": "Rejoignez notre communauté grandissante"
+        },
+        "card2": {
+          "title": "Gestion intelligente des fichiers",
+          "subtext": "Du niveau débutant à avancé"
+        },
+        "card3": {
+          "title": "Parcours d'apprentissage personnalisés",
+          "subtext": "Apprenez auprès d'experts du secteur"
+        },
+        "card4": {
+          "title": "Suivi de progression en temps réel",
+          "subtext": "Étudiez à votre rythme"
+        }
+      }
+    },
+    "FeatureSection": {
+      "title": "Votre compagnon d'étude intelligent",
+      "cards": [
+        {
+          "title": "Assistance par chatbot IA",
+          "subtext": "Obtenez des réponses et explications instantanées."
+        },
+        {
+          "title": "Gestion intelligente des fichiers",
+          "subtext": "Importez, organisez et annotez vos ressources."
+        },
+        {
+          "title": "Matériel d'apprentissage généré par IA",
+          "subtext": "Résumés, flashcards et quiz automatiques."
+        },
+        {
+          "title": "Parcours d'apprentissage personnalisés",
+          "subtext": "Plans d'étude adaptés à votre progression."
+        },
+        {
+          "title": "Suivi de progression en temps réel",
+          "subtext": "Suivez votre apprentissage au même endroit."
+        }
+      ]
+    },
+    "StepsSection": {
+      "title": "Apprentissage simplifié - en 3 étapes !",
+      "actionBtn": "Voir la démo",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Importez vos ressources",
+          "content": "PDFs, vidéos et plus - tout au même endroit."
+        },
+        {
+          "id": 2,
+          "title": "Choisissez votre parcours",
+          "content": "Sélectionnez parmi nos parcours d'apprentissage"
+        },
+        {
+          "id": 3,
+          "title": "Commencez à apprendre",
+          "content": "Débutez votre première leçon immédiatement"
+        }
+      ],
+      "ctaBtn": "Rejoignez maintenant"
+    },
+    "TestimonialSection": {
+      "title": "Témoignages de nos utilisateurs",
+      "testimonials": [
+        {
+          "id": 1,
+          "name": "Sarah Johnson",
+          "text": "Cette plateforme a complètement transformé ma carrière. L'approche par projets m'a aidé à décrocher le travail de mes rêves !"
+        },
+        {
+          "id": 2,
+          "name": "Michael Chen",
+          "text": "J'ai doublé mon salaire en 6 mois grâce aux compétences acquises ici. Ça vaut chaque centime."
+        },
+        {
+          "id": 3,
+          "name": "Emma Rodriguez",
+          "text": "En tant que maman occupée, la flexibilité m'a permis de me former tout en gérant mes responsabilités familiales."
+        }
+      ]
+    }
+  }
+}
