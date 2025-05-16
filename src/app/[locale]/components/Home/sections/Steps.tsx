@@ -7,25 +7,28 @@ import {
 } from "../../ui/accordion";
 import { Button } from "../../ui/button";
 import { Card, CardContent } from "../../ui/card";
+import { useTranslations } from "next-intl"; // or your i18n library
 
 export const Steps = (): JSX.Element => {
+  const t = useTranslations("HomePage.StepsSection");
+
   const steps = [
     {
       id: "step-1",
-      title: "Upload Your Learning Materials",
-      content: "PDFs, videos, and links.",
+      title: t("steps.step1.title"),
+      content: t("steps.step1.content"),
       defaultOpen: true,
     },
     {
       id: "step-2",
-      title: "Chat with AI for Instant Help",
-      content: "",
+      title: t("steps.step2.title"),
+      content: t("steps.step2.content"),
       defaultOpen: false,
     },
     {
       id: "step-3",
-      title: "Learn & Track Progress",
-      content: "",
+      title: t("steps.step3.title"),
+      content: t("steps.step3.content"),
       defaultOpen: false,
     },
   ];
@@ -33,7 +36,7 @@ export const Steps = (): JSX.Element => {
   return (
     <section className="flex flex-col items-center gap-8 sm:gap-16 px-4 sm:px-8 lg:px-24 py-16 sm:py-[120px] border border-solid border-[#f8f8f8] w-full">
       <h2 className="text-2xl sm:text-3xl lg:text-4xl leading-9 text-[#040303] font-medium font-['Ubuntu',Helvetica] tracking-[0] text-center">
-        Learning Made Simple – Just 3 Steps!
+        {t("title")}
       </h2>
 
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16 w-full">
@@ -52,7 +55,7 @@ export const Steps = (): JSX.Element => {
                 />
               </span>
               <span className="font-['Ubuntu',Helvetica] font-medium text-[#090909] text-[15.6px]">
-                View Live Demo
+                {t("demoButton.text")}
               </span>
             </Button>
           </CardContent>
@@ -83,7 +86,7 @@ export const Steps = (): JSX.Element => {
 
           <Button className="w-full sm:w-auto px-6 py-3 bg-[#3800b3] rounded-[99px] hover:bg-[#3800b3]/90">
             <span className="font-['Ubuntu',Helvetica] font-medium text-white text-base">
-              Join Now →
+              {t("joinButton.text")}
             </span>
           </Button>
         </div>

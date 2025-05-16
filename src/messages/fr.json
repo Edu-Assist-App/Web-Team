@@ -9,9 +9,16 @@
       "testimonials": "Témoignages"
     },
     "language": {
+      "amharic": "Amharique",
+      "oromiffa": "Oromiffa",
+      "Tigrinya": "Tigrigna",
       "english": "Anglais",
       "french": "Français",
+      "amharicShort": "AMH",
+      "oromiffaShort": "ORO",
+      "TigrinyaShort": "TIG",
       "englishShort": "ANG",
+
       "frenchShort": "FR"
     },
     "buttons": {
@@ -49,72 +56,129 @@
         }
       }
     },
-    "FeatureSection": {
+
+    "FeaturesSection": {
       "title": "Votre compagnon d'étude intelligent",
-      "cards": [
-        {
-          "title": "Assistance par chatbot IA",
-          "subtext": "Obtenez des réponses et explications instantanées."
+      "features": {
+        "aiChatbot": {
+          "title": "Assistant par Chatbot IA",
+          "description": "Réponses et explications instantanées."
         },
-        {
-          "title": "Gestion intelligente des fichiers",
-          "subtext": "Importez, organisez et annotez vos ressources."
+        "fileManagement": {
+          "title": "Gestion intelligente de fichiers",
+          "description": "Importez, organisez et annotez vos ressources."
         },
-        {
-          "title": "Matériel d'apprentissage généré par IA",
-          "subtext": "Résumés, flashcards et quiz automatiques."
+        "aiMaterials": {
+          "title": "Matériel généré par IA",
+          "description": "Résumés, flashcards et quiz automatiques."
         },
-        {
-          "title": "Parcours d'apprentissage personnalisés",
-          "subtext": "Plans d'étude adaptés à votre progression."
+        "learningPaths": {
+          "title": "Parcours personnalisés",
+          "description": "Plans d'étude adaptés à votre progression."
         },
-        {
-          "title": "Suivi de progression en temps réel",
-          "subtext": "Suivez votre apprentissage au même endroit."
+        "progressTracking": {
+          "title": "Suivi en temps réel",
+          "description": "Suivez votre apprentissage au même endroit."
         }
-      ]
+      }
     },
     "StepsSection": {
-      "title": "Apprentissage simplifié - en 3 étapes !",
-      "actionBtn": "Voir la démo",
-      "steps": [
-        {
-          "id": 1,
-          "title": "Importez vos ressources",
-          "content": "PDFs, vidéos et plus - tout au même endroit."
+      "title": "Apprentissage simplifié - en seulement 3 étapes !",
+      "demoButton": {
+        "text": "Voir la démo en direct"
+      },
+      "joinButton": {
+        "text": "Rejoindre maintenant →"
+      },
+      "steps": {
+        "step1": {
+          "title": "Importez vos supports d'apprentissage",
+          "content": "PDFs, vidéos et liens."
         },
-        {
-          "id": 2,
-          "title": "Choisissez votre parcours",
-          "content": "Sélectionnez parmi nos parcours d'apprentissage"
+        "step2": {
+          "title": "Discutez avec l'IA pour une aide immédiate",
+          "content": ""
         },
-        {
-          "id": 3,
-          "title": "Commencez à apprendre",
-          "content": "Débutez votre première leçon immédiatement"
+        "step3": {
+          "title": "Apprenez et suivez votre progression",
+          "content": ""
         }
-      ],
-      "ctaBtn": "Rejoignez maintenant"
+      }
     },
-    "TestimonialSection": {
-      "title": "Témoignages de nos utilisateurs",
+
+    "TestimonialsSection": {
+      "title": "Découvrez ce que disent nos utilisateurs",
       "testimonials": [
         {
           "id": 1,
-          "name": "Sarah Johnson",
-          "text": "Cette plateforme a complètement transformé ma carrière. L'approche par projets m'a aidé à décrocher le travail de mes rêves !"
+          "name": "Sarah M.",
+          "text": "\"EduAssist a révolutionné ma façon d'étudier ! Le chatbot IA rend les sujets complexes faciles à comprendre, et les quiz personnalisés m'aident à mieux retenir les connaissances.\""
         },
         {
           "id": 2,
-          "name": "Michael Chen",
-          "text": "J'ai doublé mon salaire en 6 mois grâce aux compétences acquises ici. Ça vaut chaque centime."
+          "name": "Pierre D.",
+          "text": "\"Grâce à EduAssist, j'ai pu améliorer mes résultats de 30%. La gestion intelligente des fichiers est un véritable atout pour mon organisation.\""
         },
         {
           "id": 3,
-          "name": "Emma Rodriguez",
-          "text": "En tant que maman occupée, la flexibilité m'a permis de me former tout en gérant mes responsabilités familiales."
+          "name": "Amélie T.",
+          "text": "\"Les parcours d'apprentissage personnalisés s'adaptent parfaitement à mon rythme. C'est comme avoir un tuteur disponible 24h/24 !\""
+        }
+      ],
+      "navigation": {
+        "previous": "Précédent",
+        "next": "Suivant"
+      }
+    },
+    "FAQSection": {
+      "title": "Questions Fréquentes",
+      "faqItems": [
+        {
+          "question": "Comment m'inscrire ?",
+          "answer": "Inscription par email ou Google en 30 secondes."
+        },
+        {
+          "question": "Comment générer des supports ?",
+          "answer": "L'IA crée automatiquement résumés/flashcards."
+        },
+        {
+          "question": "Puis-je importer des liens YouTube ou fichiers ?",
+          "answer": "Oui, collez des liens ou importez PDFs/PPTX pour analyse."
+        },
+        {
+          "question": "Comment échanger/partager ?",
+          "answer": "Chats groupes et espaces partagés disponibles."
         }
       ]
+    },
+    "Footer": {
+      "companyInfo": {
+        "name": "EduAssist",
+        "tagline": "L'apprentissage intelligent commence ici – Personnalisé, Multilingue et Piloté par IA.",
+        "learnMore": "En savoir plus →"
+      },
+      "navigation": {
+        "title": "LIENS",
+        "links": [
+          "Accueil",
+          "Fonctionnalités",
+          "Comment ça marche",
+          "Témoignages",
+          "Contact"
+        ]
+      },
+      "social": {
+        "title": "RÉSEAUX",
+        "icons": [
+          { "alt": "Twitter" },
+          { "alt": "Facebook" },
+          { "alt": "Instagram" },
+          { "alt": "LinkedIn" }
+        ]
+      },
+      "copyright": {
+        "text": "©2025, Tous droits réservés"
+      }
     }
   }
 }

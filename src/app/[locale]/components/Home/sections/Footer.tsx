@@ -1,14 +1,9 @@
 import React from "react";
 import { Separator } from "../../ui/separator";
+import { useTranslations } from "next-intl";
 
 export const Footer = (): JSX.Element => {
-  const navigationLinks = [
-    "Home",
-    "Features",
-    "How It Works",
-    "Testimonials",
-    "Contact",
-  ];
+  const t = useTranslations("HomePage.Footer");
 
   const socialIcons = [
     { icon: "/group.png", background: "bg-white", border: true },
@@ -27,21 +22,19 @@ export const Footer = (): JSX.Element => {
               <img className="w-4 h-4" alt="Frame" src="/frame.svg" />
             </div>
             <div className="font-medium text-[#040303] text-[18.7px] [font-family:'Ubuntu',Helvetica] tracking-[0] leading-normal whitespace-nowrap">
-              EduAssist
+              {t("companyInfo.name")}
             </div>
           </div>
 
           <p className="self-stretch text-[#00000099] leading-6 [font-family:'Ubuntu',Helvetica] font-normal text-base tracking-[0]">
-            We offer a wide range of products to make shopping easy, convenient,
-            and enjoyable. Quality and customer satisfaction are our top
-            priorities.
+            {t("companyInfo.tagline")}
           </p>
 
           <a
             href="#"
             className="self-stretch text-[#3800b3] leading-6 underline [font-family:'Ubuntu',Helvetica] font-normal text-base tracking-[0]"
           >
-            Learn More →
+            {t("companyInfo.learnMore")}
           </a>
         </div>
 
@@ -50,30 +43,11 @@ export const Footer = (): JSX.Element => {
           {/* First Links Section */}
           <div className="inline-flex flex-col items-start gap-[26px]">
             <h3 className="w-fit mt-[-1.00px] [font-family:'Ubuntu',Helvetica] font-medium text-black text-base tracking-[3.00px] leading-[18px] whitespace-nowrap">
-              Links
+              {t("navigation.title")}
             </h3>
 
             <nav className="flex flex-col items-start justify-center gap-6 w-full">
-              {navigationLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="w-fit text-[#00000099] leading-[19px] whitespace-nowrap [font-family:'Ubuntu',Helvetica] font-normal text-base tracking-[0]"
-                >
-                  {link}
-                </a>
-              ))}
-            </nav>
-          </div>
-
-          {/* Second Links Section */}
-          <div className="inline-flex flex-col items-start gap-[26px]">
-            <h3 className="w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-medium text-black text-base tracking-[3.00px] leading-[18px] whitespace-nowrap">
-              Links
-            </h3>
-
-            <nav className="flex flex-col items-start justify-center gap-6 w-full">
-              {navigationLinks.map((link, index) => (
+              {t.raw("navigation.links").map((link, index) => (
                 <a
                   key={index}
                   href="#"
@@ -88,7 +62,7 @@ export const Footer = (): JSX.Element => {
           {/* Social Media Section */}
           <div className="inline-flex flex-col items-start gap-[26px]">
             <h3 className="w-fit mt-[-1.00px] [font-family:'Ubuntu',Helvetica] font-medium text-black text-base tracking-[3.00px] leading-[18px] whitespace-nowrap">
-              Social
+              {t("social.title")}
             </h3>
 
             <div className="flex items-center gap-3 py-2 w-full">
@@ -103,7 +77,7 @@ export const Footer = (): JSX.Element => {
                 >
                   <img
                     src={social.icon}
-                    alt={`Social icon ${index + 1}`}
+                    alt={t(`social.icons.${index}.alt`)}
                     className={`absolute ${
                       index === 0
                         ? "w-[11px] h-[9px] top-[9px] left-2"
@@ -134,12 +108,12 @@ export const Footer = (): JSX.Element => {
             />
           </div>
           <div className="font-normal text-[#00000099] text-[14.5px] [font-family:'Ubuntu',Helvetica] tracking-[0] leading-normal whitespace-nowrap">
-            EduAssist
+            {t("companyInfo.name")}
           </div>
         </div>
 
         <div className="[font-family:'Ubuntu',Helvetica] font-normal text-[#00000099] text-sm text-center sm:text-right tracking-[0] leading-normal whitespace-nowrap">
-          ©2025, All Rights Reserved
+          {t("copyright.text")}
         </div>
       </div>
     </footer>

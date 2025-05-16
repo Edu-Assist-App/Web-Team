@@ -9,10 +9,32 @@
       "testimonials": "Testimonials"
     },
     "language": {
+      "amharic": "አማርኛ",
+      "oromiffa": "Afaan Oromoo",
+      "Tigrinya": "ትግርኛ",
       "english": "English",
-      "french": "French",
+      "spanish": "Español",
+      "french": "Français",
+      "arabic": "العربية",
+      "chinese": "中文",
+      "hindi": "हिन्दी",
+      "portuguese": "Português",
+      "russian": "Русский",
+      "japanese": "日本語",
+      "german": "Deutsch",
+      "amharicShort": "አማ",
+      "oromiffaShort": "Oro",
+      "TigrinyaShort": "Tig",
       "englishShort": "ENG",
-      "frenchShort": "FR"
+      "spanishShort": "ESP",
+      "frenchShort": "FR",
+      "arabicShort": "عرب",
+      "chineseShort": "中文",
+      "hindiShort": "हिं",
+      "portugueseShort": "POR",
+      "russianShort": "РУС",
+      "japaneseShort": "日本語",
+      "germanShort": "DE"
     },
     "buttons": {
       "login": "Login",
@@ -49,72 +71,125 @@
         }
       }
     },
-    "FeatureSection": {
+
+    "FeaturesSection": {
       "title": "Your Smartest Study Companion",
-      "cards": [
-        {
+      "features": {
+        "aiChatbot": {
           "title": "AI Chatbot Assistance",
-          "subtext": "Get instant answers and explanations."
+          "description": "Get instant answers and explanations."
         },
-        {
+        "fileManagement": {
           "title": "Smart File Management",
-          "subtext": "Upload, organize, and annotate resources."
+          "description": "Upload, organize, and annotate resources."
         },
-        {
+        "aiMaterials": {
           "title": "AI-Generated Learning Materials",
-          "subtext": "Summaries, flashcards, and quizzes."
+          "description": "Summaries, flashcards, and quizzes."
         },
-        {
+        "learningPaths": {
           "title": "Personalized Learning Paths",
-          "subtext": "Study plans tailored to your progress."
+          "description": "Study plans tailored to your progress."
         },
-        {
+        "progressTracking": {
           "title": "Real-Time Progress Tracking",
-          "subtext": "Monitor your learning in one place."
+          "description": "Monitor your learning in one place."
         }
-      ]
+      }
     },
+
     "StepsSection": {
       "title": "Learning Made Simple – Just 3 Steps!",
-      "actionBtn": "View Live Demo",
-      "steps": [
-        {
-          "id": 1,
+      "demoButton": {
+        "text": "View Live Demo"
+      },
+      "joinButton": {
+        "text": "Join Now →"
+      },
+      "steps": {
+        "step1": {
           "title": "Upload Your Learning Materials",
-          "content": "PDFs, videos, and more – all in one place."
+          "content": "PDFs, videos, and links."
         },
-        {
-          "id": 2,
-          "title": "Choose Your Path",
-          "content": "Select from our curated learning tracks"
+        "step2": {
+          "title": "Chat with AI for Instant Help",
+          "content": ""
         },
-        {
-          "id": 3,
-          "title": "Start Learning",
-          "content": "Begin your first lesson immediately"
+        "step3": {
+          "title": "Learn & Track Progress",
+          "content": ""
         }
-      ],
-      "ctaBtn": "Join Now"
+      }
     },
-    "TestimonialSection": {
-      "title": "What Our Users Say",
+
+    "TestimonialsSection": {
+      "title": "See What Our Users Say",
       "testimonials": [
         {
           "id": 1,
-          "name": "Sarah Johnson",
-          "text": "This platform completely transformed my career. The project-based approach helped me land my dream job!"
+          "name": "Sarah M.",
+          "text": "\"EduAssist transformed the way I study! The AI chatbot makes complex topics easy to understand, and the personalized quizzes help me retain knowledge better.\""
         },
         {
           "id": 2,
-          "name": "Michael Chen",
-          "text": "I doubled my salary within 6 months thanks to the skills I learned here. Worth every penny."
+          "name": "John D.",
+          "text": "\"With EduAssist, I improved my grades by 30%. The smart file management is a game-changer for my study organization.\""
         },
         {
           "id": 3,
-          "name": "Emma Rodriguez",
-          "text": "As a busy mom, the flexible scheduling allowed me to upskill while managing family responsibilities."
+          "name": "Emily T.",
+          "text": "\"The personalized learning paths adapt perfectly to my pace. It's like having a tutor available 24/7!\""
+        }
+      ],
+      "navigation": {
+        "previous": "Previous",
+        "next": "Next"
+      }
+    },
+
+    "FAQSection": {
+      "title": "Frequently Asked Questions",
+      "faqItems": [
+        {
+          "question": "How do I register?",
+          "answer": "Sign up with email or Google in 30 seconds."
+        },
+        {
+          "question": "How to generate study materials?",
+          "answer": "AI creates summaries/flashcards from your content automatically."
+        },
+        {
+          "question": "Can I upload YouTube links or files?",
+          "answer": "Yes, paste links or upload PDFs/PPTX for AI analysis."
+        },
+        {
+          "question": "How to chat/share with peers?",
+          "answer": "Use group chats and shared workspaces for collaboration."
         }
       ]
+    },
+    "Footer": {
+      "companyInfo": {
+        "name": "EduAssist",
+        "tagline": "Smarter Learning Starts Here – Personalized, Multilingual & AI-Powered.",
+        "learnMore": "Learn More →"
+      },
+      "navigation": {
+        "title": "LINKS",
+        "links": ["Home", "Features", "How It Works", "Testimonials", "Contact"]
+      },
+      "social": {
+        "title": "SOCIAL",
+        "icons": [
+          { "alt": "Twitter" },
+          { "alt": "Facebook" },
+          { "alt": "Instagram" },
+          { "alt": "LinkedIn" }
+        ]
+      },
+      "copyright": {
+        "text": "©2025, All Rights Reserved"
+      }
     }
   }
 }

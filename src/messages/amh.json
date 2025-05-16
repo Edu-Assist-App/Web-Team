@@ -1,0 +1,195 @@
+{
+  "Header": {
+    "logoAlt": "የEduAssist ሎጎ",
+    "brandName": "EduAssist",
+    "navigation": {
+      "home": "መነሻ",
+      "features": "ባህሪያት",
+      "howItWorks": "እንዴት እንደሚሰራ",
+      "testimonials": "የደንበኞች አስተያየቶች"
+    },
+    "language": {
+      "amharic": "አማርኛ",
+      "oromiffa": "ኦሮምኛ",
+      "Tigrinya": "ትግርኛ",
+      "english": "እንግሊዝኛ",
+      "spanish": "ስፓኒሽ",
+      "french": "ፈረንሳይኛ",
+      "arabic": "ዓረብኛ",
+      "chinese": "ቻይንኛ",
+      "hindi": "ህንድኛ",
+      "portuguese": "ፖርቹጋልኛ",
+      "russian": "ሩስኛ",
+      "japanese": "ጃፓንኛ",
+      "german": "ጀርመንኛ",
+      "amharicShort": "አማ",
+      "oromiffaShort": "ኦሮ",
+      "TigrinyaShort": "ትግ",
+      "englishShort": "እንግ",
+      "spanishShort": "ስፓ",
+      "frenchShort": "ፈረ",
+      "arabicShort": "ዓረ",
+      "chineseShort": "ቻይ",
+      "hindiShort": "ህንድ",
+      "portugueseShort": "ፖር",
+      "russianShort": "ሩስ",
+      "japaneseShort": "ጃፓ",
+      "germanShort": "ጀር"
+    },
+    "buttons": {
+      "login": "ግባ",
+      "getStarted": "ጀምር"
+    },
+    "mobileMenu": {
+      "languageLabel": "ቋንቋ",
+      "close": "ዝጋ"
+    }
+  },
+  "HomePage": {
+    "HeroSection": {
+      "topTag": "ጉዞዎን ይጀምሩ",
+      "headline": "በ<span1>AI የሚመራ</span1> <span2>እርዳታ</span2> ለግል የተበጀ ትምህርት ይክፈቱ",
+      "subtitle": "EduAssist ተማሪዎች፣ አስተማሪዎች እና ባለሙያዎች በAI የሚመራ ግንዛቤ፣ በብዙ ቋንቋዎች ድጋፍ እና ለግል የተበጀ የትምህርት መሳሪያዎች በብቃት እንዲማሩ ይረዳል።",
+      "cta1": "ነፃ ይመዝገቡ",
+      "cta2": "ቀጥታ ማሳያ ይመልከቱ",
+      "cards": {
+        "card1": {
+          "title": "በAI የተመሠረቱ የትምህርት ቁሳቁሶች",
+          "subtext": "የምንዘራውን ማህበረሰብ �ና"
+        },
+        "card2": {
+          "title": "አስተዋይ ፋይል አስተዳደር",
+          "subtext": "ከጀማሪ እስከ ላቀ"
+        },
+        "card3": {
+          "title": "ለግል የተበጀ የትምህርት መንገዶች",
+          "subtext": "ከኢንዱስትሪ መሪዎች ይማሩ"
+        },
+        "card4": {
+          "title": "በቅጽበት የሂደት ቍጽጽር",
+          "subtext": "በራስዎ ፍጥነት ይማሩ"
+        }
+      }
+    },
+
+    "FeaturesSection": {
+      "title": "አስተዋይ የትምህርት ባልንጀራዎ",
+      "features": {
+        "aiChatbot": {
+          "title": "የAI ቻትቦት እርዳታ",
+          "description": "ፈጣን መልሶች እና ማብራሪያዎች ያግኙ።"
+        },
+        "fileManagement": {
+          "title": "አስተዋይ ፋይል አስተዳደር",
+          "description": "ሀብቶችን ይስቀሉ፣ ያስተካክሉ እና ማስታወሻ ይጻፉ።"
+        },
+        "aiMaterials": {
+          "title": "በAI የተመሠረቱ የትምህርት ቁሳቁሶች",
+          "description": "ማጠቃለያዎች፣ ፍላሽ ካርዶች እና ፈተናዎች።"
+        },
+        "learningPaths": {
+          "title": "ለግል የተበጀ የትምህርት መንገዶች",
+          "description": "ወደ ሂደትዎ የተገጠሙ �ና የትምህርት ዕቅዶች።"
+        },
+        "progressTracking": {
+          "title": "በቅጽበት የሂደት ቍጽጽር",
+          "description": "ትምህርትዎን በአንድ ቦታ ይከታተሉ።"
+        }
+      }
+    },
+
+    "StepsSection": {
+      "title": "ትምህርት ቀላል ተደረገ - በ3 እርከኖች ብቻ!",
+      "demoButton": {
+        "text": "ቀጥታ ማሳያ ይመልከቱ"
+      },
+      "joinButton": {
+        "text": "አሁን ይቀላቀሉ →"
+      },
+      "steps": {
+        "step1": {
+          "title": "የትምህርት ቁሳቁሶችዎን ይስቀሉ",
+          "content": "PDFs፣ ቪዲዮዎች እና አገናኞች።"
+        },
+        "step2": {
+          "title": "በAI ለፈጣን እርዳታ ይዋደሩ",
+          "content": ""
+        },
+        "step3": {
+          "title": "ይማሩ እና ሂደትን ይከታተሉ",
+          "content": ""
+        }
+      }
+    },
+
+    "TestimonialsSection": {
+      "title": "ተጠቃሚዎቻችን ምን እንደሚሉ ይመልከቱ",
+      "testimonials": [
+        {
+          "id": 1,
+          "name": "ሳራ ኤም.",
+          "text": "\"EduAssist �ና የምማርበትን መንገድ ቀይሯል! የAI ቻትቦት ውስብስብ ርዕሶችን ለመረዳት ቀላል ያደርጋል፣ ለግል �ና የተበጀ ፈተናዎችም እውቀትን በተሻለ ለመያዝ ይረዳኛል።\""
+        },
+        {
+          "id": 2,
+          "name": "ጆን ዲ.",
+          "text": "\"በEduAssist እድገቴን በ30% ጨምረኋል። አስተዋይ ፋይል አስተዳደሩ ለየኔ የትምህርት አደረጃጀት የጨዋታ ለውጥ ነው።\""
+        },
+        {
+          "id": 3,
+          "name": "ኤሚሊ ቲ.",
+          "text": "\"ለግል �ና የተበጀ የትምህርት መንገዶች ወደ ፍጥነቴ በብቃት �ና ይስተካከላሉ። ሁልጊዜ የሚገኝ የትምህርት አስተማሪ እንዳለኝ ነው!\""
+        }
+      ],
+      "navigation": {
+        "previous": "ቀዳሚ",
+        "next": "ቀጣይ"
+      }
+    },
+
+    "FAQSection": {
+      "title": "በተደጋጋሚ የሚነሱ ጥያቄዎች",
+      "faqItems": [
+        {
+          "question": "እንዴት መመዝገብ እችላለሁ?",
+          "answer": "በ30 ሰከንድ ውስጥ በኢሜይል ወይም በGoogle ይመዝገቡ።"
+        },
+        {
+          "question": "የትምህርት ቁሳቁሶችን እንዴት ማመንጨት እችላለሁ?",
+          "answer": "AI ከይዘትዎ ማጠቃለያዎች/ፍላሽ ካርዶችን በራስ-ሰር �ና ይፈጥራል።"
+        },
+        {
+          "question": "የYouTube አገናኞችን ወይም ፋይሎችን መስቀል እችላለሁ?",
+          "answer": "አዎ፣ አገናኞችን ይለጥፉ ወይም PDFs/PPTX ለAI ትንተና ይስቀሉ።"
+        },
+        {
+          "question": "ከወዳጆቼ ጋር እንዴት መወያየት/ማጋራት እችላለሁ?",
+          "answer": "ለትብብር የቡድን ውይይቶችን እና የተጋሩ የስራ ቦታዎችን ይጠቀሙ።"
+        }
+      ]
+    },
+    "Footer": {
+      "companyInfo": {
+        "name": "EduAssist",
+        "tagline": "ብቃት ያለው ትምህርት እዚህ ይጀምራል - ለግል የተበጀ፣ በብዙ ቋንቋዎች እና በAI የሚመራ።",
+        "learnMore": "ተጨማሪ ይወቁ →"
+      },
+      "navigation": {
+        "title": "አገናኞች",
+        "links": ["መነሻ", "ባህሪያት", "እንዴት እንደሚሰራ", "የደንበኞች አስተያየቶች", "አግኙን"]
+      },
+      "social": {
+        "title": "ማህበራዊ ሚዲያ",
+        "icons": [
+          { "alt": "ትዊተር" },
+          { "alt": "ፌስቡክ" },
+          { "alt": "ኢንስታግራም" },
+          { "alt": "ሊንክዲን" }
+        ]
+      },
+      "copyright": {
+        "text": "©2025፣ ሁሉም መብቶች የተጠበቁ ናቸው"
+      }
+    }
+  }
+}

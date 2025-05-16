@@ -7,38 +7,22 @@ import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
 import { Button } from "../../ui/button";
 import { Card, CardContent } from "../../ui/card";
+import { useTranslations } from "next-intl";
 
 export const Testimonials = (): JSX.Element => {
-  // Testimonial data for mapping
-  const testimonials = [
-    {
-      id: 1,
-      name: "Sarah M.",
-      image: "/ellipse-1-2.png",
-      text: '"EduAssist transformed the way I study! The AI chatbot makes complex topics easy to understand, and the personalized quizzes help me retain knowledge better."',
-    },
-    {
-      id: 2,
-      name: "Sarah M.",
-      image: "/ellipse-1-2.png",
-      text: '"EduAssist transformed the way I study! The AI chatbot makes complex topics easy to understand, and the personalized quizzes help me retain knowledge better."',
-    },
-    {
-      id: 3,
-      name: "Sarah M.",
-      image: "/ellipse-1-2.png",
-      text: '"EduAssist transformed the way I study! The AI chatbot makes complex topics easy to understand, and the personalized quizzes help me retain knowledge better."',
-    },
-  ];
+  const t = useTranslations("HomePage.TestimonialsSection");
+
+  // Utilisation des témoignages traduits
+  const testimonials = t.raw("testimonials");
 
   return (
     <section className="py-[120px] px-[120px] bg-[#155ddc0a] flex flex-col gap-16 w-full">
       <h2 className="font-bold text-4xl text-[#040303] font-['Ubuntu',Helvetica] tracking-[0] leading-normal">
-        See What Our Users Say
+        {t("title")}
       </h2>
 
       <div className="flex gap-6 w-full">
-        {testimonials.map((testimonial) => (
+        {testimonials.map((testimonial: any) => (
           <Card
             key={testimonial.id}
             className="flex-1 rounded-[20px] overflow-hidden"
@@ -46,11 +30,16 @@ export const Testimonials = (): JSX.Element => {
             <CardContent className="p-8 flex flex-col items-start gap-6">
               <Avatar className="w-[81.2px] h-[81.2px] rounded-full bg-[#d9d9d9]">
                 <AvatarImage
-                  src={testimonial.image}
-                  alt="User avatar"
+                  src="/ellipse-1-2.png"
+                  alt="Avatar utilisateur"
                   className="object-cover"
                 />
-                <AvatarFallback>SM</AvatarFallback>
+                <AvatarFallback>
+                  {testimonial.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
+                </AvatarFallback>
               </Avatar>
 
               <div className="flex flex-col items-start gap-3 w-full">
@@ -71,7 +60,7 @@ export const Testimonials = (): JSX.Element => {
                   <img
                     key={star}
                     className="w-[21.47px] h-[20.42px]"
-                    alt="Star"
+                    alt="Étoile"
                     src="/star-1.svg"
                   />
                 ))}
@@ -87,6 +76,7 @@ export const Testimonials = (): JSX.Element => {
             variant="outline"
             size="icon"
             className="w-[52px] h-[52px] rounded-full"
+            aria-label={t("navigation.previous")}
           >
             <ChevronLeftIcon className="h-6 w-6" />
           </Button>
@@ -94,6 +84,7 @@ export const Testimonials = (): JSX.Element => {
             variant="outline"
             size="icon"
             className="w-[52px] h-[52px] rounded-full"
+            aria-label={t("navigation.next")}
           >
             <ChevronRightIcon className="h-6 w-6" />
           </Button>

@@ -36,6 +36,22 @@ export const Header = (): JSX.Element => {
 
   const languages = [
     {
+      code: "amh",
+      name: t("language.amharic"),
+      shortName: t("language.amharicShort"),
+    },
+
+    {
+      code: "tig",
+      name: t("language.Tigrinya"),
+      shortName: t("language.TigrinyaShort"),
+    },
+    {
+      code: "afan",
+      name: t("language.oromiffa"),
+      shortName: t("language.oromiffaShort"),
+    },
+    {
       code: "en",
       name: t("language.english"),
       shortName: t("language.englishShort"),

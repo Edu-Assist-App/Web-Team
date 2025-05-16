@@ -12,7 +12,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   // Validate locale
-  if (!["en", "fr"].includes(locale)) notFound();
+  if (!["en", "fr", "amh", "tig", "afan"].includes(locale)) notFound();
 
   let messages;
   try {

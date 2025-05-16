@@ -1,26 +1,29 @@
 import React from "react";
 import { Card, CardContent } from "../../ui/card";
+import { useTranslations } from "next-intl"; // or your i18n library
 
 export const Features = (): JSX.Element => {
+  const t = useTranslations("HomePage.FeaturesSection");
+
   const topRowFeatures = [
     {
       id: 1,
-      title: "AI Chatbot Assistance",
-      description: "Get instant answers and explanations.",
+      title: t("features.aiChatbot.title"),
+      description: t("features.aiChatbot.description"),
       iconBg: "bg-[#f1fdff]",
       iconSrc: "/frame-3.svg",
     },
     {
       id: 2,
-      title: "Smart File Management",
-      description: "Upload, organize, and annotate resources.",
+      title: t("features.fileManagement.title"),
+      description: t("features.fileManagement.description"),
       iconBg: "bg-[#155ddc0a]",
       iconSrc: "/frame-3.svg",
     },
     {
       id: 3,
-      title: "AI-Generated Learning Materials",
-      description: "Summaries, flashcards, and quizzes.",
+      title: t("features.aiMaterials.title"),
+      description: t("features.aiMaterials.description"),
       iconBg: "bg-[#f1fdff]",
       iconSrc: "/frame-3.svg",
     },
@@ -29,15 +32,15 @@ export const Features = (): JSX.Element => {
   const bottomRowFeatures = [
     {
       id: 1,
-      title: "Personalized Learning Paths",
-      description: "Study plans tailored to your progress.",
+      title: t("features.learningPaths.title"),
+      description: t("features.learningPaths.description"),
       iconBg: "bg-[#000d9f14]",
       iconSrc: "/frame-3.svg",
     },
     {
       id: 2,
-      title: "Real-Time Progress Tracking",
-      description: "Monitor your learning in one place.",
+      title: t("features.progressTracking.title"),
+      description: t("features.progressTracking.description"),
       iconBg: "bg-[#000d9f14]",
       iconSrc: "/frame-3.svg",
     },
@@ -46,7 +49,7 @@ export const Features = (): JSX.Element => {
   return (
     <section className="flex flex-col items-center gap-8 sm:gap-16 py-16 sm:py-[120px] px-4 sm:px-8 lg:px-[120px] w-full">
       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#040303] font-['Outfit',Helvetica] tracking-normal text-center">
-        Your Smartest Study Companion
+        {t("title")}
       </h2>
 
       <div className="flex flex-col items-start gap-4 sm:gap-8 w-full">

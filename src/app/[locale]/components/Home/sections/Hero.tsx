@@ -47,7 +47,6 @@ export const Hero = (): JSX.Element => {
           {/* Heading */}
           <h1 className="self-stretch text-3xl sm:text-4xl lg:text-[52px] text-center leading-normal font-['Ubuntu',Helvetica] font-medium tracking-[0]">
             {t.rich("headline", {
-              strong: (children) => <strong>{children}</strong>,
               span1: (children) => (
                 <span className="text-[#3800b3]">{children}</span>
               ),
