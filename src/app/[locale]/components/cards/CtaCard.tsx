@@ -3,22 +3,23 @@ import React from "react";
 import { Progress } from "../ui/progress";
 
 type CtaCardProps = {
-  haveProgress: boolean | false;
-  title: string | "Create your first study material now!";
-  description: string | "Create your first study material now!";
-  imageUrl: string | "/puzzle-icon.png";
-  noChapter: boolean | false;
-  chapters: number | 0;
-  progress: number | 0;
+  haveProgress?: boolean;
+  title: string;
+  description: string;
+  imageUrl: string;
+  noChapter?: boolean;
+  chapters?: number;
+  progress?: number;
 };
+
 export default function CtaCard({
-  haveProgress,
+  haveProgress = false,
   title,
   description,
-  imageUrl,
-  noChapter,
-  chapters,
-  progress,
+  imageUrl = "/puzzle-icon.png",
+  noChapter = false,
+  chapters = 0,
+  progress = 0,
 }: CtaCardProps) {
   return (
     <div className="bg-[#f8f8f8f8] rounded-xl p-6 shadow-sm flex flex-col md:flex-row gap-6">
@@ -35,7 +36,7 @@ export default function CtaCard({
         {haveProgress && (
           <>
             {noChapter && (
-              <div className=" chapter flex items-center gap-1 mb-2">
+              <div className="chapter flex items-center gap-1 mb-2">
                 <svg
                   width="20"
                   height="20"
@@ -57,7 +58,7 @@ export default function CtaCard({
                     strokeLinecap="round"
                   />
                 </svg>
-                <span className="font-medium">Total Chapter : {chapters}</span>
+                <span className="font-medium">Total Chapter: {chapters}</span>
               </div>
             )}
 

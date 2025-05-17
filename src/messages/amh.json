@@ -6,11 +6,11 @@
       "home": "መነሻ",
       "features": "ባህሪያት",
       "howItWorks": "እንዴት እንደሚሰራ",
-      "testimonials": "የደንበኞች አስተያየቶች"
+      "testimonials": "ምስክርነቶች"
     },
     "language": {
       "amharic": "አማርኛ",
-      "oromiffa": "ኦሮምኛ",
+      "oromiffa": "Afaan Oromoo",
       "Tigrinya": "ትግርኛ",
       "english": "እንግሊዝኛ",
       "spanish": "ስፓኒሽ",
@@ -19,22 +19,24 @@
       "chinese": "ቻይንኛ",
       "hindi": "ህንድኛ",
       "portuguese": "ፖርቹጋልኛ",
-      "russian": "ሩስኛ",
+      "russian": "ራሽኛ",
       "japanese": "ጃፓንኛ",
       "german": "ጀርመንኛ",
       "amharicShort": "አማ",
-      "oromiffaShort": "ኦሮ",
-      "TigrinyaShort": "ትግ",
-      "englishShort": "እንግ",
-      "spanishShort": "ስፓ",
-      "frenchShort": "ፈረ",
-      "arabicShort": "ዓረ",
-      "chineseShort": "ቻይ",
-      "hindiShort": "ህንድ",
-      "portugueseShort": "ፖር",
-      "russianShort": "ሩስ",
-      "japaneseShort": "ጃፓ",
-      "germanShort": "ጀር"
+      "oromiffaShort": "Oro",
+      "TigrinyaShort": "Tig",
+      "englishShort": "ENG",
+      "spanishShort": "ESP",
+      "frenchShort": "FR",
+      "arabicShort": "عرب",
+      "chineseShort": "中文",
+      "hindiShort": "हिं",
+      "portugueseShort": "POR",
+      "russianShort": "РУС",
+      "japaneseShort": "日本語",
+      "germanShort": "DE",
+      "searchPlaceholder": "ቋንቋዎችን ፈልግ...",
+      "noResults": "ምንም ቋንቋ አልተገኘም"
     },
     "buttons": {
       "login": "ግባ",
@@ -43,6 +45,36 @@
     "mobileMenu": {
       "languageLabel": "ቋንቋ",
       "close": "ዝጋ"
+    },
+    "profile": {
+      "myAccount": "የእኔ አካውንት",
+      "settings": "ማስተካከያዎች",
+      "signOut": "ውጣ"
+    },
+    "pages": {
+      "dashboard": "ዳሽቦርድ",
+      "profile": "መገለጫ",
+      "settings": "ማስተካከያዎች"
+    }
+  },
+
+  "Sidebar": {
+    "logoAlt": "የEduAssist ሎጎ",
+    "brandName": "EduAssist",
+    "quickNav": "ፈጣን አሻራ",
+    "navItems": {
+      "overview": "አጠቃላይ እይታ",
+      "studyMaterials": "የጥናት ቁሳቁሶች",
+      "chats": "ውይይቶች"
+    },
+    "buttons": {
+      "newModule": "አዲስ ሞጁል",
+      "settings": "ማስተካከያዎች",
+      "logout": "ውጣ"
+    },
+    "ariaLabels": {
+      "collapse": "የጎን አሞሌ ቀልብ",
+      "close": "የጎን አሞሌ ዝጋ"
     }
   },
   "HomePage": {
@@ -190,6 +222,38 @@
       "copyright": {
         "text": "©2025፣ ሁሉም መብቶች የተጠበቁ ናቸው"
       }
+    }
+  },
+  "Dashboard": {
+    "ctaCard": {
+      "title": "የእርስዎን እድገት ይቆጣጠሩ። ግቦችዎን ይቆጣጠሩ",
+      "description": "ተነሳሽነትዎን ይጠብቁ! የጀመሩትን ምንጮች በመጨረስ የትምህርት ጉዞዎን ይቀጥሉ።"
+    },
+    "stats": {
+      "resourcesGenerated": "የተፈጠሩ ምንጮች",
+      "quizzesGenerated": "የተፈጠሩ ፈተናዎች",
+      "flashcardsGenerated": "የተፈጠሩ ፍላሽ ካርዶች",
+      "daysActive": "ንቁ የሆኑ ቀናት"
+    },
+    "sections": {
+      "activities": "እንቅስቃሴዎች",
+      "studyMaterials": "የትምህርት ቁሳቁሶች",
+      "recommended": "ለእርስዎ የሚመከር"
+    },
+    "search": {
+      "placeholder": "ምንጮች፣ ፈተናዎች፣ ፍላሽ ካርዶችን ይፈልጉ..."
+    },
+    "buttons": {
+      "loadMore": "ተጨማሪ ጫን"
+    },
+    "studyMaterials": {
+      "recent": "የቅርብ ጊዜ ቁሳቁሶች",
+      "saved": "የተቀመጡ ቁሳቁሶች",
+      "viewAll": "ሁሉንም ይመልከቱ"
+    },
+    "recommended": {
+      "basedOnActivity": "በእርስዎ እንቅስቃሴ ላይ የተመሠረተ",
+      "newResources": "የሚወዷቸው አዳዲስ ምንጮች"
     }
   }
 }

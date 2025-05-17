@@ -14,38 +14,43 @@ import { Button } from "@/app/[locale]/components/ui/button";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-const navItems = [
-  {
-    name: "Overview",
-    icon: <HomeIcon className="w-4 h-4" />,
-    path: "/dashboard",
-  },
-  {
-    name: "Study Materials",
-    icon: <BookOpenIcon className="w-4 h-4" />,
-    path: "/resource",
-  },
-  {
-    name: "Chats",
-    icon: <MessageSquareIcon className="w-4 h-4" />,
-    path: "/chats",
-  },
-];
-
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
+  const locale = useLocale();
+  const t = useTranslations("Sidebar");
+  const withLocale = (path: string) =>
+    path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
   const [collapsed, setCollapsed] = useState(false);
 
   const toggleCollapse = () => {
     setCollapsed(!collapsed);
   };
+
+  const navItems = [
+    {
+      name: t("navItems.overview"),
+      icon: <HomeIcon className="w-4 h-4" />,
+      path: "/dashboard",
+    },
+    {
+      name: t("navItems.studyMaterials"),
+      icon: <BookOpenIcon className="w-4 h-4" />,
+      path: "/resource",
+    },
+    {
+      name: t("navItems.chats"),
+      icon: <MessageSquareIcon className="w-4 h-4" />,
+      path: "/chats",
+    },
+  ];
 
   return (
     <>
@@ -67,6 +72,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           size="icon"
           className="absolute top-4 right-4 hidden md:flex"
           onClick={toggleCollapse}
+          aria-label={t("ariaLabels.collapse")}
         >
           {collapsed ? (
             <ChevronRight className="h-6 w-6" />
@@ -81,6 +87,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           size="icon"
           className="absolute top-4 right-4 md:hidden"
           onClick={onClose}
+          aria-label={t("ariaLabels.close")}
         >
           <X className="h-6 w-6" />
         </Button>
@@ -88,28 +95,22 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         {/* Logo section */}
         <div className="flex-col justify-center gap-3 w-full flex items-center">
           <div className="flex items-center justify-end gap-2 p-[3px] w-full">
-            {/* <button onClick={toggleCollapse} className="relative w-4 h-4">
-              <img
-                className="absolute w-[18px] h-[18px] -top-px -left-px"
-                alt="Collapse icon"
-                src="/collapse-icon.svg"
-              />
-            </button> */}
+            {/* Optional collapse button could go here */}
           </div>
 
           {!collapsed && (
             <div className="flex items-center justify-center gap-3">
               <div className="flex items-center gap-2 p-3 bg-[#1b19e514] rounded-[48px] shadow-[0px_1.25px_31.25px_#1b19e51a]">
-                <img className="w-6 h-6" alt="Logo" src="/logo.svg" />
+                <img className="w-6 h-6" alt={t("logoAlt")} src="/logo.svg" />
               </div>
               <h1 className="font-medium text-[#040303] text-[28px] font-['Ubuntu',Helvetica] whitespace-nowrap">
-                EduAssist
+                {t("brandName")}
               </h1>
             </div>
           )}
           {collapsed && (
             <div className="flex items-center gap-2 p-3 bg-[#1b19e514] rounded-[48px] shadow-[0px_1.25px_31.25px_#1b19e51a]">
-              <img className="w-6 h-6" alt="Logo" src="/logo.svg" />
+              <img className="w-6 h-6" alt={t("logoAlt")} src="/logo.svg" />
             </div>
           )}
         </div>
@@ -117,7 +118,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         {/* Navigation */}
         <nav className="flex flex-col items-start justify-center gap-2 p-0.5 w-full rounded">
           <Button
-            onClick={() => router.push("/materials")}
+            onClick={() => router.push(withLocale("/materials"))}
             className={`w-full bg-[#3800b3] rounded-[999px] text-white font-['Poppins',Helvetica] font-normal text-sm ${
               collapsed ? "justify-center" : ""
             }`}
@@ -125,12 +126,12 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
             <div className="p-1 bg-[#ffffff33] rounded-[99px]">
               <PlusIcon className="w-4 h-4" />
             </div>
-            {!collapsed && "New Module"}
+            {!collapsed && t("buttons.newModule")}
           </Button>
 
           {!collapsed && (
             <div className="text-[#00000099] text-sm font-['Poppins',Helvetica] font-normal mt-4">
-              Quick Nav
+              {t("quickNav")}
             </div>
           )}
 
@@ -138,7 +139,12 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
             {navItems.map((item, index) => {
               const isActive = pathname === item.path;
               return (
-                <Link className="w-full" key={index} href={item.path} passHref>
+                <Link
+                  className="w-full"
+                  key={index}
+                  href={withLocale(item.path)}
+                  passHref
+                >
                   <Button
                     variant="ghost"
                     className={`flex items-center gap-2 p-3 w-full justify-start ${
@@ -184,13 +190,13 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
               </div>
               {!collapsed && (
                 <span className="font-['Poppins',Helvetica] font-normal text-black text-base">
-                  Settings
+                  {t("buttons.settings")}
                 </span>
               )}
             </Button>
 
-            <Button
-              variant="ghost"
+            <Link
+              href={withLocale("/")}
               className={`flex items-center gap-2 p-3 w-full justify-start rounded-xl ${
                 collapsed ? "justify-center" : ""
               }`}
@@ -199,17 +205,17 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                 <div className="relative w-4 h-4">
                   <img
                     className="absolute w-[13px] h-3 top-0.5 left-px"
-                    alt="Logout icon"
+                    alt={t("buttons.logout")}
                     src="/logout.svg"
                   />
                 </div>
               </div>
               {!collapsed && (
                 <span className="font-['Poppins',Helvetica] font-normal text-black text-base">
-                  Logout
+                  {t("buttons.logout")}
                 </span>
               )}
-            </Button>
+            </Link>
           </div>
         </div>
       </aside>

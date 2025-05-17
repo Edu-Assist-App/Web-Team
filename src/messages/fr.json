@@ -4,22 +4,39 @@
     "brandName": "EduAssist",
     "navigation": {
       "home": "Accueil",
-      "features": "Fonctions",
-      "howItWorks": "Fonctionnement",
+      "features": "Fonctionnalités",
+      "howItWorks": "Comment ça marche",
       "testimonials": "Témoignages"
     },
     "language": {
       "amharic": "Amharique",
-      "oromiffa": "Oromiffa",
+      "oromiffa": "Oromo",
       "Tigrinya": "Tigrigna",
       "english": "Anglais",
+      "spanish": "Espagnol",
       "french": "Français",
-      "amharicShort": "AMH",
-      "oromiffaShort": "ORO",
-      "TigrinyaShort": "TIG",
+      "arabic": "Arabe",
+      "chinese": "Chinois",
+      "hindi": "Hindi",
+      "portuguese": "Portugais",
+      "russian": "Russe",
+      "japanese": "Japonais",
+      "german": "Allemand",
+      "amharicShort": "አማ",
+      "oromiffaShort": "Oro",
+      "TigrinyaShort": "Tig",
       "englishShort": "ANG",
-
-      "frenchShort": "FR"
+      "spanishShort": "ESP",
+      "frenchShort": "FR",
+      "arabicShort": "عرب",
+      "chineseShort": "中文",
+      "hindiShort": "हिं",
+      "portugueseShort": "POR",
+      "russianShort": "РУС",
+      "japaneseShort": "日本語",
+      "germanShort": "ALL",
+      "searchPlaceholder": "Rechercher des langues...",
+      "noResults": "Aucune langue trouvée"
     },
     "buttons": {
       "login": "Connexion",
@@ -28,6 +45,35 @@
     "mobileMenu": {
       "languageLabel": "Langue",
       "close": "Fermer"
+    },
+    "profile": {
+      "myAccount": "Mon compte",
+      "settings": "Paramètres",
+      "signOut": "Déconnexion"
+    },
+    "pages": {
+      "dashboard": "Tableau de bord",
+      "profile": "Profil",
+      "settings": "Paramètres"
+    }
+  },
+  "Sidebar": {
+    "logoAlt": "Logo EduAssist",
+    "brandName": "EduAssist",
+    "quickNav": "Navigation rapide",
+    "navItems": {
+      "overview": "Aperçu",
+      "studyMaterials": "Matériel d'étude",
+      "chats": "Discussions"
+    },
+    "buttons": {
+      "newModule": "Nouveau module",
+      "settings": "Paramètres",
+      "logout": "Déconnexion"
+    },
+    "ariaLabels": {
+      "collapse": "Basculer la barre latérale",
+      "close": "Fermer la barre latérale"
     }
   },
   "HomePage": {
@@ -179,6 +225,39 @@
       "copyright": {
         "text": "©2025, Tous droits réservés"
       }
+    }
+  },
+
+  "Dashboard": {
+    "ctaCard": {
+      "title": "Maîtrisez votre progression. Dominez vos objectifs",
+      "description": "Maintenez votre élan ! Continuez votre parcours d'apprentissage en terminant les ressources que vous avez commencées."
+    },
+    "stats": {
+      "resourcesGenerated": "Ressources générées",
+      "quizzesGenerated": "Quiz générés",
+      "flashcardsGenerated": "Cartes mémo générées",
+      "daysActive": "Jours actifs"
+    },
+    "sections": {
+      "activities": "Activités",
+      "studyMaterials": "Matériels d'étude",
+      "recommended": "Recommandé pour vous"
+    },
+    "search": {
+      "placeholder": "Rechercher des ressources, quiz, cartes mémo..."
+    },
+    "buttons": {
+      "loadMore": "Charger plus"
+    },
+    "studyMaterials": {
+      "recent": "Matériels récents",
+      "saved": "Matériels sauvegardés",
+      "viewAll": "Voir tout"
+    },
+    "recommended": {
+      "basedOnActivity": "Basé sur votre activité",
+      "newResources": "Nouvelles ressources qui pourraient vous plaire"
     }
   }
 }

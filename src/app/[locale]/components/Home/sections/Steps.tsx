@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -7,10 +8,12 @@ import {
 } from "../../ui/accordion";
 import { Button } from "../../ui/button";
 import { Card, CardContent } from "../../ui/card";
-import { useTranslations } from "next-intl"; // or your i18n library
+import { useTranslations } from "next-intl";
 
 export const Steps = (): JSX.Element => {
   const t = useTranslations("HomePage.StepsSection");
+  const [showVideo, setShowVideo] = useState(false);
+  const videoId = "yHk7Vavmc7Q"; // Extract from your YouTube URL
 
   const steps = [
     {
@@ -33,6 +36,10 @@ export const Steps = (): JSX.Element => {
     },
   ];
 
+  const handleToggleVideo = () => {
+    setShowVideo(!showVideo);
+  };
+
   return (
     <section className="flex flex-col items-center gap-8 sm:gap-16 px-4 sm:px-8 lg:px-24 py-16 sm:py-[120px] border border-solid border-[#f8f8f8] w-full">
       <h2 className="text-2xl sm:text-3xl lg:text-4xl leading-9 text-[#040303] font-medium font-['Ubuntu',Helvetica] tracking-[0] text-center">
@@ -41,27 +48,60 @@ export const Steps = (): JSX.Element => {
 
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16 w-full">
         {/* Demo Card */}
-        <Card className="flex flex-col w-full lg:w-[565px] h-[300px] lg:h-[467px] items-center justify-center gap-6 p-6 bg-[#155ddc0a] rounded-xl">
-          <CardContent className="flex items-center justify-center w-full h-full p-0">
-            <Button
-              variant="outline"
-              className="inline-flex items-center gap-[10.38px] pl-[10.38px] pr-[31.15px] py-[10.38px] bg-white rounded-[128.5px] border-[0.65px] border-solid border-[#0000001a]"
-            >
-              <span className="inline-flex items-center justify-center gap-[10.38px] p-[10.38px] bg-[#3800b3] rounded-[128.5px]">
-                <img
-                  className="w-[20.77px] h-[20.77px]"
-                  alt="Frame"
-                  src="/frame-8.svg"
-                />
-              </span>
-              <span className="font-['Ubuntu',Helvetica] font-medium text-[#090909] text-[15.6px]">
-                {t("demoButton.text")}
-              </span>
-            </Button>
+        <Card className="flex flex-col w-full lg:w-[565px] h-[300px] lg:h-[467px] items-center justify-center gap-6 bg-[#155ddc0a] rounded-xl overflow-hidden">
+          <CardContent className="relative w-full h-full p-0 group">
+            {showVideo ? (
+              // YouTube Iframe
+              <div className="absolute inset-0 w-full h-full">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="rounded-xl"
+                ></iframe>
+              </div>
+            ) : (
+              // YouTube Thumbnail with dark overlay
+              <div
+                className="absolute inset-0 w-full h-full bg-gray-200 overflow-hidden cursor-pointer"
+                onClick={handleToggleVideo}
+              >
+                <div className="relative w-full h-full">
+                  <img
+                    src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+                    alt="Demo Preview"
+                    className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src =
+                        "https://via.placeholder.com/800x450?text=Demo+Preview";
+                    }}
+                  />
+                  {/* Dark Overlay */}
+                  <div className="absolute inset-0 bg-black bg-opacity-30 transition-opacity group-hover:bg-opacity-40"></div>
+                </div>
+                {/* Play Button Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-[#3800b3] bg-opacity-90 rounded-full flex items-center justify-center group-hover:bg-opacity-100 transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="white"
+                      className="w-8 h-8 ml-1"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            )}
           </CardContent>
         </Card>
 
-        {/* Steps Section */}
+        {/* Steps Section (unchanged) */}
         <div className="flex flex-col items-start justify-center gap-8 p-3 flex-1 w-full">
           <Accordion
             type="single"

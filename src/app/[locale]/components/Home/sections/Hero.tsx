@@ -10,174 +10,141 @@ export const Hero = (): JSX.Element => {
     {
       icon: "/frame-3.svg",
       title: t("cards.card1.title"),
-      position: "left-top",
+      gradient: "from-purple-500 to-blue-500",
     },
     {
       icon: "/frame-18.svg",
       title: t("cards.card2.title"),
-      position: "left-bottom",
+      gradient: "from-emerald-500 to-teal-500",
     },
     {
       icon: "/frame-10.svg",
       title: t("cards.card3.title"),
-      position: "right-top",
+      gradient: "from-amber-500 to-orange-500",
     },
     {
       icon: "/frame-15.svg",
       title: t("cards.card4.title"),
-      position: "right-bottom",
+      gradient: "from-pink-500 to-rose-500",
     },
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center w-full gap-8 pt-0 pb-8 px-4 sm:px-8">
-      <div className="flex flex-col items-center justify-center w-full gap-8 sm:gap-16 pt-20 sm:pt-40 pb-10 sm:pb-20 px-4 sm:px-8 lg:px-[120px] rounded-3xl [background:radial-gradient(50%_50%_at_50%_46%,rgba(241,253,255,1)_68%,rgba(255,255,255,1)_100%)]">
+    <section className="relative w-full overflow-hidden ">
+      {/* Futuristic background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl mix-blend-multiply animate-pulse-slow" />
+        <div className="absolute top-1/3 right-0 w-96 h-96 bg-blue-500/10 rounded-full filter blur-3xl mix-blend-multiply animate-pulse-slow delay-1000" />
+        <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-teal-500/10 rounded-full filter blur-3xl mix-blend-multiply animate-pulse-slow delay-2000" />
+      </div>
+
+      <div className="relative flex flex-col items-center justify-center w-full gap-8 py-20 sm:py-32 px-4 sm:px-8 max-w-7xl mx-auto">
         {/* Hero content */}
-        <div className="flex flex-col w-full lg:w-[833px] items-center justify-center gap-6">
+        <div className="flex flex-col w-full lg:w-[833px] items-center justify-center gap-6 z-10">
           {/* Badge */}
-          <Badge className="gap-2 pl-2 pr-6 py-1 bg-white rounded-[99px]">
-            <div className="inline-flex items-center justify-center gap-2 p-2 bg-[#3800b3] rounded-[99px]">
-              <img className="w-4 h-4" alt="Start icon" src="/frame-2.svg" />
+          <Badge className="px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm border border-gray-200 shadow-sm hover:bg-white transition-colors">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 animate-pulse" />
+              <span className="text-xs font-medium text-gray-800">
+                {t("topTag")}
+              </span>
             </div>
-            <span className="font-medium text-[#090218] text-xs font-['Poppins',Helvetica]">
-              {t("topTag")}
-            </span>
           </Badge>
 
           {/* Heading */}
-          <h1 className="self-stretch text-3xl sm:text-4xl lg:text-[52px] text-center leading-normal font-['Ubuntu',Helvetica] font-medium tracking-[0]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-900 leading-tight">
             {t.rich("headline", {
               span1: (children) => (
-                <span className="text-[#3800b3]">{children}</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-[#3800b3]">
+                  {children}
+                </span>
               ),
               span2: (children) => (
-                <span className="text-[#040303]">{children}</span>
+                <span className="text-gray-900">{children}</span>
               ),
             })}
           </h1>
 
           {/* Subheading */}
-          <p className="self-stretch font-['Poppins',Helvetica] font-normal text-[#040303] text-sm sm:text-base text-center px-4">
+          <p className="text-lg sm:text-xl text-center text-gray-600 max-w-2xl">
             {t("subtitle")}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 pt-6 w-full sm:w-auto">
-            <Button className="w-full sm:w-auto px-6 py-3.5 bg-[#3800b3] rounded-[99px] font-['Ubuntu',Helvetica] font-medium text-white text-base">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+            <Button className="px-8 py-4 rounded-full bg-gradient-to-r  from-purple-500 to-[#3800b3] text-white shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all">
               {t("cta1")} →
             </Button>
 
             <Button
               variant="outline"
-              className="w-full sm:w-auto gap-2 pl-2 pr-6 py-2 bg-white rounded-[99px] border-[0.5px] border-solid border-[#3800b3]"
+              className="px-6 py-3.5 rounded-full bg-white/90 backdrop-blur-sm border border-gray-200 hover:bg-white hover:shadow-md transition-all"
             >
-              <div className="inline-flex items-center justify-center gap-2 p-2 bg-[#3800b3] rounded-[99px]">
-                <img className="w-4 h-4" alt="Demo icon" src="/frame-29.svg" />
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center">
+                  <img
+                    className="w-3 h-3"
+                    alt="Demo icon"
+                    src="/frame-29.svg"
+                  />
+                </div>
+                <span className="font-medium text-gray-800">{t("cta2")}</span>
               </div>
-              <span className="font-['Ubuntu',Helvetica] font-medium text-[#090909] text-sm">
-                {t("cta2")}
-              </span>
             </Button>
           </div>
         </div>
 
-        {/* Features diagram - Hidden on mobile, visible on tablet and desktop */}
-        <div className="hidden md:flex items-center justify-center py-16 w-full">
-          {/* Left features */}
-          <div className="flex flex-col w-[277px] items-start gap-8 p-2">
-            {features.slice(0, 2).map((feature, index) => (
-              <Card
-                key={`left-${index}`}
-                className="flex items-center justify-center gap-3 px-8 py-6 w-full bg-white rounded-3xl border-[0.5px] border-solid border-[#000da0b2]"
-              >
-                <CardContent className="p-0 flex items-center gap-3">
-                  {index === 0 ? (
-                    <div className="inline-flex items-center gap-[10.04px] p-5 bg-white rounded-[50.2px] overflow-hidden border border-solid border-[#1a18e414]">
-                      <img
-                        className="w-6 h-6"
-                        alt={feature.title}
-                        src={feature.icon}
-                      />
-                    </div>
-                  ) : (
-                    <img alt={feature.title} src={feature.icon} />
-                  )}
-                  <div className="flex-1 font-['Ubuntu',Helvetica] font-medium text-[#090909] text-base">
-                    {feature.title}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Left connector */}
-          <img
-            className="w-[179.32px] h-[95.73px] ml-[-7px]"
-            alt="Left connector"
-            src="/vector-2.svg"
-          />
-
-          {/* Center logo */}
-          <div className="flex-col justify-center gap-2.5 p-[30px] ml-[-7px] bg-[#000da008] rounded-[48px] border border-solid border-[#000d9f] shadow-[0px_1.25px_31.25px_#1b19e51a] backdrop-blur backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(8px)_brightness(100%)] inline-flex items-center">
-            <img
-              className="w-[60px] h-[60px] z-[1]"
-              alt="EduAssist logo"
-              src="/frame-11.svg"
-            />
-            <div className="z-0 font-medium text-[#040303] text-2xl font-['Ubuntu',Helvetica] whitespace-nowrap">
-              EduAssist
-            </div>
-          </div>
-
-          {/* Right connector */}
-          <img
-            className="w-[179.32px] h-[95.73px] ml-[-7px]"
-            alt="Right connector"
-            src="/vector-5.svg"
-          />
-
-          {/* Right features */}
-          <div className="flex flex-col items-start gap-8 p-2 flex-1 grow ml-[-7px]">
-            {features.slice(2, 4).map((feature, index) => (
-              <Card
-                key={`right-${index}`}
-                className="flex items-center justify-center gap-3 px-8 py-6 w-full bg-white rounded-3xl border-[0.5px] border-solid border-[#000da0b2]"
-              >
-                <CardContent className="p-0 flex items-center gap-3">
-                  <div className="inline-flex items-center gap-[10.04px] p-5 bg-white rounded-[50.2px] overflow-hidden border border-solid border-[#1a18e414]">
-                    <img
-                      className="w-6 h-6"
-                      alt={feature.title}
-                      src={feature.icon}
-                    />
-                  </div>
-                  <div className="flex-1 font-['Ubuntu',Helvetica] font-medium text-[#090909] text-base">
-                    {feature.title}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile Features List */}
-        <div className="flex flex-col gap-4 md:hidden w-full px-4">
+        {/* Features grid - Visible on tablet and desktop */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-5xl mt-12 z-10">
           {features.map((feature, index) => (
             <Card
-              key={`mobile-${index}`}
-              className="w-full bg-white rounded-xl border-[0.5px] border-solid border-[#000da0b2]"
+              key={index}
+              className="group relative overflow-hidden rounded-2xl border border-gray-200/50 bg-white/90 backdrop-blur-sm hover:shadow-lg transition-all"
             >
-              <CardContent className="p-4 flex items-center gap-3">
-                <div className="inline-flex items-center justify-center p-3 bg-white rounded-full border border-solid border-[#1a18e414]">
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-10 group-hover:opacity-20 transition-opacity`}
+              />
+              <CardContent className="p-6 flex flex-col items-center gap-4">
+                <div
+                  className={`w-16 h-16 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center shadow-sm`}
+                >
                   <img
-                    className="w-5 h-5"
+                    className="w-6 h-6"
                     alt={feature.title}
                     src={feature.icon}
                   />
                 </div>
-                <div className="font-['Ubuntu',Helvetica] font-medium text-[#090909] text-sm">
+                <h3 className="text-lg font-medium text-center text-gray-800">
                   {feature.title}
+                </h3>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Mobile Features List */}
+        <div className="grid grid-cols-2 gap-4 md:hidden w-full z-10">
+          {features.map((feature, index) => (
+            <Card
+              key={`mobile-${index}`}
+              className="relative overflow-hidden rounded-xl border border-gray-200/50 bg-white/90 backdrop-blur-sm"
+            >
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-10`}
+              />
+              <CardContent className="p-4 flex items-center gap-3">
+                <div
+                  className={`w-10 h-10 rounded-lg bg-gradient-to-br ${feature.gradient} flex items-center justify-center`}
+                >
+                  <img
+                    className="w-4 h-4"
+                    alt={feature.title}
+                    src={feature.icon}
+                  />
                 </div>
+                <h3 className="text-sm font-medium text-gray-800">
+                  {feature.title}
+                </h3>
               </CardContent>
             </Card>
           ))}

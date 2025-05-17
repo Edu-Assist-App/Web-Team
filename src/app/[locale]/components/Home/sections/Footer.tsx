@@ -7,51 +7,49 @@ export const Footer = (): JSX.Element => {
 
   const socialIcons = [
     { icon: "/group.png", background: "bg-white", border: true },
-    { icon: "/group-1.png", background: "bg-[#3800b3]", border: false },
+    { icon: "/group-1.png", background: "bg-[#c77dff]", border: false },
     { icon: "/group-2.png", background: "bg-white", border: true },
     { icon: "/group-3.png", background: "bg-white", border: true },
   ];
 
   return (
-    <footer className="flex flex-col gap-3 px-4 sm:px-8 lg:px-[120px] py-8 sm:py-16 w-full border-t border-[#f9f9f9]">
+    <footer className="flex flex-col gap-6 px-4 sm:px-8 lg:px-[120px] py-12 sm:py-20 w-full bg-gradient-to-b from-[#10002B] via-[#240046] to-[#3C096C] text-white">
       <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-0 w-full">
-        {/* Company Info Section */}
-        <div className="flex flex-col w-full lg:w-[360px] items-start gap-[26px]">
-          <div className="inline-flex items-center gap-[5.33px]">
-            <div className="inline-flex items-center px-2 py-1 bg-[#3800b3] rounded-[32px] shadow-[0px_0.83px_20.83px_#1b19e51a]">
+        {/* Company Info */}
+        <div className="flex flex-col w-full lg:w-[360px] items-start gap-6">
+          <div className="inline-flex items-center gap-2">
+            <div className="inline-flex items-center px-2 py-1 bg-[#c77dff] rounded-full shadow-md">
               <img className="w-4 h-4" alt="Frame" src="/frame.svg" />
             </div>
-            <div className="font-medium text-[#040303] text-[18.7px] [font-family:'Ubuntu',Helvetica] tracking-[0] leading-normal whitespace-nowrap">
+            <div className="font-medium text-white text-lg tracking-wide">
               {t("companyInfo.name")}
             </div>
           </div>
 
-          <p className="self-stretch text-[#00000099] leading-6 [font-family:'Ubuntu',Helvetica] font-normal text-base tracking-[0]">
+          <p className="text-sm text-purple-100 leading-relaxed">
             {t("companyInfo.tagline")}
           </p>
 
           <a
             href="#"
-            className="self-stretch text-[#3800b3] leading-6 underline [font-family:'Ubuntu',Helvetica] font-normal text-base tracking-[0]"
+            className="text-[#f0c0ff] underline hover:text-white transition-colors"
           >
             {t("companyInfo.learnMore")}
           </a>
         </div>
 
-        {/* Links Sections */}
+        {/* Links + Socials */}
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 w-full lg:w-auto">
-          {/* First Links Section */}
-          <div className="inline-flex flex-col items-start gap-[26px]">
-            <h3 className="w-fit mt-[-1.00px] [font-family:'Ubuntu',Helvetica] font-medium text-black text-base tracking-[3.00px] leading-[18px] whitespace-nowrap">
+          <div className="flex flex-col items-start gap-6">
+            <h3 className="uppercase tracking-widest text-purple-300 font-medium text-sm">
               {t("navigation.title")}
             </h3>
-
-            <nav className="flex flex-col items-start justify-center gap-6 w-full">
+            <nav className="flex flex-col gap-4 text-sm">
               {t.raw("navigation.links").map((link, index) => (
                 <a
                   key={index}
                   href="#"
-                  className="w-fit text-[#00000099] leading-[19px] whitespace-nowrap [font-family:'Ubuntu',Helvetica] font-normal text-base tracking-[0]"
+                  className="text-purple-100 hover:text-white transition-colors"
                 >
                   {link}
                 </a>
@@ -59,34 +57,24 @@ export const Footer = (): JSX.Element => {
             </nav>
           </div>
 
-          {/* Social Media Section */}
-          <div className="inline-flex flex-col items-start gap-[26px]">
-            <h3 className="w-fit mt-[-1.00px] [font-family:'Ubuntu',Helvetica] font-medium text-black text-base tracking-[3.00px] leading-[18px] whitespace-nowrap">
+          <div className="flex flex-col items-start gap-6">
+            <h3 className="uppercase tracking-widest text-purple-300 font-medium text-sm">
               {t("social.title")}
             </h3>
-
-            <div className="flex items-center gap-3 py-2 w-full">
+            <div className="flex items-center gap-3">
               {socialIcons.map((social, index) => (
                 <div
                   key={index}
-                  className={`relative w-7 h-7 ${
+                  className={`relative w-8 h-8 ${
                     social.background
-                  } rounded-[14px] ${
-                    social.border ? "border border-solid border-[#3800b3]" : ""
-                  }`}
+                  } rounded-full flex items-center justify-center ${
+                    social.border ? "border border-[#c77dff]" : ""
+                  } shadow-md`}
                 >
                   <img
                     src={social.icon}
                     alt={t(`social.icons.${index}.alt`)}
-                    className={`absolute ${
-                      index === 0
-                        ? "w-[11px] h-[9px] top-[9px] left-2"
-                        : index === 1
-                        ? "w-1.5 h-3 top-2 left-[11px]"
-                        : index === 2
-                        ? "w-3.5 h-3.5 top-1.5 left-1.5"
-                        : "w-[13px] h-[13px] top-1.5 left-[7px]"
-                    }`}
+                    className="w-4 h-4"
                   />
                 </div>
               ))}
@@ -95,26 +83,16 @@ export const Footer = (): JSX.Element => {
         </div>
       </div>
 
-      <Separator className="w-full h-px my-4" />
+      <Separator className="w-full h-px bg-purple-900/50 my-6" />
 
-      {/* Copyright Section */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0 w-full">
-        <div className="inline-flex items-center gap-[4.13px]">
-          <div className="inline-flex items-center px-[6.19px] py-[3.1px] bg-[#3800b3] rounded-[24.78px] shadow-[0px_0.65px_16.13px_#1b19e51a]">
-            <img
-              className="w-[12.39px] h-[12.39px]"
-              alt="Frame"
-              src="/frame-5.svg"
-            />
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-purple-200">
+        <div className="flex items-center gap-2">
+          <div className="inline-flex items-center px-2 py-1 bg-[#c77dff] rounded-full shadow-md">
+            <img className="w-4 h-4" alt="Frame" src="/frame-5.svg" />
           </div>
-          <div className="font-normal text-[#00000099] text-[14.5px] [font-family:'Ubuntu',Helvetica] tracking-[0] leading-normal whitespace-nowrap">
-            {t("companyInfo.name")}
-          </div>
+          <span>{t("companyInfo.name")}</span>
         </div>
-
-        <div className="[font-family:'Ubuntu',Helvetica] font-normal text-[#00000099] text-sm text-center sm:text-right tracking-[0] leading-normal whitespace-nowrap">
-          {t("copyright.text")}
-        </div>
+        <div className="text-center sm:text-right">{t("copyright.text")}</div>
       </div>
     </footer>
   );

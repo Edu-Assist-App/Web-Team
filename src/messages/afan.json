@@ -4,46 +4,77 @@
     "brandName": "EduAssist",
     "navigation": {
       "home": "Mana",
-      "features": "Qoosaa",
-      "howItWorks": "Akka itti hojjetu",
-      "testimonials": "Yaada Fayyadamtoota"
+      "features": "Qoodannoo",
+      "howItWorks": "Akkaataa itti hojjetu",
+      "testimonials": "Raggaa"
     },
     "language": {
-      "amharic": "Amaaraa",
+      "amharic": "Amariffa",
       "oromiffa": "Afaan Oromoo",
       "Tigrinya": "Tigrinya",
-
-      "english": "Ingiliffaa",
+      "english": "Ingiliffa",
       "spanish": "Spanish",
       "french": "French",
-      "arabic": "Arabiffaa",
+      "arabic": "Arabic",
       "chinese": "Chinese",
       "hindi": "Hindi",
       "portuguese": "Portuguese",
       "russian": "Russian",
       "japanese": "Japanese",
       "german": "German",
-      "amharicShort": "Ama",
+      "amharicShort": "አማ",
       "oromiffaShort": "Oro",
       "TigrinyaShort": "Tig",
       "englishShort": "ENG",
       "spanishShort": "ESP",
       "frenchShort": "FR",
-      "arabicShort": "Arab",
-      "chineseShort": "Chi",
-      "hindiShort": "Hin",
+      "arabicShort": "عرب",
+      "chineseShort": "中文",
+      "hindiShort": "हिं",
       "portugueseShort": "POR",
-      "russianShort": "RUS",
-      "japaneseShort": "JPN",
-      "germanShort": "GER"
+      "russianShort": "РУС",
+      "japaneseShort": "日本語",
+      "germanShort": "DE",
+      "searchPlaceholder": "Afaanota barbaadi...",
+      "noResults": "Afaanota hin argamne"
     },
     "buttons": {
-      "login": "Seensa",
-      "getStarted": "Jalqaba"
+      "login": "Seeni",
+      "getStarted": "Jalqabi"
     },
     "mobileMenu": {
       "languageLabel": "Afaan",
       "close": "Cufi"
+    },
+    "profile": {
+      "myAccount": "Akkaawuntii koo",
+      "settings": "Sirreeffama",
+      "signOut": "Ba'i"
+    },
+    "pages": {
+      "dashboard": "Daashboorduu",
+      "profile": "Profaayilii",
+      "settings": "Sirreeffama"
+    }
+  },
+
+  "Sidebar": {
+    "logoAlt": "Logo EduAssist",
+    "brandName": "EduAssist",
+    "quickNav": "Naannoo Dhihoo",
+    "navItems": {
+      "overview": "Ijaarsa",
+      "studyMaterials": "Qorannoo",
+      "chats": "Haasaa"
+    },
+    "buttons": {
+      "newModule": "Mojula Haaraa",
+      "settings": "Sirreeffama",
+      "logout": "Ba'i"
+    },
+    "ariaLabels": {
+      "collapse": "Naannoo dhihoo jijjiiri",
+      "close": "Naannoo dhihoo cufi"
     }
   },
   "HomePage": {
@@ -198,6 +229,39 @@
       "copyright": {
         "text": "©2025, Mirga Hunda Kan Qabamu"
       }
+    }
+  },
+
+  "Dashboard": {
+    "ctaCard": {
+      "title": "Odeeffannoo Keessan Mirkaneessaa. Kaayyoo Keessan To'achaa",
+      "description": "Sochii keessan itti fufaa! Barannoowwan eegalan keessan xumuraa barannoo keessan itti fufaa."
+    },
+    "stats": {
+      "resourcesGenerated": "Qorannoowwan Uumaman",
+      "quizzesGenerated": "Qorannoowwan Imalaa Uumaman",
+      "flashcardsGenerated": "Kaardiiwwan Flash Uumaman",
+      "daysActive": "Guyyaawwan Sochii"
+    },
+    "sections": {
+      "activities": "Sochiiwwan",
+      "studyMaterials": "Qorannoowwan Barannoo",
+      "recommended": "Siif Gorsaman"
+    },
+    "search": {
+      "placeholder": "Qorannoowwan, imalaa, kaardiiwwan flash barbaaduu..."
+    },
+    "buttons": {
+      "loadMore": "Dabalataa Guutuu"
+    },
+    "studyMaterials": {
+      "recent": "Qorannoowwan Duraan",
+      "saved": "Qorannoowwan Qabadaman",
+      "viewAll": "Hunda Ilaaluu"
+    },
+    "recommended": {
+      "basedOnActivity": "Sochii Keetii Irratti Hundaa'e",
+      "newResources": "Qorannoowwan Haaraa Siif Malu"
     }
   }
 }

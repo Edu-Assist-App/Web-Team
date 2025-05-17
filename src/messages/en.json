@@ -34,7 +34,9 @@
       "portugueseShort": "POR",
       "russianShort": "РУС",
       "japaneseShort": "日本語",
-      "germanShort": "DE"
+      "germanShort": "DE",
+      "searchPlaceholder": "Search languages...",
+      "noResults": "No languages found"
     },
     "buttons": {
       "login": "Login",
@@ -43,6 +45,36 @@
     "mobileMenu": {
       "languageLabel": "Language",
       "close": "Close"
+    },
+    "profile": {
+      "myAccount": "My Account",
+      "settings": "Settings",
+      "signOut": "Sign Out"
+    },
+    "pages": {
+      "dashboard": "Dashboard",
+      "profile": "Profile",
+      "settings": "Settings"
+    }
+  },
+
+  "Sidebar": {
+    "logoAlt": "EduAssist Logo",
+    "brandName": "EduAssist",
+    "quickNav": "Quick Nav",
+    "navItems": {
+      "overview": "Overview",
+      "studyMaterials": "Study Materials",
+      "chats": "Chats"
+    },
+    "buttons": {
+      "newModule": "New Module",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+    "ariaLabels": {
+      "collapse": "Toggle sidebar",
+      "close": "Close sidebar"
     }
   },
   "HomePage": {
@@ -190,6 +222,39 @@
       "copyright": {
         "text": "©2025, All Rights Reserved"
       }
+    }
+  },
+
+  "Dashboard": {
+    "ctaCard": {
+      "title": "Own Your Progress. Dominate Your Goals",
+      "description": "Keep up the momentum! Continue your learning journey by finishing the resources you've started."
+    },
+    "stats": {
+      "resourcesGenerated": "Resources Generated",
+      "quizzesGenerated": "Quizzes Generated",
+      "flashcardsGenerated": "Flashcards Generated",
+      "daysActive": "Days Active"
+    },
+    "sections": {
+      "activities": "Activities",
+      "studyMaterials": "Study Materials",
+      "recommended": "Recommended For You"
+    },
+    "search": {
+      "placeholder": "Search resources, quizzes, flashcards..."
+    },
+    "buttons": {
+      "loadMore": "Load More"
+    },
+    "studyMaterials": {
+      "recent": "Recent Materials",
+      "saved": "Saved Materials",
+      "viewAll": "View All"
+    },
+    "recommended": {
+      "basedOnActivity": "Based on your activity",
+      "newResources": "New resources you might like"
     }
   }
 }

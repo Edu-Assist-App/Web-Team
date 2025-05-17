@@ -12,7 +12,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
       <div className="flex-1 md:ml-[300px]">
         <Navbar onMenuClick={() => setIsSidebarOpen(true)} />
-        <main className="pt-[84px]">{children}</main>
+        <main className="">{children}</main>
       </div>
     </div>
   );
