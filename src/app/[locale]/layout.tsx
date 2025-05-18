@@ -1,17 +1,17 @@
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import "../globals.css";
+
 export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
   params: { locale: string };
-}) {
-  // First extract locale from params
+} & { params: any }) {
+  // Add this type assertion
   const { locale } = await params;
 
-  // Validate locale
   if (!["en", "fr", "amh", "tig", "afan"].includes(locale)) notFound();
 
   let messages;
