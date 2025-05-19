@@ -1,11 +1,16 @@
 "use client";
 import CtaCard from "@/app/components/cards/CtaCard";
-import RichTextChapter from "@/app/components/course/RichText";
+import RichTextChapter from "@/app/components/course/RichTextChapter";
 import { Button } from "@/app/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import AIChatBox from "@/app/components/course/AIChatBox";
+import { AiOutlineRobot } from "react-icons/ai";
 
-// Complete mock data for all chapters
+// Dynamically import DOMPurify on the client side only
+import dynamic from 'next/dynamic';
+const DOMPurify = dynamic(() => import('dompurify'), { ssr: false });
+
 const courseData = {
   title: "Introduction to Data Science",
   totalChapters: 3,
@@ -13,165 +18,22 @@ const courseData = {
     {
       id: 1,
       title: "What is Data Science?",
-      description:
-        "Explore the foundations of data science and its applications in the modern world.",
+      description: "Explore the foundations of data science.",
       imageUrl: "/chapter1.svg",
-      content: {
-        title: "Chapter 1 Overview",
-        description:
-          "Learn the core concepts of data science and why it's transforming industries.",
-        estimatedTime: "45 minutes",
-        topics: [
-          {
-            title: "Data Science Fundamentals",
-            content:
-              "Data science combines statistics, programming, and domain expertise to extract insights from data.",
-            bulletPoints: [
-              "Interdisciplinary field combining math, statistics, and computer science",
-              "Used for predictive analytics, pattern recognition, and decision making",
-              "Applications in healthcare, finance, marketing, and more",
-            ],
-          },
-          {
-            title: "Key Technologies",
-            content: "Modern data science relies on several core technologies:",
-            bulletPoints: [
-              "Python and R programming languages",
-              "Machine learning frameworks like TensorFlow and PyTorch",
-              "Big data tools like Hadoop and Spark",
-            ],
-          },
-        ],
-        exampleCode: {
-          language: "python",
-          code: `# Simple data analysis example
-import pandas as pd
-
-data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35]}
-df = pd.DataFrame(data)
-print(df.describe())`,
-        },
-      },
     },
     {
       id: 2,
       title: "Python for Data Analysis",
-      description:
-        "Master Python fundamentals for data manipulation and visualization.",
+      description: "Master Python fundamentals for data analysis.",
       imageUrl: "/chapter2.svg",
-      content: {
-        title: "Chapter 2 Overview",
-        description:
-          "Learn how to use Python for effective data analysis and visualization.",
-        estimatedTime: "60 minutes",
-        topics: [
-          {
-            title: "Essential Libraries",
-            content:
-              "Python's data science ecosystem includes powerful libraries:",
-            bulletPoints: [
-              "NumPy for numerical computing",
-              "Pandas for data manipulation",
-              "Matplotlib and Seaborn for visualization",
-            ],
-          },
-          {
-            title: "Data Cleaning Techniques",
-            content: "Real-world data requires cleaning before analysis:",
-            bulletPoints: [
-              "Handling missing values",
-              "Removing duplicates",
-              "Normalizing data formats",
-            ],
-          },
-        ],
-        exampleCode: {
-          language: "python",
-          code: `# Data cleaning example
-import pandas as pd
-import numpy as np
-
-data = {'A': [1, 2, np.nan], 'B': [5, np.nan, np.nan]}
-df = pd.DataFrame(data)
-clean_df = df.fillna(df.mean())
-print(clean_df)`,
-        },
-      },
     },
     {
       id: 3,
       title: "Machine Learning Basics",
-      description: "Introduction to machine learning concepts and algorithms.",
+      description: "Introduction to machine learning concepts.",
       imageUrl: "/chapter3.svg",
-      content: {
-        title: "Chapter 3 Overview",
-        description:
-          "Understand the fundamentals of machine learning and its applications.",
-        estimatedTime: "50 minutes",
-        topics: [
-          {
-            title: "Types of Machine Learning",
-            content:
-              "Machine learning can be categorized into three main types:",
-            bulletPoints: [
-              "Supervised learning (labeled data)",
-              "Unsupervised learning (unlabeled data)",
-              "Reinforcement learning (reward-based)",
-            ],
-          },
-          {
-            title: "Common Algorithms",
-            content: "Popular machine learning algorithms include:",
-            bulletPoints: [
-              "Linear Regression for predictions",
-              "Decision Trees for classification",
-              "K-Means for clustering",
-            ],
-          },
-        ],
-        exampleCode: {
-          language: "python",
-          code: `# Simple linear regression example
-from sklearn.linear_model import LinearRegression
-import numpy as np
-
-X = np.array([[1], [2], [3]])
-y = np.array([1, 3, 5])
-model = LinearRegression().fit(X, y)
-print(model.predict([[4]]))`,
-        },
-      },
     },
   ],
-};
-
-const initialContent = {
-  type: 'doc',
-  content: [
-    {
-      type: 'heading',
-      attrs: { level: 2 },
-      content: [{ type: 'text', text: 'Hi there,' }]
-    },
-    {
-      type: 'paragraph',
-      content: [
-        { type: 'text', text: 'this is a ' },
-        { type: 'text', marks: [{ type: 'italic' }], text: 'basic' },
-        { type: 'text', text: ' example of ' },
-        { type: 'text', marks: [{ type: 'bold' }], text: 'Tiptap' },
-        { type: 'text', text: '.' }
-      ]
-    },
-    {
-      type: 'youtube',
-      attrs: {
-        src: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        width: 560,
-        height: 315
-      }
-    }
-  ]
 };
 
 export default function Page() {
@@ -180,14 +42,20 @@ export default function Page() {
   const currentChapterData = courseData.chapters.find(
     (ch) => ch.id === currentChapter
   );
+  const richTextRef = useRef<any>(null);
+  const [content, setContent] = useState<string>(`
+    <h2>Hi there,</h2>
+    <p>This is a <em>basic</em> example of <strong>TipTap</strong>.</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+  `);
+  const [isEditing, setIsEditing] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Scroll to top whenever chapter changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentChapter]);
 
-  const calculateProgress = (chapter) => {
-    // Chapter 1: 0%, Chapter 2: 33%, Chapter 3: 66%, Completion: 100%
+  const calculateProgress = (chapter: number) => {
     return Math.round(((chapter - 1) / courseData.totalChapters) * 100);
   };
 
@@ -205,12 +73,8 @@ export default function Page() {
     if (currentChapter < courseData.totalChapters) {
       const newChapter = currentChapter + 1;
       setCurrentChapter(newChapter);
-      // Update progress based on the new chapter
-      setProgress(
-        Math.round(((newChapter - 1) / courseData.totalChapters) * 100)
-      );
+      setProgress(calculateProgress(newChapter));
     } else {
-      // When completing the last chapter, set progress to 100%
       setProgress(100);
     }
   };
@@ -219,21 +83,82 @@ export default function Page() {
     if (currentChapter > 1) {
       const newChapter = currentChapter - 1;
       setCurrentChapter(newChapter);
-      // Update progress based on the new chapter
-      setProgress(
-        Math.round(((newChapter - 1) / courseData.totalChapters) * 100)
-      );
+      setProgress(calculateProgress(newChapter));
     }
   };
+
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const handleSendPrompt = async (prompt: string): Promise<string> => {
+    setIsLoading(true);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const response = `<p>AI Response to "${prompt}": This is a sample response.</p>`;
+    setIsLoading(false);
+    return response;
+  };
+
+  const handleAIResponse = async (prompt: string) => {
+    const response = await handleSendPrompt(prompt);
+    if (isEditing && richTextRef.current) {
+      const editor = richTextRef.current.editor;
+      if (editor) {
+        editor.chain().focus().insertContent(response).run();
+        setContent(editor.getHTML());
+      }
+    } else {
+      setContent((prev) => prev + response);
+    }
+    return response;
+  };
+
+  const toggleEditMode = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsEditing(!isEditing);
+      setIsLoading(false);
+    }, 300);
+  };
+
+  // Sanitize content only on the client side
+  const [sanitizedContent, setSanitizedContent] = useState(content);
+  useEffect(() => {
+    if (typeof window !== 'undefined' && DOMPurify.sanitize) {
+      const cleaned = DOMPurify.sanitize(content, {
+        ADD_TAGS: ['iframe'],
+        ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'src'],
+      });
+      setSanitizedContent(cleaned);
+    } else {
+      setSanitizedContent(content); // Fallback for SSR
+    }
+  }, [content]);
 
   return (
     <div className="min-h-screen p-4 md:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto space-y-8">
         <CtaCard {...cardContent} />
 
-        {/* Replace RichTextChapter with TipTap and pass initialContent */}
-        {currentChapterData?.content && (
-          <RichTextChapter initialContent={initialContent} />
+        <div className="flex justify-end">
+          <Button onClick={toggleEditMode}>
+            {isEditing ? "Save & Exit" : "Edit"}
+          </Button>
+        </div>
+
+        {isLoading ? (
+          <div className="flex justify-center items-center h-64">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500"></div>
+          </div>
+        ) : isEditing ? (
+          <RichTextChapter
+            ref={richTextRef}
+            content={content}
+            setContent={setContent}
+          />
+        ) : (
+          <div
+            className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto"
+            dangerouslySetInnerHTML={{ __html: sanitizedContent }}
+          />
         )}
 
         <div className="flex justify-between mt-8">
@@ -253,6 +178,20 @@ export default function Page() {
             <ChevronRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
+
+        <button
+          onClick={() => setIsChatOpen(!isChatOpen)}
+          className="fixed bottom-1 right-1 w-12 h-12 bg-[#3900b3] text-white rounded-full flex items-center justify-center shadow-lg z-40"
+          title="Toggle AI Assistant"
+        >
+          <AiOutlineRobot size={24} />
+        </button>
+
+        <AIChatBox
+          isOpen={isChatOpen}
+          onClose={() => setIsChatOpen(false)}
+          onSendPrompt={handleAIResponse}
+        />
       </div>
     </div>
   );
