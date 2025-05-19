@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}", // Include all files in the src directory
-    "./public/**/*.html",         // Include any HTML files in the public directory
+    "./public/**/*.html", // Include any HTML files in the public directory
   ],
   theme: {
     extend: {
@@ -43,9 +43,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        ubuntu: ['var(--font-ubuntu)'],
-        poppins: ['var(--font-poppins)'],
-        outfit: ['var(--font-outfit)'],
+        ubuntu: ["var(--font-ubuntu)"],
+        poppins: ["var(--font-poppins)"],
+        outfit: ["var(--font-outfit)"],
       },
       borderRadius: {
         lg: "var(--radius)",

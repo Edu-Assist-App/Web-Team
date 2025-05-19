@@ -1,0 +1,267 @@
+{
+  "Header": {
+    "logoAlt": "Logo EduAssist",
+    "brandName": "EduAssist",
+    "navigation": {
+      "home": "Mana",
+      "features": "Qoodannoo",
+      "howItWorks": "Akkaataa itti hojjetu",
+      "testimonials": "Raggaa"
+    },
+    "language": {
+      "amharic": "Amariffa",
+      "oromiffa": "Afaan Oromoo",
+      "Tigrinya": "Tigrinya",
+      "english": "Ingiliffa",
+      "spanish": "Spanish",
+      "french": "French",
+      "arabic": "Arabic",
+      "chinese": "Chinese",
+      "hindi": "Hindi",
+      "portuguese": "Portuguese",
+      "russian": "Russian",
+      "japanese": "Japanese",
+      "german": "German",
+      "amharicShort": "አማ",
+      "oromiffaShort": "Oro",
+      "TigrinyaShort": "Tig",
+      "englishShort": "ENG",
+      "spanishShort": "ESP",
+      "frenchShort": "FR",
+      "arabicShort": "عرب",
+      "chineseShort": "中文",
+      "hindiShort": "हिं",
+      "portugueseShort": "POR",
+      "russianShort": "РУС",
+      "japaneseShort": "日本語",
+      "germanShort": "DE",
+      "searchPlaceholder": "Afaanota barbaadi...",
+      "noResults": "Afaanota hin argamne"
+    },
+    "buttons": {
+      "login": "Seeni",
+      "getStarted": "Jalqabi"
+    },
+    "mobileMenu": {
+      "languageLabel": "Afaan",
+      "close": "Cufi"
+    },
+    "profile": {
+      "myAccount": "Akkaawuntii koo",
+      "settings": "Sirreeffama",
+      "signOut": "Ba'i"
+    },
+    "pages": {
+      "dashboard": "Daashboorduu",
+      "profile": "Profaayilii",
+      "settings": "Sirreeffama"
+    }
+  },
+
+  "Sidebar": {
+    "logoAlt": "Logo EduAssist",
+    "brandName": "EduAssist",
+    "quickNav": "Naannoo Dhihoo",
+    "navItems": {
+      "overview": "Ijaarsa",
+      "studyMaterials": "Qorannoo",
+      "chats": "Haasaa"
+    },
+    "buttons": {
+      "newModule": "Mojula Haaraa",
+      "settings": "Sirreeffama",
+      "logout": "Ba'i"
+    },
+    "ariaLabels": {
+      "collapse": "Naannoo dhihoo jijjiiri",
+      "close": "Naannoo dhihoo cufi"
+    }
+  },
+  "HomePage": {
+    "HeroSection": {
+      "topTag": "Imala kee jalqabi",
+      "headline": "<span1>AI-Waliin</span1> <span2>Gargaarsa</span2> Barannoo Dhuunfaa Banaa",
+      "subtitle": "EduAssist barattoota, barsiisotaa fi miseensota hojii gargaara barannoo sirriitti barachuuf AI-waliin, gargaarsa afaanota baay'ee fi qalbiin barannoo dhuunfaa.",
+      "cta1": "Biyyaa Bilisaatti Makamu",
+      "cta2": "Fakkii Jiraa Ilaali",
+      "cards": {
+        "card1": {
+          "title": "Qopheessaa Barannoo AI-waliin",
+          "subtext": "Gareen keenya guddataa seenuu"
+        },
+        "card2": {
+          "title": "Manaajimantii Fayyila Qaroo",
+          "subtext": "Jalqabaa irraa gahaa hanga"
+        },
+        "card3": {
+          "title": "Karaa Barannoo Dhuunfaa",
+          "subtext": "Hoggantoota industirii irraa baradhaa"
+        },
+        "card4": {
+          "title": "Qorannoo Yeroo Dhugaa",
+          "subtext": "Saffisa keetiin baradhaa"
+        }
+      }
+    },
+
+    "FeaturesSection": {
+      "title": "Hojjettoota Barannoo Keetiif Qaroo",
+      "features": {
+        "aiChatbot": {
+          "title": "Gargaarsa AI Chatbot",
+          "description": "Deebii yeroo gabaabaa fi ibsaa argadhaa."
+        },
+        "fileManagement": {
+          "title": "Manaajimantii Fayyila Qaroo",
+          "description": "Qopheessaa, sirreessi fi mallattoo galchi."
+        },
+
+        "aiMaterials": {
+          "title": "Qopheessaa Barannoo AI-waliin",
+          "description": "Xumura, kaardii barannoo fi qormaata."
+        },
+        "learningPaths": {
+          "title": "Karaa Barannoo Dhuunfaa",
+          "description": "Karoora barannoo gara geessuu keetti qopheessuu."
+        },
+        "progressTracking": {
+          "title": "Qorannoo Yeroo Dhugaa",
+          "description": "Barannoo kee bakka tokkotti ilaali."
+        }
+      }
+    },
+
+    "StepsSection": {
+      "title": "Barannoo Salpha Ta'e - Qajeelcha 3 Qofa!",
+      "demoButton": {
+        "text": "Fakkii Jiraa Ilaali"
+      },
+      "joinButton": {
+        "text": "Amma Makamu →"
+      },
+      "steps": {
+        "step1": {
+          "title": "Qopheessaa Barannoo Keessan Olkaasi",
+          "content": "PDFs, vidiyoota fi linkiiwwan."
+        },
+        "step2": {
+          "title": "AI-waliin Yeroo Gabaabaa Gargaarsa Waami",
+          "content": ""
+        },
+        "step3": {
+          "title": "Baradhaa fi Ijoo Ilaali",
+          "content": ""
+        }
+      }
+    },
+
+    "TestimonialsSection": {
+      "title": "Fayyadamtoonni Nu Waa'ee Maal Jettu Ilaali",
+      "testimonials": [
+        {
+          "id": 1,
+          "name": "Saara M.",
+          "text": "\"EduAssist akka baradhu jijjiirame! AI chatbot-tiin gosa garii salpha taasisaa, qormaata dhuunfaanis beekumsa qabadha.\""
+        },
+        {
+          "id": 2,
+          "name": "Joon D.",
+          "text": "\"EduAssist waliin qabxii koo 30% guddise. Manaajimantii fayyila qaroo sirriin akka barattu na gargaare.\""
+        },
+        {
+          "id": 3,
+          "name": "Emilii T.",
+          "text": "\"Karaa barannoo dhuunfaan gara saffisa kootti sirriitti walqabata. Barreessaa yeroo hunda argachuudha!\""
+        }
+      ],
+      "navigation": {
+        "previous": "Duraan",
+        "next": "Itaana"
+      }
+    },
+
+    "FAQSection": {
+      "title": "Gaaffiiwwan Kan Faallaa Faallaa",
+      "faqItems": [
+        {
+          "question": "Akkaataa galmaa'uu?",
+          "answer": "Email walliin ykn Google waliin sekondii 30 keessatti galmaa'aa."
+        },
+        {
+          "question": "Akkaataa qopheessaa barannoo uumu?",
+          "answer": "AI qopheessaa/xumura/kaardii barannoo kan qopheessu keessan irraa."
+        },
+        {
+          "question": "Linkii YouTube ykn fayyilota olkaasuu danda'ama?",
+          "answer": "Eeyyee, linkii darbaa ykn PDF/PPTX AI analyseessuuf olkaasi."
+        },
+        {
+          "question": "Akkaataa hiriyaa waliin waamu/qooduu?",
+          "answer": "Gareen waamicha fi bakka hojii qoodaa fayyadami."
+        }
+      ]
+    },
+    "Footer": {
+      "companyInfo": {
+        "name": "EduAssist",
+        "tagline": "Barannoo Qaroo Asii Jalqaba - Dhuunfaa, Afaanota Baay'ee fi AI-waliin.",
+        "learnMore": "Dabalataan Baradhaa →"
+      },
+      "navigation": {
+        "title": "LINKIIWAN",
+        "links": [
+          "Mana",
+          "Qoosaa",
+          "Akka itti hojjetu",
+          "Yaada Fayyadamtoota",
+          "Nu Qunnamaa"
+        ]
+      },
+      "social": {
+        "title": "SOSHIYALA MIIDIIAA",
+        "icons": [
+          { "alt": "Twitter" },
+          { "alt": "Facebook" },
+          { "alt": "Instagram" },
+          { "alt": "LinkedIn" }
+        ]
+      },
+      "copyright": {
+        "text": "©2025, Mirga Hunda Kan Qabamu"
+      }
+    }
+  },
+
+  "Dashboard": {
+    "ctaCard": {
+      "title": "Odeeffannoo Keessan Mirkaneessaa. Kaayyoo Keessan To'achaa",
+      "description": "Sochii keessan itti fufaa! Barannoowwan eegalan keessan xumuraa barannoo keessan itti fufaa."
+    },
+    "stats": {
+      "resourcesGenerated": "Qorannoowwan Uumaman",
+      "quizzesGenerated": "Qorannoowwan Imalaa Uumaman",
+      "flashcardsGenerated": "Kaardiiwwan Flash Uumaman",
+      "daysActive": "Guyyaawwan Sochii"
+    },
+    "sections": {
+      "activities": "Sochiiwwan",
+      "studyMaterials": "Qorannoowwan Barannoo",
+      "recommended": "Siif Gorsaman"
+    },
+    "search": {
+      "placeholder": "Qorannoowwan, imalaa, kaardiiwwan flash barbaaduu..."
+    },
+    "buttons": {
+      "loadMore": "Dabalataa Guutuu"
+    },
+    "studyMaterials": {
+      "recent": "Qorannoowwan Duraan",
+      "saved": "Qorannoowwan Qabadaman",
+      "viewAll": "Hunda Ilaaluu"
+    },
+    "recommended": {
+      "basedOnActivity": "Sochii Keetii Irratti Hundaa'e",
+      "newResources": "Qorannoowwan Haaraa Siif Malu"
+    }
+  }
+}
