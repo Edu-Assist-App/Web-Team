@@ -11,7 +11,11 @@
     "language": {
       "amharic": "አማርኛ",
       "oromiffa": "Afaan Oromoo",
+<<<<<<< HEAD
       "tigrinya": "ትግርኛ",
+=======
+      "Tigrinya": "ትግርኛ",
+>>>>>>> c4b22272a75778879fd429e93145139fe4286b34
       "english": "English",
       "spanish": "Español",
       "french": "Français",
@@ -24,7 +28,11 @@
       "german": "Deutsch",
       "amharicShort": "አማ",
       "oromiffaShort": "Oro",
+<<<<<<< HEAD
       "tigrinyaShort": "Tig",
+=======
+      "TigrinyaShort": "Tig",
+>>>>>>> c4b22272a75778879fd429e93145139fe4286b34
       "englishShort": "ENG",
       "spanishShort": "ESP",
       "frenchShort": "FR",
@@ -57,6 +65,10 @@
       "settings": "Settings"
     }
   },
+<<<<<<< HEAD
+=======
+
+>>>>>>> c4b22272a75778879fd429e93145139fe4286b34
   "Sidebar": {
     "logoAlt": "EduAssist Logo",
     "brandName": "EduAssist",
@@ -102,6 +114,10 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
+
+>>>>>>> c4b22272a75778879fd429e93145139fe4286b34
     "FeaturesSection": {
       "title": "Your Smartest Study Companion",
       "features": {
@@ -127,6 +143,10 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
+
+>>>>>>> c4b22272a75778879fd429e93145139fe4286b34
     "StepsSection": {
       "title": "Learning Made Simple – Just 3 Steps!",
       "demoButton": {
@@ -150,6 +170,10 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
+
+>>>>>>> c4b22272a75778879fd429e93145139fe4286b34
     "TestimonialsSection": {
       "title": "See What Our Users Say",
       "testimonials": [
@@ -174,6 +198,10 @@
         "next": "Next"
       }
     },
+<<<<<<< HEAD
+=======
+
+>>>>>>> c4b22272a75778879fd429e93145139fe4286b34
     "FAQSection": {
       "title": "Frequently Asked Questions",
       "faqItems": [
@@ -219,6 +247,10 @@
       }
     }
   },
+<<<<<<< HEAD
+=======
+
+>>>>>>> c4b22272a75778879fd429e93145139fe4286b34
   "Dashboard": {
     "ctaCard": {
       "title": "Own Your Progress. Dominate Your Goals",
@@ -250,6 +282,7 @@
       "basedOnActivity": "Based on your activity",
       "newResources": "New resources you might like"
     }
+<<<<<<< HEAD
   },
   "Materials": {
     "ctaCard": {
@@ -299,5 +332,7 @@
       "loadMore": "Load More",
       "view": "View"
     }
+=======
+>>>>>>> c4b22272a75778879fd429e93145139fe4286b34
   }
 }

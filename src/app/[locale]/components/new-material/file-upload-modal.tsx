@@ -3,7 +3,10 @@
 import { useState, useRef } from "react";
 import { X, Upload, File } from "lucide-react";
 import { Button } from "@/app/[locale]/components/ui/button";
+<<<<<<< HEAD
 import { useTranslations } from "next-intl";
+=======
+>>>>>>> c4b22272a75778879fd429e93145139fe4286b34
 
 interface FileUploadModalProps {
   isOpen: boolean;

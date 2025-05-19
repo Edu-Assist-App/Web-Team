@@ -3,14 +3,22 @@
     "logoAlt": "የEduAssist ሎጎ",
     "brandName": "EduAssist",
     "navigation": {
+<<<<<<< HEAD
       "home": "ዋና ገጽ",
       "features": "ባህሪያት",
       "howItWorks": "እንዴት እንደሚሰራ",
       "testimonials": "የተጠቃሚዎች አስተያየቶች"
+=======
+      "home": "መነሻ",
+      "features": "ባህሪያት",
+      "howItWorks": "እንዴት እንደሚሰራ",
+      "testimonials": "ምስክርነቶች"
+>>>>>>> c4b22272a75778879fd429e93145139fe4286b34
     },
     "language": {
       "amharic": "አማርኛ",
       "oromiffa": "Afaan Oromoo",
+<<<<<<< HEAD
       "tigrinya": "ትግርኛ",
       "english": "English",
       "spanish": "Español",
@@ -25,6 +33,22 @@
       "amharicShort": "አማ",
       "oromiffaShort": "Oro",
       "tigrinyaShort": "Tig",
+=======
+      "Tigrinya": "ትግርኛ",
+      "english": "እንግሊዝኛ",
+      "spanish": "ስፓኒሽ",
+      "french": "ፈረንሳይኛ",
+      "arabic": "ዓረብኛ",
+      "chinese": "ቻይንኛ",
+      "hindi": "ህንድኛ",
+      "portuguese": "ፖርቹጋልኛ",
+      "russian": "ራሽኛ",
+      "japanese": "ጃፓንኛ",
+      "german": "ጀርመንኛ",
+      "amharicShort": "አማ",
+      "oromiffaShort": "Oro",
+      "TigrinyaShort": "Tig",
+>>>>>>> c4b22272a75778879fd429e93145139fe4286b34
       "englishShort": "ENG",
       "spanishShort": "ESP",
       "frenchShort": "FR",
@@ -255,6 +279,7 @@
       "basedOnActivity": "በእርስዎ እንቅስቃሴ ላይ የተመሠረተ",
       "newResources": "የሚወዷቸው አዳዲስ ምንጮች"
     }
+<<<<<<< HEAD
   },
   "Materials": {
     "ctaCard": {
@@ -331,5 +356,7 @@
       "generating": "በመፍጠር ላይ...",
       "completed": "ተጠናቀቀ"
     }
+=======
+>>>>>>> c4b22272a75778879fd429e93145139fe4286b34
   }
 }
