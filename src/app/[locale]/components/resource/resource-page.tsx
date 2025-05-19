@@ -3,11 +3,8 @@ import { RefreshCw } from "lucide-react";
 import { Button } from "@/app/[locale]/components/ui/button";
 import { Card, CardContent } from "@/app/[locale]/components/ui/card";
 import { StudyMaterialCard } from "@/app/[locale]/components/study-material-card";
-<<<<<<< HEAD
 import CtaCard from "../cards/CtaCard";
 import { useTranslations } from "next-intl";
-=======
->>>>>>> c4b22272a75778879fd429e93145139fe4286b34
 
 const studyMaterials = [
   {

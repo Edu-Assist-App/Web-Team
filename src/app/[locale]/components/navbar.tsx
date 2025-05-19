@@ -79,7 +79,6 @@ export const Navbar = (): JSX.Element => {
       name: t("language.amharic"),
       shortName: t("language.amharicShort"),
     },
-<<<<<<< HEAD
     // {
     //   code: "tig",
     //   name: t("language.Tigrinya"),
@@ -90,36 +89,16 @@ export const Navbar = (): JSX.Element => {
     //   name: t("language.oromiffa"),
     //   shortName: t("language.oromiffaShort"),
     // },
-=======
-    {
-      code: "tig",
-      name: t("language.Tigrinya"),
-      shortName: t("language.TigrinyaShort"),
-    },
-    {
-      code: "afan",
-      name: t("language.oromiffa"),
-      shortName: t("language.oromiffaShort"),
-    },
->>>>>>> c4b22272a75778879fd429e93145139fe4286b34
     {
       code: "en",
       name: t("language.english"),
       shortName: t("language.englishShort"),
     },
-<<<<<<< HEAD
     // {
     //   code: "fr",
     //   name: t("language.french"),
     //   shortName: t("language.frenchShort"),
     // },
-=======
-    {
-      code: "fr",
-      name: t("language.french"),
-      shortName: t("language.frenchShort"),
-    },
->>>>>>> c4b22272a75778879fd429e93145139fe4286b34
   ];
 
   const filteredLanguages = languages.filter(
