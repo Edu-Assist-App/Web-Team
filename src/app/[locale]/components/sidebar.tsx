@@ -154,7 +154,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                     variant="ghost"
                     className={`flex items-center gap-3 w-full  rounded-[99px] justify-start transition-all ${
                       active
-                        ? "bg-white shadow-sm border border-purple-100"
+                        ? "bg-white shadow-sm border border-purple-100 bg-[#f6f2ff"
                         : ""
                     } ${collapsed ? "justify-center" : "px-4"} h-12`}
                   >
