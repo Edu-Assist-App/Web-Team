@@ -145,6 +145,35 @@ print(model.predict([[4]]))`,
   ],
 };
 
+const initialContent = {
+  type: 'doc',
+  content: [
+    {
+      type: 'heading',
+      attrs: { level: 2 },
+      content: [{ type: 'text', text: 'Hi there,' }]
+    },
+    {
+      type: 'paragraph',
+      content: [
+        { type: 'text', text: 'this is a ' },
+        { type: 'text', marks: [{ type: 'italic' }], text: 'basic' },
+        { type: 'text', text: ' example of ' },
+        { type: 'text', marks: [{ type: 'bold' }], text: 'Tiptap' },
+        { type: 'text', text: '.' }
+      ]
+    },
+    {
+      type: 'youtube',
+      attrs: {
+        src: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        width: 560,
+        height: 315
+      }
+    }
+  ]
+};
+
 export default function Page() {
   const [currentChapter, setCurrentChapter] = useState(1);
   const [progress, setProgress] = useState(0);
@@ -202,8 +231,9 @@ export default function Page() {
       <div className="max-w-7xl mx-auto space-y-8">
         <CtaCard {...cardContent} />
 
+        {/* Replace RichTextChapter with TipTap and pass initialContent */}
         {currentChapterData?.content && (
-          <RichTextChapter {...currentChapterData.content} />
+          <RichTextChapter initialContent={initialContent} />
         )}
 
         <div className="flex justify-between mt-8">
