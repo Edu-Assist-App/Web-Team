@@ -1,5 +1,5 @@
 "use client";
-import React, { forwardRef, useImperativeHandle, useRef } from "react";
+import React, { forwardRef, useImperativeHandle, useRef, useState, useEffect } from "react";
 import { EditorProvider, useCurrentEditor, EditorContent } from '@tiptap/react';
 import { Color } from '@tiptap/extension-color';
 import ListItem from '@tiptap/extension-list-item';
@@ -14,6 +14,7 @@ import {
 } from 'react-icons/ai';
 import { BsListUl, BsListOl, BsCodeSlash } from 'react-icons/bs';
 import { TbSeparatorHorizontal } from 'react-icons/tb';
+import { MdOutlineSend } from 'react-icons/md';
 import Code from '@tiptap/extension-code';
 import BulletList from '@tiptap/extension-bullet-list';
 import OrderedList from '@tiptap/extension-ordered-list';
@@ -21,11 +22,11 @@ import Youtube from '@tiptap/extension-youtube';
 import TextAlign from '@tiptap/extension-text-align';
 import CodeBlock from '@tiptap/extension-code-block';
 import { Extension } from '@tiptap/core';
-import Iframe from './IframeExtension'
 
 interface RichTextProps {
   content: string;
   setContent: React.Dispatch<React.SetStateAction<string>>;
+  onSendPrompt?: (prompt: string) => Promise<string>;
 }
 
 // Custom Iframe Extension to handle raw <iframe> tags
@@ -231,12 +232,160 @@ const extensions = [
   }),
 ];
 
+const CustomBubbleMenu = ({ editor, onSendPrompt }) => {
+  const [visible, setVisible] = useState(false);
+  const [position, setPosition] = useState({ top: 0, left: 0 });
+  const [prompt, setPrompt] = useState('');
+  const menuRef = useRef(null);
+  const [showAbove, setShowAbove] = useState(true);
+
+  useEffect(() => {
+    const updateMenu = () => {
+      if (!editor) return;
+
+      if (editor.state.selection.empty) {
+        setVisible(false);
+        return;
+      }
+
+      setVisible(true);
+
+      // Get position from selection
+      const { from, to } = editor.state.selection;
+      const domFrom = editor.view.domAtPos(from);
+      const domTo = editor.view.domAtPos(to);
+      const nodeFrom = domFrom.node;
+      const nodeTo = domTo.node;
+
+      if (nodeFrom && nodeTo) {
+        try {
+          const range = document.createRange();
+          const startNode = nodeFrom.nodeType === Node.TEXT_NODE ? nodeFrom : nodeFrom.childNodes[0];
+          const endNode = nodeTo.nodeType === Node.TEXT_NODE ? nodeTo : nodeTo.childNodes[0];
+          
+          if (startNode && endNode) {
+            range.setStart(startNode, domFrom.offset);
+            range.setEnd(endNode, domTo.offset);
+            const rect = range.getBoundingClientRect();
+            
+            const editorRect = editor.view.dom.getBoundingClientRect();
+            const menuHeight = menuRef.current ? menuRef.current.offsetHeight : 50;
+            
+            // Check if there's enough space above the selection
+            const spaceAbove = rect.top - editorRect.top;
+            const shouldShowAbove = spaceAbove > menuHeight + 20;
+            
+            setShowAbove(shouldShowAbove);
+            
+            if (shouldShowAbove) {
+              // Position above the selected text
+              setPosition({
+                top: rect.top - editorRect.top - (menuHeight + 10),
+                left: rect.left + (rect.width / 2) - editorRect.left
+              });
+            } else {
+              // Position below the selected text
+              setPosition({
+                top: rect.bottom - editorRect.top + 10,
+                left: rect.left + (rect.width / 2) - editorRect.left
+              });
+            }
+          }
+        } catch (error) {
+          console.error('Error calculating position:', error);
+        }
+      }
+    };
+
+    if (editor) {
+      editor.on('selectionUpdate', updateMenu);
+    }
+
+    return () => {
+      if (editor) {
+        editor.off('selectionUpdate', updateMenu);
+      }
+    };
+  }, [editor]);
+
+  const handleClickOutside = (e) => {
+    if (menuRef.current && !menuRef.current.contains(e.target) && 
+        e.target !== editor.view.dom && !editor.view.dom.contains(e.target)) {
+      setVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleSendPrompt = async () => {
+    if (!prompt.trim() || !onSendPrompt) return;
+    
+    try {
+      const { from, to } = editor.state.selection;
+      const selectedText = editor.state.doc.textBetween(from, to, ' ');
+      
+      const promptWithContext = `Context: "${selectedText}". ${prompt}`;
+      const response = await onSendPrompt(promptWithContext);
+      setPrompt('');
+      
+      // Insert the AI response at the current cursor position
+      editor.chain().focus().insertContent(response).run();
+      
+      // Hide the menu after sending
+      setVisible(false);
+    } catch (error) {
+      console.error('Error sending prompt:', error);
+    }
+  };
+
+  if (!visible || !editor) return null;
+
+  return (
+    <div 
+      ref={menuRef}
+      className="absolute bg-white p-2 rounded shadow-md flex gap-2 border z-50"
+      style={{ 
+        top: `${position.top}px`, 
+        left: `${position.left}px`,
+        transform: 'translateX(-50%)',
+      }}
+    >
+      <div 
+        className={`absolute w-3 h-3 bg-white transform rotate-45 ${
+          showAbove ? 'bottom-[-6px]' : 'top-[-6px]'
+        } left-1/2 ml-[-6px] border ${
+          showAbove ? 'border-b border-r' : 'border-t border-l'
+        } border-gray-200`}
+      />
+      <input
+        type="text"
+        value={prompt}
+        onChange={(e) => setPrompt(e.target.value)}
+        placeholder="Ask AI about selection..."
+        className="border rounded p-1 text-sm w-48 focus:outline-none"
+        onKeyPress={(e) => e.key === 'Enter' && handleSendPrompt()}
+      />
+      <button
+        onClick={handleSendPrompt}
+        className="bg-[#3900b3] text-white p-1 px-2 rounded text-sm hover:bg-[#2d0090]"
+      >
+        <MdOutlineSend size={18} />
+      </button>
+    </div>
+  );
+};
+
 const RichText: React.ForwardRefRenderFunction<any, RichTextProps> = (
-  { content, setContent },
+  { content, setContent, onSendPrompt },
   ref
 ) => {
   const editorRef = useRef<any>(null);
-  const { editor } = useCurrentEditor();
+  const [editor, setEditor] = useState(null);
 
   useImperativeHandle(ref, () => ({
     get editor() {
@@ -245,16 +394,21 @@ const RichText: React.ForwardRefRenderFunction<any, RichTextProps> = (
   }));
 
   return (
-    <div className="rounded-md shadow-md p-4 bg-white">
+    <div className="rounded-md shadow-md p-4 bg-white relative">
       <EditorProvider
         slotBefore={<MenuBar />}
         extensions={extensions}
         content={content}
         onUpdate={({ editor }) => setContent(editor.getHTML())}
-        immediatelyRender={false}
+        onTransaction={({ editor }) => setEditor(editor)}
+        onCreate={({ editor }) => setEditor(editor)}
       >
-        <EditorContent editor={editor} className="tiptap" ref={editorRef} />
+        <EditorContent className="tiptap" ref={editorRef} />
       </EditorProvider>
+      
+      {editor && onSendPrompt && (
+        <CustomBubbleMenu editor={editor} onSendPrompt={onSendPrompt} />
+      )}
     </div>
   );
 };

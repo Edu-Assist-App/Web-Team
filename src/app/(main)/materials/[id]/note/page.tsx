@@ -5,7 +5,7 @@ import { Button } from "@/app/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
 import AIChatBox from "@/app/components/course/AIChatBox";
-import { AiOutlineRobot } from "react-icons/ai";
+import { MdOutlineSmartToy } from "react-icons/md";
 
 // Dynamically import DOMPurify on the client side only
 import dynamic from 'next/dynamic';
@@ -153,6 +153,7 @@ export default function Page() {
             ref={richTextRef}
             content={content}
             setContent={setContent}
+            onSendPrompt={handleAIResponse}
           />
         ) : (
           <div
@@ -184,7 +185,7 @@ export default function Page() {
           className="fixed bottom-1 right-1 w-12 h-12 bg-[#3900b3] text-white rounded-full flex items-center justify-center shadow-lg z-40"
           title="Toggle AI Assistant"
         >
-          <AiOutlineRobot size={24} />
+          <MdOutlineSmartToy size={24} />
         </button>
 
         <AIChatBox
