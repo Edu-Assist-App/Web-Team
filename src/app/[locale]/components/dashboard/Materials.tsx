@@ -17,7 +17,7 @@ export default function Materials() {
   };
 
   return (
-    <div className="container w-[70%] mx-auto p-12 max-w-4xl flex flex-col gap-6">
+    <>
       {/* Header Section */}
       <CtaCard {...cardContent} />
 
@@ -26,6 +26,7 @@ export default function Materials() {
       // title={t("buttons.newModule")} // "New Module" from Sidebar translations
       // Add any other translations needed for the form
       />
-    </div>
+      {/* </div> */}
+    </>
   );
 }

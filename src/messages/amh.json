@@ -65,7 +65,9 @@
     "navItems": {
       "overview": "አጠቃላይ እይታ",
       "studyMaterials": "የጥናት ቁሳቁሶች",
-      "chats": "ውይይቶች"
+      "chats": "ውይይቶች",
+      "settings": "ማስተካከያዎች",
+      "logout": "ውጣ"
     },
     "buttons": {
       "newModule": "አዲስ ሞጁል",
@@ -249,7 +251,8 @@
     "studyMaterials": {
       "recent": "የቅርብ ጊዜ ቁሳቁሶች",
       "saved": "የተቀመጡ ቁሳቁሶች",
-      "viewAll": "ሁሉንም ይመልከቱ"
+      "viewAll": "ሁሉንም ይመልከቱ",
+      "view": "ይመልከቱ"
     },
     "recommended": {
       "basedOnActivity": "በእርስዎ እንቅስቃሴ ላይ የተመሠረተ",
@@ -330,6 +333,82 @@
     "status": {
       "generating": "በመፍጠር ላይ...",
       "completed": "ተጠናቀቀ"
+    }
+  },
+  "Settings": {
+    "title": "ቅንብሮች",
+    "tabs": {
+      "account": "መለያ",
+      "billing": "ክፍያ እና ዕቅድ",
+      "appearance": "መልኩ",
+      "notifications": "ማሳወቂያዎች",
+      "delete": "መለያ ማጥፊያ"
+    },
+    "account": {
+      "title": "የመለያ መረጃ",
+      "profile": {
+        "upload_help": "JPG, GIF ወይም PNG። ከፍተኛ መጠን 5MB",
+        "default_bio": "ውብ ቅርጸ-ቁምፊዎችን ለማመንጨት በፍላጎት የተሞላ የምርት አውታረ አቀማመጥ አዘጋጅ።"
+      },
+      "fields": {
+        "name": {
+          "label": "ስም",
+          "placeholder": "ምሳ.  ጆን"
+        },
+        "email": {
+          "label": "ኢሜይል",
+          "placeholder": "john@example.com"
+        },
+        "bio": {
+          "label": "መግለጫ"
+        }
+      },
+      "save_button": "ለውጦችን አስቀምጥ"
+    },
+    "billing": {
+      "title": "ክፍያ እና ዕቅድ",
+      "current_plan": {
+        "title": "የአሁኑ ዕቅድ",
+        "description": "Pro ዕቅድ - $19/ወር"
+      },
+      "payment_method": {
+        "title": "የመክፈያ ዘዴ",
+        "card": "Visa በ 4242 ላይ የሚያበቃ",
+        "expires": "የሚያበቃው 04/2025",
+        "update_button": "አዘምን"
+      },
+      "upgrade_button": "ዕቅድ አሻሽል"
+    },
+    "appearance": {
+      "title": "መልኩ",
+      "theme": {
+        "title": "ገጽታ",
+        "light": "ብርሃን",
+        "dark": "ጨለማ"
+      }
+    },
+    "notifications": {
+      "title": "ማሳወቂያዎች",
+      "email": {
+        "title": "የኢሜይል ማሳወቂያዎች",
+        "description": "አዳዲስ መረጃዎችን በኢሜይል ይቀበሉ"
+      },
+      "push": {
+        "title": "የእርስዎ መሳሪያ ላይ ማሳወቂያዎች",
+        "description": "አዳዲስ መረጃዎችን በመሳሪያዎ ላይ ይቀበሉ"
+      }
+    },
+    "delete": {
+      "title": "መለያ ማጥፊያ",
+      "warning": {
+        "title": "ማስጠንቀቂያ",
+        "description": "መለያዎን መሰረዝ ማለት መረጃዎትን ሁሉ በቋሚነት መሰረዝ ማለት ነው። ይህ እርምጃ ማድረግ አይቻልም።"
+      },
+      "confirmation": {
+        "label": "ለማረጋገጥ \"DELETE\" ይተይቡ",
+        "placeholder": "DELETE"
+      },
+      "delete_button": "መለያን ሰርዝ"
     }
   }
 }

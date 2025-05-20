@@ -64,7 +64,9 @@
     "navItems": {
       "overview": "Overview",
       "studyMaterials": "Study Materials",
-      "chats": "Chats"
+      "chats": "Chats",
+      "settings": "Settings",
+      "logout": "Logout"
     },
     "buttons": {
       "newModule": "New Module",
@@ -244,7 +246,8 @@
     "studyMaterials": {
       "recent": "Recent Materials",
       "saved": "Saved Materials",
-      "viewAll": "View All"
+      "viewAll": "View All",
+      "view": "View"
     },
     "recommended": {
       "basedOnActivity": "Based on your activity",
@@ -298,6 +301,83 @@
       "refresh": "Refresh",
       "loadMore": "Load More",
       "view": "View"
+    }
+  },
+
+  "Settings": {
+    "title": "Settings",
+    "tabs": {
+      "account": "Account",
+      "billing": "Billing & Plan",
+      "appearance": "Appearance",
+      "notifications": "Notifications",
+      "delete": "Delete Account"
+    },
+    "account": {
+      "title": "Account Information",
+      "profile": {
+        "upload_help": "JPG, GIF or PNG. Max size of 5MB",
+        "default_bio": "Product designer with a passion for creating beautiful interfaces."
+      },
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "John Doe"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "john@example.com"
+        },
+        "bio": {
+          "label": "Bio"
+        }
+      },
+      "save_button": "Save Changes"
+    },
+    "billing": {
+      "title": "Billing & Plan",
+      "current_plan": {
+        "title": "Current Plan",
+        "description": "Pro Plan - $19/month"
+      },
+      "payment_method": {
+        "title": "Payment Method",
+        "card": "Visa ending in 4242",
+        "expires": "Expires 04/2025",
+        "update_button": "Update"
+      },
+      "upgrade_button": "Upgrade Plan"
+    },
+    "appearance": {
+      "title": "Appearance",
+      "theme": {
+        "title": "Theme",
+        "light": "Light",
+        "dark": "Dark"
+      }
+    },
+    "notifications": {
+      "title": "Notifications",
+      "email": {
+        "title": "Email Notifications",
+        "description": "Receive updates via email"
+      },
+      "push": {
+        "title": "Push Notifications",
+        "description": "Receive updates on your device"
+      }
+    },
+    "delete": {
+      "title": "Delete Account",
+      "warning": {
+        "title": "Warning",
+        "description": "Deleting your account will permanently remove all of your data. This action cannot be undone."
+      },
+      "confirmation": {
+        "label": "Type \"DELETE\" to confirm",
+        "placeholder": "DELETE"
+      },
+      "delete_button": "Delete Account"
     }
   }
 }

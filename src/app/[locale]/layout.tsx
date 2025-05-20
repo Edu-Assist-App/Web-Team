@@ -23,7 +23,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body data-new-gr-c-s-check-loaded="14.1235.0" data-gr-ext-installed="">
+      <body
+        data-new-gr-c-s-check-loaded="14.1235.0"
+        data-gr-ext-installed=""
+        // className="bg-[#fbfbff]"
+      >
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

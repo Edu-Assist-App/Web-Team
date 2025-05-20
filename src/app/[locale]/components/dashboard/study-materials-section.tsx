@@ -1,4 +1,6 @@
+"use client";
 import { StudyMaterialCard } from "@/app/[locale]/components/study-material-card";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 const studyMaterials = [
@@ -29,15 +31,16 @@ const studyMaterials = [
 ];
 
 export function StudyMaterialsSection() {
+  const t = useTranslations("Dashboard");
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">Your Study Materials</h2>
+        <h2 className="text-xl font-medium">{t("sections.studyMaterials")}</h2>
         <Link
           href="/study-materials"
-          className="text-sm text-gray-600 hover:underline"
+          className="text-sm text-gray-700 underline hover:text-gray-900"
         >
-          View All
+          {t("studyMaterials.viewAll")}
         </Link>
       </div>
 
