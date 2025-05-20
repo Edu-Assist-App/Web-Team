@@ -45,7 +45,7 @@ export function ResourcePage() {
     progress: 0,
   };
   return (
-    <div className="flex flex-col items-start gap-6 px-4 md:pl-9 md:pr-24 py-9 w-full">
+    <>
       {/* Study Materials header */}
       <CtaCard {...cardContent} />
       <div className="flex items-center justify-between px-3 py-0 w-full">
@@ -80,6 +80,6 @@ export function ResourcePage() {
           {t("buttons.loadMore")}
         </Button>
       </div>
-    </div>
+    </>
   );
 }

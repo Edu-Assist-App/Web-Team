@@ -14,6 +14,10 @@ import {
   ChevronLeft,
   ChevronRight,
   LogOut,
+  GlobeIcon,
+  ChevronDown,
+  Search,
+  Check,
 } from "lucide-react";
 import { Button } from "@/app/[locale]/components/ui/button";
 
@@ -33,11 +37,20 @@ export const Sidebar = memo(function Sidebar({
   isOpen,
   onClose,
 }: SidebarProps) {
-  const pathname = usePathname();
-  const router = useRouter();
   const locale = useLocale();
   const t = useTranslations("Sidebar");
+  const s = useTranslations("Header");
   const [collapsed, setCollapsed] = useState(false);
+  const [languageSearchTerm, setLanguageSearchTerm] = useState("");
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const currentLocale = useLocale();
+
+  // Remove locale prefix from current path for language switching
+  const pathWithoutLocale = pathname.startsWith(`/${currentLocale}`)
+    ? pathname.slice(currentLocale.length + 1) || "/"
+    : pathname || "/";
 
   // Memoize the locale path helper
   const withLocale = useCallback(
@@ -45,6 +58,37 @@ export const Sidebar = memo(function Sidebar({
       path.startsWith(`/${locale}`) ? path : `/${locale}${path}`,
     [locale]
   );
+  const languages = [
+    {
+      code: "amh",
+      name: s("language.amharic"),
+      shortName: s("language.amharicShort"),
+    },
+    {
+      code: "en",
+      name: s("language.english"),
+      shortName: s("language.englishShort"),
+    },
+  ];
+  const filteredLanguages = languages.filter(
+    (lang) =>
+      lang.name.toLowerCase().includes(languageSearchTerm.toLowerCase()) ||
+      lang.shortName.toLowerCase().includes(languageSearchTerm.toLowerCase())
+  );
+
+  const handleLanguageChange = (newLocale: string) => {
+    const url = new URL(window.location.href);
+    const searchParams = url.search;
+    const hash = url.hash;
+
+    const newPath = `/${newLocale}${
+      pathWithoutLocale === "/" ? "" : pathWithoutLocale
+    }`;
+
+    router.push(newPath + searchParams + hash);
+  };
+
+  const currentLanguage = languages.find((lang) => lang.code === currentLocale);
 
   // Memoize the collapse toggle
   const toggleCollapse = useCallback(() => {
@@ -127,14 +171,14 @@ export const Sidebar = memo(function Sidebar({
       )}
 
       <aside
-        className={`fixed lg:sticky top-0 hidden lg:flex flex-col h-screen items-start gap-8 p-8 ${
+        className={`absolute z-[52] lg:sticky top-0 lg:flex flex-col h-screen items-start gap-8 p-8 ${
           collapsed ? "px-4" : "px-8"
         } bg-white border-r border-gray-100 z-50 transition-all duration-200 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0`}
         style={{ width: collapsed ? "80px" : "300px" }}
       >
-        <MobileCloseButton onClose={onClose} t={t} />
+        {/* <MobileCloseButton onClose={onClose} t={t} /> */}
 
         <LogoSection
           collapsed={collapsed}
@@ -170,7 +214,7 @@ export const Sidebar = memo(function Sidebar({
 });
 
 // Extracted NavItem component for better memoization
-const NavItemComponent = memo(function NavItemComponent({
+export const NavItemComponent = memo(function NavItemComponent({
   item,
   isActive,
   collapsed,

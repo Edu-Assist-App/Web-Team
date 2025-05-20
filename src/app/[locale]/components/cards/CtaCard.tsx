@@ -23,10 +23,10 @@ export default function CtaCard({
   progress = 0,
 }: CtaCardProps) {
   return (
-    <Card className="relative overflow-hidden flex flex-col md:flex-row items-center gap-8 p-4 md:p-8 w-full bg-[#f9f9f9] rounded-2xl border border-[#ececec] shadow-sm">
-      {/* Subtle animated floating circle accents */}
+    <div className="relative overflow-hidden flex flex-col md:flex-row items-center gap-8 p-4 md:p-8 w-full bg-gradient-to-l from-[#5103ab] to-[#360271] rounded-2xl  shadow-sm">
+      {/* Subtle animated floating circle accents
       <div className="absolute top-[-30px] left-[-30px] w-28 h-28 rounded-full bg-[#3800b3]/10 blur-3xl animate-float" />
-      <div className="absolute bottom-[-40px] right-[-40px] w-36 h-36 rounded-full bg-[#3800b3]/15 blur-4xl animate-float delay-2000" />
+      <div className="absolute bottom-[-40px] right-[-40px] w-36 h-36 rounded-full bg-[#3800b3]/15 blur-4xl " /> */}
 
       {/* Icon container */}
       <div className="flex items-center justify-center gap-2 px-6 py-[22px] bg-white rounded-[99px] shadow z-10">
@@ -40,11 +40,11 @@ export default function CtaCard({
       </div>
 
       {/* Text Content */}
-      <CardContent className="flex flex-col items-start gap-2 p-0 flex-1 text-center md:text-left z-10">
-        <h2 className="font-['Ubuntu',Helvetica] font-medium text-[#090218] text-2xl md:text-[28px]">
+      <div className="flex flex-col items-start gap-2 p-0 flex-1 text-center md:text-left z-10">
+        <h2 className="font-['Ubuntu',Helvetica] font-medium text-[#ffffff] text-2xl md:text-[28px]">
           {title}
         </h2>
-        <p className="font-['Poppins',Helvetica] font-normal text-[#090218] text-sm">
+        <p className="font-['Poppins',Helvetica] font-normal text-[#ffffff] text-sm">
           {description}
         </p>
 
@@ -81,7 +81,7 @@ export default function CtaCard({
             </div>
           </>
         )}
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }

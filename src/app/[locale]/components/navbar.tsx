@@ -10,13 +10,13 @@ import {
   HomeIcon,
   BookOpenIcon,
   MessageSquareIcon,
-  PlusIcon,
   SettingsIcon,
+  LogOut,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Button } from "./ui/button";
 import {
   DropdownMenu,
@@ -28,6 +28,7 @@ import {
 import { Input } from "./ui/input";
 
 export const Navbar = (): JSX.Element => {
+  const locale = useLocale();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [languageSearchTerm, setLanguageSearchTerm] = useState("");
   const router = useRouter();
@@ -65,12 +66,41 @@ export const Navbar = (): JSX.Element => {
   };
 
   const pageTitle = getPageTitle();
+  const onMenuClick = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
   const navItems = [
-    { name: t("navigation.home"), href: "#hero" },
-    { name: t("navigation.features"), href: "#features" },
-    { name: t("navigation.howItWorks"), href: "#how-it-works" },
-    { name: t("navigation.testimonials"), href: "#testimonials" },
+    {
+      name: tSidebar("navItems.overview"),
+      icon: <HomeIcon className="w-4 h-4" />,
+      path: "/dashboard",
+      matchPattern: "/dashboard",
+    },
+    {
+      name: tSidebar("navItems.studyMaterials"),
+      icon: <BookOpenIcon className="w-4 h-4" />,
+      path: "/resource",
+      matchPattern: "/resource",
+    },
+    {
+      name: tSidebar("navItems.chats"),
+      icon: <MessageSquareIcon className="w-4 h-4" />,
+      path: "/chats",
+      matchPattern: "/chats",
+    },
+    {
+      name: tSidebar("navItems.settings"),
+      icon: <SettingsIcon className="w-4 h-4" />,
+      path: "/settings",
+      matchPattern: "/settings",
+    },
+    {
+      name: tSidebar("navItems.logout"),
+      icon: <LogOut className="w-4 h-4" />,
+      path: "/logout",
+      matchPattern: "/logout",
+    },
   ];
 
   const languages = [
@@ -79,26 +109,11 @@ export const Navbar = (): JSX.Element => {
       name: t("language.amharic"),
       shortName: t("language.amharicShort"),
     },
-    // {
-    //   code: "tig",
-    //   name: t("language.Tigrinya"),
-    //   shortName: t("language.TigrinyaShort"),
-    // },
-    // {
-    //   code: "afan",
-    //   name: t("language.oromiffa"),
-    //   shortName: t("language.oromiffaShort"),
-    // },
     {
       code: "en",
       name: t("language.english"),
       shortName: t("language.englishShort"),
     },
-    // {
-    //   code: "fr",
-    //   name: t("language.french"),
-    //   shortName: t("language.frenchShort"),
-    // },
   ];
 
   const filteredLanguages = languages.filter(
@@ -122,42 +137,25 @@ export const Navbar = (): JSX.Element => {
 
   const currentLanguage = languages.find((lang) => lang.code === currentLocale);
 
-  const sidebarNavItems = [
-    {
-      name: tSidebar("navItems.overview"),
-      icon: <HomeIcon className="w-4 h-4" />,
-      path: "/dashboard",
+  // Optimized active path check
+  const isActive = useCallback(
+    (matchPattern: string) => {
+      const pathWithoutLocale = pathname.replace(new RegExp(`^/${locale}`), "");
+      return pathWithoutLocale.startsWith(matchPattern);
     },
-    {
-      name: tSidebar("navItems.studyMaterials"),
-      icon: <BookOpenIcon className="w-4 h-4" />,
-      path: "/resource",
-    },
-    {
-      name: tSidebar("navItems.chats"),
-      icon: <MessageSquareIcon className="w-4 h-4" />,
-      path: "/chats",
-    },
-  ];
+    [pathname, locale]
+  );
 
   const withLocale = (path: string) =>
     path.startsWith(`/${currentLocale}`) ? path : `/${currentLocale}${path}`;
 
   return (
     <>
-      {/* Mobile Overlay */}
-      {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-          onClick={() => setIsMenuOpen(false)}
-        />
-      )}
-
       {/* Navbar */}
       <div className="flex flex-col w-full bg-white border border-solid border-[#f9f9f9] sticky top-0 z-50">
-        <header className="flex items-center justify-between px-8 lg:px-12 lg:pr-[8%] py-6 w-full">
-          {/* Logo - Only shown on mobile */}
-          <div className="lg:hidden flex items-center">
+        <header className="flex items-center justify-between px-4 lg:px-12 lg:pr-[8%] py-4 lg:py-6 w-full">
+          {/* Mobile Logo and Navigation */}
+          <div className="lg:hidden flex items-center gap-4">
             <div className="flex items-center gap-2 p-3 bg-[#1b19e514] rounded-[48px]">
               <img className="w-6 h-6" alt={t("logoAlt")} src="/logo.svg" />
             </div>
@@ -171,7 +169,7 @@ export const Navbar = (): JSX.Element => {
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={onMenuClick}
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
@@ -185,8 +183,8 @@ export const Navbar = (): JSX.Element => {
           <div className="hidden lg:flex items-center gap-4">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg border-[0.5px] border-solid border-[#00000014] cursor-pointer hover:bg-gray-50">
-                  <div className="flex items-center justify-center p-1 bg-[#155ddc1a] rounded-lg border border-solid border-[#00000003]">
+                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-[99px] border-[0.5px] border-solid border-[#1c19e51f] cursor-pointer hover:bg-gray-50">
+                  <div className="flex items-center justify-center p-1 bg-[#bf99f839] text-[#3900B3]  rounded-full border border-solid border-[#00000003]">
                     <GlobeIcon className="w-4 h-4" />
                   </div>
                   <span className="font-['Ubuntu',Helvetica] font-normal text-black text-sm">
@@ -247,155 +245,63 @@ export const Navbar = (): JSX.Element => {
           </div>
         </header>
 
-        {/* Mobile Sidebar */}
-        <div
-          className={`fixed top-0 left-0 h-full w-[300px] bg-white z-50 shadow-xl transform transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? "translate-x-0" : "-translate-x-full"
-          } lg:hidden flex flex-col items-start gap-8 p-8`}
-        >
-          {/* Mobile Sidebar Header */}
-          <div className="flex justify-between items-center w-full">
-            <div className="flex items-center justify-center gap-3">
-              <div className="flex items-center gap-2 p-3 bg-[#1b19e514] rounded-[48px] shadow-[0px_1.25px_31.25px_#1b19e51a]">
-                <img
-                  className="w-6 h-6"
-                  alt={tSidebar("logoAlt")}
-                  src="/logo.svg"
-                />
-              </div>
-              <h1 className="font-medium text-[#040303] text-[28px] font-['Ubuntu',Helvetica] whitespace-nowrap">
-                {tSidebar("brandName")}
-              </h1>
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-between w-full overflow-y-auto pr-2">
-            {/* Mobile Navigation */}
-            <nav className="flex flex-col items-start justify-center gap-2 p-0.5 w-full rounded">
-              <Button
-                onClick={() => router.push(withLocale("/materials"))}
-                className="w-full bg-[#3800b3] rounded-[999px] text-white font-['Poppins',Helvetica] font-normal text-sm"
+        {/* Mobile Menu - Expanded when hamburger menu is clicked */}
+        {isMenuOpen && (
+          <div className="lg:hidden flex flex-col items-start gap-2 px-4 py-4 bg-white border-t border-solid border-[#f9f9f9]">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                href={withLocale(item.path)}
+                className={`flex items-center gap-3 w-full p-2 ${
+                  isActive(item.matchPattern) ? "bg-gray-100" : ""
+                }`}
+                onClick={() => setIsMenuOpen(false)}
               >
-                <div className="p-1 bg-[#ffffff33] rounded-[99px]">
-                  <PlusIcon className="w-4 h-4" />
-                </div>
-                {tSidebar("buttons.newModule")}
-              </Button>
-
-              <div className="text-[#00000099] text-sm font-['Poppins',Helvetica] font-normal mt-4">
-                {tSidebar("quickNav")}
-              </div>
-
-              <div className="gap-0.5 flex flex-col items-start w-full">
-                {sidebarNavItems.map((item, index) => {
-                  const isActive = pathname === item.path;
-                  return (
-                    <Link
-                      className="w-full"
-                      key={index}
-                      href={withLocale(item.path)}
-                      passHref
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      <Button
-                        variant="ghost"
-                        className={`flex items-center gap-2 p-3 w-full justify-start ${
-                          isActive
-                            ? "bg-[#f9f9f9] rounded-[99px]"
-                            : "rounded-xl"
-                        }`}
-                      >
-                        <div
-                          className={`flex items-center justify-center p-${
-                            isActive ? "2" : "1"
-                          } rounded-[28px] border border-solid border-[#00000003] ${
-                            isActive ? "bg-[#1a18e41a]" : "bg-[#0000000d]"
-                          }`}
-                        >
-                          {item.icon}
-                        </div>
-                        <span
-                          className={`font-['Poppins',Helvetica] font-normal text-base ${
-                            isActive ? "text-black" : "text-[#00000099]"
-                          }`}
-                        >
-                          {item.name}
-                        </span>
-                      </Button>
-                    </Link>
-                  );
-                })}
-              </div>
-            </nav>
-            {/* Mobile Language Selector */}
-            <div className="mt-4 w-full">
-              <h3 className="font-medium text-sm text-gray-500 mb-2">
-                {t("mobileMenu.languageLabel")}
-              </h3>
-              <div className="relative mb-3">
-                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input
-                  placeholder={t("language.searchPlaceholder")}
-                  className="pl-8"
-                  value={languageSearchTerm}
-                  onChange={(e) => setLanguageSearchTerm(e.target.value)}
-                />
-              </div>
-              <div className="flex flex-col gap-1 max-h-40 overflow-y-auto">
-                {filteredLanguages.map((language) => (
-                  <button
-                    key={language.code}
-                    onClick={() => handleLanguageChange(language.code)}
-                    className={`flex items-center justify-between px-4 py-2 rounded-lg ${
-                      language.code === currentLocale
-                        ? "bg-[#f0f0f0]"
-                        : "hover:bg-gray-50"
-                    }`}
-                  >
-                    <span>{language.name}</span>
-                    {language.code === currentLocale && (
-                      <Check className="h-4 w-4 text-primary" />
-                    )}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Mobile Bottom Section */}
-            <div className="flex flex-col items-start justify-end gap-2 p-0.5 mt-auto w-full rounded">
-              <div className="bg-[#00000005] rounded-xl flex flex-col items-start w-full">
-                <Button
-                  variant="ghost"
-                  className="flex items-center gap-2 p-3 w-full justify-start rounded-xl"
-                >
-                  <div className="flex items-center justify-center p-1 bg-[#0000000d] rounded-[28px] border border-solid border-[#00000003]">
-                    <SettingsIcon className="w-4 h-4" />
+                {item.icon}
+                <span>{item.name}</span>
+              </Link>
+            ))}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="w-full justify-start gap-3">
+                  <div className="flex items-center justify-center p-1 bg-[#155ddc1a] rounded-lg">
+                    <GlobeIcon className="w-4 h-4" />
                   </div>
-                  <span className="font-['Poppins',Helvetica] font-normal text-black text-base">
-                    {tSidebar("buttons.settings")}
-                  </span>
+                  <span>{currentLanguage?.shortName}</span>
+                  <ChevronDown className="ml-auto h-4 w-4 opacity-50" />
                 </Button>
-
-                <Link
-                  href={withLocale("/")}
-                  className="flex items-center gap-2 p-3 w-full justify-start rounded-xl"
-                >
-                  <div className="flex items-center justify-center p-1 bg-[#0000000d] rounded-[28px] border border-solid border-[#00000003]">
-                    <div className="relative w-4 h-4">
-                      <img
-                        className="absolute w-[13px] h-3 top-0.5 left-px"
-                        alt={tSidebar("buttons.logout")}
-                        src="/logout.svg"
-                      />
-                    </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-[calc(100vw-32px)]">
+                <div className="px-2 py-1">
+                  <div className="relative">
+                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                    <Input
+                      placeholder={t("language.searchPlaceholder")}
+                      className="pl-8"
+                      value={languageSearchTerm}
+                      onChange={(e) => setLanguageSearchTerm(e.target.value)}
+                    />
                   </div>
-                  <span className="font-['Poppins',Helvetica] font-normal text-black text-base">
-                    {tSidebar("buttons.logout")}
-                  </span>
-                </Link>
-              </div>
-            </div>
+                </div>
+                <DropdownMenuSeparator />
+                <div className="max-h-60 overflow-y-auto">
+                  {filteredLanguages.map((language) => (
+                    <DropdownMenuItem
+                      key={language.code}
+                      onClick={() => handleLanguageChange(language.code)}
+                      className="cursor-pointer flex justify-between"
+                    >
+                      <span>{language.name}</span>
+                      {language.code === currentLocale && (
+                        <Check className="h-4 w-4 text-primary" />
+                      )}
+                    </DropdownMenuItem>
+                  ))}
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
-        </div>
+        )}
       </div>
     </>
   );

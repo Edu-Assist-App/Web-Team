@@ -1,43 +1,46 @@
 "use client";
 import { useState, useRef, ChangeEvent } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const SettingsPage = () => {
-  const [activeTab, setActiveTab] = useState("account");
+  const [activeTab, setActiveTab] = useState(0);
+  const t = useTranslations("Settings");
+  const tabs = [
+    t("tabs.account"),
+    t("tabs.billing"),
+    t("tabs.appearance"),
+    t("tabs.notifications"),
+    t("tabs.delete"),
+  ];
+  const tabContent = [
+    <AccountTab />,
+    <BillingTab />,
+    <AppearanceTab />,
+    <NotificationsTab />,
+    <DeleteAccountTab />,
+  ];
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="space-y-6">
-        <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
+        <h1 className="text-3xl font-bold text-gray-900">{t("title")}</h1>
 
         {/* Tabs */}
         <div className="border-b border-gray-200">
           <nav className="-mb-px flex space-x-8">
-            {[
-              "account",
-              "billing",
-              "appearance",
-              "notifications",
-              "delete",
-            ].map((tab) => {
-              const tabName = tab.charAt(0).toUpperCase() + tab.slice(1);
+            {tabs.map((tab, key) => {
               return (
                 <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
+                  key={key}
+                  onClick={() => setActiveTab(key)}
                   className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${
-                    activeTab === tab
+                    activeTab === key
                       ? "border-[#3800b3] text-[#3800b3]"
                       : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
                   }`}
                 >
-                  {tab === "billing"
-                    ? "Billing & Plan"
-                    : tab === "appearance"
-                    ? "Appearance"
-                    : tab === "delete"
-                    ? "Delete Account"
-                    : tabName}
+                  {tab}
                 </button>
               );
             })}
@@ -46,11 +49,7 @@ const SettingsPage = () => {
 
         {/* Tab Content */}
         <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-          {activeTab === "account" && <AccountTab />}
-          {activeTab === "billing" && <BillingTab />}
-          {activeTab === "appearance" && <AppearanceTab />}
-          {activeTab === "notifications" && <NotificationsTab />}
-          {activeTab === "delete" && <DeleteAccountTab />}
+          {tabContent[activeTab]}
         </div>
       </div>
     </div>
@@ -59,11 +58,10 @@ const SettingsPage = () => {
 
 // Account Tab Component
 const AccountTab = () => {
-  const [name, setName] = useState("John Doe");
-  const [email, setEmail] = useState("john@example.com");
-  const [bio, setBio] = useState(
-    "Product designer with a passion for creating beautiful interfaces."
-  );
+  const t = useTranslations("Settings");
+  const [name, setName] = useState(t("account.fields.name.placeholder"));
+  const [email, setEmail] = useState(t("account.fields.email.placeholder"));
+  const [bio, setBio] = useState(t("account.profile.default_bio"));
   const [profilePic, setProfilePic] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -85,7 +83,7 @@ const AccountTab = () => {
   return (
     <div className="space-y-6">
       <h2 className="text-xl font-semibold text-gray-900">
-        Account Information
+        {t("account.title")}
       </h2>
 
       {/* Profile Picture Upload */}
@@ -144,7 +142,7 @@ const AccountTab = () => {
         </div>
         <div>
           <p className="text-sm text-gray-500">
-            JPG, GIF or PNG. Max size of 5MB
+            {t("account.profile.upload_help")}
           </p>
         </div>
       </div>
@@ -155,7 +153,7 @@ const AccountTab = () => {
             htmlFor="name"
             className="block text-sm font-medium text-gray-700"
           >
-            Name
+            {t("account.fields.name.label")}
           </label>
           <input
             type="text"
@@ -170,7 +168,7 @@ const AccountTab = () => {
             htmlFor="email"
             className="block text-sm font-medium text-gray-700"
           >
-            Email
+            {t("account.fields.email.label")}
           </label>
           <input
             type="email"
@@ -185,7 +183,7 @@ const AccountTab = () => {
             htmlFor="bio"
             className="block text-sm font-medium text-gray-700"
           >
-            Bio
+            {t("account.fields.bio.label")}
           </label>
           <textarea
             id="bio"
@@ -198,7 +196,7 @@ const AccountTab = () => {
       </div>
       <div className="flex justify-end">
         <button className="px-4 py-2 bg-[#3800b3] text-white rounded-md hover:bg-[#2d0091] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3800b3]">
-          Save Changes
+          {t("account.save_button")}
         </button>
       </div>
     </div>
@@ -206,53 +204,72 @@ const AccountTab = () => {
 };
 
 // Billing Tab Component
-const BillingTab = () => (
-  <div className="space-y-6">
-    <h2 className="text-xl font-semibold text-gray-900">Billing & Plan</h2>
-    <div className="bg-gray-50 p-4 rounded-md">
-      <h3 className="font-medium text-gray-900">Current Plan</h3>
-      <p className="text-gray-600 mt-1">Pro Plan - $19/month</p>
-    </div>
-    <div className="space-y-4">
-      <h3 className="font-medium text-gray-900">Payment Method</h3>
-      <div className="flex items-center justify-between p-4 border rounded-md">
-        <div className="flex items-center">
-          <div className="bg-gray-100 p-2 rounded-md mr-3">
-            <svg
-              className="h-6 w-6 text-gray-500"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm0 14c2.209 0 4-1.791 4-4s-1.791-4-4-4-4 1.791-4 4 1.791 4 4 4z" />
-            </svg>
+const BillingTab = () => {
+  const t = useTranslations("Settings");
+
+  return (
+    <div className="space-y-6">
+      <h2 className="text-xl font-semibold text-gray-900">
+        {t("billing.title")}
+      </h2>
+      <div className="bg-gray-50 p-4 rounded-md">
+        <h3 className="font-medium text-gray-900">
+          {t("billing.current_plan.title")}
+        </h3>
+        <p className="text-gray-600 mt-1">
+          {t("billing.current_plan.description")}
+        </p>
+      </div>
+      <div className="space-y-4">
+        <h3 className="font-medium text-gray-900">
+          {t("billing.payment_method.title")}
+        </h3>
+        <div className="flex items-center justify-between p-4 border rounded-md">
+          <div className="flex items-center">
+            <div className="bg-gray-100 p-2 rounded-md mr-3">
+              <svg
+                className="h-6 w-6 text-gray-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm0 14c2.209 0 4-1.791 4-4s-1.791-4-4-4-4 1.791-4 4 1.791 4 4 4z" />
+              </svg>
+            </div>
+            <div>
+              <p className="font-medium">{t("billing.payment_method.card")}</p>
+              <p className="text-sm text-gray-500">
+                {t("billing.payment_method.expires")}
+              </p>
+            </div>
           </div>
-          <div>
-            <p className="font-medium">Visa ending in 4242</p>
-            <p className="text-sm text-gray-500">Expires 04/2025</p>
-          </div>
+          <button className="text-sm font-medium text-[#3800b3] hover:text-[#2d0091]">
+            {t("billing.payment_method.update_button")}
+          </button>
         </div>
-        <button className="text-sm font-medium text-[#3800b3] hover:text-[#2d0091]">
-          Update
+      </div>
+      <div className="pt-4 border-t">
+        <button className="px-4 py-2 bg-[#3800b3] text-white rounded-md hover:bg-[#2d0091] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3800b3]">
+          {t("billing.upgrade_button")}
         </button>
       </div>
     </div>
-    <div className="pt-4 border-t">
-      <button className="px-4 py-2 bg-[#3800b3] text-white rounded-md hover:bg-[#2d0091] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3800b3]">
-        Upgrade Plan
-      </button>
-    </div>
-  </div>
-);
+  );
+};
 
 // Appearance Tab Component
 const AppearanceTab = () => {
+  const t = useTranslations("Settings");
   const [theme, setTheme] = useState("light");
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-semibold text-gray-900">Appearance</h2>
+      <h2 className="text-xl font-semibold text-gray-900">
+        {t("appearance.title")}
+      </h2>
       <div className="space-y-4">
-        <h3 className="font-medium text-gray-900">Theme</h3>
+        <h3 className="font-medium text-gray-900">
+          {t("appearance.theme.title")}
+        </h3>
         <div className="flex space-x-4">
           <button
             onClick={() => setTheme("light")}
@@ -264,7 +281,9 @@ const AppearanceTab = () => {
           >
             <div className="flex flex-col items-center">
               <div className="w-full h-24 bg-white border border-gray-200 rounded mb-2"></div>
-              <span className="text-sm font-medium">Light</span>
+              <span className="text-sm font-medium">
+                {t("appearance.theme.light")}
+              </span>
             </div>
           </button>
           <button
@@ -277,7 +296,9 @@ const AppearanceTab = () => {
           >
             <div className="flex flex-col items-center">
               <div className="w-full h-24 bg-gray-800 border border-gray-700 rounded mb-2"></div>
-              <span className="text-sm font-medium">Dark</span>
+              <span className="text-sm font-medium">
+                {t("appearance.theme.dark")}
+              </span>
             </div>
           </button>
         </div>
@@ -288,17 +309,24 @@ const AppearanceTab = () => {
 
 // Notifications Tab Component
 const NotificationsTab = () => {
+  const t = useTranslations("Settings");
   const [emailNotifications, setEmailNotifications] = useState(true);
   const [pushNotifications, setPushNotifications] = useState(false);
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-semibold text-gray-900">Notifications</h2>
+      <h2 className="text-xl font-semibold text-gray-900">
+        {t("notifications.title")}
+      </h2>
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="font-medium text-gray-900">Email Notifications</h3>
-            <p className="text-sm text-gray-500">Receive updates via email</p>
+            <h3 className="font-medium text-gray-900">
+              {t("notifications.email.title")}
+            </h3>
+            <p className="text-sm text-gray-500">
+              {t("notifications.email.description")}
+            </p>
           </div>
           <button
             onClick={() => setEmailNotifications(!emailNotifications)}
@@ -315,9 +343,11 @@ const NotificationsTab = () => {
         </div>
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="font-medium text-gray-900">Push Notifications</h3>
+            <h3 className="font-medium text-gray-900">
+              {t("notifications.push.title")}
+            </h3>
             <p className="text-sm text-gray-500">
-              Receive updates on your device
+              {t("notifications.push.description")}
             </p>
           </div>
           <button
@@ -339,36 +369,41 @@ const NotificationsTab = () => {
 };
 
 // Delete Account Tab Component
-const DeleteAccountTab = () => (
-  <div className="space-y-6">
-    <h2 className="text-xl font-semibold text-gray-900">Delete Account</h2>
-    <div className="bg-red-50 p-4 rounded-md">
-      <h3 className="font-medium text-red-800">Warning</h3>
-      <p className="text-red-700 mt-1">
-        Deleting your account will permanently remove all of your data. This
-        action cannot be undone.
-      </p>
+const DeleteAccountTab = () => {
+  const t = useTranslations("Settings");
+
+  return (
+    <div className="space-y-6">
+      <h2 className="text-xl font-semibold text-gray-900">
+        {t("delete.title")}
+      </h2>
+      <div className="bg-red-50 p-4 rounded-md">
+        <h3 className="font-medium text-red-800">
+          {t("delete.warning.title")}
+        </h3>
+        <p className="text-red-700 mt-1">{t("delete.warning.description")}</p>
+      </div>
+      <div>
+        <label
+          htmlFor="confirm"
+          className="block text-sm font-medium text-gray-700"
+        >
+          {t("delete.confirmation.label")}
+        </label>
+        <input
+          type="text"
+          id="confirm"
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#3800b3] focus:ring-[#3800b3] sm:text-sm p-2 border"
+          placeholder={t("delete.confirmation.placeholder")}
+        />
+      </div>
+      <div className="flex justify-end">
+        <button className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+          {t("delete.delete_button")}
+        </button>
+      </div>
     </div>
-    <div>
-      <label
-        htmlFor="confirm"
-        className="block text-sm font-medium text-gray-700"
-      >
-        Type "DELETE" to confirm
-      </label>
-      <input
-        type="text"
-        id="confirm"
-        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#3800b3] focus:ring-[#3800b3] sm:text-sm p-2 border"
-        placeholder="DELETE"
-      />
-    </div>
-    <div className="flex justify-end">
-      <button className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-        Delete Account
-      </button>
-    </div>
-  </div>
-);
+  );
+};
 
 export default SettingsPage;
