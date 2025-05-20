@@ -64,7 +64,9 @@
     "navItems": {
       "overview": "Overview",
       "studyMaterials": "Study Materials",
-      "chats": "Chats"
+      "chats": "Chats",
+      "settings": "Settings",
+      "logout": "Logout"
     },
     "buttons": {
       "newModule": "New Module",

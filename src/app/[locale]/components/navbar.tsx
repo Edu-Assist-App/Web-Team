@@ -155,7 +155,7 @@ export const Navbar = (): JSX.Element => {
 
       {/* Navbar */}
       <div className="flex flex-col w-full bg-white border border-solid border-[#f9f9f9] sticky top-0 z-50">
-        <header className="flex items-center justify-between px-4 sm:px-8 lg:px-8 lg:pr-[8%] py-6 w-full">
+        <header className="flex items-center justify-between px-8 lg:px-12 lg:pr-[8%] py-6 w-full">
           {/* Logo - Only shown on mobile */}
           <div className="lg:hidden flex items-center">
             <div className="flex items-center gap-2 p-3 bg-[#1b19e514] rounded-[48px]">

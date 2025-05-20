@@ -22,7 +22,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 lg:py-8 lg:pr-[8%] py-12 space-y-8">
+    <div className="container mx-0 p-12 sm:px-6 lg:p-12 lg:pr-[8%] py-12 space-y-8">
       {/* Hero Section */}
       <CtaCard {...cardContent} />
 
@@ -46,11 +46,11 @@ export default function Dashboard() {
       </div>
 
       {/* {/* Study Materials Section */}
-      {/* <StudyMaterialsSection
-        recentTitle={t("studyMaterials.recent") || ""}
-        savedTitle={t("studyMaterials.saved")}
-        viewAllText={t("studyMaterials.viewAll")}
-      /> */}
+      <StudyMaterialsSection
+      // recentTitle={t("studyMaterials.recent") || ""}
+      // savedTitle={t("studyMaterials.saved")}
+      // viewAllText={t("studyMaterials.viewAll")}
+      />
 
       {/* Search Bar */}
       {/* <SearchBar placeholder={t("search.placeholder")} /> */}
