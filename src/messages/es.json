@@ -1,0 +1,147 @@
+{
+  "Header": {
+    "logoAlt": "Logo de EduAssist",
+    "brandName": "EduAssist",
+    "navigation": {
+      "home": "Inicio",
+      "features": "Características",
+      "howItWorks": "Cómo funciona",
+      "testimonials": "Testimonios"
+    },
+    "buttons": {
+      "login": "Iniciar sesión",
+      "getStarted": "Empezar"
+    },
+    "mobileMenu": {
+      "languageLabel": "Idioma",
+      "close": "Cerrar"
+    }
+  },
+  "HomePage": {
+    "HeroSection": {
+      "topTag": "Comienza tu viaje",
+      "headline": "Desbloquea el aprendizaje personalizado con <span1>Asistencia</span1> <span2>con IA</span2>",
+      "subtitle": "EduAssist ayuda a estudiantes, educadores y profesionales a aprender de manera más inteligente con conocimientos impulsados por IA, soporte multilingüe y herramientas de estudio personalizadas.",
+      "cta1": "Únete gratis",
+      "cta2": "Ver demo en vivo",
+      "cards": {
+        "card1": {
+          "title": "Materiales de aprendizaje generados por IA",
+          "subtext": "Únete a nuestra comunidad"
+        },
+        "card2": {
+          "title": "Gestión inteligente de archivos",
+          "subtext": "De principiante a avanzado"
+        },
+        "card3": {
+          "title": "Rutas de aprendizaje personalizadas",
+          "subtext": "Aprende de líderes industriales"
+        },
+        "card4": {
+          "title": "Seguimiento de progreso en tiempo real",
+          "subtext": "Estudia a tu propio ritmo"
+        }
+      }
+    },
+    "FeaturesSection": {
+      "title": "Tu compañero de estudio más inteligente",
+      "features": {
+        "aiChatbot": {
+          "title": "Asistente de chatbot con IA",
+          "description": "Obtén respuestas y explicaciones instantáneas."
+        },
+        "fileManagement": {
+          "title": "Gestión inteligente de archivos",
+          "description": "Sube, organiza y anota recursos."
+        },
+        "aiMaterials": {
+          "title": "Materiales generados por IA",
+          "description": "Resúmenes, flashcards y cuestionarios."
+        },
+        "learningPaths": {
+          "title": "Rutas de aprendizaje personalizadas",
+          "description": "Planes de estudio adaptados a tu progreso."
+        },
+        "progressTracking": {
+          "title": "Seguimiento de progreso",
+          "description": "Controla tu aprendizaje en un solo lugar."
+        }
+      }
+    },
+    "StepsSection": {
+      "title": "Aprendizaje simplificado - ¡Solo 3 pasos!",
+      "demoButton": {
+        "text": "Ver demo en vivo"
+      },
+      "joinButton": {
+        "text": "Únete ahora →"
+      },
+      "steps": {
+        "step1": {
+          "title": "Sube tus materiales de estudio",
+          "content": "PDFs, videos y enlaces."
+        },
+        "step2": {
+          "title": "Chatea con IA para ayuda instantánea",
+          "content": ""
+        },
+        "step3": {
+          "title": "Aprende y sigue tu progreso",
+          "content": ""
+        }
+      }
+    },
+    "TestimonialsSection": {
+      "title": "Lo que dicen nuestros usuarios",
+      "testimonials": [
+        {
+          "id": 1,
+          "name": "María S.",
+          "text": "\"¡EduAssist transformó mi forma de estudiar! El chatbot de IA hace que los temas complejos sean fáciles de entender.\""
+        }
+      ],
+      "navigation": {
+        "previous": "Anterior",
+        "next": "Siguiente"
+      }
+    },
+    "FAQSection": {
+      "title": "Preguntas frecuentes",
+      "faqItems": [
+        {
+          "question": "¿Cómo me registro?",
+          "answer": "Regístrate con email o Google en 30 segundos."
+        }
+      ]
+    },
+    "Footer": {
+      "companyInfo": {
+        "name": "EduAssist",
+        "tagline": "El aprendizaje inteligente comienza aquí - Personalizado, multilingüe y con IA.",
+        "learnMore": "Saber más →"
+      },
+      "navigation": {
+        "title": "ENLACES",
+        "links": [
+          "Inicio",
+          "Características",
+          "Cómo funciona",
+          "Testimonios",
+          "Contacto"
+        ]
+      },
+      "social": {
+        "title": "SOCIAL",
+        "icons": [
+          { "alt": "Twitter" },
+          { "alt": "Facebook" },
+          { "alt": "Instagram" },
+          { "alt": "LinkedIn" }
+        ]
+      },
+      "copyright": {
+        "text": "©2025, Todos los derechos reservados"
+      }
+    }
+  }
+}

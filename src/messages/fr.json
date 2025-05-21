@@ -1,0 +1,263 @@
+{
+  "Header": {
+    "logoAlt": "Logo EduAssist",
+    "brandName": "EduAssist",
+    "navigation": {
+      "home": "Accueil",
+      "features": "Fonctionnalités",
+      "howItWorks": "Comment ça marche",
+      "testimonials": "Témoignages"
+    },
+    "language": {
+      "amharic": "Amharique",
+      "oromiffa": "Oromo",
+      "Tigrinya": "Tigrigna",
+      "english": "Anglais",
+      "spanish": "Espagnol",
+      "french": "Français",
+      "arabic": "Arabe",
+      "chinese": "Chinois",
+      "hindi": "Hindi",
+      "portuguese": "Portugais",
+      "russian": "Russe",
+      "japanese": "Japonais",
+      "german": "Allemand",
+      "amharicShort": "አማ",
+      "oromiffaShort": "Oro",
+      "TigrinyaShort": "Tig",
+      "englishShort": "ANG",
+      "spanishShort": "ESP",
+      "frenchShort": "FR",
+      "arabicShort": "عرب",
+      "chineseShort": "中文",
+      "hindiShort": "हिं",
+      "portugueseShort": "POR",
+      "russianShort": "РУС",
+      "japaneseShort": "日本語",
+      "germanShort": "ALL",
+      "searchPlaceholder": "Rechercher des langues...",
+      "noResults": "Aucune langue trouvée"
+    },
+    "buttons": {
+      "login": "Connexion",
+      "getStarted": "Commencer"
+    },
+    "mobileMenu": {
+      "languageLabel": "Langue",
+      "close": "Fermer"
+    },
+    "profile": {
+      "myAccount": "Mon compte",
+      "settings": "Paramètres",
+      "signOut": "Déconnexion"
+    },
+    "pages": {
+      "dashboard": "Tableau de bord",
+      "profile": "Profil",
+      "settings": "Paramètres"
+    }
+  },
+  "Sidebar": {
+    "logoAlt": "Logo EduAssist",
+    "brandName": "EduAssist",
+    "quickNav": "Navigation rapide",
+    "navItems": {
+      "overview": "Aperçu",
+      "studyMaterials": "Matériel d'étude",
+      "chats": "Discussions"
+    },
+    "buttons": {
+      "newModule": "Nouveau module",
+      "settings": "Paramètres",
+      "logout": "Déconnexion"
+    },
+    "ariaLabels": {
+      "collapse": "Basculer la barre latérale",
+      "close": "Fermer la barre latérale"
+    }
+  },
+  "HomePage": {
+    "HeroSection": {
+      "topTag": "Commencez votre parcours",
+      "headline": "Débloquez un apprentissage personnalisé avec <span1>une assistance</span1> <span2>propulsée par IA</span2>",
+      "subtitle": "EduAssist aide les étudiants, enseignants et professionnels à apprendre plus intelligemment grâce à des insights pilotés par IA, un support multilingue et des outils d'étude personnalisés.",
+      "cta1": "Rejoignez gratuitement",
+      "cta2": "Voir la démo",
+      "cards": {
+        "card1": {
+          "title": "Matériel d'apprentissage généré par IA",
+          "subtext": "Rejoignez notre communauté grandissante"
+        },
+        "card2": {
+          "title": "Gestion intelligente des fichiers",
+          "subtext": "Du niveau débutant à avancé"
+        },
+        "card3": {
+          "title": "Parcours d'apprentissage personnalisés",
+          "subtext": "Apprenez auprès d'experts du secteur"
+        },
+        "card4": {
+          "title": "Suivi de progression en temps réel",
+          "subtext": "Étudiez à votre rythme"
+        }
+      }
+    },
+
+    "FeaturesSection": {
+      "title": "Votre compagnon d'étude intelligent",
+      "features": {
+        "aiChatbot": {
+          "title": "Assistant par Chatbot IA",
+          "description": "Réponses et explications instantanées."
+        },
+        "fileManagement": {
+          "title": "Gestion intelligente de fichiers",
+          "description": "Importez, organisez et annotez vos ressources."
+        },
+        "aiMaterials": {
+          "title": "Matériel généré par IA",
+          "description": "Résumés, flashcards et quiz automatiques."
+        },
+        "learningPaths": {
+          "title": "Parcours personnalisés",
+          "description": "Plans d'étude adaptés à votre progression."
+        },
+        "progressTracking": {
+          "title": "Suivi en temps réel",
+          "description": "Suivez votre apprentissage au même endroit."
+        }
+      }
+    },
+    "StepsSection": {
+      "title": "Apprentissage simplifié - en seulement 3 étapes !",
+      "demoButton": {
+        "text": "Voir la démo en direct"
+      },
+      "joinButton": {
+        "text": "Rejoindre maintenant →"
+      },
+      "steps": {
+        "step1": {
+          "title": "Importez vos supports d'apprentissage",
+          "content": "PDFs, vidéos et liens."
+        },
+        "step2": {
+          "title": "Discutez avec l'IA pour une aide immédiate",
+          "content": ""
+        },
+        "step3": {
+          "title": "Apprenez et suivez votre progression",
+          "content": ""
+        }
+      }
+    },
+
+    "TestimonialsSection": {
+      "title": "Découvrez ce que disent nos utilisateurs",
+      "testimonials": [
+        {
+          "id": 1,
+          "name": "Sarah M.",
+          "text": "\"EduAssist a révolutionné ma façon d'étudier ! Le chatbot IA rend les sujets complexes faciles à comprendre, et les quiz personnalisés m'aident à mieux retenir les connaissances.\""
+        },
+        {
+          "id": 2,
+          "name": "Pierre D.",
+          "text": "\"Grâce à EduAssist, j'ai pu améliorer mes résultats de 30%. La gestion intelligente des fichiers est un véritable atout pour mon organisation.\""
+        },
+        {
+          "id": 3,
+          "name": "Amélie T.",
+          "text": "\"Les parcours d'apprentissage personnalisés s'adaptent parfaitement à mon rythme. C'est comme avoir un tuteur disponible 24h/24 !\""
+        }
+      ],
+      "navigation": {
+        "previous": "Précédent",
+        "next": "Suivant"
+      }
+    },
+    "FAQSection": {
+      "title": "Questions Fréquentes",
+      "faqItems": [
+        {
+          "question": "Comment m'inscrire ?",
+          "answer": "Inscription par email ou Google en 30 secondes."
+        },
+        {
+          "question": "Comment générer des supports ?",
+          "answer": "L'IA crée automatiquement résumés/flashcards."
+        },
+        {
+          "question": "Puis-je importer des liens YouTube ou fichiers ?",
+          "answer": "Oui, collez des liens ou importez PDFs/PPTX pour analyse."
+        },
+        {
+          "question": "Comment échanger/partager ?",
+          "answer": "Chats groupes et espaces partagés disponibles."
+        }
+      ]
+    },
+    "Footer": {
+      "companyInfo": {
+        "name": "EduAssist",
+        "tagline": "L'apprentissage intelligent commence ici – Personnalisé, Multilingue et Piloté par IA.",
+        "learnMore": "En savoir plus →"
+      },
+      "navigation": {
+        "title": "LIENS",
+        "links": [
+          "Accueil",
+          "Fonctionnalités",
+          "Comment ça marche",
+          "Témoignages",
+          "Contact"
+        ]
+      },
+      "social": {
+        "title": "RÉSEAUX",
+        "icons": [
+          { "alt": "Twitter" },
+          { "alt": "Facebook" },
+          { "alt": "Instagram" },
+          { "alt": "LinkedIn" }
+        ]
+      },
+      "copyright": {
+        "text": "©2025, Tous droits réservés"
+      }
+    }
+  },
+
+  "Dashboard": {
+    "ctaCard": {
+      "title": "Maîtrisez votre progression. Dominez vos objectifs",
+      "description": "Maintenez votre élan ! Continuez votre parcours d'apprentissage en terminant les ressources que vous avez commencées."
+    },
+    "stats": {
+      "resourcesGenerated": "Ressources générées",
+      "quizzesGenerated": "Quiz générés",
+      "flashcardsGenerated": "Cartes mémo générées",
+      "daysActive": "Jours actifs"
+    },
+    "sections": {
+      "activities": "Activités",
+      "studyMaterials": "Matériels d'étude",
+      "recommended": "Recommandé pour vous"
+    },
+    "search": {
+      "placeholder": "Rechercher des ressources, quiz, cartes mémo..."
+    },
+    "buttons": {
+      "loadMore": "Charger plus"
+    },
+    "studyMaterials": {
+      "recent": "Matériels récents",
+      "saved": "Matériels sauvegardés",
+      "viewAll": "Voir tout"
+    },
+    "recommended": {
+      "basedOnActivity": "Basé sur votre activité",
+      "newResources": "Nouvelles ressources qui pourraient vous plaire"
+    }
+  }
+}
