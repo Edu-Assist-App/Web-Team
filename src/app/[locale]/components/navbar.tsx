@@ -110,9 +110,64 @@ export const Navbar = (): JSX.Element => {
       shortName: t("language.amharicShort"),
     },
     {
+      code: "tig",
+      name: t("language.tigrinya"),
+      shortName: t("language.tigrinyaShort"),
+    },
+    {
+      code: "afan",
+      name: t("language.oromiffa"),
+      shortName: t("language.oromiffaShort"),
+    },
+    {
       code: "en",
       name: t("language.english"),
       shortName: t("language.englishShort"),
+    },
+    {
+      code: "es",
+      name: t("language.spanish"),
+      shortName: t("language.spanishShort"),
+    },
+    {
+      code: "fr",
+      name: t("language.french"),
+      shortName: t("language.frenchShort"),
+    },
+    {
+      code: "ar",
+      name: t("language.arabic"),
+      shortName: t("language.arabicShort"),
+    },
+    {
+      code: "zh",
+      name: t("language.chinese"),
+      shortName: t("language.chineseShort"),
+    },
+    {
+      code: "hi",
+      name: t("language.hindi"),
+      shortName: t("language.hindiShort"),
+    },
+    {
+      code: "pt",
+      name: t("language.portuguese"),
+      shortName: t("language.portugueseShort"),
+    },
+    {
+      code: "ru",
+      name: t("language.russian"),
+      shortName: t("language.russianShort"),
+    },
+    {
+      code: "ja",
+      name: t("language.japanese"),
+      shortName: t("language.japaneseShort"),
+    },
+    {
+      code: "de",
+      name: t("language.german"),
+      shortName: t("language.germanShort"),
     },
   ];
 

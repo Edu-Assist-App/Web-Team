@@ -58,6 +58,54 @@
     }
   },
 
+  "LoginPage": {
+    "cardDescription": "መለያዎን ለመግባት የይለፍ ቃልዎን ያስገቡ",
+    "emailLabel": "ኢሜይል",
+    "emailPlaceholder": "ኢሜይልዎን ያስገቡ (ምሳሌ፡ your.email@example.com)",
+    "passwordLabel": "የይለፍ ቃል",
+    "submitButton": {
+      "loading": "በመግባት ላይ...",
+      "default": "ግባ",
+      "googleLoading": "በመግባት ላይ...",
+      "googleDefault": "ግባ በGoogle",
+      "continueWith": "ይቀጥሉ በ"
+    },
+    "footerText": "መለያ የሎትህ?",
+    "createAccountLink": "መለያ ይፍጠሩ",
+    "errorMessages": {
+      "invalidEmail": "ትክክለኛ ኢሜይል ያስገቡ",
+      "passwordLength": "የይለፍ ቃል ቢያንስ 6 ቁምፊ ሊኖረው ይገባል",
+      "loginFailed": "መግባት አልተቻለም። �ስብሳቢዎችዎን ያረጋግጡ።"
+    }
+  },
+  "RegisterPage": {
+    "cardDescription": "መለያ ለመፍጠር መረጃዎን ያስገቡ",
+    "emailLabel": "ኢሜይል",
+    "emailPlaceholder": "ኢሜይልዎን ያስገቡ (ምሳሌ፡ your.email@example.com)",
+    "userNameLabel": "የተጠቃሚ ስም",
+    "userNamePlaceholder": "ምሳሌ፡ johndoe",
+    "fullNameLabel": "ሙሉ ስም",
+    "fullNamePlaceholder": "ምሳሌ፡ ያሬድ መኮንን",
+    "passwordLabel": "የይለፍ ቃል",
+    "passwordPlaceholder": "••••••••",
+    "confirmPasswordLabel": "የይለፍ ቃል ያረጋግጡ",
+    "confirmPasswordPlaceholder": "••••••••",
+    "submitButton": {
+      "loading": "መለያ በመፍጠር ላይ...",
+      "default": "መለያ ይፍጠሩ"
+    },
+    "footerText": "ቀድሞውኑ መለያ አለህ?",
+    "signInLink": "ግባ",
+    "errorMessages": {
+      "invalidEmail": "ትክክለኛ ኢሜይል ያስገቡ",
+      "usernameLength": "የተጠቃሚ ስም ቢያንስ 3 ቁምፊ ሊኖረው ይገባል",
+      "fullNameRequired": "ሙሉ ስም ያስፈልጋል",
+      "passwordLength": "የይለፍ ቃል ቢያንስ 6 ቁምፊ ሊኖረው ይገባል",
+      "passwordsMismatch": "የይለፍ ቃሎች አንድ አይነት አይደሉም",
+      "registrationFailed": "ምዝገባ አልተሳካም። እባክዎ እንደገና ይሞክሩ።"
+    }
+  },
+
   "Sidebar": {
     "logoAlt": "የEduAssist ሎጎ",
     "brandName": "EduAssist",

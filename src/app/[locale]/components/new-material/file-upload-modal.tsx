@@ -66,14 +66,13 @@ export function FileUploadModal({
   };
 
   const formatFileSize = (bytes: number) => {
-    if (bytes < 1024) return bytes + " " + t("fileSize.bytes");
-    else if (bytes < 1048576)
-      return (bytes / 1024).toFixed(1) + " " + t("fileSize.kb");
-    else return (bytes / 1048576).toFixed(1) + " " + t("fileSize.mb");
+    if (bytes < 1024) return bytes + " bytes";
+    else if (bytes < 1048576) return (bytes / 1024).toFixed(1) + " KB";
+    else return (bytes / 1048576).toFixed(1) + " MB";
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-30 p-4">
       <div className="bg-white rounded-lg max-w-lg w-full max-h-[90vh] overflow-auto">
         <div className="p-4 border-b flex justify-between items-center">
           <h3 className="text-lg font-medium flex items-center gap-2">
@@ -124,7 +123,7 @@ export function FileUploadModal({
           {files.length > 0 && (
             <div className="mt-4">
               <h4 className="text-sm font-medium mb-2">
-                {t("selectedFiles", { count: files.length })}
+                selectedFiles, count:{files.length}
               </h4>
               <div className="space-y-2 max-h-60 overflow-y-auto">
                 {files.map((file, index) => (

@@ -17,8 +17,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../../ui/dropdown-menu";
+import { signOut, useSession } from "next-auth/react";
+import { sign } from "crypto";
 
 export const Header = (): JSX.Element => {
+  const { data: session } = useSession();
+  console.log("Session data:", session);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -40,27 +44,66 @@ export const Header = (): JSX.Element => {
       name: t("language.amharic"),
       shortName: t("language.amharicShort"),
     },
-
-    // {
-    //   code: "tig",
-    //   name: t("language.Tigrinya"),
-    //   shortName: t("language.TigrinyaShort"),
-    // },
-    // {
-    //   code: "afan",
-    //   name: t("language.oromiffa"),
-    //   shortName: t("language.oromiffaShort"),
-    // },
+    {
+      code: "tig",
+      name: t("language.tigrinya"),
+      shortName: t("language.tigrinyaShort"),
+    },
+    {
+      code: "afan",
+      name: t("language.oromiffa"),
+      shortName: t("language.oromiffaShort"),
+    },
     {
       code: "en",
       name: t("language.english"),
       shortName: t("language.englishShort"),
     },
-    // {
-    //   code: "fr",
-    //   name: t("language.french"),
-    //   shortName: t("language.frenchShort"),
-    // },
+    {
+      code: "es",
+      name: t("language.spanish"),
+      shortName: t("language.spanishShort"),
+    },
+    {
+      code: "fr",
+      name: t("language.french"),
+      shortName: t("language.frenchShort"),
+    },
+    {
+      code: "ar",
+      name: t("language.arabic"),
+      shortName: t("language.arabicShort"),
+    },
+    {
+      code: "zh",
+      name: t("language.chinese"),
+      shortName: t("language.chineseShort"),
+    },
+    {
+      code: "hi",
+      name: t("language.hindi"),
+      shortName: t("language.hindiShort"),
+    },
+    {
+      code: "pt",
+      name: t("language.portuguese"),
+      shortName: t("language.portugueseShort"),
+    },
+    {
+      code: "ru",
+      name: t("language.russian"),
+      shortName: t("language.russianShort"),
+    },
+    {
+      code: "ja",
+      name: t("language.japanese"),
+      shortName: t("language.japaneseShort"),
+    },
+    {
+      code: "de",
+      name: t("language.german"),
+      shortName: t("language.germanShort"),
+    },
   ];
 
   const handleLanguageChange = (newLocale: string) => {
@@ -139,17 +182,40 @@ export const Header = (): JSX.Element => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+            {!session ? (
+              <>
+                <Button
+                  onClick={() => router.push("auth/login")}
+                  variant="outline"
+                  className="px-6 py-2 font-['Ubuntu',Helvetica] font-normal text-black text-base"
+                >
+                  {t("buttons.login")}
+                </Button>
 
-            <Button
-              variant="outline"
-              className="px-6 py-2 font-['Ubuntu',Helvetica] font-normal text-black text-base"
-            >
-              {t("buttons.login")}
-            </Button>
-
-            <Button className="px-6 py-3 bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm">
-              {t("buttons.getStarted")}
-            </Button>
+                <Button
+                  onClick={() => router.push("/auth/register")}
+                  className="px-6 py-3 bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm"
+                >
+                  {t("buttons.getStarted")}
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  onClick={() => router.push("/dashboard")}
+                  className="px-6 py-3 bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm"
+                >
+                  Go To DashBoard
+                </Button>
+                <Button
+                  onClick={() => signOut()}
+                  variant="outline"
+                  className="px-6 py-2 font-['Ubuntu',Helvetica] font-normal text-black text-base"
+                >
+                  LogOut
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </header>
@@ -193,15 +259,23 @@ export const Header = (): JSX.Element => {
                 ))}
               </div>
             </div>
-            <Button
-              variant="outline"
-              className="w-full font-['Ubuntu',Helvetica] font-normal text-black text-base mb-2"
-            >
-              {t("buttons.login")}
-            </Button>
-            <Button className="w-full bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm">
-              {t("buttons.getStarted")}
-            </Button>
+            {!session ? (
+              <>
+                <Button
+                  variant="outline"
+                  className="w-full font-['Ubuntu',Helvetica] font-normal text-black text-base mb-2"
+                >
+                  {t("buttons.login")}
+                </Button>
+                <Button className="w-full bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm">
+                  {t("buttons.getStarted")}
+                </Button>
+              </>
+            ) : (
+              <Button className="w-full bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm">
+                DashBoard
+              </Button>
+            )}
           </div>
         </div>
       )}

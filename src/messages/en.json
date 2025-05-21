@@ -57,6 +57,56 @@
       "settings": "Settings"
     }
   },
+  "LoginPage": {
+    "cardDescription": "Enter your credentials to access your account",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "passwordLabel": "Password",
+    "submitButton": {
+      "loading": "Signing in...",
+      "default": "Sign in",
+      "googleLoading": "Signing in with Google...",
+      "googleDefault": "Sign in with Google",
+      "continueWith": "Continue with"
+    },
+    "footerText": "Don't have an account?",
+    "createAccountLink": "Create account",
+    "errorMessages": {
+      "invalidEmail": "Please enter a valid email address",
+      "passwordLength": "Password must be at least 6 characters",
+      "loginFailed": "Failed to login. Please check your credentials."
+    }
+  },
+
+  "RegisterPage": {
+    "cardDescription": "Enter your information to create an account",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "userNameLabel": "Username",
+    "userNamePlaceholder": "johndoe",
+    "fullNameLabel": "Full Name",
+    "fullNamePlaceholder": "John Doe",
+    "passwordPlaceholder": "••••••••",
+
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordPlaceholder": "••••••••",
+
+    "submitButton": {
+      "loading": "Creating account...",
+      "default": "Create account"
+    },
+    "footerText": "Already have an account?",
+    "signInLink": "Sign in",
+    "errorMessages": {
+      "invalidEmail": "Please enter a valid email address",
+      "usernameLength": "Username must be at least 3 characters",
+      "fullNameRequired": "Full name is required",
+      "passwordLength": "Password must be at least 6 characters",
+      "passwordsMismatch": "Passwords do not match",
+      "registrationFailed": "Registration failed. Please try again."
+    }
+  },
+
   "Sidebar": {
     "logoAlt": "EduAssist Logo",
     "brandName": "EduAssist",

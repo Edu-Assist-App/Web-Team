@@ -1,0 +1,433 @@
+{
+  "Header": {
+    "logoAlt": "Logo EduAssist",
+    "brandName": "EduAssist",
+    "navigation": {
+      "home": "Mana",
+      "features": "Qoodannoo",
+      "howItWorks": "Akkaatti Hojjeta",
+      "testimonials": "Yaada Fayyadamtoota"
+    },
+    "language": {
+      "amharic": "Amaaraa",
+      "oromiffa": "Afaan Oromoo",
+      "tigrinya": "Tigree",
+      "english": "Ingiliffa",
+      "spanish": "Ispeenii",
+      "french": "Faransaayii",
+      "arabic": "Arabiffaa",
+      "chinese": "Chaayinaa",
+      "hindi": "Hindii",
+      "portuguese": "Pootugaalii",
+      "russian": "Raashiyaa",
+      "japanese": "Japaanii",
+      "german": "Jarmanii",
+      "amharicShort": "Amh",
+      "oromiffaShort": "Oro",
+      "tigrinyaShort": "Tig",
+      "englishShort": "ENG",
+      "spanishShort": "ESP",
+      "frenchShort": "FR",
+      "arabicShort": "Arab",
+      "chineseShort": "Chaay",
+      "hindiShort": "Hin",
+      "portugueseShort": "POR",
+      "russianShort": "RUS",
+      "japaneseShort": "Jap",
+      "germanShort": "DE",
+      "searchPlaceholder": "Afaan barbaadi...",
+      "noResults": "Afaan hin argamne"
+    },
+    "buttons": {
+      "login": "Seeni",
+      "getStarted": "Jalqabi"
+    },
+    "mobileMenu": {
+      "languageLabel": "Afaan",
+      "close": "Cufi"
+    },
+    "profile": {
+      "myAccount": "Akkaawuntii Koo",
+      "settings": "Sirreeffama",
+      "signOut": "Ba'i"
+    },
+    "pages": {
+      "dashboard": "Daashboorduu",
+      "profile": "Profaayilii",
+      "settings": "Sirreeffama"
+    }
+  },
+  "LoginPage": {
+    "cardDescription": "Akkaawuntii keessan galchuu fi galmaa'uu irratti argamuu keessanii galchaa",
+    "emailLabel": "Imeelii",
+    "emailPlaceholder": "example@email.com",
+    "passwordLabel": "Jecha Iccitii",
+    "submitButton": {
+      "loading": "Galmaa'uu irra jira...",
+      "default": "Galmaa'uu",
+      "googleLoading": "Google waliin galmaa'uu irra jira...",
+      "googleDefault": "Google waliin galmaa'uu",
+      "continueWith": "Itti fufi"
+    },
+    "footerText": "Akkaawuntii hin qabduu?",
+    "createAccountLink": "Akkaawuntii uumuu",
+    "errorMessages": {
+      "invalidEmail": "Imeelii sirrii ta'e galchi",
+      "passwordLength": "Jecha iccitii digirii 6 ol ta'uu qaba",
+      "loginFailed": "Galmaa'uu hin dandeenye. Iccitii keessanii mirkaneeffadhaa."
+    }
+  },
+  "RegisterPage": {
+    "cardDescription": "Akkaawuntii uumuu keessanii oodeffannoo keessanii galchaa",
+    "emailLabel": "Imeelii",
+    "emailPlaceholder": "example@email.com",
+    "userNameLabel": "Maqaa Fayyadamaa",
+    "userNamePlaceholder": "maqaafayyadamaa",
+    "fullNameLabel": "Maqaa Guutuu",
+    "fullNamePlaceholder": "Maqaa Guutuu",
+    "passwordPlaceholder": "••••••••",
+    "confirmPasswordLabel": "Jecha Iccitii Mirkaneessuu",
+    "confirmPasswordPlaceholder": "••••••••",
+    "submitButton": {
+      "loading": "Akkaawuntii uumuu irra jira...",
+      "default": "Akkaawuntii Uumuu"
+    },
+    "footerText": "Akkaawuntii qabduu?",
+    "signInLink": "Seeni",
+    "errorMessages": {
+      "invalidEmail": "Imeelii sirrii ta'e galchi",
+      "usernameLength": "Maqaa fayyadamaa digirii 3 ol ta'uu qaba",
+      "fullNameRequired": "Maqaa guutuu barbaachisaadha",
+      "passwordLength": "Jecha iccitii digirii 6 ol ta'uu qaba",
+      "passwordsMismatch": "Jecha icciitii wal hin qabne",
+      "registrationFailed": "Galmaa'uu hin dandeenye. Irra deebi'aa."
+    }
+  },
+  "Sidebar": {
+    "logoAlt": "Logo EduAssist",
+    "brandName": "EduAssist",
+    "quickNav": "Naannoo Dhiyeessuu",
+    "navItems": {
+      "overview": "Ibsa Guutuu",
+      "studyMaterials": "Qo'annoowwan Barannoo",
+      "chats": "Haasaa",
+      "settings": "Sirreeffama",
+      "logout": "Ba'i"
+    },
+    "buttons": {
+      "newModule": "Moodiilii Haaraa",
+      "settings": "Sirreeffama",
+      "logout": "Ba'i"
+    },
+    "ariaLabels": {
+      "collapse": "Naannoo dhiyeessuu togglii",
+      "close": "Naannoo dhiyeessuu cufi"
+    }
+  },
+  "HomePage": {
+    "HeroSection": {
+      "topTag": "Imala keessan jalqabi",
+      "headline": "Barannoo Keessanii <span1>AI-Waliin</span1> <span2>Gargaarsa</span2> Ta'een Banaa",
+      "subtitle": "EduAssist barattoota, barsiisotaa, fi hojjettoota barannoo AI-waliin gargaarsa, dubbisa afaanota adda addaa, fi qo'annoowwan barannoo kanneen barattoonni fayyadamu gargaara.",
+      "cta1": "Biyyaa Bilisaan Makamu",
+      "cta2": "Demo Jiraa Ilaali",
+      "cards": {
+        "card1": {
+          "title": "Qo'annoowwan Barannoo AI-Waliin Uumaman",
+          "subtext": "Gareen keenya waliin makamu"
+        },
+        "card2": {
+          "title": "Sirna Fayyadamaa Fayila",
+          "subtext": "Jalqabaa irraa ka'uudhaan gahaa"
+        },
+        "card3": {
+          "title": "Karaa Barannoo Keessanii",
+          "subtext": "Hoggantoota indaastirii irraa baradhaa"
+        },
+        "card4": {
+          "title": "Fuula Duraa Barannoo",
+          "subtext": "Akka keessanitti baradhaa"
+        }
+      }
+    },
+    "FeaturesSection": {
+      "title": "Gargaarsa Barannoo Keessanii",
+      "features": {
+        "aiChatbot": {
+          "title": "Gargaarsa AI Chatbot",
+          "description": "Deebii dhiheessaa fi ibsa argadhaa."
+        },
+        "fileManagement": {
+          "title": "Sirna Fayyadamaa Fayila",
+          "description": "Fayila dhiyeessuu, sirreeffachuu, fi mallattoo gochuu."
+        },
+        "aiMaterials": {
+          "title": "Qo'annoowwan Barannoo AI-Waliin Uumaman",
+          "description": "Xumura, kaardaa barannoo, fi kwiizii."
+        },
+        "learningPaths": {
+          "title": "Karaa Barannoo Keessanii",
+          "description": "Karoora barannoo akka keessanitti sirreeffama."
+        },
+        "progressTracking": {
+          "title": "Fuula Duraa Barannoo",
+          "description": "Barannoo keessanii bakka tokko irratti ilaalaa."
+        }
+      }
+    },
+    "StepsSection": {
+      "title": "Barannoo Salpha Ta'ee – Darbii 3 Qofa!",
+      "demoButton": {
+        "text": "Demo Jiraa Ilaali"
+      },
+      "joinButton": {
+        "text": "Amma Makamu →"
+      },
+      "steps": {
+        "step1": {
+          "title": "Qo'annoowwan Barannoo Keessanii Dhiyeessaa",
+          "content": "PDF, video, fi linkii."
+        },
+        "step2": {
+          "title": "AI Waliin Haasaa",
+          "content": ""
+        },
+        "step3": {
+          "title": "Baradhaa & Fuula Duraa Ilalaa",
+          "content": ""
+        }
+      }
+    },
+    "TestimonialsSection": {
+      "title": "Fayyadamtoota Keenya Yaada Ilaali",
+      "testimonials": [
+        {
+          "id": 1,
+          "name": "Sarah M.",
+          "text": "\"EduAssist akka baradhu jijjiirame! AI chatbot gosa walxaxaa salpha ta'ee gochuu fi kwiiziiwwan akka keessanitti barannoo nageenya guddaa naaf kennu.\""
+        },
+        {
+          "id": 2,
+          "name": "John D.",
+          "text": "\"EduAssist waliin, qaxalchii koo 30% guddate. Sirna fayyadamaa fayila sirna barannoo koo jijjiirame.\""
+        },
+        {
+          "id": 3,
+          "name": "Emily T.",
+          "text": "\"Karaa barannoo akka keessanitti sirreeffaman akka koo dhaabbataa ta'ee gargaaru. Kan barsiisaa sa'aatii 24/7 qaba ta'ee jira!\""
+        }
+      ],
+      "navigation": {
+        "previous": "Duraan",
+        "next": "Itaana"
+      }
+    },
+    "FAQSection": {
+      "title": "Gaaffiiwwan Faakii",
+      "faqItems": [
+        {
+          "question": "Akkaataa galmaa'uu?",
+          "answer": "Imeelii ykn Google waliin sekondii 30 keessatti galmaa'uu."
+        },
+        {
+          "question": "Akkaataa qo'annoowwan barannoo uumuu?",
+          "content": "AI xumura/kaardaa barannoo kanneen keessanii irraa uuma."
+        },
+        {
+          "question": "YouTube linkii ykn fayila dhiyeessuu danda'aa?",
+          "answer": "Eeyyee, linkii dhiyeessuu ykn PDF/PPTX AI irratti fayyadamuuf dhiyeessuu."
+        },
+        {
+          "question": "Akkaataa haasaa/hirmaachuu?",
+          "answer": "Garee haasaa fi bakka hirmaachaa waliin hojjedhaa."
+        }
+      ]
+    },
+    "Footer": {
+      "companyInfo": {
+        "name": "EduAssist",
+        "tagline": "Barannoo Ogeessa Jalqaba – Keessanitti Sirreeffama, Afaanota Addaa, fi AI-Waliin.",
+        "learnMore": "Dabalataan Baradhu →"
+      },
+      "navigation": {
+        "title": "LINKII",
+        "links": [
+          "Mana",
+          "Qoodannoo",
+          "Akkaatti Hojjeta",
+          "Yaada Fayyadamtoota",
+          "Quunnamtii"
+        ]
+      },
+      "social": {
+        "title": "SOSHIILA",
+        "icons": [
+          { "alt": "Twitter" },
+          { "alt": "Facebook" },
+          { "alt": "Instagram" },
+          { "alt": "LinkedIn" }
+        ]
+      },
+      "copyright": {
+        "text": "©2025, Mirga Hundaa Qaba"
+      }
+    }
+  },
+  "Dashboard": {
+    "ctaCard": {
+      "title": "Fuula Duraa Keessanii Qabaa. Kaayyoo Keessanii Guutaa",
+      "description": "Osoo hin dhiifne itti fufaa! Barannoo keessanii jalqabaa qo'annoowwan keessanii xumuraa."
+    },
+    "stats": {
+      "resourcesGenerated": "Qo'annoowwan Uumaman",
+      "quizzesGenerated": "Kwiiziiwwan Uumaman",
+      "flashcardsGenerated": "Kaardaa Barannoo Uumaman",
+      "daysActive": "Guyyaa Hojii Irra Jira"
+    },
+    "sections": {
+      "activities": "Hojiiwwan",
+      "studyMaterials": "Qo'annoowwan Barannoo",
+      "recommended": "Keessanif Namaa'amu"
+    },
+    "search": {
+      "placeholder": "Qo'annoowwan, kwiizii, kaardaa barannoo barbaadi..."
+    },
+    "buttons": {
+      "loadMore": "Dabalataan Loodii"
+    },
+    "studyMaterials": {
+      "recent": "Qo'annoowwan Dhiyoo",
+      "saved": "Qo'annoowwan Qophaa'e",
+      "viewAll": "Hunda Ilaali",
+      "view": "Ilaali"
+    },
+    "recommended": {
+      "basedOnActivity": "Hojii keessan irratti hundaa'uudhaan",
+      "newResources": "Qo'annoowwan haaraa namaa'amu"
+    }
+  },
+  "Materials": {
+    "ctaCard": {
+      "title": "Qo'annoowwan Barannoo Keessanii Uumaa Jalqabi",
+      "description": "Yaada Keessanii Koorsii Sirreeffama Ta'ee Keessatti Dhiyeessaa."
+    },
+    "form": {
+      "label": "Ibsa Koorsii / Dhiyeessuu",
+      "placeholder": "Fkn, Koorsii jalqabaa Python irratti uumuu.",
+      "upload": {
+        "label": "Fayila Dhiyeessuu",
+        "textDrag": "Fayila asii irratti dhiyeessi",
+        "textBrowse": "ykn asiin irraa filadhu",
+        "description": "PDF, DOCX, TXT, PPT fayila (maksimaamii 10MB tokko tokko)",
+        "buttons": {
+          "browse": "Fayila Filadhu",
+          "add": "Linkii Dabalachiisi",
+          "cancel": "Dhiisi"
+        }
+      },
+      "youtube": {
+        "title": "Linkii YouTube Dabalachiisi",
+        "label": "URL YouTube",
+        "placeholder": "https://www.youtube.com/watch?v=...",
+        "description": "Linkii video YouTube qo'annoowwan barannoo keessanii irratti dhiyeessuu.",
+        "buttons": {
+          "add": "Linkii Dabalachiisi",
+          "cancel": "Dhiisi"
+        }
+      },
+      "buttons": {
+        "generate": "Uumuu"
+      }
+    }
+  },
+  "Resources": {
+    "ctaCard": {
+      "title": "Barannoo Keessanii Guutuu Banaa",
+      "description": "Qo'annoowwan keessanii, kaardaa barannoo, fi kwiiziiwwan bakka tokko irratti argadhaa. Sirreeffamaa, akka ogeessa ta'ee baradhaa, fi fuula duraa keessanii ilaalaa."
+    },
+    "sections": {
+      "title1": "Qo'annoowwan Barannoo Keessanii"
+    },
+    "buttons": {
+      "refresh": "Haaromsi",
+      "loadMore": "Dabalataan Loodii",
+      "view": "Ilaali"
+    }
+  },
+  "Settings": {
+    "title": "Sirreeffama",
+    "tabs": {
+      "account": "Akkaawuntii",
+      "billing": "Kaffaltii & Karoora",
+      "appearance": "Mul'ata",
+      "notifications": "Beeksisa",
+      "delete": "Akkaawuntii Haquu"
+    },
+    "account": {
+      "title": "Oodeffannoo Akkaawuntii",
+      "profile": {
+        "upload_help": "JPG, GIF ykn PNG. Fayila maksimaamii 5MB",
+        "default_bio": "Qopheessaa qopheessaa kanneen mul'ataa bareedu uumuu jaallatu."
+      },
+      "fields": {
+        "name": {
+          "label": "Maqaa",
+          "placeholder": "Maqaa Guutuu"
+        },
+        "email": {
+          "label": "Imeelii",
+          "placeholder": "example@email.com"
+        },
+        "bio": {
+          "label": "Seenaa"
+        }
+      },
+      "save_button": "Jijjiirraa Qusadhu"
+    },
+    "billing": {
+      "title": "Kaffaltii & Karoora",
+      "current_plan": {
+        "title": "Karoora Ammaa",
+        "description": "Karoora Pro - $19/bira"
+      },
+      "payment_method": {
+        "title": "Karaa Kaffaltii",
+        "card": "Visa xumura 4242",
+        "expires": "Xumura 04/2025",
+        "update_button": "Haaromsi"
+      },
+      "upgrade_button": "Karoora Guddifadhu"
+    },
+    "appearance": {
+      "title": "Mul'ata",
+      "theme": {
+        "title": "Teemii",
+        "light": "Ifaa",
+        "dark": "Dukkana"
+      }
+    },
+    "notifications": {
+      "title": "Beeksisa",
+      "email": {
+        "title": "Beeksisa Imeelii",
+        "description": "Odeeffannoo imeelii irratti argadhaa"
+      },
+      "push": {
+        "title": "Beeksisa Push",
+        "description": "Odeeffannoo qarqara keessan irratti argadhaa"
+      }
+    },
+    "delete": {
+      "title": "Akkaawuntii Haquu",
+      "warning": {
+        "title": "Akeekkachiisaa",
+        "description": "Akkaawuntii keessan haquun oodeffannoo keessanii haqa. Kana deebisuun hin danda'amuu."
+      },
+      "confirmation": {
+        "label": "\"DELETE\" jedhuun mirkaneeffadhu",
+        "placeholder": "DELETE"
+      },
+      "delete_button": "Akkaawuntii Haquu"
+    }
+  }
+}
