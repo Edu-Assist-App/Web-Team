@@ -4,7 +4,7 @@ import RichTextChapter from "@/app/[locale]/components/course/RichTextChapter";
 import { Button } from "@/app/[locale]/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
-import AIChatBox from "@/app/components/course/AIChatBox";
+import AIChatBox from "@/app/[locale]/components/course/AIChatBox";
 import { MdOutlineSmartToy } from "react-icons/md";
 
 // Dynamically import DOMPurify on the client side only
@@ -43,11 +43,53 @@ export default function Page() {
     (ch) => ch.id === currentChapter
   );
   const richTextRef = useRef<any>(null);
+  // ...existing code...
   const [content, setContent] = useState<string>(`
-    <h2>Hi there,</h2>
-    <p>This is a <em>basic</em> example of <strong>TipTap</strong>.</p>
-    <iframe style="width: 100%; max-width: 560px; aspect-ratio: 560/315; border: 0;" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-  `);
+  <h2>What is Data Science?</h2>
+  <p>
+    <strong>Data Science</strong> is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data. It combines aspects of statistics, computer science, and domain expertise to turn raw data into actionable insights.
+  </p>
+  <h3>Key Components of Data Science</h3>
+  <ul>
+    <li><strong>Data Collection:</strong> Gathering raw data from various sources such as databases, web scraping, sensors, or user input.</li>
+    <li><strong>Data Cleaning:</strong> Removing inconsistencies, handling missing values, and preparing data for analysis.</li>
+    <li><strong>Exploratory Data Analysis (EDA):</strong> Visualizing and summarizing data to understand patterns and relationships.</li>
+    <li><strong>Modeling:</strong> Applying statistical and machine learning models to make predictions or classify data.</li>
+    <li><strong>Interpretation:</strong> Translating model results into actionable business or research insights.</li>
+  </ul>
+  <h3>Common Tools & Languages</h3>
+  <ul>
+    <li>Python (with libraries like <code>pandas</code>, <code>numpy</code>, <code>scikit-learn</code>)</li>
+    <li>R</li>
+    <li>SQL</li>
+    <li>Jupyter Notebooks</li>
+    <li>Visualization tools (e.g., <code>matplotlib</code>, <code>seaborn</code>, <code>Tableau</code>)</li>
+  </ul>
+  <h3>Sample Python Code: Loading and Summarizing Data</h3>
+  <pre><code class="language-python">
+import pandas as pd
+
+# Load a CSV file
+df = pd.read_csv('data.csv')
+
+# Show the first 5 rows
+print(df.head())
+
+# Get summary statistics
+print(df.describe())
+  </code></pre>
+  <h3>Applications of Data Science</h3>
+  <ul>
+    <li>Healthcare: Predicting disease outbreaks, personalized medicine</li>
+    <li>Finance: Fraud detection, risk assessment</li>
+    <li>Retail: Recommendation systems, inventory management</li>
+    <li>Transportation: Route optimization, demand forecasting</li>
+  </ul>
+  <blockquote>
+    <strong>Did you know?</strong> Data Science is one of the fastest-growing fields, with applications in almost every industry!
+  </blockquote>
+`);
+  // ...existing code...
   const [isEditing, setIsEditing] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
