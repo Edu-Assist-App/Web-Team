@@ -21,16 +21,17 @@ export default function CtaCard({
   progress,
 }: CtaCardProps) {
   return (
-    <div className="bg-[#f8f8f8f8] rounded-xl p-6 shadow-sm flex flex-col md:flex-row gap-6">
-      <div className="bg-white rounded-full p-4 h-24 w-24 flex items-center justify-center flex-shrink-0">
+    <div className="bg-[#f8f8f8f8] rounded-xl p-4 sm:p-6 shadow-sm flex flex-col md:flex-row gap-6">
+      <div className="bg-white rounded-full p-3 sm:p-4 h-20 w-20 sm:h-24 sm:w-24 flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
         <div className="relative">
-          <Image src={imageUrl} alt="" width={64} height={64} />
+          <Image src={imageUrl} alt="" width={50} height={50} className="sm:hidden" />
+          <Image src={imageUrl} alt="" width={64} height={64} className="hidden sm:block"/>
         </div>
       </div>
 
-      <div className="flex-1">
-        <h1 className="text-2xl md:text-3xl font-medium mb-2">{title}</h1>
-        <p className="text-gray-600 mb-4">{description}</p>
+      <div className="flex-1 text-center md:text-left">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-medium mb-2">{title}</h1>
+        <p className="text-gray-600 mb-4 text-sm sm:text-base">{description}</p>
 
         {haveProgress && (
           <>
