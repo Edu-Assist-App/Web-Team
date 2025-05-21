@@ -199,7 +199,7 @@ print(df.describe())
           />
         ) : (
           <div
-            className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto overflow-x-auto"
+            className="tiptap prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto overflow-x-auto"
             dangerouslySetInnerHTML={{ __html: sanitizedContent }}
           />
         )}
