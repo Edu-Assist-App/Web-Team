@@ -5,7 +5,7 @@ import { Button } from "@/app/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
 import AIChatBox from "@/app/components/course/AIChatBox";
-import { AiOutlineRobot } from "react-icons/ai";
+import { MdOutlineSmartToy } from "react-icons/md";
 
 // Dynamically import DOMPurify on the client side only
 import dynamic from 'next/dynamic';
@@ -46,7 +46,7 @@ export default function Page() {
   const [content, setContent] = useState<string>(`
     <h2>Hi there,</h2>
     <p>This is a <em>basic</em> example of <strong>TipTap</strong>.</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    <iframe style="width: 100%; max-width: 560px; aspect-ratio: 560/315; border: 0;" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
   `);
   const [isEditing, setIsEditing] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -153,10 +153,11 @@ export default function Page() {
             ref={richTextRef}
             content={content}
             setContent={setContent}
+            onSendPrompt={handleAIResponse}
           />
         ) : (
           <div
-            className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto"
+            className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto overflow-x-auto"
             dangerouslySetInnerHTML={{ __html: sanitizedContent }}
           />
         )}
@@ -184,7 +185,7 @@ export default function Page() {
           className="fixed bottom-1 right-1 w-12 h-12 bg-[#3900b3] text-white rounded-full flex items-center justify-center shadow-lg z-40"
           title="Toggle AI Assistant"
         >
-          <AiOutlineRobot size={24} />
+          <MdOutlineSmartToy size={24} />
         </button>
 
         <AIChatBox

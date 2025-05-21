@@ -5,10 +5,11 @@ import RichText from "./RichText";
 interface RichTextChapterProps {
   content: string;
   setContent: React.Dispatch<React.SetStateAction<string>>;
+  onSendPrompt?: (prompt: string) => Promise<string>;
 }
 
 const RichTextChapter: React.ForwardRefRenderFunction<any, RichTextChapterProps> = (
-  { content, setContent },
+  { content, setContent, onSendPrompt },
   ref
 ) => {
   const richTextRef = useRef<any>(null);
@@ -25,6 +26,7 @@ const RichTextChapter: React.ForwardRefRenderFunction<any, RichTextChapterProps>
         ref={richTextRef}
         content={content}
         setContent={setContent}
+        onSendPrompt={onSendPrompt}
       />
     </div>
   );
