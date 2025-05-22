@@ -5,27 +5,27 @@
     "navigation": {
       "home": "Accueil",
       "features": "Fonctionnalités",
-      "howItWorks": "Comment ça marche",
+      "howItWorks": "Comment ça fonctionne",
       "testimonials": "Témoignages"
     },
     "language": {
-      "amharic": "Amharique",
-      "oromiffa": "Oromo",
-      "Tigrinya": "Tigrigna",
-      "english": "Anglais",
-      "spanish": "Espagnol",
+      "amharic": "አማርኛ",
+      "oromiffa": "Afaan Oromoo",
+      "tigrinya": "ትግርኛ",
+      "english": "English",
+      "spanish": "Español",
       "french": "Français",
-      "arabic": "Arabe",
-      "chinese": "Chinois",
-      "hindi": "Hindi",
-      "portuguese": "Portugais",
-      "russian": "Russe",
-      "japanese": "Japonais",
-      "german": "Allemand",
+      "arabic": "العربية",
+      "chinese": "中文",
+      "hindi": "हिन्दी",
+      "portuguese": "Português",
+      "russian": "Русский",
+      "japanese": "日本語",
+      "german": "Deutsch",
       "amharicShort": "አማ",
       "oromiffaShort": "Oro",
-      "TigrinyaShort": "Tig",
-      "englishShort": "ANG",
+      "tigrinyaShort": "Tig",
+      "englishShort": "ENG",
       "spanishShort": "ESP",
       "frenchShort": "FR",
       "arabicShort": "عرب",
@@ -34,7 +34,7 @@
       "portugueseShort": "POR",
       "russianShort": "РУС",
       "japaneseShort": "日本語",
-      "germanShort": "ALL",
+      "germanShort": "DE",
       "searchPlaceholder": "Rechercher des langues...",
       "noResults": "Aucune langue trouvée"
     },
@@ -57,6 +57,53 @@
       "settings": "Paramètres"
     }
   },
+  "LoginPage": {
+    "cardDescription": "Entrez vos identifiants pour accéder à votre compte",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "passwordLabel": "Mot de passe",
+    "submitButton": {
+      "loading": "Connexion en cours...",
+      "default": "Se connecter",
+      "googleLoading": "Connexion avec Google...",
+      "googleDefault": "Se connecter avec Google",
+      "continueWith": "Continuer avec"
+    },
+    "footerText": "Vous n'avez pas de compte ?",
+    "createAccountLink": "Créer un compte",
+    "errorMessages": {
+      "invalidEmail": "Veuillez entrer une adresse email valide",
+      "passwordLength": "Le mot de passe doit comporter au moins 6 caractères",
+      "loginFailed": "Échec de la connexion. Veuillez vérifier vos identifiants."
+    }
+  },
+  "RegisterPage": {
+    "cardDescription": "Entrez vos informations pour créer un compte",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "userNameLabel": "Nom d'utilisateur",
+    "userNamePlaceholder": "johndoe",
+    "fullNameLabel": "Nom complet",
+    "fullNamePlaceholder": "John Doe",
+    "passwordPlaceholder": "••••••••",
+    "passwordLabel": "Mot de passe",
+    "confirmPasswordLabel": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "••••••••",
+    "submitButton": {
+      "loading": "Création du compte...",
+      "default": "Créer un compte"
+    },
+    "footerText": "Vous avez déjà un compte ?",
+    "signInLink": "Se connecter",
+    "errorMessages": {
+      "invalidEmail": "Veuillez entrer une adresse email valide",
+      "usernameLength": "Le nom d'utilisateur doit comporter au moins 3 caractères",
+      "fullNameRequired": "Le nom complet est requis",
+      "passwordLength": "Le mot de passe doit comporter au moins 6 caractères",
+      "passwordsMismatch": "Les mots de passe ne correspondent pas",
+      "registrationFailed": "Échec de l'inscription. Veuillez réessayer."
+    }
+  },
   "Sidebar": {
     "logoAlt": "Logo EduAssist",
     "brandName": "EduAssist",
@@ -64,7 +111,9 @@
     "navItems": {
       "overview": "Aperçu",
       "studyMaterials": "Matériel d'étude",
-      "chats": "Discussions"
+      "chats": "Discussions",
+      "settings": "Paramètres",
+      "logout": "Déconnexion"
     },
     "buttons": {
       "newModule": "Nouveau module",
@@ -79,10 +128,10 @@
   "HomePage": {
     "HeroSection": {
       "topTag": "Commencez votre parcours",
-      "headline": "Débloquez un apprentissage personnalisé avec <span1>une assistance</span1> <span2>propulsée par IA</span2>",
-      "subtitle": "EduAssist aide les étudiants, enseignants et professionnels à apprendre plus intelligemment grâce à des insights pilotés par IA, un support multilingue et des outils d'étude personnalisés.",
+      "headline": "Déverrouillez un apprentissage personnalisé avec <span1>l'assistance</span1> <span2>alimentée par l'IA</span2>",
+      "subtitle": "EduAssist aide les étudiants, les éducateurs et les professionnels à apprendre plus intelligemment grâce à des insights alimentés par l'IA, un support multilingue et des outils d'étude personnalisés.",
       "cta1": "Rejoignez gratuitement",
-      "cta2": "Voir la démo",
+      "cta2": "Voir la démo en direct",
       "cards": {
         "card1": {
           "title": "Matériel d'apprentissage généré par IA",
@@ -90,59 +139,58 @@
         },
         "card2": {
           "title": "Gestion intelligente des fichiers",
-          "subtext": "Du niveau débutant à avancé"
+          "subtext": "Du débutant à l'avancé"
         },
         "card3": {
           "title": "Parcours d'apprentissage personnalisés",
-          "subtext": "Apprenez auprès d'experts du secteur"
+          "subtext": "Apprenez auprès des leaders de l'industrie"
         },
         "card4": {
           "title": "Suivi de progression en temps réel",
-          "subtext": "Étudiez à votre rythme"
+          "subtext": "Étudiez à votre propre rythme"
         }
       }
     },
-
     "FeaturesSection": {
-      "title": "Votre compagnon d'étude intelligent",
+      "title": "Votre compagnon d'étude le plus intelligent",
       "features": {
         "aiChatbot": {
-          "title": "Assistant par Chatbot IA",
-          "description": "Réponses et explications instantanées."
+          "title": "Assistance par chatbot IA",
+          "description": "Obtenez des réponses et des explications instantanées."
         },
         "fileManagement": {
-          "title": "Gestion intelligente de fichiers",
-          "description": "Importez, organisez et annotez vos ressources."
+          "title": "Gestion intelligente des fichiers",
+          "description": "Téléchargez, organisez et annotez les ressources."
         },
         "aiMaterials": {
-          "title": "Matériel généré par IA",
-          "description": "Résumés, flashcards et quiz automatiques."
+          "title": "Matériel d'apprentissage généré par IA",
+          "description": "Résumés, fiches d'étude et quiz."
         },
         "learningPaths": {
-          "title": "Parcours personnalisés",
+          "title": "Parcours d'apprentissage personnalisés",
           "description": "Plans d'étude adaptés à votre progression."
         },
         "progressTracking": {
-          "title": "Suivi en temps réel",
-          "description": "Suivez votre apprentissage au même endroit."
+          "title": "Suivi de progression en temps réel",
+          "description": "Suivez votre apprentissage en un seul endroit."
         }
       }
     },
     "StepsSection": {
-      "title": "Apprentissage simplifié - en seulement 3 étapes !",
+      "title": "Apprentissage simplifié – en 3 étapes seulement !",
       "demoButton": {
         "text": "Voir la démo en direct"
       },
       "joinButton": {
-        "text": "Rejoindre maintenant →"
+        "text": "Rejoignez maintenant →"
       },
       "steps": {
         "step1": {
-          "title": "Importez vos supports d'apprentissage",
+          "title": "Téléchargez votre matériel d'apprentissage",
           "content": "PDFs, vidéos et liens."
         },
         "step2": {
-          "title": "Discutez avec l'IA pour une aide immédiate",
+          "title": "Discutez avec l'IA pour une aide instantanée",
           "content": ""
         },
         "step3": {
@@ -151,24 +199,23 @@
         }
       }
     },
-
     "TestimonialsSection": {
-      "title": "Découvrez ce que disent nos utilisateurs",
+      "title": "Découvrez ce que nos utilisateurs disent",
       "testimonials": [
         {
           "id": 1,
           "name": "Sarah M.",
-          "text": "\"EduAssist a révolutionné ma façon d'étudier ! Le chatbot IA rend les sujets complexes faciles à comprendre, et les quiz personnalisés m'aident à mieux retenir les connaissances.\""
+          "text": "« EduAssist a transformé ma façon d'étudier ! Le chatbot IA rend les sujets complexes faciles à comprendre, et les quiz personnalisés m'aident à mieux retenir les connaissances. »"
         },
         {
           "id": 2,
-          "name": "Pierre D.",
-          "text": "\"Grâce à EduAssist, j'ai pu améliorer mes résultats de 30%. La gestion intelligente des fichiers est un véritable atout pour mon organisation.\""
+          "name": "John D.",
+          "text": "« Avec EduAssist, j'ai amélioré mes notes de 30 %. La gestion intelligente des fichiers a révolutionné l'organisation de mes études. »"
         },
         {
           "id": 3,
-          "name": "Amélie T.",
-          "text": "\"Les parcours d'apprentissage personnalisés s'adaptent parfaitement à mon rythme. C'est comme avoir un tuteur disponible 24h/24 !\""
+          "name": "Emily T.",
+          "text": "« Les parcours d'apprentissage personnalisés s'adaptent parfaitement à mon rythme. C'est comme avoir un tuteur disponible 24/7 ! »"
         }
       ],
       "navigation": {
@@ -177,30 +224,30 @@
       }
     },
     "FAQSection": {
-      "title": "Questions Fréquentes",
+      "title": "Questions fréquemment posées",
       "faqItems": [
         {
           "question": "Comment m'inscrire ?",
-          "answer": "Inscription par email ou Google en 30 secondes."
+          "answer": "Inscrivez-vous avec un email ou Google en 30 secondes."
         },
         {
-          "question": "Comment générer des supports ?",
-          "answer": "L'IA crée automatiquement résumés/flashcards."
+          "question": "Comment générer du matériel d'étude ?",
+          "answer": "L'IA crée automatiquement des résumés/fiches d'étude à partir de votre contenu."
         },
         {
-          "question": "Puis-je importer des liens YouTube ou fichiers ?",
-          "answer": "Oui, collez des liens ou importez PDFs/PPTX pour analyse."
+          "question": "Puis-je télécharger des liens YouTube ou des fichiers ?",
+          "answer": "Oui, collez des liens ou téléchargez des PDF/PPTX pour une analyse par l'IA."
         },
         {
-          "question": "Comment échanger/partager ?",
-          "answer": "Chats groupes et espaces partagés disponibles."
+          "question": "Comment discuter/partager avec mes pairs ?",
+          "answer": "Utilisez les discussions de groupe et les espaces de travail partagés pour collaborer."
         }
       ]
     },
     "Footer": {
       "companyInfo": {
         "name": "EduAssist",
-        "tagline": "L'apprentissage intelligent commence ici – Personnalisé, Multilingue et Piloté par IA.",
+        "tagline": "Un apprentissage plus intelligent commence ici – personnalisé, multilingue et alimenté par l'IA.",
         "learnMore": "En savoir plus →"
       },
       "navigation": {
@@ -208,13 +255,13 @@
         "links": [
           "Accueil",
           "Fonctionnalités",
-          "Comment ça marche",
+          "Comment ça fonctionne",
           "Témoignages",
           "Contact"
         ]
       },
       "social": {
-        "title": "RÉSEAUX",
+        "title": "SOCIAL",
         "icons": [
           { "alt": "Twitter" },
           { "alt": "Facebook" },
@@ -227,37 +274,161 @@
       }
     }
   },
-
   "Dashboard": {
     "ctaCard": {
-      "title": "Maîtrisez votre progression. Dominez vos objectifs",
-      "description": "Maintenez votre élan ! Continuez votre parcours d'apprentissage en terminant les ressources que vous avez commencées."
+      "title": "Maîtrisez votre progression. Atteignez vos objectifs",
+      "description": "Maintenez l'élan ! Continuez votre parcours d'apprentissage en terminant les ressources que vous avez commencées."
     },
     "stats": {
       "resourcesGenerated": "Ressources générées",
       "quizzesGenerated": "Quiz générés",
-      "flashcardsGenerated": "Cartes mémo générées",
+      "flashcardsGenerated": "Fiches d'étude générées",
       "daysActive": "Jours actifs"
     },
     "sections": {
       "activities": "Activités",
-      "studyMaterials": "Matériels d'étude",
+      "studyMaterials": "Matériel d'étude",
       "recommended": "Recommandé pour vous"
     },
     "search": {
-      "placeholder": "Rechercher des ressources, quiz, cartes mémo..."
+      "placeholder": "Rechercher des ressources, quiz, fiches d'étude..."
     },
     "buttons": {
       "loadMore": "Charger plus"
     },
     "studyMaterials": {
-      "recent": "Matériels récents",
-      "saved": "Matériels sauvegardés",
-      "viewAll": "Voir tout"
+      "recent": "Matériel récent",
+      "saved": "Matériel sauvegardé",
+      "viewAll": "Voir tout",
+      "view": "Voir"
     },
     "recommended": {
       "basedOnActivity": "Basé sur votre activité",
       "newResources": "Nouvelles ressources qui pourraient vous plaire"
+    }
+  },
+  "Materials": {
+    "ctaCard": {
+      "title": "Commencez à créer votre matériel d'étude",
+      "description": "Transformez vos idées en cours structurés en quelques minutes."
+    },
+    "form": {
+      "label": "Description du cours / Invite",
+      "placeholder": "Par exemple, créer un cours adapté aux débutants sur Python.",
+      "upload": {
+        "label": "Télécharger des fichiers",
+        "textDrag": "Glissez et déposez les fichiers ici",
+        "textBrowse": "ou cliquez pour parcourir",
+        "description": "Fichiers PDF, DOCX, TXT, PPT (max 10 Mo chacun)",
+        "buttons": {
+          "browse": "Parcourir les fichiers",
+          "add": "Ajouter un lien",
+          "cancel": "Annuler"
+        }
+      },
+      "youtube": {
+        "title": "Ajouter un lien YouTube",
+        "label": "URL YouTube",
+        "placeholder": "https://www.youtube.com/watch?v=...",
+        "description": "Ajoutez un lien de vidéo YouTube contenant du contenu pertinent pour votre matériel d'étude.",
+        "buttons": {
+          "add": "Ajouter un lien",
+          "cancel": "Annuler"
+        }
+      },
+      "buttons": {
+        "generate": "Générer"
+      }
+    }
+  },
+  "Resources": {
+    "ctaCard": {
+      "title": "Libérez tout votre potentiel d'apprentissage",
+      "description": "Accédez à vos notes, fiches d'étude et quiz, tout en un seul endroit. Restez organisé, apprenez plus intelligemment et suivez votre progression sans effort."
+    },
+    "sections": {
+      "title1": "Votre matériel d'étude"
+    },
+    "buttons": {
+      "refresh": "Actualiser",
+      "loadMore": "Charger plus",
+      "view": "Voir"
+    }
+  },
+  "Settings": {
+    "title": "Paramètres",
+    "tabs": {
+      "account": "Compte",
+      "billing": "Facturation et forfait",
+      "appearance": "Apparence",
+      "notifications": "Notifications",
+      "delete": "Supprimer le compte"
+    },
+    "account": {
+      "title": "Informations du compte",
+      "profile": {
+        "upload_help": "JPG, GIF ou PNG. Taille maximale de 5 Mo",
+        "default_bio": "Designer produit passionné par la création d'interfaces esthétiques."
+      },
+      "fields": {
+        "name": {
+          "label": "Nom",
+          "placeholder": "John Doe"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "john@example.com"
+        },
+        "bio": {
+          "label": "Bio"
+        }
+      },
+      "save_button": "Enregistrer les modifications"
+    },
+    "billing": {
+      "title": "Facturation et forfait",
+      "current_plan": {
+        "title": "Forfait actuel",
+        "description": "Forfait Pro - 19 $/mois"
+      },
+      "payment_method": {
+        "title": "Méthode de paiement",
+        "card": "Visa se terminant par 4242",
+        "expires": "Expire en 04/2025",
+        "update_button": "Mettre à jour"
+      },
+      "upgrade_button": "Mettre à niveau le forfait"
+    },
+    "appearance": {
+      "title": "Apparence",
+      "theme": {
+        "title": "Thème",
+        "light": "Clair",
+        "dark": "Sombre"
+      }
+    },
+    "notifications": {
+      "title": "Notifications",
+      "email": {
+        "title": "Notifications par email",
+        "description": "Recevoir les mises à jour par email"
+      },
+      "push": {
+        "title": "Notifications push",
+        "description": "Recevoir les mises à jour sur votre appareil"
+      }
+    },
+    "delete": {
+      "title": "Supprimer le compte",
+      "warning": {
+        "title": "Avertissement",
+        "description": "La suppression de votre compte entraînera la suppression définitive de toutes vos données. Cette action est irréversible."
+      },
+      "confirmation": {
+        "label": "Tapez \"DELETE\" pour confirmer",
+        "placeholder": "DELETE"
+      },
+      "delete_button": "Supprimer le compte"
     }
   }
 }

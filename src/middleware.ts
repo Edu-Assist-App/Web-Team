@@ -5,20 +5,15 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 // List all supported locales
-const supportedLocales = [
+export const supportedLocales = [
+  "amh",
+  "oro",
+  "tig",
   "en",
   "fr",
-  "amh",
-  "tig",
-  "oro", // Your custom ones
   "es",
   "ar",
   "zh",
-  "hi",
-  "pt",
-  "ru",
-  "ja",
-  "de", // Common languages
 ];
 
 // Define protected routes (without locale prefix)
@@ -36,13 +31,11 @@ export async function middleware(request: NextRequest) {
 
   const response = intlMiddleware(request);
 
-  const localeMatch = pathname.match(
-    /^\/(en|fr|amh|tig|afan|es|ar|zh|hi|pt|ru|ja|de)(\/|$)/
-  );
+  const localeMatch = pathname.match(/^\/(amh|oro|tig|en|fr|es|ar|zh)(\/|$)/);
   const locale = localeMatch?.[1];
 
   const pathWithoutLocale = pathname.replace(
-    /^\/(en|fr|amh|tig|afan|es|ar|zh|hi|pt|ru|ja|de)/,
+    /^\/(amh|oro|tig|en|fr|es|ar|zh)/,
     ""
   );
 

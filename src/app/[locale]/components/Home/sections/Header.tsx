@@ -79,31 +79,6 @@ export const Header = (): JSX.Element => {
       name: t("language.chinese"),
       shortName: t("language.chineseShort"),
     },
-    {
-      code: "hi",
-      name: t("language.hindi"),
-      shortName: t("language.hindiShort"),
-    },
-    {
-      code: "pt",
-      name: t("language.portuguese"),
-      shortName: t("language.portugueseShort"),
-    },
-    {
-      code: "ru",
-      name: t("language.russian"),
-      shortName: t("language.russianShort"),
-    },
-    {
-      code: "ja",
-      name: t("language.japanese"),
-      shortName: t("language.japaneseShort"),
-    },
-    {
-      code: "de",
-      name: t("language.german"),
-      shortName: t("language.germanShort"),
-    },
   ];
 
   const handleLanguageChange = (newLocale: string) => {

@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { ReduxProvider } from "@/lib/redux/provider";
+import { supportedLocales } from "@/middleware";
 
 export default async function LocaleLayout({
   children,
@@ -13,7 +14,7 @@ export default async function LocaleLayout({
   // Add this type assertion
   const { locale } = await params;
 
-  if (!["en", "amh", "oro"].includes(locale)) notFound();
+  if (!supportedLocales.includes(locale)) notFound();
 
   let messages;
   try {

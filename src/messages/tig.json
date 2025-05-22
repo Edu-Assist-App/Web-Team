@@ -1,42 +1,42 @@
 {
   "Header": {
-    "logoAlt": "ሎጎ EduAssist",
+    "logoAlt": "ኤዱአሲስት ሎጎ",
     "brandName": "EduAssist",
     "navigation": {
-      "home": "መኣዲ",
+      "home": "ገዛ",
       "features": "ባህርያት",
       "howItWorks": "ከመይ ይሰርሕ",
-      "testimonials": "ምስክርነታት"
+      "testimonials": "ምስክርነት"
     },
     "language": {
       "amharic": "አማርኛ",
       "oromiffa": "Afaan Oromoo",
       "tigrinya": "ትግርኛ",
-      "english": "እንግሊዝኛ",
-      "spanish": "ስፓኒሽ",
-      "french": "ፈረንሳይኛ",
-      "arabic": "ዓረብኛ",
-      "chinese": "ቻይንኛ",
-      "hindi": "ህንድኛ",
-      "portuguese": "ፖርቱጋልኛ",
-      "russian": "ራሽኛ",
-      "japanese": "ጃፓንኛ",
-      "german": "ጀርመንኛ",
+      "english": "English",
+      "spanish": "Español",
+      "french": "Français",
+      "arabic": "العربية",
+      "chinese": "中文",
+      "hindi": "हिन्दी",
+      "portuguese": "Português",
+      "russian": "Русский",
+      "japanese": "日本語",
+      "german": "Deutsch",
       "amharicShort": "አማ",
       "oromiffaShort": "Oro",
       "tigrinyaShort": "ትግ",
       "englishShort": "ENG",
       "spanishShort": "ESP",
       "frenchShort": "FR",
-      "arabicShort": "ዓረ",
-      "chineseShort": "ቻይ",
-      "hindiShort": "ህን",
+      "arabicShort": "عرب",
+      "chineseShort": "中文",
+      "hindiShort": "हिं",
       "portugueseShort": "POR",
-      "russianShort": "RUS",
-      "japaneseShort": "ጃፓ",
+      "russianShort": "РУС",
+      "japaneseShort": "日本語",
       "germanShort": "DE",
-      "searchPlaceholder": "ቋንቋታት ድለ...",
-      "noResults": "ቋንቋታት ኣይተረኽበን"
+      "searchPlaceholder": "ቋንቋታት ድለይ...",
+      "noResults": "ዝተገኘ ቋንቋ የለን"
     },
     "buttons": {
       "login": "እቶ",
@@ -44,217 +44,218 @@
     },
     "mobileMenu": {
       "languageLabel": "ቋንቋ",
-      "close": "ዕጾ"
+      "close": "ዕፀው"
     },
     "profile": {
-      "myAccount": "ኣካውንተይ",
-      "settings": "ምርጫታት",
-      "signOut": "ውጻእ"
+      "myAccount": "ናተይ መለለይ",
+      "settings": "ምችዎታት",
+      "signOut": "ካብ ስርዓት ውፃእ"
     },
     "pages": {
       "dashboard": "ዳሽቦርድ",
       "profile": "ፕሮፋይል",
-      "settings": "ምርጫታት"
+      "settings": "ምችዎታት"
     }
   },
   "LoginPage": {
-    "cardDescription": "ንኣካውንትኻ ክትኣቱ መለለዪታትካ ኣእትው",
+    "cardDescription": "ናብ መለለይካ ንምእታው መረጋገፂኻ ኣእቱ",
     "emailLabel": "ኢመይል",
-    "emailPlaceholder": "ኢመይልካ@example.com",
+    "emailPlaceholder": "your.email@example.com",
     "passwordLabel": "መሕለፊ ቃል",
     "submitButton": {
-      "loading": "እተኣታዊ...",
+      "loading": "እቶ ኣብ መስርሕ...",
       "default": "እቶ",
-      "googleLoading": "ብጉግል እተኣታዊ...",
+      "googleLoading": "ብጉግል እቶ ኣብ መስርሕ...",
       "googleDefault": "ብጉግል እቶ",
-      "continueWith": "ብ... ቀፃሊ"
+      "continueWith": "ቀፅል ምስ"
     },
-    "footerText": "ኣካውንት የብልካን፧",
-    "createAccountLink": "ኣካውንት ፍጠር",
+    "footerText": "መለለይ የብልካን?",
+    "createAccountLink": "መለለይ ፍጠር",
     "errorMessages": {
-      "invalidEmail": "ቅኑዕ ኢመይል ኣእትው",
-      "passwordLength": "መሕለፊ ቃል እንተዘይኮነ 6 ፊደላት ክኸውን ኣለዎ",
-      "loginFailed": "እቲኣቱ ኣይተኻኽለን። መለለዪታትካ ምረጽ።"
+      "invalidEmail": "እባክን ቅኑዕ ኢመይል ኣእቱ",
+      "passwordLength": "መሕለፊ ቃል ብውሕዱ 6 ፊደላት ክኸውን ኣለዎ",
+      "loginFailed": "እቶ ኣይተኻኸለን። እባክን መረጋገፂኻ ተዐቅብ።"
     }
   },
   "RegisterPage": {
-    "cardDescription": "ኣካውንት ንምፍጣር ሓበሬታኻ ኣእትው",
+    "cardDescription": "መለለይ ንምፍጣር ሓበሬታኻ ኣእቱ",
     "emailLabel": "ኢመይል",
-    "emailPlaceholder": "ኢመይልካ@example.com",
+    "emailPlaceholder": "your.email@example.com",
     "userNameLabel": "ስም ተጠቃሚ",
-    "userNamePlaceholder": "ስም ተጠቃሚ",
-    "fullNameLabel": "ምሉእ ስም",
-    "fullNamePlaceholder": "ምሉእ ስም",
+    "userNamePlaceholder": "johndoe",
+    "fullNameLabel": "ሙሉእ ስም",
+    "fullNamePlaceholder": "John Doe",
     "passwordPlaceholder": "••••••••",
-    "confirmPasswordLabel": "መሕለፊ ቃል ኣረጋግጽ",
+    "passwordLabel": "መሕለፊ ቃል",
+    "confirmPasswordLabel": "መሕለፊ ቃል ኣረጋግፅ",
     "confirmPasswordPlaceholder": "••••••••",
     "submitButton": {
-      "loading": "ኣካውንት ይፍጠር...",
-      "default": "ኣካውንት ፍጠር"
+      "loading": "መለለይ ኣብ መፍጣር...",
+      "default": "መለለይ ፍጠር"
     },
-    "footerText": "ቀደም ኣካውንት ኣለካ፧",
+    "footerText": "መለለይ ተፈጢሩ ኣለካ?",
     "signInLink": "እቶ",
     "errorMessages": {
-      "invalidEmail": "ቅኑዕ ኢመይል ኣእትው",
-      "usernameLength": "ስም ተጠቃሚ እንተዘይኮነ 3 ፊደላት ክኸውን ኣለዎ",
-      "fullNameRequired": "ምሉእ ስም ኣስፈላጢ እዩ",
-      "passwordLength": "መሕለፊ ቃል እንተዘይኮነ 6 ፊደላት ክኸውን ኣለዎ",
-      "passwordsMismatch": "መሕለፊ ቃላት ኣይሰማማዕን",
-      "registrationFailed": "ምዝገባ ኣይተኻኽለን። ደጊም ፈትን።"
+      "invalidEmail": "እባክን ቅኑዕ ኢመይል ኣእቱ",
+      "usernameLength": "ስም ተጠቃሚ ብውሕዱ 3 ፊደላት ክኸውን ኣለዎ",
+      "fullNameRequired": "ሙሉእ ስም የድሊ",
+      "passwordLength": "መሕለፊ ቃል ብውሕዱ 6 ፊደላት ክኸውን ኣለዎ",
+      "passwordsMismatch": "መሕለፊ ቃላት ኣይተሳነዩን",
+      "registrationFailed": "መዝገብ ኣይተኻኸለን። እባክን ደጊምካ ፈትን።"
     }
   },
   "Sidebar": {
-    "logoAlt": "ሎጎ ኤድዩአሲስት",
-    "brandName": "ኤድዩአሲስት",
-    "quickNav": "ቅልጡፍ ናይ ምንቅስቓስ",
+    "logoAlt": "ኤዱአሲስት ሎጎ",
+    "brandName": "ኤዱአሲስት",
+    "quickNav": "ቅልጡፍ መራሒ",
     "navItems": {
-      "overview": "ሓፈሻዊ ሓበሬታ",
-      "studyMaterials": "ትምህርታዊ ንብረታት",
-      "chats": "ዝርርብ",
-      "settings": "ምርጫታት",
-      "logout": "ውጻእ"
+      "overview": "እታዊ መግለፂ",
+      "studyMaterials": "መጻሕፍቲ መጽናዕቲ",
+      "chats": "ዕላል",
+      "settings": "ምችዎታት",
+      "logout": "ካብ ስርዓት ውፃእ"
     },
     "buttons": {
-      "newModule": "ሓድሽ ሞጁል",
-      "settings": "ምርጫታት",
-      "logout": "ውጻእ"
+      "newModule": "ሓድሽ ሞዱል",
+      "settings": "ምችዎታት",
+      "logout": "ካብ ስርዓት ውፃእ"
     },
     "ariaLabels": {
-      "collapse": "ሳይድባር ተግባራዊ ምግባር",
-      "close": "ሳይድባር ዕጾ"
+      "collapse": "ሳይድባር ተግዕ",
+      "close": "ሳይድባር ዕፀው"
     }
   },
   "HomePage": {
     "HeroSection": {
       "topTag": "ጉዕዞኻ ጀምር",
-      "headline": "ብ<span1>AI-ዝድገፍ</span1> <span2>ሓገዝ</span2> ብግልጋሎ ዝተሰርዐ ትምህርቲ ክፉት",
-      "subtitle": "ኤድዩአሲስት ንተማሃሮ፣ ንመምህራን፣ ከምኡውን ንፕሮፌሽናሎች ብAI-ዝነገረ ግንዛቤታት፣ ብዙሕ ቋንቋዊ ሓገዝ፣ ከምኡውን ብግልጋሎ ዝተሰርዐ ትምህርታዊ መሳርሒታት ንኽትምሃሩ ይሕግዝ።",
-      "cta1": "ነፃ ተጸንበር",
-      "cta2": "ቀጥታ ምሳሌ ርአ",
+      "headline": "<span1>ብኤአይ ዝደገፈ</span1> <span2>ሓገዝ</span2> ምስ ግሉው ትምህርቲ ክፈት",
+      "subtitle": "ኤዱአሲስት ተማሃሮ፣ መምህራን፣ ከምኡ’ውን ፕሮፌሽናል ሰባት ብኤአይ ዝድገፍ ሓበሬታ፣ ብተግባራዊ ቋንቋታት ዝድገፍ፣ ከምኡ’ውን ግሉው መሣርሒታት መጽናዕቲ ብዝበለጸ ክመሃሩ ይሕግዝ።",
+      "cta1": "ብነጻ ተጸንብር",
+      "cta2": "ቀጥታ ዲሞ ተመልከት",
       "cards": {
         "card1": {
-          "title": "ብAI ዝተፈጥረ ትምህርታዊ ንብረታት",
-          "subtext": "እቲ ዝዕብየሉ ማሕበረሰብና ተጸንበር"
+          "title": "ብኤአይ ዝተፈጥረ መጻሕፍቲ መጽናዕቲ",
+          "subtext": "ናብ ዝዓበየ ማሕበረሰብና ተጸንብር"
         },
         "card2": {
-          "title": "�ሊኡ ዝተሰርዐ ምምሕዳር ፋይል",
-          "subtext": "ካብ ጀማሪ ኽሳዕ ልዑል ደረጃ"
+          "title": "ስልጡን ምሕደራ ፋይላት",
+          "subtext": "ካብ ጀማሪ ክሳብ ዝለመደ"
         },
         "card3": {
-          "title": "ብግልጋሎ ዝተሰርዐ መንገዲ ትምህርቲ",
-          "subtext": "ካብ መራሕቲ ኢንዱስትሪ ተምሃር"
+          "title": "ግሉው መንገዲ መጽናዕቲ",
+          "subtext": "ካብ መራሕቲ ኢንዱስትሪ ተማሃር"
         },
         "card4": {
-          "title": "ቅጽበታዊ ምክትታል እዋናት",
-          "subtext": "ብጥሜትካ ተምሃር"
+          "title": "ቀጥታ ክትንባይ ግስጋሰ",
+          "subtext": "ብፍቓድካ ተማሃር"
         }
       }
     },
     "FeaturesSection": {
-      "title": "እቲ ኣርእስታዊ ተመሃራይ ብጾትካ",
+      "title": "ሓደ ካብ ዝለዓለ መሓዛ መጽናዕቲ",
       "features": {
         "aiChatbot": {
-          "title": "AI ቻትቦት ሓገዝ",
-          "description": "ቅጽበታዊ መልስታትን መግለጺታትን ረክብ።"
+          "title": "ሓገዝ ኤአይ ቻትቦት",
+          "description": "ቅጽበታዊ መልስታትን መግለፂታትን ረክብ።"
         },
         "fileManagement": {
-          "title": "ምምሕዳር ፋይል ሓይሊ",
-          "description": "ምቕራብ፣ ምድርድር፣ ከምኡውን መዝገብ ምግባር።"
+          "title": "ስልጡን ምሕደራ ፋይላት",
+          "description": "መጻሕፍቲ ጽዓን፣ ኣዳልው፣ ከምኡ’ውን ምልክት ግበር።"
         },
         "aiMaterials": {
-          "title": "ብAI ዝተፈጥረ ትምህርታዊ ንብረታት",
-          "description": "ጽማቝታት፣ ፍላሽ ካርድታት፣ ከምኡውን ዕውት ምርመራታት።"
+          "title": "ብኤአይ ዝተፈጥረ መጻሕፍቲ መጽናዕቲ",
+          "description": "ማጠቓለሊ፣ ፍላሽካርድ፣ ከምኡ’ውን ፈተናታት።"
         },
         "learningPaths": {
-          "title": "ብግልጋሎ ዝተሰርዐ መንገዲ ትምህርቲ",
-          "description": "ንዕቤትካ ዝተሰለፈ ውጥን ትምህርቲ።"
+          "title": "ግሉው መንገዲ መጽናዕቲ",
+          "description": "ንግስጋሰኻ ዝግበር መደባት መጽናዕቲ።"
         },
         "progressTracking": {
-          "title": "ቅጽበታዊ ምክትታል እዋናት",
-          "description": "ትምህርትካ ኣብ ሓደ ቦታ ምርሳር።"
+          "title": "ቀጥታ ክትንባይ ግስጋሰ",
+          "description": "ትምህርትኻ ብሓንቲ ቦታ ተዐቅብ።"
         }
       }
     },
     "StepsSection": {
-      "title": "ትምህርቲ ቀሊል ዝበለ - 3 ስጉምትታት ጥራይ!",
+      "title": "ትምህርቲ ቀሊል ተገብረ – ሰለስተ ስጉምትታት ጥራይ!",
       "demoButton": {
-        "text": "ቀጥታ ምሳሌ ርአ"
+        "text": "ቀጥታ ዲሞ ተመልከት"
       },
       "joinButton": {
-        "text": "ሕጂ ተጸንበር →"
+        "text": "ሕጂ ተጸንብር →"
       },
       "steps": {
         "step1": {
-          "title": "ትምህርታዊ ንብረታትካ �ጺእካ",
-          "content": "PDFታት፣ ቪድዮታት፣ ከምኡውን ሊንክታት።"
+          "title": "መጻሕፍቲ መጽናዕትኻ ጽዓን",
+          "content": "PDFታት፣ ቪድዮታት፣ ከምኡ’ውን ሊንካት።"
         },
         "step2": {
-          "title": "ምስ AI ብቐጥታ ሓገዝ ዝርርብ ግበር",
+          "title": "ብኤአይ ቻት ግበር ቅጽበታዊ ሓገዝ ንምርካብ",
           "content": ""
         },
         "step3": {
-          "title": "ተምሃር & እዋናት ምክትታል",
+          "title": "ተማሃርን ግስጋሰኻ ተዐቅብን",
           "content": ""
         }
       }
     },
     "TestimonialsSection": {
-      "title": "ተጠቃሚታትና እንታይ ከም ዝብሉ ርአ",
+      "title": "ተጠቀምቲና እንታይ ይብሉ",
       "testimonials": [
         {
           "id": 1,
           "name": "ሳራ ኤም.",
-          "text": "\"ኤድዩአሲስት ኣገባብ ትምህርተይ ኣመሓይሽዎ! እቲ AI ቻትቦት ዝተሓላለኸ ርእሰ-ሓሳባት ቀሊል ንኽትርድኦም ይገብር፣ እቲ ብግልጋሎ ዝተሰርዐ ዕውት ምርመራታት ዕላማ ዝያዳ ንኽሕዝ ይሕግዘኒ።\""
+          "text": "\"ኤዱአሲስት ናይ መጽናዕቲ መንገደይ ቀይሩ! ኤአይ ቻትቦት ዝኸበደ ኣርእስታት ቀሊል ንምርዳእ ይገብሮ፣ ከምኡ’ውን ግሉው ፈተናታት ዕውት ክኸውን ይሕግዙኒ።\""
         },
         {
           "id": 2,
           "name": "ጆን ዲ.",
-          "text": "\"ብኤድዩአሲስት፣ ነጥበይ ብ30% ዕብየ። እቲ ምምሕዳር ፋይል ሓይሊ ንውጥን ትምህርተይ ዘበላሽዎ ነገር እዩ።\""
+          "text": "\"ብኤዱአሲስት፣ ኣብ ውጽኢተይ 30% ኣሻሺለ። ስልጡን ምሕደራ ፋይላት ንውዳበ መጽናዕተይ ለውጢ ኣምጺኡ!\""
         },
         {
           "id": 3,
-          "name": "ኢሚሊ ቲ.",
-          "text": "\"እቲ ብግልጋሎ ዝተሰርዐ መንገዲ ትምህርቲ ብትኽክል ምስ ፍጥነተይ ይሰማማዕ። ልክዕ ከም ሓደ ብ24/7 ዝርከብ መምህር እዩ!\""
+          "name": "ኤሚሊ ቲ.",
+          "text": "\"ግሉው መንገዲ መጽናዕቲ ብፍፁም ምስ ናይ ኣነ ፍጥነት ይሰማማዕ። ከም 24/7 ዝርከብ መምህር ይመስል!\""
         }
       ],
       "navigation": {
-        "previous": "ቕድሚ",
-        "next": "ዝቕጽል"
+        "previous": "ቀዳማይ",
+        "next": "ቀፃሊ"
       }
     },
     "FAQSection": {
-      "title": "ብተደጋጋሚ ዝተሓተት ሕቶታት",
+      "title": "ተደጋጋሚ ሕቶታት",
       "faqItems": [
         {
-          "question": "ከመይ እየ እተመዝግብ?",
-          "answer": "ብኢመይል ወይ ጉግል ኣብ 30 ካውንት እተመዝግብ።"
+          "question": "ከመይ ገይረ ክመዝገብ እኽእል?",
+          "answer": "ብኢመይል ወይ ጉግል ኣብ 30 ካልኢታት ተመዝገብ።"
         },
         {
-          "question": "ትምህርታዊ ንብረታት ከመይ እየ እፈጥር?",
-          "answer": "AI ካብ ትሕዝቶኻ ጽማቝታት/ፍላሽ ካርድታት ብኣውቶማቲክ ይፈጥር።"
+          "question": "መጻሕፍቲ መጽናዕቲ ከመይ ገይረ ክፈጥር?",
+          "answer": "ኤአይ ካብ ትሕዝቶኻ ማጠቓለሊ/ፍላሽካርድ ብቀጥታ ይፈጥር።"
         },
         {
-          "question": "ሊንክ ዩቱብ ወይ ፋይላት ክሰክም ይኽእል ድየ?",
-          "answer": "እወ፣ ሊንክታት �ጺእካ ወይ PDF/PPTX ፋይላት ንAI ትንተና ሰክም።"
+          "question": "ናይ ዩቱብ ሊንካት ወይ ፋይላት ክጽዕን ይኽእል?",
+          "answer": "እወ፣ ሊንካት ለጥፍ ወይ PDF/PPTX ጽዓን ንኤአይ ትንታነ።"
         },
         {
-          "question": "ምስ ኣሕዋተይ ዝርርብ/ምክፋል ከመይ እየ እገብር?",
-          "answer": "ብጉጅለ ዝርርብን ዝተካፈለ መስርሕ ቦታታትን ንምትሕብባር ተጠቐም።"
+          "question": "ከመይ ገይረ ምስ መሓዛ ክዛሪ/ክካፈል?",
+          "answer": "ምክትታል ጉጅለን ሓባራዊ ቦታታት ስራሕን ተጠቀም።"
         }
       ]
     },
     "Footer": {
       "companyInfo": {
-        "name": "ኤድዩአሲስት",
-        "tagline": "ልክዕ ትምህርቲ ኣብዚ ይጅምር - ብግልጋሎ ዝተሰርዐ፣ ብዙሕ ቋንቋዊ & AI-ዝድገፍ።",
-        "learnMore": "ተወሳኺ ርአ →"
+        "name": "ኤዱአሲስት",
+        "tagline": "ዝበለጸ ትምህርቲ ኣብዚ ይጅምር – ግሉው፣ ብተግባራዊ ቋንቋታት ዝድገፍ፣ ብኤአይ ዝደገፈ።",
+        "learnMore": "ተወሳኺ ፍለጥ →"
       },
       "navigation": {
-        "title": "ሊንክታት",
-        "links": ["መኣዲ", "ባህርያት", "ከመይ ይሰርሕ", "ምስክርነታት", "ርክብ"]
+        "title": "ሊንካት",
+        "links": ["ገዛ", "ባህርያት", "ከመይ ይሰርሕ", "ምስክርነት", "ርክብ"]
       },
       "social": {
-        "title": "ማሕበራዊ",
+        "title": "ሶሻል",
         "icons": [
           { "alt": "ትዊተር" },
           { "alt": "ፌስቡክ" },
@@ -263,165 +264,8 @@
         ]
       },
       "copyright": {
-        "text": "©2025, ኩሉ መሰል ይሕለ"
+        "text": "©2025, ኩሉ መሰላት ተዓቂቡ"
       }
-    }
-  },
-  "Dashboard": {
-    "ctaCard": {
-      "title": "እዋናትካ ብሉጽ ግበር። ዕላማታትካ ዓለቕ",
-      "description": "እቲ ጽዕረት ዓቂብካ! ነቲ ዝጀመርካዮ ንብረታት ብምውዳእ ናይ ትምህርቲ ጉዕዞኻ ቀፃሊ።"
-    },
-    "stats": {
-      "resourcesGenerated": "ንብረታት ተፈጢሩ",
-      "quizzesGenerated": "ዕውት ምርመራታት ተፈጢሩ",
-      "flashcardsGenerated": "ፍላሽ ካርድታት ተፈጢሩ",
-      "daysActive": "ንጡፍ መዓልታት"
-    },
-    "sections": {
-      "activities": "�ጸውዒታት",
-      "studyMaterials": "ትምህርታዊ ንብረታት",
-      "recommended": "ንኣኻ ዝተመርጸ"
-    },
-    "search": {
-      "placeholder": "ንብረታት፣ ዕውት ምርመራታት፣ ፍላሽ ካርድታት ድለ..."
-    },
-    "buttons": {
-      "loadMore": "ተወሳኺ ጫን"
-    },
-    "studyMaterials": {
-      "recent": "ቀረባ ንብረታት",
-      "saved": "ዝተቐምጠ ንብረታት",
-      "viewAll": "ኩሉ ርአ",
-      "view": "ርአ"
-    },
-    "recommended": {
-      "basedOnActivity": "ብመሰረት ኣገባብካ",
-      "newResources": "ሓድሽ ንብረታት ንኣኻ ዝተመርጸ"
-    }
-  },
-  "Materials": {
-    "ctaCard": {
-      "title": "ትምህርታዊ ንብረትካ ምህናጽ ጀምር",
-      "description": "ሓሳባትካ ኣብ ደረጃዊ ኮርሳት ኣብ ደቒቕ ኣብቅዎ።"
-    },
-    "form": {
-      "label": "መግለጺ ኮርስ / ምትእስሳር",
-      "placeholder": "ምሳሌ፦ ንጀማሪታት ዝተሰርዐ ኮርስ ፓይቶን ምፍጣር።",
-      "upload": {
-        "label": "ፋይላት ስክም",
-        "textDrag": "ፋይላት ኣብዚ ሰክም",
-        "textBrowse": "ወይ ክትድለ ጠውቕ",
-        "description": "PDF, DOCX, TXT, PPT ፋይላት (እንተዘይኮነ 10MB ንሓደ ፋይል)",
-        "buttons": {
-          "browse": "ፋይላት ድለ",
-          "add": "ሊንክ ወስኽ",
-          "cancel": "ሰርዝ"
-        }
-      },
-      "youtube": {
-        "title": "ሊንክ ዩቱብ ወስኽ",
-        "label": "URL ዩቱብ",
-        "placeholder": "https://www.youtube.com/watch?v=...",
-        "description": "ንትምህርታዊ ንብረትካ ዝሰማማዕ ዩቱብ ቪድዮ ሊንክ ወስኽ።",
-        "buttons": {
-          "add": "ሊንክ ወስኽ",
-          "cancel": "ሰርዝ"
-        }
-      },
-      "buttons": {
-        "generate": "ፍጠር"
-      }
-    }
-  },
-  "Resources": {
-    "ctaCard": {
-      "title": "ምሉእ ናይ ትምህርቲ ክእለትካ ክፉት",
-      "description": "ንምልክታትካ፣ ፍላሽ ካርድታትካ፣ ከምኡውን ዕውት ምርመራታትካ ኣብ ሓደ ቦታ ኣብትው። ድርድር ግበር፣ ብልክዕ ተምሃር፣ እዋናትካ ብቐሊሉ ምክትታል።"
-    },
-    "sections": {
-      "title1": "ትምህርታዊ ንብረታትካ"
-    },
-    "buttons": {
-      "refresh": "ኣድስእ",
-      "loadMore": "ተወሳኺ ጫን",
-      "view": "ርአ"
-    }
-  },
-  "Settings": {
-    "title": "ምርጫታት",
-    "tabs": {
-      "account": "ኣካውንት",
-      "billing": "ክፍሊት & ውጥን",
-      "appearance": "መልክዕ",
-      "notifications": "ምልክታታት",
-      "delete": "ኣካውንት ሰርዝ"
-    },
-    "account": {
-      "title": "ሓበሬታ ኣካውንት",
-      "profile": {
-        "upload_help": "JPG, GIF ወይ PNG. ዝለዓለ ዓቐን 5MB",
-        "default_bio": "ምስሊ ዘማዕብል ዝርከብ ፕሮዳክት ዲዛይነር።"
-      },
-      "fields": {
-        "name": {
-          "label": "ስም",
-          "placeholder": "ምሉእ ስም"
-        },
-        "email": {
-          "label": "ኢመይል",
-          "placeholder": "example@email.com"
-        },
-        "bio": {
-          "label": "ታሪኽ"
-        }
-      },
-      "save_button": "ለውጢ ኣቐምጥ"
-    },
-    "billing": {
-      "title": "ክፍሊት & ውጥን",
-      "current_plan": {
-        "title": "ናይ ሕጂ ውጥን",
-        "description": "ፕሮ ውጥን - $19/ወርሒ"
-      },
-      "payment_method": {
-        "title": "ኣገባብ ክፍሊት",
-        "card": "ቪዛ ኣብ 4242 ዝውድእ",
-        "expires": "ዝውድእ 04/2025",
-        "update_button": "ኣድስእ"
-      },
-      "upgrade_button": "ውጥን ኣልዕል"
-    },
-    "appearance": {
-      "title": "መልክዕ",
-      "theme": {
-        "title": "ጭብጥ",
-        "light": "ብርሃን",
-        "dark": "ጸሊም"
-      }
-    },
-    "notifications": {
-      "title": "ምልክታታት",
-      "email": {
-        "title": "ኢመይል ምልክታታት",
-        "description": "ምልክታታት ብኢመይል ረክብ"
-      },
-      "push": {
-        "title": "ፑሽ ምልክታታት",
-        "description": "ምልክታታት ኣብ መሳርሒኻ ረክብ"
-      }
-    },
-    "delete": {
-      "title": "ኣካውንት ሰርዝ",
-      "warning": {
-        "title": "መጠንቀቕታ",
-        "description": "ኣካውንትካ ምስምስል ኩሉ ዳታኻ ብትሕቲኡ ይወጽእ። እዚ ኣገባብ ክሕደስ ኣይክእልን እዩ።"
-      },
-      "confirmation": {
-        "label": "\"DELETE\" ኢልካ ኣረጋግጽ",
-        "placeholder": "DELETE"
-      },
-      "delete_button": "ኣካውንት ሰርዝ"
     }
   }
 }
