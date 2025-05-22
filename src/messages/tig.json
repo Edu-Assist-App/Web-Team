@@ -1,0 +1,271 @@
+{
+  "Header": {
+    "logoAlt": "ኤዱአሲስት ሎጎ",
+    "brandName": "EduAssist",
+    "navigation": {
+      "home": "ገዛ",
+      "features": "ባህርያት",
+      "howItWorks": "ከመይ ይሰርሕ",
+      "testimonials": "ምስክርነት"
+    },
+    "language": {
+      "amharic": "አማርኛ",
+      "oromiffa": "Afaan Oromoo",
+      "tigrinya": "ትግርኛ",
+      "english": "English",
+      "spanish": "Español",
+      "french": "Français",
+      "arabic": "العربية",
+      "chinese": "中文",
+      "hindi": "हिन्दी",
+      "portuguese": "Português",
+      "russian": "Русский",
+      "japanese": "日本語",
+      "german": "Deutsch",
+      "amharicShort": "አማ",
+      "oromiffaShort": "Oro",
+      "tigrinyaShort": "ትግ",
+      "englishShort": "ENG",
+      "spanishShort": "ESP",
+      "frenchShort": "FR",
+      "arabicShort": "عرب",
+      "chineseShort": "中文",
+      "hindiShort": "हिं",
+      "portugueseShort": "POR",
+      "russianShort": "РУС",
+      "japaneseShort": "日本語",
+      "germanShort": "DE",
+      "searchPlaceholder": "ቋንቋታት ድለይ...",
+      "noResults": "ዝተገኘ ቋንቋ የለን"
+    },
+    "buttons": {
+      "login": "እቶ",
+      "getStarted": "ጀምር"
+    },
+    "mobileMenu": {
+      "languageLabel": "ቋንቋ",
+      "close": "ዕፀው"
+    },
+    "profile": {
+      "myAccount": "ናተይ መለለይ",
+      "settings": "ምችዎታት",
+      "signOut": "ካብ ስርዓት ውፃእ"
+    },
+    "pages": {
+      "dashboard": "ዳሽቦርድ",
+      "profile": "ፕሮፋይል",
+      "settings": "ምችዎታት"
+    }
+  },
+  "LoginPage": {
+    "cardDescription": "ናብ መለለይካ ንምእታው መረጋገፂኻ ኣእቱ",
+    "emailLabel": "ኢመይል",
+    "emailPlaceholder": "your.email@example.com",
+    "passwordLabel": "መሕለፊ ቃል",
+    "submitButton": {
+      "loading": "እቶ ኣብ መስርሕ...",
+      "default": "እቶ",
+      "googleLoading": "ብጉግል እቶ ኣብ መስርሕ...",
+      "googleDefault": "ብጉግል እቶ",
+      "continueWith": "ቀፅል ምስ"
+    },
+    "footerText": "መለለይ የብልካን?",
+    "createAccountLink": "መለለይ ፍጠር",
+    "errorMessages": {
+      "invalidEmail": "እባክን ቅኑዕ ኢመይል ኣእቱ",
+      "passwordLength": "መሕለፊ ቃል ብውሕዱ 6 ፊደላት ክኸውን ኣለዎ",
+      "loginFailed": "እቶ ኣይተኻኸለን። እባክን መረጋገፂኻ ተዐቅብ።"
+    }
+  },
+  "RegisterPage": {
+    "cardDescription": "መለለይ ንምፍጣር ሓበሬታኻ ኣእቱ",
+    "emailLabel": "ኢመይል",
+    "emailPlaceholder": "your.email@example.com",
+    "userNameLabel": "ስም ተጠቃሚ",
+    "userNamePlaceholder": "johndoe",
+    "fullNameLabel": "ሙሉእ ስም",
+    "fullNamePlaceholder": "John Doe",
+    "passwordPlaceholder": "••••••••",
+    "passwordLabel": "መሕለፊ ቃል",
+    "confirmPasswordLabel": "መሕለፊ ቃል ኣረጋግፅ",
+    "confirmPasswordPlaceholder": "••••••••",
+    "submitButton": {
+      "loading": "መለለይ ኣብ መፍጣር...",
+      "default": "መለለይ ፍጠር"
+    },
+    "footerText": "መለለይ ተፈጢሩ ኣለካ?",
+    "signInLink": "እቶ",
+    "errorMessages": {
+      "invalidEmail": "እባክን ቅኑዕ ኢመይል ኣእቱ",
+      "usernameLength": "ስም ተጠቃሚ ብውሕዱ 3 ፊደላት ክኸውን ኣለዎ",
+      "fullNameRequired": "ሙሉእ ስም የድሊ",
+      "passwordLength": "መሕለፊ ቃል ብውሕዱ 6 ፊደላት ክኸውን ኣለዎ",
+      "passwordsMismatch": "መሕለፊ ቃላት ኣይተሳነዩን",
+      "registrationFailed": "መዝገብ ኣይተኻኸለን። እባክን ደጊምካ ፈትን።"
+    }
+  },
+  "Sidebar": {
+    "logoAlt": "ኤዱአሲስት ሎጎ",
+    "brandName": "ኤዱአሲስት",
+    "quickNav": "ቅልጡፍ መራሒ",
+    "navItems": {
+      "overview": "እታዊ መግለፂ",
+      "studyMaterials": "መጻሕፍቲ መጽናዕቲ",
+      "chats": "ዕላል",
+      "settings": "ምችዎታት",
+      "logout": "ካብ ስርዓት ውፃእ"
+    },
+    "buttons": {
+      "newModule": "ሓድሽ ሞዱል",
+      "settings": "ምችዎታት",
+      "logout": "ካብ ስርዓት ውፃእ"
+    },
+    "ariaLabels": {
+      "collapse": "ሳይድባር ተግዕ",
+      "close": "ሳይድባር ዕፀው"
+    }
+  },
+  "HomePage": {
+    "HeroSection": {
+      "topTag": "ጉዕዞኻ ጀምር",
+      "headline": "<span1>ብኤአይ ዝደገፈ</span1> <span2>ሓገዝ</span2> ምስ ግሉው ትምህርቲ ክፈት",
+      "subtitle": "ኤዱአሲስት ተማሃሮ፣ መምህራን፣ ከምኡ’ውን ፕሮፌሽናል ሰባት ብኤአይ ዝድገፍ ሓበሬታ፣ ብተግባራዊ ቋንቋታት ዝድገፍ፣ ከምኡ’ውን ግሉው መሣርሒታት መጽናዕቲ ብዝበለጸ ክመሃሩ ይሕግዝ።",
+      "cta1": "ብነጻ ተጸንብር",
+      "cta2": "ቀጥታ ዲሞ ተመልከት",
+      "cards": {
+        "card1": {
+          "title": "ብኤአይ ዝተፈጥረ መጻሕፍቲ መጽናዕቲ",
+          "subtext": "ናብ ዝዓበየ ማሕበረሰብና ተጸንብር"
+        },
+        "card2": {
+          "title": "ስልጡን ምሕደራ ፋይላት",
+          "subtext": "ካብ ጀማሪ ክሳብ ዝለመደ"
+        },
+        "card3": {
+          "title": "ግሉው መንገዲ መጽናዕቲ",
+          "subtext": "ካብ መራሕቲ ኢንዱስትሪ ተማሃር"
+        },
+        "card4": {
+          "title": "ቀጥታ ክትንባይ ግስጋሰ",
+          "subtext": "ብፍቓድካ ተማሃር"
+        }
+      }
+    },
+    "FeaturesSection": {
+      "title": "ሓደ ካብ ዝለዓለ መሓዛ መጽናዕቲ",
+      "features": {
+        "aiChatbot": {
+          "title": "ሓገዝ ኤአይ ቻትቦት",
+          "description": "ቅጽበታዊ መልስታትን መግለፂታትን ረክብ።"
+        },
+        "fileManagement": {
+          "title": "ስልጡን ምሕደራ ፋይላት",
+          "description": "መጻሕፍቲ ጽዓን፣ ኣዳልው፣ ከምኡ’ውን ምልክት ግበር።"
+        },
+        "aiMaterials": {
+          "title": "ብኤአይ ዝተፈጥረ መጻሕፍቲ መጽናዕቲ",
+          "description": "ማጠቓለሊ፣ ፍላሽካርድ፣ ከምኡ’ውን ፈተናታት።"
+        },
+        "learningPaths": {
+          "title": "ግሉው መንገዲ መጽናዕቲ",
+          "description": "ንግስጋሰኻ ዝግበር መደባት መጽናዕቲ።"
+        },
+        "progressTracking": {
+          "title": "ቀጥታ ክትንባይ ግስጋሰ",
+          "description": "ትምህርትኻ ብሓንቲ ቦታ ተዐቅብ።"
+        }
+      }
+    },
+    "StepsSection": {
+      "title": "ትምህርቲ ቀሊል ተገብረ – ሰለስተ ስጉምትታት ጥራይ!",
+      "demoButton": {
+        "text": "ቀጥታ ዲሞ ተመልከት"
+      },
+      "joinButton": {
+        "text": "ሕጂ ተጸንብር →"
+      },
+      "steps": {
+        "step1": {
+          "title": "መጻሕፍቲ መጽናዕትኻ ጽዓን",
+          "content": "PDFታት፣ ቪድዮታት፣ ከምኡ’ውን ሊንካት።"
+        },
+        "step2": {
+          "title": "ብኤአይ ቻት ግበር ቅጽበታዊ ሓገዝ ንምርካብ",
+          "content": ""
+        },
+        "step3": {
+          "title": "ተማሃርን ግስጋሰኻ ተዐቅብን",
+          "content": ""
+        }
+      }
+    },
+    "TestimonialsSection": {
+      "title": "ተጠቀምቲና እንታይ ይብሉ",
+      "testimonials": [
+        {
+          "id": 1,
+          "name": "ሳራ ኤም.",
+          "text": "\"ኤዱአሲስት ናይ መጽናዕቲ መንገደይ ቀይሩ! ኤአይ ቻትቦት ዝኸበደ ኣርእስታት ቀሊል ንምርዳእ ይገብሮ፣ ከምኡ’ውን ግሉው ፈተናታት ዕውት ክኸውን ይሕግዙኒ።\""
+        },
+        {
+          "id": 2,
+          "name": "ጆን ዲ.",
+          "text": "\"ብኤዱአሲስት፣ ኣብ ውጽኢተይ 30% ኣሻሺለ። ስልጡን ምሕደራ ፋይላት ንውዳበ መጽናዕተይ ለውጢ ኣምጺኡ!\""
+        },
+        {
+          "id": 3,
+          "name": "ኤሚሊ ቲ.",
+          "text": "\"ግሉው መንገዲ መጽናዕቲ ብፍፁም ምስ ናይ ኣነ ፍጥነት ይሰማማዕ። ከም 24/7 ዝርከብ መምህር ይመስል!\""
+        }
+      ],
+      "navigation": {
+        "previous": "ቀዳማይ",
+        "next": "ቀፃሊ"
+      }
+    },
+    "FAQSection": {
+      "title": "ተደጋጋሚ ሕቶታት",
+      "faqItems": [
+        {
+          "question": "ከመይ ገይረ ክመዝገብ እኽእል?",
+          "answer": "ብኢመይል ወይ ጉግል ኣብ 30 ካልኢታት ተመዝገብ።"
+        },
+        {
+          "question": "መጻሕፍቲ መጽናዕቲ ከመይ ገይረ ክፈጥር?",
+          "answer": "ኤአይ ካብ ትሕዝቶኻ ማጠቓለሊ/ፍላሽካርድ ብቀጥታ ይፈጥር።"
+        },
+        {
+          "question": "ናይ ዩቱብ ሊንካት ወይ ፋይላት ክጽዕን ይኽእል?",
+          "answer": "እወ፣ ሊንካት ለጥፍ ወይ PDF/PPTX ጽዓን ንኤአይ ትንታነ።"
+        },
+        {
+          "question": "ከመይ ገይረ ምስ መሓዛ ክዛሪ/ክካፈል?",
+          "answer": "ምክትታል ጉጅለን ሓባራዊ ቦታታት ስራሕን ተጠቀም።"
+        }
+      ]
+    },
+    "Footer": {
+      "companyInfo": {
+        "name": "ኤዱአሲስት",
+        "tagline": "ዝበለጸ ትምህርቲ ኣብዚ ይጅምር – ግሉው፣ ብተግባራዊ ቋንቋታት ዝድገፍ፣ ብኤአይ ዝደገፈ።",
+        "learnMore": "ተወሳኺ ፍለጥ →"
+      },
+      "navigation": {
+        "title": "ሊንካት",
+        "links": ["ገዛ", "ባህርያት", "ከመይ ይሰርሕ", "ምስክርነት", "ርክብ"]
+      },
+      "social": {
+        "title": "ሶሻል",
+        "icons": [
+          { "alt": "ትዊተር" },
+          { "alt": "ፌስቡክ" },
+          { "alt": "ኢንስታግራም" },
+          { "alt": "ሊንክድኢን" }
+        ]
+      },
+      "copyright": {
+        "text": "©2025, ኩሉ መሰላት ተዓቂቡ"
+      }
+    }
+  }
+}
