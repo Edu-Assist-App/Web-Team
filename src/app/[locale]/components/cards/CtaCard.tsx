@@ -24,10 +24,6 @@ export default function CtaCard({
 }: CtaCardProps) {
   return (
     <div className="relative overflow-hidden flex flex-col md:flex-row items-center gap-8 p-4 md:p-8 w-full bg-gradient-to-l from-[#5103ab] to-[#360271] rounded-2xl  shadow-sm">
-      {/* Subtle animated floating circle accents
-      <div className="absolute top-[-30px] left-[-30px] w-28 h-28 rounded-full bg-[#3800b3]/10 blur-3xl animate-float" />
-      <div className="absolute bottom-[-40px] right-[-40px] w-36 h-36 rounded-full bg-[#3800b3]/15 blur-4xl " /> */}
-
       {/* Icon container */}
       <div className="flex items-center justify-center gap-2 px-6 py-[22px] bg-white rounded-[99px] shadow z-10">
         <Image
@@ -51,7 +47,7 @@ export default function CtaCard({
         {haveProgress && (
           <>
             {noChapter && (
-              <div className="mt-3 flex items-center text-sm gap-2 text-[#3800b3] font-medium">
+              <div className="mt-3 flex items-center text-sm gap-2 text-[#c5adf9] font-medium">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path
                     d="M5 10H15M5 6H15M5 14H12"
@@ -65,16 +61,16 @@ export default function CtaCard({
             )}
 
             <div className="mt-2 w-full">
-              <p className="text-xs font-medium text-[#3800b3] mb-1">
+              <p className="text-xs font-medium text-[#ffc32d] mb-1">
                 Course Progress
               </p>
               <div className="flex items-center gap-2">
                 <Progress
                   value={progress}
-                  className="h-2 flex-1 bg-[#ddd]"
-                  indicatorColor="bg-[#3800b3]"
+                  className="h-2 flex-1 bg-[#fff]"
+                  indicatorColor="bg-[#ffc32d]"
                 />
-                <span className="text-sm font-semibold text-[#3800b3]">
+                <span className="text-sm font-semibold text-[#ffc32d]">
                   {progress}%
                 </span>
               </div>

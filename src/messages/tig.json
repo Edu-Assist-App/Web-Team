@@ -40,7 +40,9 @@
     },
     "buttons": {
       "login": "እቶ",
-      "getStarted": "ጀምር"
+      "getStarted": "ጀምር",
+      "dashboard": "ናብ ዳሽቦርድ ኪድ",
+      "logout": "ውጻ"
     },
     "mobileMenu": {
       "languageLabel": "ቋንቋ",
@@ -106,19 +108,20 @@
   },
   "Sidebar": {
     "logoAlt": "ኤዱአሲስት ሎጎ",
-    "brandName": "ኤዱአሲስት",
+    "brandName": "EduAssist",
     "quickNav": "ቅልጡፍ መራሒ",
     "navItems": {
-      "overview": "እታዊ መግለፂ",
-      "studyMaterials": "መጻሕፍቲ መጽናዕቲ",
+      "dashboard": "እታ ሓፈሻዊ ትይት",
+      "materials": "መጻሕፍቲ መጽናዕቲ",
+      "resources": "መጻሕፍቲ መጽናዕቲ",
       "chats": "ዕላል",
-      "settings": "ምችዎታት",
-      "logout": "ካብ ስርዓት ውፃእ"
+      "settings": "ምምላእ",
+      "logout": "ውጻ"
     },
     "buttons": {
       "newModule": "ሓድሽ ሞዱል",
       "settings": "ምችዎታት",
-      "logout": "ካብ ስርዓት ውፃእ"
+      "logout": "ውጻ"
     },
     "ariaLabels": {
       "collapse": "ሳይድባር ተግዕ",
