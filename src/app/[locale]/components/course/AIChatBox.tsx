@@ -2,6 +2,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { AiOutlineSend, AiOutlineClose } from "react-icons/ai";
 
+// Cast icons to any to resolve type issues
+const AiOutlineCloseIcon = AiOutlineClose as any;
+const AiOutlineSendIcon = AiOutlineSend as any;
+
 interface AIChatBoxProps {
   isOpen: boolean;
   onClose: () => void;
@@ -48,7 +52,7 @@ const AIChatBox: React.FC<AIChatBoxProps> = ({ isOpen, onClose, onSendPrompt }) 
       <div className="flex justify-between items-center p-3 bg-gray-100 rounded-t-lg border-b">
         <h3 className="text-sm font-semibold text-gray-800">AI Assistant</h3>
         <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
-          <AiOutlineClose size={18} />
+          <AiOutlineCloseIcon size={18} />
         </button>
       </div>
 
@@ -93,7 +97,7 @@ const AIChatBox: React.FC<AIChatBoxProps> = ({ isOpen, onClose, onSendPrompt }) 
           onClick={handleSend}
           className="p-2 bg-[#3900b3] text-white rounded-md"
         >
-          <AiOutlineSend size={18} />
+          <AiOutlineSendIcon size={18} />
         </button>
       </div>
     </div>

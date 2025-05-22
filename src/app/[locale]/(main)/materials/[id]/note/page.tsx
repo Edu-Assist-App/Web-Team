@@ -4,12 +4,12 @@ import RichTextChapter from "@/app/[locale]/components/course/RichTextChapter";
 import { Button } from "@/app/[locale]/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
-import AIChatBox from "@/app/components/course/AIChatBox";
+import AIChatBox from "@/app/[locale]/components/course/AIChatBox";
 import { AiOutlineRobot } from "react-icons/ai";
 
 // Dynamically import DOMPurify on the client side only
 import dynamic from "next/dynamic";
-const DOMPurify = dynamic(() => import("dompurify"), { ssr: false });
+const DOMPurify = dynamic(() => import("dompurify") as any, { ssr: false }) as any;
 
 const courseData = {
   title: "Introduction to Data Science",
@@ -35,6 +35,8 @@ const courseData = {
     },
   ],
 };
+
+const AiOutlineRobotIcon = (AiOutlineRobot as any);
 
 export default function Page() {
   const [currentChapter, setCurrentChapter] = useState(1);
@@ -184,7 +186,7 @@ export default function Page() {
           className="fixed bottom-1 right-1 w-12 h-12 bg-[#3900b3] text-white rounded-full flex items-center justify-center shadow-lg z-40"
           title="Toggle AI Assistant"
         >
-          <AiOutlineRobot size={24} />
+          <AiOutlineRobotIcon size={24} />
         </button>
 
         <AIChatBox

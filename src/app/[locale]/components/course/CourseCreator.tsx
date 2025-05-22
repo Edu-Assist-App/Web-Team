@@ -3,7 +3,9 @@
 import { useState } from "react";
 import { Button } from "@/app/[locale]/components/ui/button";
 import { Card } from "@/app/[locale]/components/ui/card";
-import { Textarea } from "../ui/Textarea";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
+import { Textarea } from "../ui/textarea";
 import { FileUp, YoutubeIcon, Send } from "lucide-react";
 import { useRouter } from "next/navigation";
 
