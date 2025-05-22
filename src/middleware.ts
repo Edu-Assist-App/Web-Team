@@ -49,7 +49,7 @@ export async function middleware(request: NextRequest) {
       secret: process.env.JWT_SECRET,
     });
 
-    console.log("Token in middleware:", token);
+    // console.log("Token in middleware:", token);
 
     if (!token) {
       const loginUrl = new URL(`/${locale || "en"}/auth/login`, request.url);
