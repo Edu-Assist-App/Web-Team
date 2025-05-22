@@ -40,7 +40,9 @@
     },
     "buttons": {
       "login": "登录",
-      "getStarted": "开始使用"
+      "getStarted": "开始使用",
+      "dashboard": "前往仪表板",
+      "logout": "退出登录"
     },
     "mobileMenu": {
       "languageLabel": "语言",

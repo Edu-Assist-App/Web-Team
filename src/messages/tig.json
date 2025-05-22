@@ -40,7 +40,9 @@
     },
     "buttons": {
       "login": "እቶ",
-      "getStarted": "ጀምር"
+      "getStarted": "ጀምር",
+      "dashboard": "ናብ ዳሽቦርድ ኪድ",
+      "logout": "ውጻ"
     },
     "mobileMenu": {
       "languageLabel": "ቋንቋ",
@@ -113,12 +115,12 @@
       "studyMaterials": "መጻሕፍቲ መጽናዕቲ",
       "chats": "ዕላል",
       "settings": "ምችዎታት",
-      "logout": "ካብ ስርዓት ውፃእ"
+      "logout": "ውጻ"
     },
     "buttons": {
       "newModule": "ሓድሽ ሞዱል",
       "settings": "ምችዎታት",
-      "logout": "ካብ ስርዓት ውፃእ"
+      "logout": "ውጻ"
     },
     "ariaLabels": {
       "collapse": "ሳይድባር ተግዕ",

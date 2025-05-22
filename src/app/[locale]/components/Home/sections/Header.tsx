@@ -1,29 +1,25 @@
 "use client";
-import { GlobeIcon, Menu, ChevronDown, Check } from "lucide-react";
+import { GlobeIcon, Menu, ChevronDown, Check, Search, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useLocale, useTranslations } from "next-intl"; // Add useLocale here
+import { useLocale, useTranslations } from "next-intl";
 import React, { useState } from "react";
 import { Button } from "../../ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "../../ui/navigation-menu";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../../ui/dropdown-menu";
 import { signOut, useSession } from "next-auth/react";
-import { sign } from "crypto";
+import { Input } from "../../ui/input";
 
 export const Header = (): JSX.Element => {
   const { data: session } = useSession();
-  // console.log("Session data:", session);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false); // State for collapsible language section
+  const [languageSearchTerm, setLanguageSearchTerm] = useState("");
   const router = useRouter();
   const pathname = usePathname();
   const currentLocale = useLocale();
@@ -81,18 +77,30 @@ export const Header = (): JSX.Element => {
     },
   ];
 
+  const filteredLanguages = languages.filter(
+    (lang) =>
+      lang.name.toLowerCase().includes(languageSearchTerm.toLowerCase()) ||
+      lang.shortName.toLowerCase().includes(languageSearchTerm.toLowerCase())
+  );
+
+  const onMenuClick = () => {
+    setIsMenuOpen((prev) => !prev);
+    setIsLanguageOpen(false); // Close language section when toggling menu
+  };
+
   const handleLanguageChange = (newLocale: string) => {
     const newPath = `/${newLocale}${
       pathWithoutLocale === "/" ? "" : pathWithoutLocale
     }`;
     router.push(newPath);
     setIsMenuOpen(false);
+    setIsLanguageOpen(false);
   };
 
   const currentLanguage = languages.find((lang) => lang.code === currentLocale);
 
   return (
-    <div className="flex flex-col w-full bg-white border border-solid border-[#f9f9f9] sticky top-0 z-50">
+    <div className="flex flex-col w-full max-h-screen bg-white border border-solid border-[#f9f9f9] sticky top-0  z-50 overflow-y-auto">
       <header className="flex items-center justify-between px-4 sm:px-8 lg:px-[120px] py-6 w-full">
         {/* Logo Section */}
         <Link href="/" className="flex items-center gap-2">
@@ -107,10 +115,14 @@ export const Header = (): JSX.Element => {
         {/* Mobile Menu Button */}
         <button
           className="lg:hidden"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={onMenuClick}
           aria-label="Toggle menu"
         >
-          <Menu className="h-6 w-6" />
+          {isMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
 
         {/* Desktop Navigation */}
@@ -162,14 +174,14 @@ export const Header = (): JSX.Element => {
                   onClick={() => router.push("/dashboard")}
                   className="px-6 py-3 bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm"
                 >
-                  Go To DashBoard
+                  {t("buttons.dashboard")}
                 </Button>
                 <Button
                   onClick={() => signOut()}
                   variant="outline"
                   className="px-6 py-2 font-['Ubuntu',Helvetica] font-normal text-black text-base"
                 >
-                  Logout
+                  {t("buttons.logout")}
                 </Button>
               </>
             )}
@@ -182,7 +194,6 @@ export const Header = (): JSX.Element => {
                 >
                   {t("buttons.login")}
                 </Button>
-
                 <Button
                   onClick={() => router.push("/auth/register")}
                   className="px-6 py-3 bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm"
@@ -195,9 +206,9 @@ export const Header = (): JSX.Element => {
         </div>
       </header>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Menu - Expanded when hamburger menu is clicked */}
       {isMenuOpen && (
-        <div className="lg:hidden flex flex-col w-full bg-white border-t border-[#f9f9f9] px-4 py-4">
+        <div className="lg:hidden flex flex-col items-start gap-2 px-4 py-4 bg-white border-t border-solid border-[#f9f9f9]">
           <nav className="flex flex-col gap-4">
             {navItems.map((item, index) => (
               <Link
@@ -210,21 +221,84 @@ export const Header = (): JSX.Element => {
               </Link>
             ))}
           </nav>
-          <div className="mt-4">
-            <div className="mb-4">
-              <h3 className="font-medium text-sm text-gray-500 mb-2">
-                {t("mobileMenu.languageLabel")}
-              </h3>
-              <div className="flex flex-col gap-2">
-                {languages.map((language) => (
+
+          {session && (
+            <>
+              <Button
+                onClick={() => router.push("/dashboard")}
+                className="px-6 py-3 bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm w-full"
+              >
+                {t("buttons.dashboard")}
+              </Button>
+              <Button
+                onClick={() => signOut()}
+                variant="outline"
+                className="px-6 py-2 font-['Ubuntu',Helvetica] font-normal text-black text-base w-full"
+              >
+                {t("buttons.logout")}
+              </Button>
+            </>
+          )}
+          {!session && (
+            <>
+              <Button
+                onClick={() => router.push("auth/login")}
+                variant="outline"
+                className="px-6 py-2 font-['Ubuntu',Helvetica] font-normal text-black text-base w-full"
+              >
+                {t("buttons.login")}
+              </Button>
+              <Button
+                onClick={() => router.push("/auth/register")}
+                className="px-6 py-3 bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm w-full"
+              >
+                {t("buttons.getStarted")}
+              </Button>
+            </>
+          )}
+
+          {/* Collapsible Language Selector for Mobile */}
+          <div className="w-full flex flex-col max-h-[300px]">
+            <Button
+              variant="ghost"
+              className="w-full justify-start gap-3"
+              onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+              aria-expanded={isLanguageOpen}
+              aria-controls="language-collapse"
+            >
+              <div className="flex items-center justify-center p-1 bg-[#155ddc1a] rounded-lg">
+                <GlobeIcon className="w-4 h-4" />
+              </div>
+              <span>{currentLanguage?.shortName}</span>
+              <ChevronDown
+                className={`ml-auto h-4 w-4 opacity-50 transition-transform ${
+                  isLanguageOpen ? "rotate-180" : ""
+                }`}
+              />
+            </Button>
+            <div
+              id="language-collapse"
+              className={`overflow-hidden flex flex-col transition-all duration-300 ease-in-out ${
+                isLanguageOpen ? "h-full pb-4 opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              <div className="px-2 py-2 border-t border-solid border-[#f9f9f9]">
+                <div className="relative">
+                  <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder={t("language.searchPlaceholder")}
+                    className="pl-8"
+                    value={languageSearchTerm}
+                    onChange={(e) => setLanguageSearchTerm(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="max-h-60 overflow-y-auto">
+                {filteredLanguages.map((language) => (
                   <button
                     key={language.code}
                     onClick={() => handleLanguageChange(language.code)}
-                    className={`flex items-center justify-between px-4 py-2 rounded-lg ${
-                      language.code === currentLocale
-                        ? "bg-[#f0f0f0]"
-                        : "hover:bg-gray-50"
-                    }`}
+                    className="w-full flex justify-between items-center px-4 py-2 text-left text-sm font-['Ubuntu',Helvetica] font-normal text-[#040303] hover:bg-gray-50"
                   >
                     <span>{language.name}</span>
                     {language.code === currentLocale && (
@@ -232,25 +306,13 @@ export const Header = (): JSX.Element => {
                     )}
                   </button>
                 ))}
+                {filteredLanguages.length === 0 && (
+                  <div className="px-4 py-2 text-sm text-muted-foreground">
+                    {t("language.noResults")}
+                  </div>
+                )}
               </div>
             </div>
-            {!session ? (
-              <>
-                <Button
-                  variant="outline"
-                  className="w-full font-['Ubuntu',Helvetica] font-normal text-black text-base mb-2"
-                >
-                  {t("buttons.login")}
-                </Button>
-                <Button className="w-full bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm">
-                  {t("buttons.getStarted")}
-                </Button>
-              </>
-            ) : (
-              <Button className="w-full bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm">
-                DashBoard
-              </Button>
-            )}
           </div>
         </div>
       )}

@@ -40,7 +40,9 @@
     },
     "buttons": {
       "login": "Seeni",
-      "getStarted": "Jalqabi"
+      "getStarted": "Jalqabi",
+      "dashboard": "Daashboordii Deemi",
+      "logout": "Ba'i"
     },
     "mobileMenu": {
       "languageLabel": "Afaan",

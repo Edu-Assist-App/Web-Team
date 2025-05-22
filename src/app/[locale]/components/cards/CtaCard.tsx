@@ -51,7 +51,7 @@ export default function CtaCard({
         {haveProgress && (
           <>
             {noChapter && (
-              <div className="mt-3 flex items-center text-sm gap-2 text-[#3800b3] font-medium">
+              <div className="mt-3 flex items-center text-sm gap-2 text-[#c5adf9] font-medium">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path
                     d="M5 10H15M5 6H15M5 14H12"

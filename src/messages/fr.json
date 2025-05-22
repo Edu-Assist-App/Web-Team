@@ -40,7 +40,9 @@
     },
     "buttons": {
       "login": "Connexion",
-      "getStarted": "Commencer"
+      "getStarted": "Commencer",
+      "dashboard": "Aller au tableau de bord",
+      "logout": "Déconnexion"
     },
     "mobileMenu": {
       "languageLabel": "Langue",

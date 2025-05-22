@@ -40,7 +40,9 @@
     },
     "buttons": {
       "login": "ግባ",
-      "getStarted": "ጀምር"
+      "getStarted": "ጀምር",
+      "dashboard": "ወደ ዳሽቦርድ ይሂዱ",
+      "logout": "ውጣ"
     },
     "mobileMenu": {
       "languageLabel": "ቋንቋ",

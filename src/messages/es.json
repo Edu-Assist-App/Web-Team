@@ -40,7 +40,9 @@
     },
     "buttons": {
       "login": "Iniciar sesión",
-      "getStarted": "Comenzar"
+      "getStarted": "Comenzar",
+      "dashboard": "Ir al panel de control",
+      "logout": "Cerrar sesión"
     },
     "mobileMenu": {
       "languageLabel": "Idioma",

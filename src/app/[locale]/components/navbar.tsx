@@ -31,6 +31,8 @@ export const Navbar = (): JSX.Element => {
   const locale = useLocale();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [languageSearchTerm, setLanguageSearchTerm] = useState("");
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false); // State for collapsible language section
+
   const router = useRouter();
   const pathname = usePathname();
   const currentLocale = useLocale();
@@ -182,7 +184,7 @@ export const Navbar = (): JSX.Element => {
   return (
     <>
       {/* Navbar */}
-      <div className="flex flex-col w-full bg-white border border-solid border-[#f9f9f9] sticky top-0 z-50">
+      <div className="flex flex-col w-full max-h-screen bg-white border border-solid border-[#f9f9f9] sticky top-0 z-50 overflow-y-auto">
         <header className="flex items-center justify-between px-4 lg:px-12 lg:pr-[8%] py-4 lg:py-6 w-full">
           {/* Mobile Logo and Navigation */}
           <div className="lg:hidden flex items-center gap-4">
@@ -291,18 +293,34 @@ export const Navbar = (): JSX.Element => {
                 <span>{item.name}</span>
               </Link>
             ))}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="w-full justify-start gap-3">
-                  <div className="flex items-center justify-center p-1 bg-[#155ddc1a] rounded-lg">
-                    <GlobeIcon className="w-4 h-4" />
-                  </div>
-                  <span>{currentLanguage?.shortName}</span>
-                  <ChevronDown className="ml-auto h-4 w-4 opacity-50" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-[calc(100vw-32px)]">
-                <div className="px-2 py-1">
+            {/* Collapsible Language Selector for Mobile */}
+            <div className="w-full flex flex-col max-h-[300px]">
+              <Button
+                variant="ghost"
+                className="w-full justify-start gap-3"
+                onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+                aria-expanded={isLanguageOpen}
+                aria-controls="language-collapse"
+              >
+                <div className="flex items-center justify-center p-1 bg-[#155ddc1a] rounded-lg">
+                  <GlobeIcon className="w-4 h-4" />
+                </div>
+                <span>{currentLanguage?.shortName}</span>
+                <ChevronDown
+                  className={`ml-auto h-4 w-4 opacity-50 transition-transform ${
+                    isLanguageOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </Button>
+              <div
+                id="language-collapse"
+                className={`overflow-hidden flex flex-col transition-all duration-300 ease-in-out ${
+                  isLanguageOpen
+                    ? "h-full pb-4 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="px-2 py-2 border-t border-solid border-[#f9f9f9]">
                   <div className="relative">
                     <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                     <Input
@@ -313,23 +331,27 @@ export const Navbar = (): JSX.Element => {
                     />
                   </div>
                 </div>
-                <DropdownMenuSeparator />
                 <div className="max-h-60 overflow-y-auto">
                   {filteredLanguages.map((language) => (
-                    <DropdownMenuItem
+                    <button
                       key={language.code}
                       onClick={() => handleLanguageChange(language.code)}
-                      className="cursor-pointer flex justify-between"
+                      className="w-full flex justify-between items-center px-4 py-2 text-left text-sm font-['Ubuntu',Helvetica] font-normal text-[#040303] hover:bg-gray-50"
                     >
                       <span>{language.name}</span>
                       {language.code === currentLocale && (
                         <Check className="h-4 w-4 text-primary" />
                       )}
-                    </DropdownMenuItem>
+                    </button>
                   ))}
+                  {filteredLanguages.length === 0 && (
+                    <div className="px-4 py-2 text-sm text-muted-foreground">
+                      {t("language.noResults")}
+                    </div>
+                  )}
                 </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
+              </div>
+            </div>
           </div>
         )}
       </div>
