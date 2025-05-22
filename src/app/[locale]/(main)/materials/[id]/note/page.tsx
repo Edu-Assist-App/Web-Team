@@ -5,11 +5,11 @@ import { Button } from "@/app/[locale]/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
 import AIChatBox from "@/app/[locale]/components/course/AIChatBox";
-import { MdOutlineSmartToy } from "react-icons/md";
+import { AiOutlineRobot } from "react-icons/ai";
 
 // Dynamically import DOMPurify on the client side only
 import dynamic from "next/dynamic";
-const DOMPurify = dynamic(() => import("dompurify"), { ssr: false });
+const DOMPurify = dynamic(() => import("dompurify") as any, { ssr: false }) as any;
 
 const courseData = {
   title: "Introduction to Data Science",
@@ -35,6 +35,8 @@ const courseData = {
     },
   ],
 };
+
+const AiOutlineRobotIcon = (AiOutlineRobot as any);
 
 export default function Page() {
   const [currentChapter, setCurrentChapter] = useState(1);
@@ -227,7 +229,7 @@ print(df.describe())
           className="fixed bottom-1 right-1 w-12 h-12 bg-[#3900b3] text-white rounded-full flex items-center justify-center shadow-lg z-40"
           title="Toggle AI Assistant"
         >
-          <MdOutlineSmartToy size={24} />
+          <AiOutlineRobotIcon size={24} />
         </button>
 
         <AIChatBox

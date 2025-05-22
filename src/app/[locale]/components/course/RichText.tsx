@@ -17,24 +17,35 @@ import {
   AiOutlineCode,
   AiOutlineRedo,
   AiOutlineUndo,
-} from "react-icons/ai";
-import { BsListUl, BsListOl, BsCodeSlash } from "react-icons/bs";
-import { TbSeparatorHorizontal } from "react-icons/tb";
-import { MdOutlineSend } from "react-icons/md";
-import Code from "@tiptap/extension-code";
-import BulletList from "@tiptap/extension-bullet-list";
-import OrderedList from "@tiptap/extension-ordered-list";
-import Youtube from "@tiptap/extension-youtube";
-import TextAlign from "@tiptap/extension-text-align";
-import CodeBlock from "@tiptap/extension-code-block";
-import { Extension } from "@tiptap/core";
-import "../../../TextEditor.css";
+} from 'react-icons/ai';
+import { BsListUl, BsListOl, BsCodeSlash } from 'react-icons/bs';
+import { TbSeparatorHorizontal } from 'react-icons/tb';
+import { MdOutlineSend } from 'react-icons/md';
+import Code from '@tiptap/extension-code';
+import BulletList from '@tiptap/extension-bullet-list';
+import OrderedList from '@tiptap/extension-ordered-list';
+import Youtube from '@tiptap/extension-youtube';
+import TextAlign from '@tiptap/extension-text-align';
+import CodeBlock from '@tiptap/extension-code-block';
+import { Extension } from '@tiptap/core';
 
 interface RichTextProps {
   content: string;
   setContent: React.Dispatch<React.SetStateAction<string>>;
   onSendPrompt?: (prompt: string) => Promise<string>;
 }
+
+// Cast icons to any to resolve type issues
+const AiOutlineBoldIcon = AiOutlineBold as any;
+const AiOutlineItalicIcon = AiOutlineItalic as any;
+const AiOutlineCodeIcon = AiOutlineCode as any;
+const AiOutlineRedoIcon = AiOutlineRedo as any;
+const AiOutlineUndoIcon = AiOutlineUndo as any;
+const BsListUlIcon = BsListUl as any;
+const BsListOlIcon = BsListOl as any;
+const BsCodeSlashIcon = BsCodeSlash as any;
+const TbSeparatorHorizontalIcon = TbSeparatorHorizontal as any;
+const MdOutlineSendIcon = MdOutlineSend as any;
 
 // Custom Iframe Extension to handle raw <iframe> tags
 const Iframe = Extension.create({
@@ -197,11 +208,7 @@ const MenuBar = () => {
                       : "text-gray-700"
                   }`}
                   onClick={() => {
-                    editor
-                      .chain()
-                      .focus()
-                      .toggleHeading({ level: level as 1 | 2 | 3 | 4 | 5 | 6 })
-                      .run();
+                    editor.chain().focus().toggleHeading({ level: level as any }).run();
                     setHeadingLevel(level);
                     setDropdownOpen(false);
                   }}
@@ -219,164 +226,22 @@ const MenuBar = () => {
   return (
     <div className="flex flex-wrap items-center gap-1 sm:gap-2 p-1 sm:p-2 bg-gray-100 rounded-md shadow-md sticky top-0 z-10">
       <HeadingDropdown />
-      <button
-        onClick={() => editor.chain().focus().toggleBold().run()}
-        disabled={!editor?.can().chain().focus().toggleBold().run()}
-        className={`px-2 py-1 rounded-md text-sm font-medium ${
-          editor.isActive("bold")
-            ? "bg-blue-500 text-white"
-            : "bg-white hover:bg-gray-200 text-gray-700"
-        } disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0`}
-        title="Bold"
-      >
-        <AiOutlineBold />
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleItalic().run()}
-        disabled={!editor?.can().chain().focus().toggleItalic().run()}
-        className={`px-2 py-1 rounded-md text-sm font-medium ${
-          editor.isActive("italic")
-            ? "bg-blue-500 text-white"
-            : "bg-white hover:bg-gray-200 text-gray-700"
-        } disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0`}
-        title="Italic"
-      >
-        <AiOutlineItalic />
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleCode().run()}
-        disabled={!editor?.can().chain().focus().toggleCode().run()}
-        className={`px-2 py-1 rounded-md text-sm font-medium ${
-          editor.isActive("code")
-            ? "bg-blue-500 text-white"
-            : "bg-white hover:bg-gray-200 text-gray-700"
-        } disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0`}
-        title="Code"
-      >
-        <AiOutlineCode />
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-        disabled={!editor?.can().chain().focus().toggleCodeBlock().run()}
-        className={`px-2 py-1 rounded-md text-sm font-medium ${
-          editor.isActive("codeBlock")
-            ? "bg-blue-500 text-white"
-            : "bg-white hover:bg-gray-200 text-gray-700"
-        } disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0`}
-        title="Code Block"
-      >
-        <BsCodeSlash />
-      </button>
-      <button
-        onClick={() => editor.chain().focus().unsetAllMarks().run()}
-        className="px-3 py-2 rounded-md text-sm font-medium bg-white hover:bg-gray-200 text-gray-700 flex-shrink-0"
-        title="Clear marks"
-      >
-        Clear marks
-      </button>
-      <button
-        onClick={() => editor.chain().focus().clearNodes().run()}
-        className="px-3 py-2 rounded-md text-sm font-medium bg-white hover:bg-gray-200 text-gray-700 flex-shrink-0"
-        title="Clear nodes"
-      >
-        Clear nodes
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleBulletList().run()}
-        className={`px-2 py-1 rounded-md text-sm font-medium ${
-          editor.isActive("bulletList")
-            ? "bg-blue-500 text-white"
-            : "bg-white hover:bg-gray-200 text-gray-700"
-        } flex-shrink-0`}
-        title="Bullet list"
-      >
-        <BsListUl />
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleOrderedList().run()}
-        className={`px-2 py-1 rounded-md text-sm font-medium ${
-          editor.isActive("orderedList")
-            ? "bg-blue-500 text-white"
-            : "bg-white hover:bg-gray-200 text-gray-700"
-        } flex-shrink-0`}
-        title="Ordered list"
-      >
-        <BsListOl />
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setTextAlign("left").run()}
-        className={`px-2 py-1 rounded-md text-sm font-medium ${
-          editor.isActive({ textAlign: "left" })
-            ? "bg-blue-500 text-white"
-            : "bg-white hover:bg-gray-200 text-gray-700"
-        } flex-shrink-0`}
-        title="Align Left"
-      >
-        Left
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setTextAlign("center").run()}
-        className={`px-2 py-1 rounded-md text-sm font-medium ${
-          editor.isActive({ textAlign: "center" })
-            ? "bg-blue-500 text-white"
-            : "bg-white hover:bg-gray-200 text-gray-700"
-        } flex-shrink-0`}
-        title="Align Center"
-      >
-        Center
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setTextAlign("right").run()}
-        className={`px-2 py-1 rounded-md text-sm font-medium ${
-          editor.isActive({ textAlign: "right" })
-            ? "bg-blue-500 text-white"
-            : "bg-white hover:bg-gray-200 text-gray-700"
-        } flex-shrink-0`}
-        title="Align Right"
-      >
-        Right
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setTextAlign("justify").run()}
-        className={`px-2 py-1 rounded-md text-sm font-medium ${
-          editor.isActive({ textAlign: "justify" })
-            ? "bg-blue-500 text-white"
-            : "bg-white hover:bg-gray-200 text-gray-700"
-        } flex-shrink-0`}
-        title="Justify"
-      >
-        Justify
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setHorizontalRule().run()}
-        className="px-3 py-2 rounded-md text-sm font-medium bg-white hover:bg-gray-200 text-gray-700 flex-shrink-0"
-        title="Horizontal rule"
-      >
-        <TbSeparatorHorizontal />
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setHardBreak().run()}
-        className="px-3 py-2 rounded-md text-sm font-medium bg-white hover:bg-gray-200 text-gray-700 flex-shrink-0"
-        title="Hard break"
-      >
-        Hard break
-      </button>
-      <button
-        onClick={() => editor.chain().focus().undo().run()}
-        disabled={!editor?.can().chain().focus().undo().run()}
-        className="px-3 py-2 rounded-md text-sm font-medium bg-white hover:bg-gray-200 text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
-        title="Undo"
-      >
-        <AiOutlineUndo />
-      </button>
-      <button
-        onClick={() => editor.chain().focus().redo().run()}
-        disabled={!editor?.can().chain().focus().redo().run()}
-        className="px-3 py-2 rounded-md text-sm font-medium bg-white hover:bg-gray-200 text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
-        title="Redo"
-      >
-        <AiOutlineRedo />
-      </button>
+      <button onClick={() => editor.chain().focus().toggleBold().run()} disabled={!editor?.can().chain().focus().toggleBold().run()} className={`px-2 py-1 rounded-md text-sm font-medium ${editor.isActive('bold') ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-200 text-gray-700'} disabled:opacity-50 disabled:cursor-not-allowed`} title="Bold"><AiOutlineBoldIcon /></button>
+      <button onClick={() => editor.chain().focus().toggleItalic().run()} disabled={!editor?.can().chain().focus().toggleItalic().run()} className={`px-2 py-1 rounded-md text-sm font-medium ${editor.isActive('italic') ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-200 text-gray-700'} disabled:opacity-50 disabled:cursor-not-allowed`} title="Italic"><AiOutlineItalicIcon /></button>
+      <button onClick={() => editor.chain().focus().toggleCode().run()} disabled={!editor?.can().chain().focus().toggleCode().run()} className={`px-2 py-1 rounded-md text-sm font-medium ${editor.isActive('code') ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-200 text-gray-700'} disabled:opacity-50 disabled:cursor-not-allowed`} title="Code"><AiOutlineCodeIcon /></button>
+      <button onClick={() => editor.chain().focus().toggleCodeBlock().run()} disabled={!editor?.can().chain().focus().toggleCodeBlock().run()} className={`px-2 py-1 rounded-md text-sm font-medium ${editor.isActive('codeBlock') ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-200 text-gray-700'} disabled:opacity-50 disabled:cursor-not-allowed`} title="Code Block"><BsCodeSlashIcon /></button>
+      <button onClick={() => editor.chain().focus().unsetAllMarks().run()} className="px-3 py-2 rounded-md text-sm font-medium bg-white hover:bg-gray-200 text-gray-700" title="Clear marks">Clear marks</button>
+      <button onClick={() => editor.chain().focus().clearNodes().run()} className="px-3 py-2 rounded-md text-sm font-medium bg-white hover:bg-gray-200 text-gray-700" title="Clear nodes">Clear nodes</button>
+      <button onClick={() => editor.chain().focus().toggleBulletList().run()} className={`px-2 py-1 rounded-md text-sm font-medium ${editor.isActive('bulletList') ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-200 text-gray-700'}`} title="Bullet list"><BsListUlIcon /></button>
+      <button onClick={() => editor.chain().focus().toggleOrderedList().run()} className={`px-2 py-1 rounded-md text-sm font-medium ${editor.isActive('orderedList') ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-200 text-gray-700'}`} title="Ordered list"><BsListOlIcon /></button>
+      <button onClick={() => editor.chain().focus().setTextAlign('left').run()} className={`px-2 py-1 rounded-md text-sm font-medium ${editor.isActive({ textAlign: 'left' }) ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-200 text-gray-700'}`} title="Align Left">Left</button>
+      <button onClick={() => editor.chain().focus().setTextAlign('center').run()} className={`px-2 py-1 rounded-md text-sm font-medium ${editor.isActive({ textAlign: 'center' }) ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-200 text-gray-700'}`} title="Align Center">Center</button>
+      <button onClick={() => editor.chain().focus().setTextAlign('right').run()} className={`px-2 py-1 rounded-md text-sm font-medium ${editor.isActive({ textAlign: 'right' }) ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-200 text-gray-700'}`} title="Align Right">Right</button>
+      <button onClick={() => editor.chain().focus().setTextAlign('justify').run()} className={`px-2 py-1 rounded-md text-sm font-medium ${editor.isActive({ textAlign: 'justify' }) ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-200 text-gray-700'}`} title="Justify">Justify</button>
+      <button onClick={() => editor.chain().focus().setHorizontalRule().run()} className="px-3 py-2 rounded-md text-sm font-medium bg-white hover:bg-gray-200 text-gray-700" title="Horizontal rule"><TbSeparatorHorizontalIcon /></button>
+      <button onClick={() => editor.chain().focus().setHardBreak().run()} className="px-3 py-2 rounded-md text-sm font-medium bg-white hover:bg-gray-200 text-gray-700" title="Hard break">Hard break</button>
+      <button onClick={() => editor.chain().focus().undo().run()} disabled={!editor?.can().chain().focus().undo().run()} className="px-3 py-2 rounded-md text-sm font-medium bg-white hover:bg-gray-200 text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed" title="Undo"><AiOutlineUndoIcon /></button>
+      <button onClick={() => editor.chain().focus().redo().run()} disabled={!editor?.can().chain().focus().redo().run()} className="px-3 py-2 rounded-md text-sm font-medium bg-white hover:bg-gray-200 text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed" title="Redo"><AiOutlineRedoIcon /></button>
     </div>
   );
 };
@@ -384,6 +249,7 @@ const MenuBar = () => {
 const extensions = [
   Iframe,
   Color.configure({ types: [TextStyle.name, ListItem.name] }),
+  TextStyle.configure({ /* types: [ListItem.name] */ }),
   StarterKit.configure({
     bulletList: false,
     orderedList: false,
@@ -410,7 +276,6 @@ const extensions = [
       class: "youtube-iframe",
     },
   }),
-  Iframe, // Add the custom Iframe extension
   TextAlign.configure({
     types: ["heading", "paragraph"],
   }),
@@ -568,7 +433,7 @@ const CustomBubbleMenu = ({ editor, onSendPrompt }) => {
         onClick={handleSendPrompt}
         className="bg-[#3900b3] text-white p-1 px-2 rounded text-sm hover:bg-[#2d0090]"
       >
-        <MdOutlineSend size={18} />
+        <MdOutlineSendIcon size={18} />
       </button>
     </div>
   );
