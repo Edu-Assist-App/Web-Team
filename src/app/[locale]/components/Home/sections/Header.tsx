@@ -50,7 +50,7 @@ export const Header = (): JSX.Element => {
       shortName: t("language.tigrinyaShort"),
     },
     {
-      code: "afan",
+      code: "oro",
       name: t("language.oromiffa"),
       shortName: t("language.oromiffaShort"),
     },
@@ -140,19 +140,18 @@ export const Header = (): JSX.Element => {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-6">
-          <NavigationMenu>
-            <NavigationMenuList className="flex items-center gap-6">
-              {navItems.map((item, index) => (
-                <NavigationMenuItem key={index}>
-                  <Link href={item.href} passHref legacyBehavior>
-                    <NavigationMenuLink className="font-['Ubuntu',Helvetica] font-normal text-[#040303] text-base cursor-pointer">
-                      {item.name}
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
+          <nav className="flex items-center gap-6">
+            {navItems.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                className="font-['Ubuntu',Helvetica] font-normal text-[#040303] text-base cursor-pointer"
+                passHref
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
 
           <div className="flex items-center gap-4">
             <DropdownMenu>
@@ -182,7 +181,24 @@ export const Header = (): JSX.Element => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            {!session ? (
+            {session && (
+              <>
+                <Button
+                  onClick={() => router.push("/dashboard")}
+                  className="px-6 py-3 bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm"
+                >
+                  Go To DashBoard
+                </Button>
+                <Button
+                  onClick={() => signOut()}
+                  variant="outline"
+                  className="px-6 py-2 font-['Ubuntu',Helvetica] font-normal text-black text-base"
+                >
+                  Logout
+                </Button>
+              </>
+            )}
+            {!session && (
               <>
                 <Button
                   onClick={() => router.push("auth/login")}
@@ -197,22 +213,6 @@ export const Header = (): JSX.Element => {
                   className="px-6 py-3 bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm"
                 >
                   {t("buttons.getStarted")}
-                </Button>
-              </>
-            ) : (
-              <>
-                <Button
-                  onClick={() => router.push("/dashboard")}
-                  className="px-6 py-3 bg-[#3800b3] font-['Ubuntu',Helvetica] font-normal text-white text-sm"
-                >
-                  Go To DashBoard
-                </Button>
-                <Button
-                  onClick={() => signOut()}
-                  variant="outline"
-                  className="px-6 py-2 font-['Ubuntu',Helvetica] font-normal text-black text-base"
-                >
-                  LogOut
                 </Button>
               </>
             )}

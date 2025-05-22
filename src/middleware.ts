@@ -10,7 +10,7 @@ const supportedLocales = [
   "fr",
   "amh",
   "tig",
-  "afan", // Your custom ones
+  "oro", // Your custom ones
   "es",
   "ar",
   "zh",
