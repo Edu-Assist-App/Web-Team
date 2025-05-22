@@ -20,6 +20,7 @@ import {
 } from 'react-icons/ai';
 import { BsListUl, BsListOl, BsCodeSlash } from 'react-icons/bs';
 import { TbSeparatorHorizontal } from 'react-icons/tb';
+import { MdOutlineSend } from 'react-icons/md';
 import Code from '@tiptap/extension-code';
 import BulletList from '@tiptap/extension-bullet-list';
 import OrderedList from '@tiptap/extension-ordered-list';
@@ -31,6 +32,7 @@ import { Extension } from '@tiptap/core';
 interface RichTextProps {
   content: string;
   setContent: React.Dispatch<React.SetStateAction<string>>;
+  onSendPrompt?: (prompt: string) => Promise<string>;
 }
 
 // Cast icons to any to resolve type issues
@@ -43,6 +45,7 @@ const BsListUlIcon = BsListUl as any;
 const BsListOlIcon = BsListOl as any;
 const BsCodeSlashIcon = BsCodeSlash as any;
 const TbSeparatorHorizontalIcon = TbSeparatorHorizontal as any;
+const MdOutlineSendIcon = MdOutlineSend as any;
 
 // Custom Iframe Extension to handle raw <iframe> tags
 const Iframe = Extension.create({
@@ -430,7 +433,7 @@ const CustomBubbleMenu = ({ editor, onSendPrompt }) => {
         onClick={handleSendPrompt}
         className="bg-[#3900b3] text-white p-1 px-2 rounded text-sm hover:bg-[#2d0090]"
       >
-        <MdOutlineSend size={18} />
+        <MdOutlineSendIcon size={18} />
       </button>
     </div>
   );

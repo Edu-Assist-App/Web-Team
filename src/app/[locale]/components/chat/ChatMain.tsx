@@ -10,8 +10,17 @@ import { ArrowLeft, Send, Smile } from "lucide-react";
 import ChatMessage from "./ChatMessage";
 import { cn } from "@/lib/utils";
 
+// Define Message type
+interface Message {
+  id: string;
+  content: string;
+  timestamp: string;
+  sender: "them" | "me";
+  status?: "read" | "sent" | "delivered";
+}
+
 // Mock data for the active chat
-const MOCK_CHATS = {
+const MOCK_CHATS: { [key: string]: { id: string; name: string; status: string; avatar: string; messages: Message[] } } = {
   "3": {
     id: "3",
     name: "David Moore",
@@ -49,7 +58,7 @@ export default function ChatMain({
   isMobile,
 }: ChatMainProps) {
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState(
+  const [messages, setMessages] = useState<Message[]>(
     MOCK_CHATS[chatId as keyof typeof MOCK_CHATS]?.messages || []
   );
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -68,7 +77,7 @@ export default function ChatMain({
     e.preventDefault();
     if (!message.trim()) return;
 
-    const newMessage = {
+    const newMessage: Message = {
       id: `m${messages.length + 1}`,
       content: message,
       timestamp: new Date().toLocaleTimeString([], {
