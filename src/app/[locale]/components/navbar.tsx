@@ -115,7 +115,7 @@ export const Navbar = (): JSX.Element => {
       shortName: t("language.tigrinyaShort"),
     },
     {
-      code: "afan",
+      code: "oro",
       name: t("language.oromiffa"),
       shortName: t("language.oromiffaShort"),
     },

@@ -20,6 +20,7 @@ import {
   Check,
 } from "lucide-react";
 import { Button } from "@/app/[locale]/components/ui/button";
+import { signOut } from "next-auth/react";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -125,7 +126,7 @@ export const Sidebar = memo(function Sidebar({
       {
         name: t("navItems.logout"),
         icon: <LogOut className="w-[18px] h-[18px]" />,
-        path: "/",
+        path: "/logout",
         matchPattern: "/logout",
       },
     ],
@@ -225,7 +226,9 @@ export const NavItemComponent = memo(function NavItemComponent({
   collapsed: boolean;
   withLocale: (path: string) => string;
 }) {
-  return (
+  const router = useRouter();
+  // console.log("item", item.path);
+  return item.path != "/logout" ? (
     <Link
       prefetch={true}
       className={`w-full flex items-center gap-3 p-2 font-light rounded-[99px] transition-colors hover:bg-gray-50 ${
@@ -243,6 +246,25 @@ export const NavItemComponent = memo(function NavItemComponent({
       </div>
       {!collapsed && <span className="font-medium text-base">{item.name}</span>}
     </Link>
+  ) : (
+    <button
+      onClick={() => {
+        signOut({ callbackUrl: withLocale("/") });
+        return;
+      }}
+      className={`w-full flex items-center gap-3 p-2 font-light rounded-[99px] transition-colors hover:bg-gray-50 ${
+        isActive ? "bg-gray-100 shadow-sm" : "text-gray-600"
+      } ${collapsed ? "justify-center" : "justify-start"}`}
+    >
+      <div
+        className={`flex items-center justify-center rounded-full p-2 ${
+          isActive ? "bg-white border" : ""
+        }`}
+      >
+        {item.icon}
+      </div>
+      {!collapsed && <span className="font-medium text-base">{item.name}</span>}
+    </button>
   );
 });
 

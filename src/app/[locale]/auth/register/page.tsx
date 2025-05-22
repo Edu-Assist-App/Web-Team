@@ -84,17 +84,17 @@ export default function RegisterPage() {
         throw new Error(regRes.error);
       }
 
-      // // Sign in automatically after successful registration
-      const loginRes = await signIn("credentials", {
-        redirect: false,
-        email: registerData.email,
-        action: "login",
-        password: registerData.password,
-      });
+      // // // Sign in automatically after successful registration
+      // const loginRes = await signIn("credentials", {
+      //   redirect: false,
+      //   email: registerData.email,
+      //   action: "login",
+      //   password: registerData.password,
+      // });
 
-      if (loginRes?.error) {
-        throw new Error(loginRes.error);
-      }
+      // if (loginRes?.error) {
+      //   throw new Error(loginRes.error);
+      // }
 
       router.push("/");
     } catch (err: any) {
