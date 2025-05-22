@@ -111,10 +111,11 @@
     "brandName": "EduAssist",
     "quickNav": "Navegación rápida",
     "navItems": {
-      "overview": "Resumen",
-      "studyMaterials": "Materiales de estudio",
+      "dashboard": "Panel de control",
+      "materials": "Crear materiales",
+      "resources": "Recursos",
       "chats": "Chats",
-      "settings": "Configuración",
+      "settings": "Configuraciones",
       "logout": "Cerrar sesión"
     },
     "buttons": {

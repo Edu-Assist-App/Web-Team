@@ -111,10 +111,11 @@
     "brandName": "EduAssist",
     "quickNav": "Naannoo Dhiyeessuu",
     "navItems": {
-      "overview": "Ibsa Guutuu",
-      "studyMaterials": "Qo'annoowwan Barannoo",
-      "chats": "Haasaa",
-      "settings": "Sirreeffama",
+      "dashboard": "Ilaalcha Waliigalaa",
+      "materials": "Qo'annoowwan Barannoo",
+      "resources": "Qo'annoowwan Barannoo",
+      "chats": "Haasawa",
+      "settings": "Qindaa'ina",
       "logout": "Ba'i"
     },
     "buttons": {

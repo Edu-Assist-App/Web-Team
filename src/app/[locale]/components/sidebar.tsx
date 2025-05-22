@@ -100,15 +100,15 @@ export const Sidebar = memo(function Sidebar({
   const navItems = useMemo<NavItem[]>(
     () => [
       {
-        name: t("navItems.overview"),
+        name: t("navItems.dashboard"),
         icon: <HomeIcon className="w-[18px] h-[18px]" />,
         path: "/dashboard",
         matchPattern: "/dashboard",
       },
       {
-        name: t("navItems.studyMaterials"),
+        name: t("navItems.materials"),
         icon: <BookOpenIcon className="w-[18px] h-[18px]" />,
-        path: "/resource",
+        path: "/resources",
         matchPattern: "/resource",
       },
       {

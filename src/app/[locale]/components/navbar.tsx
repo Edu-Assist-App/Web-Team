@@ -47,24 +47,7 @@ export const Navbar = (): JSX.Element => {
   // Get the current page title from URL
   const getPageTitle = () => {
     const segments = pathWithoutLocale.replace(/^\/|\/$/g, "").split("/");
-
-    if (segments.length > 0 && segments[0]) {
-      const specialCases: Record<string, string> = {
-        dashboard: t("pages.dashboard"),
-        profile: t("pages.profile"),
-        settings: t("pages.settings"),
-      };
-
-      if (specialCases[segments[0]]) {
-        return specialCases[segments[0]];
-      }
-
-      return segments[0]
-        .split("-")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ");
-    }
-    return t("brandName");
+    return segments[0];
   };
 
   const pageTitle = getPageTitle();
@@ -74,13 +57,13 @@ export const Navbar = (): JSX.Element => {
 
   const navItems = [
     {
-      name: tSidebar("navItems.overview"),
+      name: tSidebar("navItems.dashboard"),
       icon: <HomeIcon className="w-4 h-4" />,
       path: "/dashboard",
       matchPattern: "/dashboard",
     },
     {
-      name: tSidebar("navItems.studyMaterials"),
+      name: tSidebar("navItems.materials"),
       icon: <BookOpenIcon className="w-4 h-4" />,
       path: "/resource",
       matchPattern: "/resource",
@@ -195,7 +178,7 @@ export const Navbar = (): JSX.Element => {
 
           {/* Page Title - Hidden on mobile */}
           <div className="hidden lg:block font-medium text-[#040303] text-xl sm:text-[28px] font-['Ubuntu',Helvetica] tracking-[0]">
-            {pageTitle}
+            {tSidebar(`navItems.${pageTitle}`)}
           </div>
 
           {/* Mobile Menu Button */}

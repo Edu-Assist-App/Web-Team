@@ -115,8 +115,9 @@
     "brandName": "EduAssist",
     "quickNav": "Quick Nav",
     "navItems": {
-      "overview": "Overview",
-      "studyMaterials": "Study Materials",
+      "dashboard": "Overview",
+      "materials": "Study Materials",
+      "resources": "Study Materials",
       "chats": "Chats",
       "settings": "Settings",
       "logout": "Logout"

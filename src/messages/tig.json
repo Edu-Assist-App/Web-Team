@@ -108,13 +108,14 @@
   },
   "Sidebar": {
     "logoAlt": "ኤዱአሲስት ሎጎ",
-    "brandName": "ኤዱአሲስት",
+    "brandName": "EduAssist",
     "quickNav": "ቅልጡፍ መራሒ",
     "navItems": {
-      "overview": "እታዊ መግለፂ",
-      "studyMaterials": "መጻሕፍቲ መጽናዕቲ",
+      "dashboard": "እታ ሓፈሻዊ ትይት",
+      "materials": "መጻሕፍቲ መጽናዕቲ",
+      "resources": "መጻሕፍቲ መጽናዕቲ",
       "chats": "ዕላል",
-      "settings": "ምችዎታት",
+      "settings": "ምምላእ",
       "logout": "ውጻ"
     },
     "buttons": {

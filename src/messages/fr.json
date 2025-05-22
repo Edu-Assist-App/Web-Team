@@ -111,9 +111,10 @@
     "brandName": "EduAssist",
     "quickNav": "Navigation rapide",
     "navItems": {
-      "overview": "Aperçu",
-      "studyMaterials": "Matériel d'étude",
-      "chats": "Discussions",
+      "dashboard": "Tableau de bord",
+      "materials": "Créer des matériaux",
+      "resources": "Ressources",
+      "chats": "Conversations",
       "settings": "Paramètres",
       "logout": "Déconnexion"
     },

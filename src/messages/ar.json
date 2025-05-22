@@ -108,12 +108,13 @@
   },
   "Sidebar": {
     "logoAlt": "شعار إيديوأسيست",
-    "brandName": "إيديوأسيست",
+    "brandName": "EduAssist",
     "quickNav": "التنقل السريع",
     "navItems": {
-      "overview": "نظرة عامة",
-      "studyMaterials": "مواد الدراسة",
-      "chats": "المحادثات",
+      "dashboard": "لوحة التحكم",
+      "materials": "إنشاء مواد",
+      "resources": "الموارد",
+      "chats": "الدردشات",
       "settings": "الإعدادات",
       "logout": "تسجيل الخروج"
     },

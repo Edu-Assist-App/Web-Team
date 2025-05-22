@@ -1,23 +1,22 @@
 import { Button } from "@/app/[locale]/components/ui/button";
-import { MoreVerticalIcon, OptionIcon } from "lucide-react";
+import { MoreVerticalIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 interface StudyMaterialCardProps {
-  id: number;
   title: string;
   description: string;
   image: string;
 }
 
 export function StudyMaterialCard({
-  id,
   title,
   description,
   image,
 }: StudyMaterialCardProps) {
-  const t = useTranslations("Dashboard"); // Using Resource translations from your JSON
+  const t = useTranslations("Dashboard");
+
   return (
-    <div className="flex flex-col items-start gap-[13.24px] p-1 rounded-[10.39px]">
+    <div className="flex flex-col items-start gap-[13.24px] p-1 rounded-[10.39px] sm:w-full">
       <div className="relative w-full">
         <div
           className="w-full h-[194.64px] rounded-lg bg-cover bg-left-bottom-0 bg-center"

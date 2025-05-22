@@ -113,10 +113,11 @@
     "brandName": "EduAssist",
     "quickNav": "ፈጣን አሻራ",
     "navItems": {
-      "overview": "አጠቃላይ እይታ",
-      "studyMaterials": "የጥናት ቁሳቁሶች",
+      "dashboard": "አጠቃላይ እይታ",
+      "materials": "የጥናት ቁሳቁሶች",
+      "resources": "የጥናት ቁሳቁሶች",
       "chats": "ውይይቶች",
-      "settings": "ማስተካከያዎች",
+      "settings": "ቅንብሮች",
       "logout": "ውጣ"
     },
     "buttons": {

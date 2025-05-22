@@ -111,8 +111,9 @@
     "brandName": "EduAssist",
     "quickNav": "快速导航",
     "navItems": {
-      "overview": "概览",
-      "studyMaterials": "学习资料",
+      "dashboard": "仪表板",
+      "materials": "创建材料",
+      "resources": "资源",
       "chats": "聊天",
       "settings": "设置",
       "logout": "退出登录"
