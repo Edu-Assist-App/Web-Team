@@ -1,8 +1,8 @@
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import "../globals.css";
-// import { ReduxProvider } from "@/lib/redux/provider";
 import { supportedLocales } from "@/middleware";
+import { SessionsProvider } from "@/lib/redux/provider";
 
 export default async function LocaleLayout({
   children,
@@ -26,11 +26,11 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body data-new-gr-c-s-check-loaded="14.1235.0" data-gr-ext-installed="">
-        {/* <ReduxProvider> */}
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-        {/* </ReduxProvider> */}
+        <SessionsProvider>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </SessionsProvider>
       </body>
     </html>
   );

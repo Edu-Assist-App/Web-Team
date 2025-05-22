@@ -115,8 +115,8 @@ export default function QuizComponent() {
       setShowScore(true);
 
       // In a real app, you would submit answers to a backend here
-      console.log("User answers:", updatedAnswers);
-      console.log("Score:", calculatedScore);
+      // console.log("User answers:", updatedAnswers);
+      // console.log("Score:", calculatedScore);
 
       // Move to next question if available
       if (currentQuestionIndex < quizData.length - 1) {

@@ -48,8 +48,8 @@ export const options: NextAuthOptions = {
         if (!credentials) return null;
         const { email, username, fullName, action, password } =
           credentials as Credentialsvalue;
-        console.log("Action:", action);
-        console.log("Cred", credentials);
+        // console.log("Action:", action);
+        // console.log("Cred", credentials);
         try {
           if (action === "register") {
             // Call register API

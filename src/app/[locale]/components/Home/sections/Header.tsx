@@ -22,7 +22,7 @@ import { sign } from "crypto";
 
 export const Header = (): JSX.Element => {
   const { data: session } = useSession();
-  console.log("Session data:", session);
+  // console.log("Session data:", session);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
