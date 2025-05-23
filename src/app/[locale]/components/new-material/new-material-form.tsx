@@ -3,7 +3,15 @@
 import type React from "react";
 
 import { useState, useRef, use } from "react";
-import { PlusCircle, X, Paperclip, Youtube, Send } from "lucide-react";
+import {
+  PlusCircle,
+  X,
+  Paperclip,
+  Youtube,
+  Send,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
 import { Button } from "@/app/[locale]/components/ui/button";
 import { FileUploadModal } from "./file-upload-modal";
 import { YoutubeLinksModal } from "./youtube-links-modal";
@@ -20,6 +28,7 @@ export function NewMaterialForm() {
     { name: string; size: number; type: string }[]
   >([]);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [uploadedItemsExpanded, setUploadedItemsExpanded] = useState(true);
 
   const handleOptionClick = (option: "youtube" | "file") => {
     if (option === "youtube") {
@@ -121,87 +130,112 @@ export function NewMaterialForm() {
         </div>
       </div>
 
-      {/* Uploaded Files and YouTube Links Section */}
-      {(files.length > 0 || youtubeLinks.length > 0) && (
-        <div className="mb-6 space-y-4">
-          {/* Files Section */}
-          {files.length > 0 && (
-            <div className="border border-gray-200 rounded-lg p-4">
-              <h3 className="text-sm font-medium mb-2">
-                {t("upload.label")} ({files.length})
-              </h3>
-              <div className="space-y-2">
-                {files.map((file, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-between bg-gray-50 p-2 rounded"
-                  >
-                    <div className="flex items-center">
-                      <Paperclip className="w-4 h-4 mr-2 text-gray-500" />
-                      <div>
-                        <p className="text-sm text-gray-800 truncate max-w-[200px] sm:max-w-xs">
-                          {file.name}
-                        </p>
-                        <p className="text-xs text-gray-500">
-                          {formatFileSize(file.size)}
-                        </p>
-                      </div>
-                    </div>
-                    <button
-                      onClick={() => removeFile(index)}
-                      className="text-gray-400 hover:text-red-500 p-1"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* YouTube Links Section */}
-          {youtubeLinks.length > 0 && (
-            <div className="border border-gray-200 rounded-lg p-4">
-              <h3 className="text-sm font-medium mb-2">
-                {t("youtube.label")} ({youtubeLinks.length})
-              </h3>
-              <div className="space-y-2">
-                {youtubeLinks.map((link, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-between bg-gray-50 p-2 rounded"
-                  >
-                    <div className="flex items-center flex-grow overflow-hidden">
-                      <Youtube className="w-4 h-4 mr-2 text-red-500 flex-shrink-0" />
-                      <a
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-blue-600 hover:underline truncate"
-                      >
-                        {link}
-                      </a>
-                    </div>
-                    <button
-                      onClick={() => removeYoutubeLink(index)}
-                      className="text-gray-400 hover:text-red-500 ml-2 flex-shrink-0"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-
       {/* Generate Button */}
-      <div className="flex justify-end">
+      <div className="flex justify-end mb-6">
         <Button className="bg-purple-700 hover:bg-purple-800 text-white px-6 py-2 rounded-full">
           {t("buttons.generate")}
           <Send className="ml-2 w-4 h-4" />
         </Button>
+      </div>
+
+      {/* Uploaded Files and YouTube Links Section Wrapper */}
+      {/* This wrapper reserves space */}
+      <div className="min-h-[56px]"> 
+        {(files.length > 0 || youtubeLinks.length > 0) && (
+          <>
+            <div className="flex justify-between items-center mb-2">
+              <h3 className="text-md font-medium">
+                Uploaded Files and Youtube Links
+              </h3>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setUploadedItemsExpanded(!uploadedItemsExpanded)}
+                className="p-1 rounded-full hover:bg-gray-200"
+              >
+                {uploadedItemsExpanded ? (
+                  <ChevronUp className="w-5 h-5" />
+                ) : (
+                  <ChevronDown className="w-5 h-5" />
+                )}
+              </Button>
+            </div>
+
+            {uploadedItemsExpanded && (
+              <div className="space-y-4 max-h-[200px] overflow-y-auto pr-2 border border-gray-300 rounded-lg p-3 bg-white shadow-sm">
+                {/* Files Section */}
+                {files.length > 0 && (
+                  <div>
+                    <h3 className="text-sm font-medium mb-2 text-gray-700">
+                      {t("upload.label")} ({files.length})
+                    </h3>
+                    <div className="space-y-2">
+                      {files.map((file, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center justify-between bg-gray-50 p-2 rounded hover:bg-gray-100"
+                        >
+                          <div className="flex items-center min-w-0">
+                            <Paperclip className="w-4 h-4 mr-2 text-gray-500 flex-shrink-0" />
+                            <div className="min-w-0">
+                              <p className="text-sm text-gray-800 truncate">
+                                {file.name}
+                              </p>
+                              <p className="text-xs text-gray-500">
+                                {formatFileSize(file.size)}
+                              </p>
+                            </div>
+                          </div>
+                          <button
+                            onClick={() => removeFile(index)}
+                            className="text-gray-400 hover:text-red-500 p-1 ml-2 flex-shrink-0"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* YouTube Links Section */}
+                {youtubeLinks.length > 0 && (
+                  <div>
+                    <h3 className={`text-sm font-medium mb-2 text-gray-700 ${files.length > 0 ? 'mt-3' : ''}`}>
+                      {t("youtube.label")} ({youtubeLinks.length})
+                    </h3>
+                    <div className="space-y-2">
+                      {youtubeLinks.map((link, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center justify-between bg-gray-50 p-2 rounded hover:bg-gray-100"
+                        >
+                          <div className="flex items-center flex-grow overflow-hidden">
+                            <Youtube className="w-4 h-4 mr-2 text-red-500 flex-shrink-0" />
+                            <a
+                              href={link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sm text-blue-600 hover:underline truncate"
+                            >
+                              {link}
+                            </a>
+                          </div>
+                          <button
+                            onClick={() => removeYoutubeLink(index)}
+                            className="text-gray-400 hover:text-red-500 ml-2 flex-shrink-0"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+          </>
+        )}
       </div>
 
       {/* Modals */}
