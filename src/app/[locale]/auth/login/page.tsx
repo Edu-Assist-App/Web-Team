@@ -73,6 +73,7 @@ export default function LoginPage() {
           ? t("errorMessages.loginFailed")
           : res.error
       );
+      setLoading(false);
     } else {
       router.push("/");
     }

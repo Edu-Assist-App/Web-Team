@@ -59,7 +59,11 @@
       "settings": "ማስተካከያዎች"
     }
   },
-
+  "NotFound": {
+    "title": "ገፅ ኣልተገኘም",
+    "description": "ይቅርታ፣ እትፈልጎ ዘለኻ ገፅ የለን።",
+    "goHome": "ናብ መነሻ ገፅ ተመለስ"
+  },
   "LoginPage": {
     "cardDescription": "መለያዎን ለመግባት የይለፍ ቃልዎን ያስገቡ",
     "emailLabel": "ኢሜይል",

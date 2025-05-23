@@ -59,6 +59,11 @@
       "settings": "Sirreeffama"
     }
   },
+  "NotFound": {
+    "title": "Fuula Hin Argamne",
+    "description": "Dhiifama, fuulni ati barbaadu jiraachuu hin danda'u.",
+    "goHome": "Fuula Garaa Deebis"
+  },
   "LoginPage": {
     "cardDescription": "Akkaawuntii keessan galchuu fi galmaa'uu irratti argamuu keessanii galchaa",
     "emailLabel": "Imeelii",
