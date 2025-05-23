@@ -59,6 +59,11 @@
       "settings": "设置"
     }
   },
+  "NotFound": {
+    "title": "页面未找到",
+    "description": "抱歉，您寻找的页面不存在。",
+    "goHome": "返回主页"
+  },
   "LoginPage": {
     "cardDescription": "输入您的凭据以访问您的账户",
     "emailLabel": "电子邮件",

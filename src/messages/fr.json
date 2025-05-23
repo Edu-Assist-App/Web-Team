@@ -59,6 +59,11 @@
       "settings": "Paramètres"
     }
   },
+  "NotFound": {
+    "title": "Page non trouvée",
+    "description": "Désolé, la page que vous recherchez n'existe pas.",
+    "goHome": "Retour à l'accueil"
+  },
   "LoginPage": {
     "cardDescription": "Entrez vos identifiants pour accéder à votre compte",
     "emailLabel": "Email",
