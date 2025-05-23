@@ -28,6 +28,7 @@ import Youtube from '@tiptap/extension-youtube';
 import TextAlign from '@tiptap/extension-text-align';
 import CodeBlock from '@tiptap/extension-code-block';
 import { Extension } from '@tiptap/core';
+import '../../../TextEditor.css'
 
 interface RichTextProps {
   content: string;
