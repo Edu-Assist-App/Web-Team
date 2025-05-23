@@ -59,6 +59,11 @@
       "settings": "ምችዎታት"
     }
   },
+  "NotFound": {
+    "title": "ገፅ ኣይተረኽበን",
+    "description": "ይቕሬታ፣ እትደልዮ ገፅ የለን።",
+    "goHome": "ናብ መነሻ ገፅ ተመለስ"
+  },
   "LoginPage": {
     "cardDescription": "ናብ መለለይካ ንምእታው መረጋገፂኻ ኣእቱ",
     "emailLabel": "ኢመይል",

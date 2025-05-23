@@ -67,40 +67,27 @@ export default function RegisterPage() {
     setLoading(true);
     setError(null);
 
-    try {
-      const { confirmPassword, ...registerData } = values;
-      // console.log("Registering user with data:", registerData);
-      // // registration
-      const regRes = await signIn("credentials", {
-        redirect: false,
-        email: registerData.email,
-        username: registerData.userName,
-        fullName: registerData.fullName,
-        action: "register",
-        password: registerData.password,
-      });
+    const { confirmPassword, ...registerData } = values;
+    // console.log("Registering user with data:", registerData);
+    // // registration
+    const regRes = await signIn("credentials", {
+      redirect: false,
+      email: registerData.email,
+      username: registerData.userName,
+      fullName: registerData.fullName,
+      action: "register",
+      password: registerData.password,
+    });
 
-      if (regRes?.error) {
-        throw new Error(regRes.error);
-      }
-
-      // // // Sign in automatically after successful registration
-      // const loginRes = await signIn("credentials", {
-      //   redirect: false,
-      //   email: registerData.email,
-      //   action: "login",
-      //   password: registerData.password,
-      // });
-
-      // if (loginRes?.error) {
-      //   throw new Error(loginRes.error);
-      // }
-
-      router.push("/");
-    } catch (err: any) {
-      setError(err.message || t("errorMessages.registrationFailed"));
-    } finally {
+    if (regRes?.error) {
+      setError(
+        regRes.error === "CredentialsSignin"
+          ? t("errorMessages.registrationFailed")
+          : regRes.error
+      );
       setLoading(false);
+    } else {
+      router.push("/");
     }
   };
 
