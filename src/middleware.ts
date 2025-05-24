@@ -18,7 +18,7 @@ export const supportedLocales = [
 
 // Define protected routes (without locale prefix)
 // const protectedRoutes = [];
-const protectedRoutes = ["/dashboard", "/materials"];
+const protectedRoutes = ["/dashboards", "/materialss"];
 
 const intlMiddleware = createIntlMiddleware({
   locales: supportedLocales,
