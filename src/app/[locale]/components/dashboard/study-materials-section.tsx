@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 interface StudyMaterial {
-  id: number;
+  id: string;
   title: string;
   description: string;
   image: string;
@@ -29,6 +29,7 @@ export function StudyMaterialsSection({
             className="flex-none min-w-[250px] snap-center md:min-w-0 md:w-full"
           >
             <StudyMaterialCard
+              id={material.id || ""}
               title={material.title || ""}
               description={material.description || ""}
               image={material.image || ""}

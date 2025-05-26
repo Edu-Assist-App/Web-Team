@@ -31,7 +31,7 @@ export default function Dashboard() {
     const fetchCourses = async () => {
       try {
         const data = await listCourses();
-        // console.log("Fetched courses:", data);
+        console.log("Fetched courses:", data);
         setStudyMaterials(data);
       } catch (err) {
         setError("Failed to fetch courses");
@@ -75,13 +75,12 @@ export default function Dashboard() {
       </div>
       {isLoading ? (
         <div className="flex overflow-x-auto snap-x snap-mandatory space-x-4 pb-4 scrollbar-hide md:grid md:grid-cols-2 md:gap-6 md:space-x-0 md:pb-0 md:overflow-x-visible md:flex-wrap lg:grid-cols-2 xl:grid-cols-4">
-          <ShimmerCourse />
-          <ShimmerCourse />
-          <ShimmerCourse />
-          <ShimmerCourse />
+          {Array.from({ length: 4 }).map((_, index) => (
+            <ShimmerCourse key={index} />
+          ))}
         </div>
       ) : (
-        <StudyMaterialsSection studyMaterials={studyMaterials} />
+        <StudyMaterialsSection studyMaterials={studyMaterials.slice(-4)} />
       )}
     </>
   );
