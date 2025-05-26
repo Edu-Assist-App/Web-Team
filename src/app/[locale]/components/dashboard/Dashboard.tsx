@@ -7,6 +7,7 @@ import CtaCard from "@/app/[locale]/components/cards/CtaCard";
 import { useTranslations } from "next-intl";
 import ShimmerCourse from "../cards/ShimmerCourse";
 import Link from "next/link";
+import { listCourses } from "@/app/Services/api/course";
 
 export default function Dashboard() {
   const t = useTranslations("Dashboard");
@@ -23,41 +24,25 @@ export default function Dashboard() {
 
   const [studyMaterials, setStudyMaterials] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setError] = useState("");
 
   useEffect(() => {
     setIsLoading(true);
-    const timer = setTimeout(() => {
-      setStudyMaterials([
-        {
-          id: 1,
-          title: "Introduction to Machine Learning",
-          description: "Understand the fundamentals of machine learning.",
-          image: "/movie-card.png",
-        },
-        {
-          id: 2,
-          title: "Advanced Data Structures",
-          description: "Explore complex data structures and algorithms.",
-          image: "/movie-card-1.png",
-        },
-        {
-          id: 3,
-          title: "Web Development Basics",
-          description: "Learn the basics of web development.",
-          image: "/movie-card-2.png",
-        },
-        {
-          id: 4,
-          title: "Introduction to AI",
-          description: "Discover the world of artificial intelligence.",
-          image: "/movie-card-3.png",
-        },
-      ]);
-      setIsLoading(false);
-    }, 1500);
+    const fetchCourses = async () => {
+      try {
+        const data = await listCourses();
+        // console.log("Fetched courses:", data);
+        setStudyMaterials(data);
+      } catch (err) {
+        setError("Failed to fetch courses");
+        console.error(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-    return () => clearTimeout(timer);
-  }, []);
+    fetchCourses();
+  }, []); // Dependency array is correctly placed here
 
   return (
     <>
@@ -78,10 +63,9 @@ export default function Dashboard() {
           <ActivityChart />
         </div>
       </div>
-      {/* {/* Study Materials Section */}
+      {/* Study Materials Section */}
       <div className="flex items-center justify-between px-3 py-0 w-full mb-4">
         <h2 className="text-xl font-medium">{t("sections.studyMaterials")}</h2>
-
         <Link
           href="/resources"
           className="text-sm text-gray-700 underline hover:text-gray-900"
