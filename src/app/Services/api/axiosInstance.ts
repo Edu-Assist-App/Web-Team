@@ -3,7 +3,7 @@ import { getSession } from "next-auth/react";
 import { useRouter } from "next/navigation"; // next/navigation for client
 
 const axiosInstance = axios.create({
-  baseURL: process.env.BACKEND_URL || "https://eduassist-6uef.onrender.com",
+  baseURL: process.env.BACKEND_URL || "https://nearby-stevana-yosephshemelesbirru-43fccccb.koyeb.app/",
   headers: {
     "Content-Type": "application/json",
   },
