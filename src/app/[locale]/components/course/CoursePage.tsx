@@ -8,10 +8,7 @@ import CardMaterial from "../cards/CardMaterial";
 import ShimmerCta from "../cards/ShimmerCta";
 import ChaptersShimmer from "../cards/ChaptersShimmer";
 import ShimmerCard from "../cards/ShimmerCard";
-import {
-  getCourseLearningPathOutline,
-  getLearningPathByCourseId,
-} from "@/app/Services/api/learningPath";
+import { getCourseLearningPathOutline } from "@/app/Services/api/learningpath";
 
 export default function CoursePage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -82,7 +79,7 @@ export default function CoursePage() {
       title: "Q&A",
       description: "A beginner-focused ",
       imageUrl: "/q&a.svg",
-      url: "/",
+      url: "/youtube-chat",
       status: false,
     },
   ];
