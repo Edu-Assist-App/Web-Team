@@ -36,6 +36,7 @@ export function RecommendedSection() {
         {recommendedMaterials.map((material) => (
           <StudyMaterialCard
             key={material.id}
+            id={material.id.toString()}
             title={material.title}
             description={material.description}
             image={material.image}
