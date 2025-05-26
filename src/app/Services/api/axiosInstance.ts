@@ -3,7 +3,9 @@ import { getSession } from "next-auth/react";
 import { useRouter } from "next/navigation"; // next/navigation for client
 
 const axiosInstance = axios.create({
-  baseURL: process.env.BACKEND_URL || "https://eduassist-6uef.onrender.com",
+  baseURL:
+    process.env.BACKEND_URL ||
+    "https://nearby-stevana-yosephshemelesbirru-43fccccb.koyeb.app/",
   headers: {
     "Content-Type": "application/json",
   },
@@ -14,6 +16,7 @@ axiosInstance.interceptors.request.use(
   async (config) => {
     if (typeof window !== "undefined") {
       const session = await getSession();
+      console.log("Session in axios interceptor:", session);
       if (session?.accessToken) {
         config.headers.Authorization = `Bearer ${session.accessToken}`;
       }

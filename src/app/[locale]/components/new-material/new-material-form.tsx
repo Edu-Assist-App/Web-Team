@@ -16,9 +16,17 @@ import { Button } from "@/app/[locale]/components/ui/button";
 import { FileUploadModal } from "./file-upload-modal";
 import { YoutubeLinksModal } from "./youtube-links-modal";
 import { useTranslations } from "next-intl";
+import { createCourse } from "@/app/Services/api/course";
+import {
+  generateLearningPathOutline,
+  createLearningPathFromOutline,
+} from "@/app/Services/api/learningpath";
 
 export function NewMaterialForm() {
   const [prompt, setPrompt] = useState("");
+  const [title, setTitle] = useState("");
+  const [subtitle, setSubtitle] = useState("");
+  const [description, setDescription] = useState("");
   const [showOptions, setShowOptions] = useState(false);
   const [showYoutubeModal, setShowYoutubeModal] = useState(false);
   const [showFileModal, setShowFileModal] = useState(false);
@@ -73,11 +81,96 @@ export function NewMaterialForm() {
     else return (bytes / 1048576).toFixed(1) + " MB";
   };
 
+  const handleGenerate = async () => {
+    try {
+      // 1. Create the course
+      const courseData = await createCourse({
+        prompt,
+        title,
+        sub_title: subtitle,
+        description,
+      });
+      const courseId = courseData.id;
+      console.log("Course created:", courseData);
+
+      // 2. Placeholder for file upload
+      // TODO: Implement file upload logic here and associate with courseId
+
+      // 3. Generate learning path outline
+      const outlineData = await generateLearningPathOutline(courseId);
+      console.log("Learning path outline generated:", outlineData);
+
+      // 4. Create learning path from outline
+      const learningPath = await createLearningPathFromOutline(courseId);
+      console.log("Learning path created:", learningPath);
+
+      // 5. Display learning path (or navigate, etc.)
+      // For now, just logging as requested
+      console.log("Final Learning Path:", learningPath);
+
+      // Optionally, reset form fields or navigate the user
+      // setPrompt("");
+      // setTitle("");
+      // setSubtitle("");
+      // setDescription("");
+      // setFiles([]);
+      // setYoutubeLinks([]);
+    } catch (error) {
+      console.error("Error in generation process:", error);
+      // Handle errors appropriately in the UI
+    }
+  };
+
   return (
     <>
       {/* Input Section */}
       <div className="mb-6">
         <h2 className="text-lg font-medium mb-2">{t("label")}</h2>
+        <div className="space-y-4 mb-4">
+          <div>
+            <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
+              Title
+            </label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Enter course title"
+              className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"
+            />
+          </div>
+          <div>
+            <label htmlFor="subtitle" className="block text-sm font-medium text-gray-700 mb-1">
+              Subtitle
+            </label>
+            <input
+              type="text"
+              name="subtitle"
+              id="subtitle"
+              value={subtitle}
+              onChange={(e) => setSubtitle(e.target.value)}
+              placeholder="Enter course subtitle (optional)"
+              className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"
+            />
+          </div>
+          <div>
+            <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
+              Description
+            </label>
+            <textarea
+              name="description"
+              id="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Enter course description"
+              rows={3}
+              className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"
+            />
+          </div>
+        </div>
+
         <div className="relative">
           <div className="border border-purple-700 rounded-xl bg-gray-50 overflow-hidden">
             <div className="flex items-start p-4">
@@ -132,7 +225,10 @@ export function NewMaterialForm() {
 
       {/* Generate Button */}
       <div className="flex justify-end mb-6">
-        <Button className="bg-purple-700 hover:bg-purple-800 text-white px-6 py-2 rounded-full">
+        <Button
+          onClick={handleGenerate}
+          className="bg-purple-700 hover:bg-purple-800 text-white px-6 py-2 rounded-full"
+        >
           {t("buttons.generate")}
           <Send className="ml-2 w-4 h-4" />
         </Button>

@@ -6,7 +6,7 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body data-new-gr-c-s-check-loaded="14.1235.0" data-gr-ext-installed="">
+      <body data-new-gr-c-s-check-loaded="14.1237.0" data-gr-ext-installed="">
         {children}
       </body>
     </html>
