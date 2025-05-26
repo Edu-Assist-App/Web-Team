@@ -1,0 +1,436 @@
+{
+  "Header": {
+    "logoAlt": "شعار إيديوأسيست",
+    "brandName": "EduAssist",
+    "navigation": {
+      "home": "الرئيسية",
+      "features": "الميزات",
+      "howItWorks": "كيفية العمل",
+      "testimonials": "الشهادات"
+    },
+    "language": {
+      "amharic": "አማርኛ",
+      "oromiffa": "Afaan Oromoo",
+      "tigrinya": "ትግርኛ",
+      "english": "English",
+      "spanish": "Español",
+      "french": "Français",
+      "arabic": "العربية",
+      "chinese": "中文",
+      "hindi": "हिन्दी",
+      "portuguese": "Português",
+      "russian": "Русский",
+      "japanese": "日本語",
+      "german": "Deutsch",
+      "amharicShort": "አማ",
+      "oromiffaShort": "Oro",
+      "tigrinyaShort": "Tig",
+      "englishShort": "ENG",
+      "spanishShort": "ESP",
+      "frenchShort": "FR",
+      "arabicShort": "عرب",
+      "chineseShort": "中文",
+      "hindiShort": "हिं",
+      "portugueseShort": "POR",
+      "russianShort": "РУС",
+      "japaneseShort": "日本語",
+      "germanShort": "DE",
+      "searchPlaceholder": "ابحث عن اللغات...",
+      "noResults": "لم يتم العثور على لغات"
+    },
+    "buttons": {
+      "login": "تسجيل الدخول",
+      "getStarted": "ابدأ الآن",
+      "dashboard": "الذهاب إلى لوحة التحكم",
+      "logout": "تسجيل الخروج"
+    },
+    "mobileMenu": {
+      "languageLabel": "اللغة",
+      "close": "إغلاق"
+    },
+    "profile": {
+      "myAccount": "حسابي",
+      "settings": "الإعدادات",
+      "signOut": "تسجيل الخروج"
+    },
+    "pages": {
+      "dashboard": "لوحة التحكم",
+      "profile": "الملف الشخصي",
+      "settings": "الإعدادات"
+    }
+  },
+  "NotFound": {
+    "title": "الصفحة غير موجودة",
+    "description": "عذرًا، الصفحة التي تبحث عنها غير موجودة.",
+    "goHome": "العودة إلى الصفحة الرئيسية"
+  },
+  "LoginPage": {
+    "cardDescription": "أدخل بياناتك للوصول إلى حسابك",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "your.email@example.com",
+    "passwordLabel": "كلمة المرور",
+    "submitButton": {
+      "loading": "جارٍ تسجيل الدخول...",
+      "default": "تسجيل الدخول",
+      "googleLoading": "جارٍ تسجيل الدخول باستخدام جوجل...",
+      "googleDefault": "تسجيل الدخول باستخدام جوجل",
+      "continueWith": "متابعة باستخدام"
+    },
+    "footerText": "ليس لديك حساب؟",
+    "createAccountLink": "إنشاء حساب",
+    "errorMessages": {
+      "invalidEmail": "الرجاء إدخال عنوان بريد إلكتروني صالح",
+      "passwordLength": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
+      "loginFailed": "فشل تسجيل الدخول. الرجاء التحقق من بياناتك."
+    }
+  },
+  "RegisterPage": {
+    "cardDescription": "أدخل معلوماتك لإنشاء حساب",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "your.email@example.com",
+    "userNameLabel": "اسم المستخدم",
+    "userNamePlaceholder": "johndoe",
+    "fullNameLabel": "الاسم الكامل",
+    "fullNamePlaceholder": "John Doe",
+    "passwordPlaceholder": "••••••••",
+    "passwordLabel": "كلمة المرور",
+    "confirmPasswordLabel": "تأكيد كلمة المرور",
+    "confirmPasswordPlaceholder": "••••••••",
+    "submitButton": {
+      "loading": "جارٍ إنشاء الحساب...",
+      "default": "إنشاء حساب"
+    },
+    "footerText": "هل لديك حساب بالفعل؟",
+    "signInLink": "تسجيل الدخول",
+    "errorMessages": {
+      "invalidEmail": "الرجاء إدخال عنوان بريد إلكتروني صالح",
+      "usernameLength": "يجب أن يتكون اسم المستخدم من 3 أحرف على الأقل",
+      "fullNameRequired": "الاسم الكامل مطلوب",
+      "passwordLength": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
+      "passwordsMismatch": "كلمتا المرور غير متطابقتين",
+      "registrationFailed": "فشل التسجيل. الرجاء المحاولة مرة أخرى."
+    }
+  },
+  "Sidebar": {
+    "logoAlt": "شعار إيديوأسيست",
+    "brandName": "EduAssist",
+    "quickNav": "التنقل السريع",
+    "navItems": {
+      "dashboard": "لوحة التحكم",
+      "materials": "إنشاء مواد",
+      "resources": "الموارد",
+      "chats": "الدردشات",
+      "settings": "الإعدادات",
+      "logout": "تسجيل الخروج"
+    },
+    "buttons": {
+      "newModule": "وحدة جديدة",
+      "settings": "الإعدادات",
+      "logout": "تسجيل الخروج"
+    },
+    "ariaLabels": {
+      "collapse": "تبديل الشريط الجانبي",
+      "close": "إغلاق الشريط الجانبي"
+    }
+  },
+  "HomePage": {
+    "HeroSection": {
+      "topTag": "ابدأ رحلتك",
+      "headline": "اكتشف التعلم المخصص مع <span1>الذكاء الاصطناعي</span1> <span2>الدعم</span2>",
+      "subtitle": "يساعد إيديوأسيست الطلاب والمعلمين والمحترفين على التعلم بذكاء من خلال رؤى مدعومة بالذكاء الاصطناعي، دعم متعدد اللغات، وأدوات دراسة مخصصة.",
+      "cta1": "انضم مجانًا",
+      "cta2": "عرض العرض التجريبي المباشر",
+      "cards": {
+        "card1": {
+          "title": "مواد تعليمية مدعومة بالذكاء الاصطناعي",
+          "subtext": "انضم إلى مجتمعنا المتنامي"
+        },
+        "card2": {
+          "title": "إدارة الملفات الذكية",
+          "subtext": "من المبتدئ إلى المتقدم"
+        },
+        "card3": {
+          "title": "مسارات تعليمية مخصصة",
+          "subtext": "تعلم من قادة الصناعة"
+        },
+        "card4": {
+          "title": "تتبع التقدم في الوقت الفعلي",
+          "subtext": "تعلم وفقًا لسرعتك الخاصة"
+        }
+      }
+    },
+    "FeaturesSection": {
+      "title": "رفيقك الدراسي الأذكى",
+      "features": {
+        "aiChatbot": {
+          "title": "دعم روبوت الدردشة الذكي",
+          "description": "احصل على إجابات وتفسيرات فورية."
+        },
+        "fileManagement": {
+          "title": "إدارة الملفات الذكية",
+          "description": "رفع وتنظيم وتعليق على الموارد."
+        },
+        "aiMaterials": {
+          "title": "مواد تعليمية مدعومة بالذكاء الاصطناعي",
+          "description": "ملخصات، بطاقات تعليمية، واختبارات."
+        },
+        "learningPaths": {
+          "title": "مسارات تعليمية مخصصة",
+          "description": "خطط دراسية مصممة حسب تقدمك."
+        },
+        "progressTracking": {
+          "title": "تتبع التقدم في الوقت الفعلي",
+          "description": "راقب تعلمك في مكان واحد."
+        }
+      }
+    },
+    "StepsSection": {
+      "title": "التعلم بسهولة – ثلاث خطوات فقط!",
+      "demoButton": {
+        "text": "عرض العرض التجريبي المباشر"
+      },
+      "joinButton": {
+        "text": "انضم الآن →"
+      },
+      "steps": {
+        "step1": {
+          "title": "رفع مواد الدراسة الخاصة بك",
+          "content": "ملفات PDF، فيديوهات، وروابط."
+        },
+        "step2": {
+          "title": "الدردشة مع الذكاء الاصطناعي للحصول على مساعدة فورية",
+          "content": ""
+        },
+        "step3": {
+          "title": "تعلم وتتبع التقدم",
+          "content": ""
+        }
+      }
+    },
+    "TestimonialsSection": {
+      "title": "شاهد ما يقوله مستخدمونا",
+      "testimonials": [
+        {
+          "id": 1,
+          "name": "سارة م.",
+          "text": "\"غيّر إيديوأسيست طريقة دراستي! روبوت الدردشة الذكي يجعل المواضيع المعقدة سهلة الفهم، والاختبارات المخصصة تساعدني على الاحتفاظ بالمعرفة بشكل أفضل.\""
+        },
+        {
+          "id": 2,
+          "name": "جون د.",
+          "text": "\"مع إيديوأسيست، حسنت درجاتي بنسبة 30%. إدارة الملفات الذكية غيرت قواعد اللعبة في تنظيم دراستي.\""
+        },
+        {
+          "id": 3,
+          "name": "إيميلي ت.",
+          "text": "\"تتكيف المسارات التعليمية المخصصة بشكل مثالي مع وتيرتي. إنه كما لو كان لدي معلم متاح على مدار الساعة!\""
+        }
+      ],
+      "navigation": {
+        "previous": "السابق",
+        "next": "التالي"
+      }
+    },
+    "FAQSection": {
+      "title": "الأسئلة الشائعة",
+      "faqItems": [
+        {
+          "question": "كيف أسجل؟",
+          "answer": "سجل باستخدام البريد الإلكتروني أو جوجل في 30 ثانية."
+        },
+        {
+          "question": "كيف أولد مواد دراسية؟",
+          "answer": "يولد الذكاء الاصطناعي ملخصات/بطاقات تعليمية من محتواك تلقائيًا."
+        },
+        {
+          "question": "هل يمكنني رفع روابط يوتيوب أو ملفات؟",
+          "answer": "نعم، الصق الروابط أو ارفع ملفات PDF/PPTX لتحليلها بواسطة الذكاء الاصطناعي."
+        },
+        {
+          "question": "كيف أدردش/أشارك مع زملائي؟",
+          "answer": "استخدم الدردشات الجماعية ومساحات العمل المشتركة للتعاون."
+        }
+      ]
+    },
+    "Footer": {
+      "companyInfo": {
+        "name": "إيديوأسيست",
+        "tagline": "التعلم الذكي يبدأ هنا – مخصص، متعدد اللغات، ومدعوم بالذكاء الاصطناعي.",
+        "learnMore": "تعرف على المزيد →"
+      },
+      "navigation": {
+        "title": "الروابط",
+        "links": ["الرئيسية", "الميزات", "كيفية العمل", "الشهادات", "اتصل بنا"]
+      },
+      "social": {
+        "title": "التواصل الاجتماعي",
+        "icons": [
+          { "alt": "تويتر" },
+          { "alt": "فيسبوك" },
+          { "alt": "إنستغرام" },
+          { "alt": "لينكدإن" }
+        ]
+      },
+      "copyright": {
+        "text": "©2025، جميع الحقوق محفوظة"
+      }
+    }
+  },
+  "Dashboard": {
+    "ctaCard": {
+      "title": "امتلك تقدمك. سيطر على أهدافك",
+      "description": "حافظ على الزخم! واصل رحلتك التعليمية من خلال إكمال الموارد التي بدأتها."
+    },
+    "stats": {
+      "resourcesGenerated": "الموارد المولدة",
+      "quizzesGenerated": "الاختبارات المولدة",
+      "flashcardsGenerated": "البطاقات التعليمية المولدة",
+      "daysActive": "الأيام النشطة"
+    },
+    "sections": {
+      "activities": "الأنشطة",
+      "studyMaterials": "مواد الدراسة",
+      "recommended": "موصى به لك"
+    },
+    "search": {
+      "placeholder": "ابحث عن الموارد، الاختبارات، البطاقات التعليمية..."
+    },
+    "buttons": {
+      "loadMore": "تحميل المزيد"
+    },
+    "studyMaterials": {
+      "recent": "المواد الحديثة",
+      "saved": "المواد المحفوظة",
+      "viewAll": "عرض الكل",
+      "view": "عرض"
+    },
+    "recommended": {
+      "basedOnActivity": "بناءً على نشاطك",
+      "newResources": "موارد جديدة قد تعجبك"
+    }
+  },
+  "Materials": {
+    "ctaCard": {
+      "title": "ابدأ ببناء مواد دراستك",
+      "description": "حول أفكارك إلى دورات منظمة في دقائق."
+    },
+    "form": {
+      "label": "وصف الدورة / المطالبة",
+      "placeholder": "على سبيل المثال، إنشاء دورة مناسبة للمبتدئين في بايثون.",
+      "upload": {
+        "label": "رفع الملفات",
+        "textDrag": "اسحب الملفات وأفلتها هنا",
+        "textBrowse": "أو انقر للتصفح",
+        "description": "ملفات PDF، DOCX، TXT، PPT (بحد أقصى 10 ميغابايت لكل ملف)",
+        "buttons": {
+          "browse": "تصفح الملفات",
+          "add": "إضافة رابط",
+          "cancel": "إلغاء"
+        }
+      },
+      "youtube": {
+        "title": "إضافة رابط يوتيوب",
+        "label": "رابط يوتيوب",
+        "placeholder": "https://www.youtube.com/watch?v=...",
+        "description": "أضف رابط فيديو يوتيوب يحتوي على محتوى ذي صلة بمواد دراستك.",
+        "buttons": {
+          "add": "إضافة رابط",
+          "cancel": "إلغاء"
+        }
+      },
+      "buttons": {
+        "generate": "توليد"
+      }
+    }
+  },
+  "Resources": {
+    "ctaCard": {
+      "title": "أطلق العنان لإمكانياتك التعليمية الكاملة",
+      "description": "الوصول إلى ملاحظاتك، بطاقاتك التعليمية، واختباراتك—كلها في مكان واحد. ابق منظمًا، تعلم بذكاء، وتتبع تقدمك بسهولة."
+    },
+    "sections": {
+      "title1": "مواد دراستك"
+    },
+    "buttons": {
+      "refresh": "تحديث",
+      "loadMore": "تحميل المزيد",
+      "view": "عرض"
+    }
+  },
+  "Settings": {
+    "title": "الإعدادات",
+    "tabs": {
+      "account": "الحساب",
+      "billing": "الفوترة والخطة",
+      "appearance": "المظهر",
+      "notifications": "الإشعارات",
+      "delete": "حذف الحساب"
+    },
+    "account": {
+      "title": "معلومات الحساب",
+      "profile": {
+        "upload_help": "JPG، GIF أو PNG. الحد الأقصى للحجم 5 ميغابايت",
+        "default_bio": "مصمم منتجات شغوف بإنشاء واجهات جميلة."
+      },
+      "fields": {
+        "name": {
+          "label": "الاسم",
+          "placeholder": "John Doe"
+        },
+        "email": {
+          "label": "البريد الإلكتروني",
+          "placeholder": "john@example.com"
+        },
+        "bio": {
+          "label": "السيرة الذاتية"
+        }
+      },
+      "save_button": "حفظ التغييرات"
+    },
+    "billing": {
+      "title": "الفوترة والخطة",
+      "current_plan": {
+        "title": "الخطة الحالية",
+        "description": "الخطة الاحترافية - $19/شهر"
+      },
+      "payment_method": {
+        "title": "طريقة الدفع",
+        "card": "فيزا تنتهي بـ 4242",
+        "expires": "تنتهي في 04/2025",
+        "update_button": "تحديث"
+      },
+      "upgrade_button": "ترقية الخطة"
+    },
+    "appearance": {
+      "title": "المظهر",
+      "theme": {
+        "title": "السمة",
+        "light": "فاتح",
+        "dark": "داكن"
+      }
+    },
+    "notifications": {
+      "title": "الإشعارات",
+      "email": {
+        "title": "إشعارات البريد الإلكتروني",
+        "description": "تلقى التحديثات عبر البريد الإلكتروني"
+      },
+      "push": {
+        "title": "إشعارات الدفع",
+        "description": "تلقى التحديثات على جهازك"
+      }
+    },
+    "delete": {
+      "title": "حذف الحساب",
+      "warning": {
+        "title": "تحذير",
+        "description": "حذف حسابك سيؤدي إلى إزالة جميع بياناتك بشكل دائم. لا يمكن التراجع عن هذا الإجراء."
+      },
+      "confirmation": {
+        "label": "اكتب \"DELETE\" للتأكيد",
+        "placeholder": "DELETE"
+      },
+      "delete_button": "حذف الحساب"
+    }
+  }
+}

@@ -1,0 +1,436 @@
+{
+  "Header": {
+    "logoAlt": "EduAssist 标志",
+    "brandName": "EduAssist",
+    "navigation": {
+      "home": "首页",
+      "features": "功能",
+      "howItWorks": "工作原理",
+      "testimonials": "用户评价"
+    },
+    "language": {
+      "amharic": "አማርኛ",
+      "oromiffa": "Afaan Oromoo",
+      "tigrinya": "ትግርኛ",
+      "english": "English",
+      "spanish": "Español",
+      "french": "Français",
+      "arabic": "العربية",
+      "chinese": "中文",
+      "hindi": "हिन्दी",
+      "portuguese": "Português",
+      "russian": "Русский",
+      "japanese": "日本語",
+      "german": "Deutsch",
+      "amharicShort": "አማ",
+      "oromiffaShort": "Oro",
+      "tigrinyaShort": "Tig",
+      "englishShort": "ENG",
+      "spanishShort": "ESP",
+      "frenchShort": "FR",
+      "arabicShort": "عرب",
+      "chineseShort": "中文",
+      "hindiShort": "हिं",
+      "portugueseShort": "POR",
+      "russianShort": "РУС",
+      "japaneseShort": "日本語",
+      "germanShort": "DE",
+      "searchPlaceholder": "搜索语言...",
+      "noResults": "未找到语言"
+    },
+    "buttons": {
+      "login": "登录",
+      "getStarted": "开始使用",
+      "dashboard": "前往仪表板",
+      "logout": "退出登录"
+    },
+    "mobileMenu": {
+      "languageLabel": "语言",
+      "close": "关闭"
+    },
+    "profile": {
+      "myAccount": "我的账户",
+      "settings": "设置",
+      "signOut": "退出登录"
+    },
+    "pages": {
+      "dashboard": "仪表板",
+      "profile": "个人资料",
+      "settings": "设置"
+    }
+  },
+  "NotFound": {
+    "title": "页面未找到",
+    "description": "抱歉，您寻找的页面不存在。",
+    "goHome": "返回主页"
+  },
+  "LoginPage": {
+    "cardDescription": "输入您的凭据以访问您的账户",
+    "emailLabel": "电子邮件",
+    "emailPlaceholder": "your.email@example.com",
+    "passwordLabel": "密码",
+    "submitButton": {
+      "loading": "正在登录...",
+      "default": "登录",
+      "googleLoading": "使用 Google 登录...",
+      "googleDefault": "使用 Google 登录",
+      "continueWith": "继续使用"
+    },
+    "footerText": "还没有账户？",
+    "createAccountLink": "创建账户",
+    "errorMessages": {
+      "invalidEmail": "请输入有效的电子邮件地址",
+      "passwordLength": "密码必须至少包含 6 个字符",
+      "loginFailed": "登录失败。请检查您的凭据。"
+    }
+  },
+  "RegisterPage": {
+    "cardDescription": "输入您的信息以创建账户",
+    "emailLabel": "电子邮件",
+    "emailPlaceholder": "your.email@example.com",
+    "userNameLabel": "用户名",
+    "userNamePlaceholder": "johndoe",
+    "fullNameLabel": "全名",
+    "fullNamePlaceholder": "John Doe",
+    "passwordPlaceholder": "••••••••",
+    "passwordLabel": "密码",
+    "confirmPasswordLabel": "确认密码",
+    "confirmPasswordPlaceholder": "••••••••",
+    "submitButton": {
+      "loading": "正在创建账户...",
+      "default": "创建账户"
+    },
+    "footerText": "已有账户？",
+    "signInLink": "登录",
+    "errorMessages": {
+      "invalidEmail": "请输入有效的电子邮件地址",
+      "usernameLength": "用户名必须至少包含 3 个字符",
+      "fullNameRequired": "全名是必填项",
+      "passwordLength": "密码必须至少包含 6 个字符",
+      "passwordsMismatch": "密码不匹配",
+      "registrationFailed": "注册失败。请重试。"
+    }
+  },
+  "Sidebar": {
+    "logoAlt": "EduAssist 标志",
+    "brandName": "EduAssist",
+    "quickNav": "快速导航",
+    "navItems": {
+      "dashboard": "仪表板",
+      "materials": "创建材料",
+      "resources": "资源",
+      "chats": "聊天",
+      "settings": "设置",
+      "logout": "退出登录"
+    },
+    "buttons": {
+      "newModule": "新建模块",
+      "settings": "设置",
+      "logout": "退出登录"
+    },
+    "ariaLabels": {
+      "collapse": "切换侧边栏",
+      "close": "关闭侧边栏"
+    }
+  },
+  "HomePage": {
+    "HeroSection": {
+      "topTag": "开启您的学习之旅",
+      "headline": "通过 <span1>人工智能驱动</span1> <span2>辅助</span2> 解锁个性化学习",
+      "subtitle": "EduAssist 帮助学生、教育工作者和专业人士通过人工智能驱动的洞察、多语言支持和个性化学习工具更智能地学习。",
+      "cta1": "免费加入",
+      "cta2": "查看实时演示",
+      "cards": {
+        "card1": {
+          "title": "人工智能生成的学习资料",
+          "subtext": "加入我们不断增长的社区"
+        },
+        "card2": {
+          "title": "智能文件管理",
+          "subtext": "从初学者到高级用户"
+        },
+        "card3": {
+          "title": "个性化学习路径",
+          "subtext": "向行业领导者学习"
+        },
+        "card4": {
+          "title": "实时进度跟踪",
+          "subtext": "按照自己的节奏学习"
+        }
+      }
+    },
+    "FeaturesSection": {
+      "title": "您最智能的学习伙伴",
+      "features": {
+        "aiChatbot": {
+          "title": "人工智能聊天机器人辅助",
+          "description": "获取即时答案和解释。"
+        },
+        "fileManagement": {
+          "title": "智能文件管理",
+          "description": "上传、组织和注释资源。"
+        },
+        "aiMaterials": {
+          "title": "人工智能生成的学习资料",
+          "description": "摘要、闪卡和测验。"
+        },
+        "learningPaths": {
+          "title": "个性化学习路径",
+          "description": "根据您的进度定制的学习计划。"
+        },
+        "progressTracking": {
+          "title": "实时进度跟踪",
+          "description": "在一个地方监控您的学习进度。"
+        }
+      }
+    },
+    "StepsSection": {
+      "title": "学习变得简单 – 仅需三步！",
+      "demoButton": {
+        "text": "查看实时演示"
+      },
+      "joinButton": {
+        "text": "立即加入 →"
+      },
+      "steps": {
+        "step1": {
+          "title": "上传您的学习资料",
+          "content": "PDF、视频和链接。"
+        },
+        "step2": {
+          "title": "与人工智能聊天获取即时帮助",
+          "content": ""
+        },
+        "step3": {
+          "title": "学习并跟踪进度",
+          "content": ""
+        }
+      }
+    },
+    "TestimonialsSection": {
+      "title": "看看我们的用户怎么说",
+      "testimonials": [
+        {
+          "id": 1,
+          "name": "Sarah M.",
+          "text": "“EduAssist 改变了我学习的方式！人工智能聊天机器人让复杂主题变得易于理解，个性化测验帮助我更好地记住知识。”"
+        },
+        {
+          "id": 2,
+          "name": "John D.",
+          "text": "“有了 EduAssist，我的成绩提高了 30%。智能文件管理彻底改变了我学习的组织方式。”"
+        },
+        {
+          "id": 3,
+          "name": "Emily T.",
+          "text": "“个性化学习路径完美适应我的节奏。就像有一个全天候的导师！”"
+        }
+      ],
+      "navigation": {
+        "previous": "上一页",
+        "next": "下一页"
+      }
+    },
+    "FAQSection": {
+      "title": "常见问题",
+      "faqItems": [
+        {
+          "question": "如何注册？",
+          "answer": "使用电子邮件或 Google 在 30 秒内注册。"
+        },
+        {
+          "question": "如何生成学习资料？",
+          "answer": "人工智能会自动从您的内容生成摘要/闪卡。"
+        },
+        {
+          "question": "我可以上传 YouTube 链接或文件吗？",
+          "answer": "是的，粘贴链接或上传 PDF/PPTX 以供人工智能分析。"
+        },
+        {
+          "question": "如何与同伴聊天/分享？",
+          "answer": "使用群聊和共享工作空间进行协作。"
+        }
+      ]
+    },
+    "Footer": {
+      "companyInfo": {
+        "name": "EduAssist",
+        "tagline": "更智能的学习从这里开始 – 个性化、多语言、人工智能驱动。",
+        "learnMore": "了解更多 →"
+      },
+      "navigation": {
+        "title": "链接",
+        "links": ["首页", "功能", "工作原理", "用户评价", "联系我们"]
+      },
+      "social": {
+        "title": "社交媒体",
+        "icons": [
+          { "alt": "Twitter" },
+          { "alt": "Facebook" },
+          { "alt": "Instagram" },
+          { "alt": "LinkedIn" }
+        ]
+      },
+      "copyright": {
+        "text": "©2025，保留所有权利"
+      }
+    }
+  },
+  "Dashboard": {
+    "ctaCard": {
+      "title": "掌控您的进度，征服您的目标",
+      "description": "保持动力！通过完成您已开始的资源继续您的学习之旅。"
+    },
+    "stats": {
+      "resourcesGenerated": "已生成资源",
+      "quizzesGenerated": "已生成测验",
+      "flashcardsGenerated": "已生成闪卡",
+      "daysActive": "活跃天数"
+    },
+    "sections": {
+      "activities": "活动",
+      "studyMaterials": "学习资料",
+      "recommended": "为您推荐"
+    },
+    "search": {
+      "placeholder": "搜索资源、测验、闪卡..."
+    },
+    "buttons": {
+      "loadMore": "加载更多"
+    },
+    "studyMaterials": {
+      "recent": "最近的资料",
+      "saved": "已保存的资料",
+      "viewAll": "查看全部",
+      "view": "查看"
+    },
+    "recommended": {
+      "basedOnActivity": "基于您的活动",
+      "newResources": "您可能喜欢的新资源"
+    }
+  },
+  "Materials": {
+    "ctaCard": {
+      "title": "开始构建您的学习资料",
+      "description": "在几分钟内将您的想法转化为结构化的课程。"
+    },
+    "form": {
+      "label": "课程描述 / 提示",
+      "placeholder": "例如，创建一个适合初学者的 Python 课程。",
+      "upload": {
+        "label": "上传文件",
+        "textDrag": "将文件拖放到此处",
+        "textBrowse": "或点击浏览",
+        "description": "PDF、DOCX、TXT、PPT 文件（每个文件最大 10MB）",
+        "buttons": {
+          "browse": "浏览文件",
+          "add": "添加链接",
+          "cancel": "取消"
+        }
+      },
+      "youtube": {
+        "title": "添加 YouTube 链接",
+        "label": "YouTube 链接",
+        "placeholder": "https://www.youtube.com/watch?v=...",
+        "description": "添加一个包含与您的学习资料相关内容的 YouTube 视频链接。",
+        "buttons": {
+          "add": "添加链接",
+          "cancel": "取消"
+        }
+      },
+      "buttons": {
+        "generate": "生成"
+      }
+    }
+  },
+  "Resources": {
+    "ctaCard": {
+      "title": "释放您的全部学习潜力",
+      "description": "在一个地方访问您的笔记、闪卡和测验。保持组织，智能学习，轻松跟踪进度。"
+    },
+    "sections": {
+      "title1": "您的学习资料"
+    },
+    "buttons": {
+      "refresh": "刷新",
+      "loadMore": "加载更多",
+      "view": "查看"
+    }
+  },
+  "Settings": {
+    "title": "设置",
+    "tabs": {
+      "account": "账户",
+      "billing": "账单与计划",
+      "appearance": "外观",
+      "notifications": "通知",
+      "delete": "删除账户"
+    },
+    "account": {
+      "title": "账户信息",
+      "profile": {
+        "upload_help": "JPG、GIF 或 PNG。最大文件大小 5MB",
+        "default_bio": "热爱创建美丽界面的产品设计师。"
+      },
+      "fields": {
+        "name": {
+          "label": "姓名",
+          "placeholder": "John Doe"
+        },
+        "email": {
+          "label": "电子邮件",
+          "placeholder": "john@example.com"
+        },
+        "bio": {
+          "label": "简介"
+        }
+      },
+      "save_button": "保存更改"
+    },
+    "billing": {
+      "title": "账单与计划",
+      "current_plan": {
+        "title": "当前计划",
+        "description": "专业计划 - $19/月"
+      },
+      "payment_method": {
+        "title": "支付方式",
+        "card": "Visa，卡号末尾 4242",
+        "expires": "有效期至 2025年4月",
+        "update_button": "更新"
+      },
+      "upgrade_button": "升级计划"
+    },
+    "appearance": {
+      "title": "外观",
+      "theme": {
+        "title": "主题",
+        "light": "浅色",
+        "dark": "深色"
+      }
+    },
+    "notifications": {
+      "title": "通知",
+      "email": {
+        "title": "电子邮件通知",
+        "description": "通过电子邮件接收更新"
+      },
+      "push": {
+        "title": "推送通知",
+        "description": "在您的设备上接收更新"
+      }
+    },
+    "delete": {
+      "title": "删除账户",
+      "warning": {
+        "title": "警告",
+        "description": "删除您的账户将永久删除您的所有数据。此操作无法撤销。"
+      },
+      "confirmation": {
+        "label": "输入“DELETE”以确认",
+        "placeholder": "DELETE"
+      },
+      "delete_button": "删除账户"
+    }
+  }
+}

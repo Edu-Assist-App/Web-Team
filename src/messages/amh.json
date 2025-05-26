@@ -1,0 +1,469 @@
+{
+  "Header": {
+    "logoAlt": "የEduAssist ሎጎ",
+    "brandName": "EduAssist",
+    "navigation": {
+      "home": "ዋና ገጽ",
+      "features": "ባህሪያት",
+      "howItWorks": "እንዴት እንደሚሰራ",
+      "testimonials": "የተጠቃሚዎች አስተያየቶች"
+    },
+    "language": {
+      "amharic": "አማርኛ",
+      "oromiffa": "Afaan Oromoo",
+      "tigrinya": "ትግርኛ",
+      "english": "English",
+      "spanish": "Español",
+      "french": "Français",
+      "arabic": "العربية",
+      "chinese": "中文",
+      "hindi": "हिन्दी",
+      "portuguese": "Português",
+      "russian": "Русский",
+      "japanese": "日本語",
+      "german": "Deutsch",
+      "amharicShort": "አማ",
+      "oromiffaShort": "Oro",
+      "tigrinyaShort": "Tig",
+      "englishShort": "ENG",
+      "spanishShort": "ESP",
+      "frenchShort": "FR",
+      "arabicShort": "عرب",
+      "chineseShort": "中文",
+      "hindiShort": "हिं",
+      "portugueseShort": "POR",
+      "russianShort": "РУС",
+      "japaneseShort": "日本語",
+      "germanShort": "DE",
+      "searchPlaceholder": "ቋንቋዎችን ፈልግ...",
+      "noResults": "ምንም ቋንቋ አልተገኘም"
+    },
+    "buttons": {
+      "login": "ግባ",
+      "getStarted": "ጀምር",
+      "dashboard": "ወደ ዳሽቦርድ ይሂዱ",
+      "logout": "ውጣ"
+    },
+    "mobileMenu": {
+      "languageLabel": "ቋንቋ",
+      "close": "ዝጋ"
+    },
+    "profile": {
+      "myAccount": "የእኔ አካውንት",
+      "settings": "ማስተካከያዎች",
+      "signOut": "ውጣ"
+    },
+    "pages": {
+      "dashboard": "ዳሽቦርድ",
+      "profile": "መገለጫ",
+      "settings": "ማስተካከያዎች"
+    }
+  },
+  "NotFound": {
+    "title": "ገፅ ኣልተገኘም",
+    "description": "ይቅርታ፣ እትፈልጎ ዘለኻ ገፅ የለን።",
+    "goHome": "ናብ መነሻ ገፅ ተመለስ"
+  },
+  "LoginPage": {
+    "cardDescription": "መለያዎን ለመግባት የይለፍ ቃልዎን ያስገቡ",
+    "emailLabel": "ኢሜይል",
+    "emailPlaceholder": "ኢሜይልዎን ያስገቡ (ምሳሌ፡ your.email@example.com)",
+    "passwordLabel": "የይለፍ ቃል",
+    "submitButton": {
+      "loading": "በመግባት ላይ...",
+      "default": "ግባ",
+      "googleLoading": "በመግባት ላይ...",
+      "googleDefault": "ግባ በGoogle",
+      "continueWith": "ይቀጥሉ በ"
+    },
+    "footerText": "መለያ የሎትህ?",
+    "createAccountLink": "መለያ ይፍጠሩ",
+    "errorMessages": {
+      "invalidEmail": "ትክክለኛ ኢሜይል ያስገቡ",
+      "passwordLength": "የይለፍ ቃል ቢያንስ 6 ቁምፊ ሊኖረው ይገባል",
+      "loginFailed": "መግባት አልተቻለም። �ስብሳቢዎችዎን ያረጋግጡ።"
+    }
+  },
+  "RegisterPage": {
+    "cardDescription": "መለያ ለመፍጠር መረጃዎን ያስገቡ",
+    "emailLabel": "ኢሜይል",
+    "emailPlaceholder": "ኢሜይልዎን ያስገቡ (ምሳሌ፡ your.email@example.com)",
+    "userNameLabel": "የተጠቃሚ ስም",
+    "userNamePlaceholder": "ምሳሌ፡ johndoe",
+    "fullNameLabel": "ሙሉ ስም",
+    "fullNamePlaceholder": "ምሳሌ፡ ያሬድ መኮንን",
+    "passwordLabel": "የይለፍ ቃል",
+    "passwordPlaceholder": "••••••••",
+    "confirmPasswordLabel": "የይለፍ ቃል ያረጋግጡ",
+    "confirmPasswordPlaceholder": "••••••••",
+    "submitButton": {
+      "loading": "መለያ በመፍጠር ላይ...",
+      "default": "መለያ ይፍጠሩ"
+    },
+    "footerText": "ቀድሞውኑ መለያ አለህ?",
+    "signInLink": "ግባ",
+    "errorMessages": {
+      "invalidEmail": "ትክክለኛ ኢሜይል ያስገቡ",
+      "usernameLength": "የተጠቃሚ ስም ቢያንስ 3 ቁምፊ ሊኖረው ይገባል",
+      "fullNameRequired": "ሙሉ ስም ያስፈልጋል",
+      "passwordLength": "የይለፍ ቃል ቢያንስ 6 ቁምፊ ሊኖረው ይገባል",
+      "passwordsMismatch": "የይለፍ ቃሎች አንድ አይነት አይደሉም",
+      "registrationFailed": "ምዝገባ አልተሳካም። እባክዎ እንደገና ይሞክሩ።"
+    }
+  },
+
+  "Sidebar": {
+    "logoAlt": "የEduAssist ሎጎ",
+    "brandName": "EduAssist",
+    "quickNav": "ፈጣን አሻራ",
+    "navItems": {
+      "dashboard": "አጠቃላይ እይታ",
+      "materials": "የጥናት ቁሳቁሶች",
+      "resources": "የጥናት ቁሳቁሶች",
+      "chats": "ውይይቶች",
+      "settings": "ቅንብሮች",
+      "logout": "ውጣ"
+    },
+    "buttons": {
+      "newModule": "አዲስ ሞጁል",
+      "settings": "ማስተካከያዎች",
+      "logout": "ውጣ"
+    },
+    "ariaLabels": {
+      "collapse": "የጎን አሞሌ ቀልብ",
+      "close": "የጎን አሞሌ ዝጋ"
+    }
+  },
+  "HomePage": {
+    "HeroSection": {
+      "topTag": "ጉዞዎን ይጀምሩ",
+      "headline": "በ<span1>AI የሚመራ</span1> <span2>እርዳታ</span2> ለግል የተበጀ ትምህርት ይክፈቱ",
+      "subtitle": "EduAssist ተማሪዎች፣ አስተማሪዎች እና ባለሙያዎች በAI የሚመራ ግንዛቤ፣ በብዙ ቋንቋዎች ድጋፍ እና ለግል የተበጀ የትምህርት መሳሪያዎች በብቃት እንዲማሩ ይረዳል።",
+      "cta1": "ነፃ ይመዝገቡ",
+      "cta2": "ቀጥታ ማሳያ ይመልከቱ",
+      "cards": {
+        "card1": {
+          "title": "በAI የተመሠረቱ የትምህርት ቁሳቁሶች",
+          "subtext": "የምንዘራውን ማህበረሰብ �ና"
+        },
+        "card2": {
+          "title": "አስተዋይ ፋይል አስተዳደር",
+          "subtext": "ከጀማሪ እስከ ላቀ"
+        },
+        "card3": {
+          "title": "ለግል የተበጀ የትምህርት መንገዶች",
+          "subtext": "ከኢንዱስትሪ መሪዎች ይማሩ"
+        },
+        "card4": {
+          "title": "በቅጽበት የሂደት ቍጽጽር",
+          "subtext": "በራስዎ ፍጥነት ይማሩ"
+        }
+      }
+    },
+
+    "FeaturesSection": {
+      "title": "አስተዋይ የትምህርት ባልንጀራዎ",
+      "features": {
+        "aiChatbot": {
+          "title": "የAI ቻትቦት እርዳታ",
+          "description": "ፈጣን መልሶች እና ማብራሪያዎች ያግኙ።"
+        },
+        "fileManagement": {
+          "title": "አስተዋይ ፋይል አስተዳደር",
+          "description": "ሀብቶችን ይስቀሉ፣ ያስተካክሉ እና ማስታወሻ ይጻፉ።"
+        },
+        "aiMaterials": {
+          "title": "በAI የተመሠረቱ የትምህርት ቁሳቁሶች",
+          "description": "ማጠቃለያዎች፣ ፍላሽ ካርዶች እና ፈተናዎች።"
+        },
+        "learningPaths": {
+          "title": "ለግል የተበጀ የትምህርት መንገዶች",
+          "description": "ወደ ሂደትዎ የተገጠሙ �ና የትምህርት ዕቅዶች።"
+        },
+        "progressTracking": {
+          "title": "በቅጽበት የሂደት ቍጽጽር",
+          "description": "ትምህርትዎን በአንድ ቦታ ይከታተሉ።"
+        }
+      }
+    },
+
+    "StepsSection": {
+      "title": "ትምህርት ቀላል ተደረገ - በ3 እርከኖች ብቻ!",
+      "demoButton": {
+        "text": "ቀጥታ ማሳያ ይመልከቱ"
+      },
+      "joinButton": {
+        "text": "አሁን ይቀላቀሉ →"
+      },
+      "steps": {
+        "step1": {
+          "title": "የትምህርት ቁሳቁሶችዎን ይስቀሉ",
+          "content": "PDFs፣ ቪዲዮዎች እና አገናኞች።"
+        },
+        "step2": {
+          "title": "በAI ለፈጣን እርዳታ ይዋደሩ",
+          "content": ""
+        },
+        "step3": {
+          "title": "ይማሩ እና ሂደትን ይከታተሉ",
+          "content": ""
+        }
+      }
+    },
+
+    "TestimonialsSection": {
+      "title": "ተጠቃሚዎቻችን ምን እንደሚሉ ይመልከቱ",
+      "testimonials": [
+        {
+          "id": 1,
+          "name": "ሳራ ኤም.",
+          "text": "\"EduAssist �ና የምማርበትን መንገድ ቀይሯል! የAI ቻትቦት ውስብስብ ርዕሶችን ለመረዳት ቀላል ያደርጋል፣ ለግል �ና የተበጀ ፈተናዎችም እውቀትን በተሻለ ለመያዝ ይረዳኛል።\""
+        },
+        {
+          "id": 2,
+          "name": "ጆን ዲ.",
+          "text": "\"በEduAssist እድገቴን በ30% ጨምረኋል። አስተዋይ ፋይል አስተዳደሩ ለየኔ የትምህርት አደረጃጀት የጨዋታ ለውጥ ነው።\""
+        },
+        {
+          "id": 3,
+          "name": "ኤሚሊ ቲ.",
+          "text": "\"ለግል �ና የተበጀ የትምህርት መንገዶች ወደ ፍጥነቴ በብቃት �ና ይስተካከላሉ። ሁልጊዜ የሚገኝ የትምህርት አስተማሪ እንዳለኝ ነው!\""
+        }
+      ],
+      "navigation": {
+        "previous": "ቀዳሚ",
+        "next": "ቀጣይ"
+      }
+    },
+
+    "FAQSection": {
+      "title": "በተደጋጋሚ የሚነሱ ጥያቄዎች",
+      "faqItems": [
+        {
+          "question": "እንዴት መመዝገብ እችላለሁ?",
+          "answer": "በ30 ሰከንድ ውስጥ በኢሜይል ወይም በGoogle ይመዝገቡ።"
+        },
+        {
+          "question": "የትምህርት ቁሳቁሶችን እንዴት ማመንጨት እችላለሁ?",
+          "answer": "AI ከይዘትዎ ማጠቃለያዎች/ፍላሽ ካርዶችን በራስ-ሰር �ና ይፈጥራል።"
+        },
+        {
+          "question": "የYouTube አገናኞችን ወይም ፋይሎችን መስቀል እችላለሁ?",
+          "answer": "አዎ፣ አገናኞችን ይለጥፉ ወይም PDFs/PPTX ለAI ትንተና ይስቀሉ።"
+        },
+        {
+          "question": "ከወዳጆቼ ጋር እንዴት መወያየት/ማጋራት እችላለሁ?",
+          "answer": "ለትብብር የቡድን ውይይቶችን እና የተጋሩ የስራ ቦታዎችን ይጠቀሙ።"
+        }
+      ]
+    },
+    "Footer": {
+      "companyInfo": {
+        "name": "EduAssist",
+        "tagline": "ብቃት ያለው ትምህርት እዚህ ይጀምራል - ለግል የተበጀ፣ በብዙ ቋንቋዎች እና በAI የሚመራ።",
+        "learnMore": "ተጨማሪ ይወቁ →"
+      },
+      "navigation": {
+        "title": "አገናኞች",
+        "links": ["መነሻ", "ባህሪያት", "እንዴት እንደሚሰራ", "የደንበኞች አስተያየቶች", "አግኙን"]
+      },
+      "social": {
+        "title": "ማህበራዊ ሚዲያ",
+        "icons": [
+          { "alt": "ትዊተር" },
+          { "alt": "ፌስቡክ" },
+          { "alt": "ኢንስታግራም" },
+          { "alt": "ሊንክዲን" }
+        ]
+      },
+      "copyright": {
+        "text": "©2025፣ ሁሉም መብቶች የተጠበቁ ናቸው"
+      }
+    }
+  },
+  "Dashboard": {
+    "ctaCard": {
+      "title": "የእርስዎን እድገት ይቆጣጠሩ። ግቦችዎን ይቆጣጠሩ",
+      "description": "ተነሳሽነትዎን ይጠብቁ! የጀመሩትን ምንጮች በመጨረስ የትምህርት ጉዞዎን ይቀጥሉ።"
+    },
+    "stats": {
+      "resourcesGenerated": "የተፈጠሩ ምንጮች",
+      "quizzesGenerated": "የተፈጠሩ ፈተናዎች",
+      "flashcardsGenerated": "የተፈጠሩ ፍላሽ ካርዶች",
+      "daysActive": "ንቁ የሆኑ ቀናት"
+    },
+    "sections": {
+      "activities": "እንቅስቃሴዎች",
+      "studyMaterials": "የትምህርት ቁሳቁሶች",
+      "recommended": "ለእርስዎ የሚመከር"
+    },
+    "search": {
+      "placeholder": "ምንጮች፣ ፈተናዎች፣ ፍላሽ ካርዶችን ይፈልጉ..."
+    },
+    "buttons": {
+      "loadMore": "ተጨማሪ ጫን"
+    },
+    "studyMaterials": {
+      "recent": "የቅርብ ጊዜ ቁሳቁሶች",
+      "saved": "የተቀመጡ ቁሳቁሶች",
+      "viewAll": "ሁሉንም ይመልከቱ",
+      "view": "ይመልከቱ"
+    },
+    "recommended": {
+      "basedOnActivity": "በእርስዎ እንቅስቃሴ ላይ የተመሠረተ",
+      "newResources": "የሚወዷቸው አዳዲስ ምንጮች"
+    }
+  },
+  "Materials": {
+    "ctaCard": {
+      "title": "የትምህርት ቁሳቁሶችዎን መገንባት ይጀምሩ",
+      "description": "አስተያየቶችዎን ወደ የተዋቀሩ ኮርሶች በደቂቃዎች ውስጥ ይቀይሩ።"
+    },
+    "form": {
+      "label": "የኮርስ መግለጫ / አስተያየት",
+      "placeholder": "ለምሳሌ፣ ለጀማሪዎች የሚመች የፓይዘን ኮርስ ይፍጠሩ።",
+      "upload": {
+        "label": "ፋይሎችን ጫን",
+        "textDrag": "ፋይሎችዎን እዚህ ጎትትዎ ይጣሉ",
+        "textBrowse": "ወይም ለመሰረዝ ጠቅ ያድርጉ",
+        "description": "PDF፣ DOCX፣ TXT፣ PPT ፋይሎች (ከፍተኛው 10MB ለእያንዳንዱ)",
+        "buttons": {
+          "browse": "ፋይሎችን ምርጥ",
+          "add": "አገናኝ ጨምር",
+          "cancel": "ሰርዝ"
+        },
+        "selectedFiles": "የተመረጡ ፋይሎች ({count})",
+        "removeFile": "ፋይል አስወግድ",
+        "fileSize": {
+          "bytes": "ባይት",
+          "kb": "ኪ.ባይት",
+          "mb": "ሜ.ባይት"
+        }
+      },
+      "youtube": {
+        "title": "የYouTube አገናኝ ጨምር",
+        "label": "የYouTube አድራሻ",
+        "placeholder": "https://www.youtube.com/watch?v=...",
+        "description": "ለትምህርት ቁሳቁስዎ ግብዓት ያለው YouTube ቪዲዮ አገናኝ ያክሉ።",
+        "buttons": {
+          "add": "አገናኝ ጨምር",
+          "cancel": "ሰርዝ"
+        },
+        "errors": {
+          "empty": "እባክዎ የYouTube አገናኝ ያስገቡ",
+          "invalid": "እባክዎ ትክክለኛ የYouTube አድራሻ ያስገቡ"
+        }
+      },
+      "buttons": {
+        "generate": "ፍጠር"
+      }
+    }
+  },
+  "Resources": {
+    "ctaCard": {
+      "title": "የትምህርት እድልዎን በሙሉ ይክፈቱ",
+      "description": "ማስታወሻዎችዎን፣ ፍላሽካርዶችዎን እና ፅንሰ-ሀሳቦችዎን በአንድ ቦታ ይድረሱ። በተደራጁ፣ በብልህ መንገድ ይማሩ እና እድገትዎን በቀላሉ ይከታተሉ።"
+    },
+    "sections": {
+      "title1": "የትምህርት ቁሳቁሶችዎ"
+    },
+    "buttons": {
+      "refresh": "አድስ",
+      "loadMore": "ተጨማሪ ጫን",
+      "view": "አሳይ"
+    },
+    "emptyState": {
+      "title": "ምንም ቁሳቁሶች አልተገኙም",
+      "description": "የትምህርት ቁሳቁሶችን ለመጨመር አዲስ ይፍጠሩ።"
+    },
+    "search": {
+      "placeholder": "ቁሳቁሶችን ፈልግ...",
+      "noResults": "ውጤት አልተገኘም"
+    },
+    "filter": {
+      "all": "ሁሉም",
+      "recent": "ቅርብ",
+      "saved": "የተቀመጡ"
+    },
+    "status": {
+      "generating": "በመፍጠር ላይ...",
+      "completed": "ተጠናቀቀ"
+    }
+  },
+  "Settings": {
+    "title": "ቅንብሮች",
+    "tabs": {
+      "account": "መለያ",
+      "billing": "ክፍያ እና ዕቅድ",
+      "appearance": "መልኩ",
+      "notifications": "ማሳወቂያዎች",
+      "delete": "መለያ ማጥፊያ"
+    },
+    "account": {
+      "title": "የመለያ መረጃ",
+      "profile": {
+        "upload_help": "JPG, GIF ወይም PNG። ከፍተኛ መጠን 5MB",
+        "default_bio": "ውብ ቅርጸ-ቁምፊዎችን ለማመንጨት በፍላጎት የተሞላ የምርት አውታረ አቀማመጥ አዘጋጅ።"
+      },
+      "fields": {
+        "name": {
+          "label": "ስም",
+          "placeholder": "ምሳ.  ጆን"
+        },
+        "email": {
+          "label": "ኢሜይል",
+          "placeholder": "john@example.com"
+        },
+        "bio": {
+          "label": "መግለጫ"
+        }
+      },
+      "save_button": "ለውጦችን አስቀምጥ"
+    },
+    "billing": {
+      "title": "ክፍያ እና ዕቅድ",
+      "current_plan": {
+        "title": "የአሁኑ ዕቅድ",
+        "description": "Pro ዕቅድ - $19/ወር"
+      },
+      "payment_method": {
+        "title": "የመክፈያ ዘዴ",
+        "card": "Visa በ 4242 ላይ የሚያበቃ",
+        "expires": "የሚያበቃው 04/2025",
+        "update_button": "አዘምን"
+      },
+      "upgrade_button": "ዕቅድ አሻሽል"
+    },
+    "appearance": {
+      "title": "መልኩ",
+      "theme": {
+        "title": "ገጽታ",
+        "light": "ብርሃን",
+        "dark": "ጨለማ"
+      }
+    },
+    "notifications": {
+      "title": "ማሳወቂያዎች",
+      "email": {
+        "title": "የኢሜይል ማሳወቂያዎች",
+        "description": "አዳዲስ መረጃዎችን በኢሜይል ይቀበሉ"
+      },
+      "push": {
+        "title": "የእርስዎ መሳሪያ ላይ ማሳወቂያዎች",
+        "description": "አዳዲስ መረጃዎችን በመሳሪያዎ ላይ ይቀበሉ"
+      }
+    },
+    "delete": {
+      "title": "መለያ ማጥፊያ",
+      "warning": {
+        "title": "ማስጠንቀቂያ",
+        "description": "መለያዎን መሰረዝ ማለት መረጃዎትን ሁሉ በቋሚነት መሰረዝ ማለት ነው። ይህ እርምጃ ማድረግ አይቻልም።"
+      },
+      "confirmation": {
+        "label": "ለማረጋገጥ \"DELETE\" ይተይቡ",
+        "placeholder": "DELETE"
+      },
+      "delete_button": "መለያን ሰርዝ"
+    }
+  }
+}

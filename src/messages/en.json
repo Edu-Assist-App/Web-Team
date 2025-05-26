@@ -1,0 +1,442 @@
+{
+  "Header": {
+    "logoAlt": "EduAssist Logo",
+    "brandName": "EduAssist",
+    "navigation": {
+      "home": "Home",
+      "features": "Features",
+      "howItWorks": "How It Works",
+      "testimonials": "Testimonials"
+    },
+    "language": {
+      "amharic": "አማርኛ",
+      "oromiffa": "Afaan Oromoo",
+      "tigrinya": "ትግርኛ",
+      "english": "English",
+      "spanish": "Español",
+      "french": "Français",
+      "arabic": "العربية",
+      "chinese": "中文",
+      "hindi": "हिन्दी",
+      "portuguese": "Português",
+      "russian": "Русский",
+      "japanese": "日本語",
+      "german": "Deutsch",
+      "amharicShort": "አማ",
+      "oromiffaShort": "Oro",
+      "tigrinyaShort": "Tig",
+      "englishShort": "ENG",
+      "spanishShort": "ESP",
+      "frenchShort": "FR",
+      "arabicShort": "عرب",
+      "chineseShort": "中文",
+      "hindiShort": "हिं",
+      "portugueseShort": "POR",
+      "russianShort": "РУС",
+      "japaneseShort": "日本語",
+      "germanShort": "DE",
+      "searchPlaceholder": "Search languages...",
+      "noResults": "No languages found"
+    },
+    "buttons": {
+      "login": "Login",
+      "getStarted": "Get Started",
+      "dashboard": "Go To Dashboard",
+      "logout": "Logout"
+    },
+    "mobileMenu": {
+      "languageLabel": "Language",
+      "close": "Close"
+    },
+    "profile": {
+      "myAccount": "My Account",
+      "settings": "Settings",
+      "signOut": "Sign Out"
+    },
+    "pages": {
+      "dashboard": "Dashboard",
+      "profile": "Profile",
+      "settings": "Settings"
+    }
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for does not exist.",
+    "goHome": "Go Home"
+  },
+  "LoginPage": {
+    "cardDescription": "Enter your credentials to access your account",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "passwordLabel": "Password",
+    "submitButton": {
+      "loading": "Signing in...",
+      "default": "Sign in",
+      "googleLoading": "Signing in with Google...",
+      "googleDefault": "Sign in with Google",
+      "continueWith": "Continue with"
+    },
+    "footerText": "Don't have an account?",
+    "createAccountLink": "Create account",
+    "errorMessages": {
+      "invalidEmail": "Please enter a valid email address",
+      "passwordLength": "Password must be at least 6 characters",
+      "loginFailed": "Failed to login. Please check your credentials."
+    }
+  },
+
+  "RegisterPage": {
+    "cardDescription": "Enter your information to create an account",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "userNameLabel": "Username",
+    "userNamePlaceholder": "johndoe",
+    "fullNameLabel": "Full Name",
+    "fullNamePlaceholder": "John Doe",
+    "passwordPlaceholder": "••••••••",
+
+    "passwordLabel": "Password",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordPlaceholder": "••••••••",
+
+    "submitButton": {
+      "loading": "Creating account...",
+      "default": "Create account"
+    },
+    "footerText": "Already have an account?",
+    "signInLink": "Sign in",
+    "errorMessages": {
+      "invalidEmail": "Please enter a valid email address",
+      "usernameLength": "Username must be at least 3 characters",
+      "fullNameRequired": "Full name is required",
+      "passwordLength": "Password must be at least 6 characters",
+      "passwordsMismatch": "Passwords do not match",
+      "registrationFailed": "Registration failed. Please try again."
+    }
+  },
+
+  "Sidebar": {
+    "logoAlt": "EduAssist Logo",
+    "brandName": "EduAssist",
+    "quickNav": "Quick Nav",
+    "navItems": {
+      "dashboard": "Overview",
+      "materials": "Study Materials",
+      "resources": "Study Materials",
+      "chats": "Chats",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+    "buttons": {
+      "newModule": "New Module",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+    "ariaLabels": {
+      "collapse": "Toggle sidebar",
+      "close": "Close sidebar"
+    }
+  },
+  "HomePage": {
+    "HeroSection": {
+      "topTag": "Start your journey",
+      "headline": "Unlock Personalized Learning with <span1>AI-Powered</span1> <span2>Assistance</span2>",
+      "subtitle": "EduAssist helps students, educators, and professionals learn smarter with AI-driven insights, multilingual support, and personalized study tools.",
+      "cta1": "Join For Free",
+      "cta2": "View Live Demo",
+      "cards": {
+        "card1": {
+          "title": "AI-Generated Learning Materials",
+          "subtext": "Join our growing community"
+        },
+        "card2": {
+          "title": "Smart File Management",
+          "subtext": "From beginner to advanced"
+        },
+        "card3": {
+          "title": "Personalized Learning Paths",
+          "subtext": "Learn from industry leaders"
+        },
+        "card4": {
+          "title": "Real-Time Progress Tracking",
+          "subtext": "Study at your own pace"
+        }
+      }
+    },
+    "FeaturesSection": {
+      "title": "Your Smartest Study Companion",
+      "features": {
+        "aiChatbot": {
+          "title": "AI Chatbot Assistance",
+          "description": "Get instant answers and explanations."
+        },
+        "fileManagement": {
+          "title": "Smart File Management",
+          "description": "Upload, organize, and annotate resources."
+        },
+        "aiMaterials": {
+          "title": "AI-Generated Learning Materials",
+          "description": "Summaries, flashcards, and quizzes."
+        },
+        "learningPaths": {
+          "title": "Personalized Learning Paths",
+          "description": "Study plans tailored to your progress."
+        },
+        "progressTracking": {
+          "title": "Real-Time Progress Tracking",
+          "description": "Monitor your learning in one place."
+        }
+      }
+    },
+    "StepsSection": {
+      "title": "Learning Made Simple – Just 3 Steps!",
+      "demoButton": {
+        "text": "View Live Demo"
+      },
+      "joinButton": {
+        "text": "Join Now →"
+      },
+      "steps": {
+        "step1": {
+          "title": "Upload Your Learning Materials",
+          "content": "PDFs, videos, and links."
+        },
+        "step2": {
+          "title": "Chat with AI for Instant Help",
+          "content": ""
+        },
+        "step3": {
+          "title": "Learn & Track Progress",
+          "content": ""
+        }
+      }
+    },
+    "TestimonialsSection": {
+      "title": "See What Our Users Say",
+      "testimonials": [
+        {
+          "id": 1,
+          "name": "Sarah M.",
+          "text": "\"EduAssist transformed the way I study! The AI chatbot makes complex topics easy to understand, and the personalized quizzes help me retain knowledge better.\""
+        },
+        {
+          "id": 2,
+          "name": "John D.",
+          "text": "\"With EduAssist, I improved my grades by 30%. The smart file management is a game-changer for my study organization.\""
+        },
+        {
+          "id": 3,
+          "name": "Emily T.",
+          "text": "\"The personalized learning paths adapt perfectly to my pace. It's like having a tutor available 24/7!\""
+        }
+      ],
+      "navigation": {
+        "previous": "Previous",
+        "next": "Next"
+      }
+    },
+    "FAQSection": {
+      "title": "Frequently Asked Questions",
+      "faqItems": [
+        {
+          "question": "How do I register?",
+          "answer": "Sign up with email or Google in 30 seconds."
+        },
+        {
+          "question": "How to generate study materials?",
+          "answer": "AI creates summaries/flashcards from your content automatically."
+        },
+        {
+          "question": "Can I upload YouTube links or files?",
+          "answer": "Yes, paste links or upload PDFs/PPTX for AI analysis."
+        },
+        {
+          "question": "How to chat/share with peers?",
+          "answer": "Use group chats and shared workspaces for collaboration."
+        }
+      ]
+    },
+    "Footer": {
+      "companyInfo": {
+        "name": "EduAssist",
+        "tagline": "Smarter Learning Starts Here – Personalized, Multilingual & AI-Powered.",
+        "learnMore": "Learn More →"
+      },
+      "navigation": {
+        "title": "LINKS",
+        "links": ["Home", "Features", "How It Works", "Testimonials", "Contact"]
+      },
+      "social": {
+        "title": "SOCIAL",
+        "icons": [
+          { "alt": "Twitter" },
+          { "alt": "Facebook" },
+          { "alt": "Instagram" },
+          { "alt": "LinkedIn" }
+        ]
+      },
+      "copyright": {
+        "text": "©2025, All Rights Reserved"
+      }
+    }
+  },
+  "Dashboard": {
+    "ctaCard": {
+      "title": "Own Your Progress. Dominate Your Goals",
+      "description": "Keep up the momentum! Continue your learning journey by finishing the resources you've started."
+    },
+    "stats": {
+      "resourcesGenerated": "Resources Generated",
+      "quizzesGenerated": "Quizzes Generated",
+      "flashcardsGenerated": "Flashcards Generated",
+      "daysActive": "Days Active"
+    },
+    "sections": {
+      "activities": "Activities",
+      "studyMaterials": "Study Materials",
+      "recommended": "Recommended For You"
+    },
+    "search": {
+      "placeholder": "Search resources, quizzes, flashcards..."
+    },
+    "buttons": {
+      "loadMore": "Load More"
+    },
+    "studyMaterials": {
+      "recent": "Recent Materials",
+      "saved": "Saved Materials",
+      "viewAll": "View All",
+      "view": "View"
+    },
+    "recommended": {
+      "basedOnActivity": "Based on your activity",
+      "newResources": "New resources you might like"
+    }
+  },
+  "Materials": {
+    "ctaCard": {
+      "title": "Start Building Your Study Material",
+      "description": "Turn Your Ideas Into Structured Courses in Minutes."
+    },
+    "form": {
+      "label": "Course Description / Prompt",
+      "placeholder": "e.g., Create a beginner-friendly course on Python.",
+      "upload": {
+        "label": "Upload Files",
+        "textDrag": "Drag and drop files here",
+        "textBrowse": "or click to browse",
+        "description": "PDF, DOCX, TXT, PPT files (max 10MB each)",
+        "buttons": {
+          "browse": "Browse Files",
+          "add": "Add Link",
+          "cancel": "Cancel"
+        }
+      },
+      "youtube": {
+        "title": "Add YouTube Link",
+        "label": "YouTube URL",
+        "placeholder": "https://www.youtube.com/watch?v=...",
+        "description": "Add a YouTube video link that contains relevant content for your study material.",
+        "buttons": {
+          "add": "Add Link",
+          "cancel": "Cancel"
+        }
+      },
+      "buttons": {
+        "generate": "Generate"
+      }
+    }
+  },
+  "Resources": {
+    "ctaCard": {
+      "title": "Unlock Your Full Learning Potential",
+      "description": "Access your notes, flashcards, and quizzes—all in one place. Stay organized, learn smarter, and track your progress effortlessly."
+    },
+
+    "sections": {
+      "title1": "Your Study Materials"
+    },
+    "buttons": {
+      "refresh": "Refresh",
+      "loadMore": "Load More",
+      "view": "View"
+    }
+  },
+
+  "Settings": {
+    "title": "Settings",
+    "tabs": {
+      "account": "Account",
+      "billing": "Billing & Plan",
+      "appearance": "Appearance",
+      "notifications": "Notifications",
+      "delete": "Delete Account"
+    },
+    "account": {
+      "title": "Account Information",
+      "profile": {
+        "upload_help": "JPG, GIF or PNG. Max size of 5MB",
+        "default_bio": "Product designer with a passion for creating beautiful interfaces."
+      },
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "John Doe"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "john@example.com"
+        },
+        "bio": {
+          "label": "Bio"
+        }
+      },
+      "save_button": "Save Changes"
+    },
+    "billing": {
+      "title": "Billing & Plan",
+      "current_plan": {
+        "title": "Current Plan",
+        "description": "Pro Plan - $19/month"
+      },
+      "payment_method": {
+        "title": "Payment Method",
+        "card": "Visa ending in 4242",
+        "expires": "Expires 04/2025",
+        "update_button": "Update"
+      },
+      "upgrade_button": "Upgrade Plan"
+    },
+    "appearance": {
+      "title": "Appearance",
+      "theme": {
+        "title": "Theme",
+        "light": "Light",
+        "dark": "Dark"
+      }
+    },
+    "notifications": {
+      "title": "Notifications",
+      "email": {
+        "title": "Email Notifications",
+        "description": "Receive updates via email"
+      },
+      "push": {
+        "title": "Push Notifications",
+        "description": "Receive updates on your device"
+      }
+    },
+    "delete": {
+      "title": "Delete Account",
+      "warning": {
+        "title": "Warning",
+        "description": "Deleting your account will permanently remove all of your data. This action cannot be undone."
+      },
+      "confirmation": {
+        "label": "Type \"DELETE\" to confirm",
+        "placeholder": "DELETE"
+      },
+      "delete_button": "Delete Account"
+    }
+  }
+}

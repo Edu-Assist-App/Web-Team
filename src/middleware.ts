@@ -1,37 +1,65 @@
+import { getServerSession } from "next-auth";
+import { getToken } from "next-auth/jwt";
+import createIntlMiddleware from "next-intl/middleware";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
-  const path = request.nextUrl.pathname;
+// List all supported locales
+export const supportedLocales = [
+  "amh",
+  "oro",
+  "tig",
+  "en",
+  "fr",
+  "es",
+  "ar",
+  "zh",
+];
 
-  // Define public paths that don't require authentication
-  const isPublicPath = path === "/auth/login" || path === "/auth/register";
+// Define protected routes (without locale prefix)
+// const protectedRoutes = [];
+const protectedRoutes = ["/dashboard", "/materials"];
 
-  // Get the token from cookies
-  const token = request.cookies.get("token")?.value || "";
+const intlMiddleware = createIntlMiddleware({
+  locales: supportedLocales,
+  defaultLocale: "en",
+  localePrefix: "always",
+});
 
-  // Redirect logic
-  if (isPublicPath && token) {
-    // If user is logged in and trying to access login/register page
-    return NextResponse.redirect(new URL("/", request.url));
+export async function middleware(request: NextRequest) {
+  const pathname = request.nextUrl.pathname;
+
+  const response = intlMiddleware(request);
+
+  const localeMatch = pathname.match(/^\/(amh|oro|tig|en|fr|es|ar|zh)(\/|$)/);
+  const locale = localeMatch?.[1];
+
+  const pathWithoutLocale = pathname.replace(
+    /^\/(amh|oro|tig|en|fr|es|ar|zh)/,
+    ""
+  );
+
+  const isProtected = protectedRoutes.some((route) =>
+    pathWithoutLocale.startsWith(route)
+  );
+
+  if (isProtected) {
+    const token = await getToken({
+      req: request,
+      secret: process.env.JWT_SECRET,
+    });
+
+    // console.log("Token in middleware:", token);
+
+    if (!token) {
+      const loginUrl = new URL(`/${locale || "en"}/auth/login`, request.url);
+      return NextResponse.redirect(loginUrl);
+    }
   }
 
-  if (!isPublicPath && !token) {
-    // If user is not logged in and trying to access protected route
-    return NextResponse.redirect(new URL("/auth/login", request.url));
-  }
-
-  return NextResponse.next();
+  return response;
 }
 
-// Configure which paths should trigger this middleware
 export const config = {
-  matcher: [
-    // Add paths that should be protected
-    // "/",
-    // "/chat/:path*",
-    // "/dashboard/:path",
-    // "/new-material/:path",
-    // "/resources/:path*",
-  ],
+  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"], // Match all pages except static and API
 };

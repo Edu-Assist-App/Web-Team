@@ -98,3 +98,17 @@
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
+ul,
+ol,
+li {
+  list-style: initial;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and other WebKit browsers */
+}
