@@ -82,10 +82,11 @@ type GenerateParameters =
   | CodeExamplesParameters
   | LearningPathParameters;
 
+// Request payload
 export interface GenerateContentPayload {
   content_type: ContentType;
   parameters: GenerateParameters;
-  provider: string; // e.g., "openai", "anthropic"
+  provider: string; // e.g., "openai", "anthropic", "gemini"
 }
 
 // API response
@@ -102,13 +103,23 @@ export interface GeneratedContent {
   updated_at: string;
 }
 
-// 🔥 Main utility function
+// 🔥 POST: Generate content
 export async function generateContent(
   payload: GenerateContentPayload
 ): Promise<GeneratedContent> {
   const { data } = await axiosInstance.post<GeneratedContent>(
     "/api/v1/content/generate",
     payload
+  );
+  return data;
+}
+
+// 🔍 GET: Fetch content by ID
+export async function getContentById(
+  contentId: string
+): Promise<GeneratedContent> {
+  const { data } = await axiosInstance.get<GeneratedContent>(
+    `/api/v1/content/${contentId}`
   );
   return data;
 }

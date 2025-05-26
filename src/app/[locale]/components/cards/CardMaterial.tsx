@@ -56,15 +56,18 @@ export default function CardMaterial({
     };
 
     let data: GeneratedContent;
+    let url: string;
 
     if (id === 1) {
       data = await generateContent(quizParameters);
+      url = "quiz";
     } else if (id === 2) {
       data = await generateContent(flashcardParameters);
+      url = "flashcards";
     }
 
     console.log("Generated Content:", data);
-    router.push(`/materials/${params.id}/note`);
+    router.push(`/materials/${params.id}/${url}?id=${data.id}`);
   };
 
   return (
