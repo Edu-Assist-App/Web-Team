@@ -21,6 +21,7 @@ import {
   generateLearningPathOutline,
   createLearningPathFromOutline,
 } from "@/app/Services/api/learningPath";
+import { set } from "react-hook-form";
 
 export function NewMaterialForm() {
   const [prompt, setPrompt] = useState("");
@@ -31,6 +32,7 @@ export function NewMaterialForm() {
   const [showYoutubeModal, setShowYoutubeModal] = useState(false);
   const [showFileModal, setShowFileModal] = useState(false);
   const [youtubeLinks, setYoutubeLinks] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations("Materials.form");
   const [files, setFiles] = useState<
     { name: string; size: number; type: string }[]
@@ -82,6 +84,7 @@ export function NewMaterialForm() {
   };
 
   const handleGenerate = async () => {
+    setIsLoading(true);
     try {
       // 1. Create the course
       const courseData = await createCourse({
@@ -106,7 +109,10 @@ export function NewMaterialForm() {
 
       // 5. Display learning path (or navigate, etc.)
       // For now, just logging as requested
+      // navigate using window location instead of Router
+      window.location.href = `/materials/${courseId}`;
       console.log("Final Learning Path:", learningPath);
+      setIsLoading(false);
 
       // Optionally, reset form fields or navigate the user
       // setPrompt("");
@@ -128,7 +134,10 @@ export function NewMaterialForm() {
         <h2 className="text-lg font-medium mb-2">{t("label")}</h2>
         <div className="space-y-4 mb-4">
           <div>
-            <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="title"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Title
             </label>
             <input
@@ -142,7 +151,10 @@ export function NewMaterialForm() {
             />
           </div>
           <div>
-            <label htmlFor="subtitle" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="subtitle"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Subtitle
             </label>
             <input
@@ -156,7 +168,10 @@ export function NewMaterialForm() {
             />
           </div>
           <div>
-            <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="description"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Description
             </label>
             <textarea
@@ -229,14 +244,42 @@ export function NewMaterialForm() {
           onClick={handleGenerate}
           className="bg-purple-700 hover:bg-purple-800 text-white px-6 py-2 rounded-full"
         >
-          {t("buttons.generate")}
-          <Send className="ml-2 w-4 h-4" />
+          {isLoading ? (
+            <>
+              <svg
+                className="animate-spin h-5 w-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                ></path>
+              </svg>
+              Generating...
+            </>
+          ) : (
+            <>
+              t("buttons.generate")
+              <Send className="ml-2 w-4 h-4" />
+            </>
+          )}
         </Button>
       </div>
 
       {/* Uploaded Files and YouTube Links Section Wrapper */}
       {/* This wrapper reserves space */}
-      <div className="min-h-[56px]"> 
+      <div className="min-h-[56px]">
         {(files.length > 0 || youtubeLinks.length > 0) && (
           <>
             <div className="flex justify-between items-center mb-2">
@@ -297,7 +340,11 @@ export function NewMaterialForm() {
                 {/* YouTube Links Section */}
                 {youtubeLinks.length > 0 && (
                   <div>
-                    <h3 className={`text-sm font-medium mb-2 text-gray-700 ${files.length > 0 ? 'mt-3' : ''}`}>
+                    <h3
+                      className={`text-sm font-medium mb-2 text-gray-700 ${
+                        files.length > 0 ? "mt-3" : ""
+                      }`}
+                    >
                       {t("youtube.label")} ({youtubeLinks.length})
                     </h3>
                     <div className="space-y-2">

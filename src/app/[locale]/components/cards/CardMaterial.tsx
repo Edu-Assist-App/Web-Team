@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "../ui/card";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
@@ -32,42 +32,58 @@ export default function CardMaterial({
   const router = useRouter();
   const params = useParams();
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const goTo = async () => {
-    const quizParameters: GenerateContentPayload = {
-      content_type: "quiz",
-      parameters: {
-        topic: courseData.materialTitle,
-        difficulty: "beginner",
-        num_questions: 5,
-        question_types: ["multiple_choice", "true_false"],
-      },
-      provider: "gemini",
-    };
+    if (isLoading) return; // prevent double clicks
+    setIsLoading(true);
 
-    const flashcardParameters: GenerateContentPayload = {
-      content_type: "flashcard",
-      parameters: {
-        topic: courseData.materialTitle,
-        num_cards: 10,
-        difficulty: "intermediate",
-        include_examples: true,
-      },
-      provider: "gemini",
-    };
+    try {
+      const quizParameters: GenerateContentPayload = {
+        content_type: "quiz",
+        parameters: {
+          topic: courseData.materialTitle,
+          difficulty: "beginner",
+          num_questions: 5,
+          question_types: ["multiple_choice", "true_false"],
+        },
+        provider: "gemini",
+      };
 
-    let data: GeneratedContent;
-    let url: string;
+      const flashcardParameters: GenerateContentPayload = {
+        content_type: "flashcard",
+        parameters: {
+          topic: courseData.materialTitle,
+          num_cards: 10,
+          difficulty: "intermediate",
+          include_examples: true,
+        },
+        provider: "gemini",
+      };
 
-    if (id === 1) {
-      data = await generateContent(quizParameters);
-      url = "quiz";
-    } else if (id === 2) {
-      data = await generateContent(flashcardParameters);
-      url = "flashcards";
+      let data: GeneratedContent | undefined;
+      let targetUrl: string = "";
+
+      if (id === 1) {
+        data = await generateContent(quizParameters);
+        targetUrl = "quiz";
+      } else if (id === 2) {
+        data = await generateContent(flashcardParameters);
+        targetUrl = "flashcards";
+      }
+
+      if (data?.id) {
+        router.push(`/materials/${params.id}/${targetUrl}?id=${data.id}`);
+      } else {
+        // Handle missing data id scenario if needed
+        alert("Failed to generate content. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error generating content:", error);
+      // alert("An error occurred while generating content.");
+    } finally {
+      setIsLoading(false);
     }
-
-    console.log("Generated Content:", data);
-    router.push(`/materials/${params.id}/${url}?id=${data.id}`);
   };
 
   return (
@@ -99,9 +115,38 @@ export default function CardMaterial({
           <div className="mt-auto">
             <button
               onClick={goTo}
-              className="bg-[#3900B3] hover:bg-indigo-800 text-white rounded-full px-6 py-2 transition-colors"
+              disabled={isLoading}
+              className={`flex items-center justify-center gap-2 bg-[#3900B3] hover:bg-indigo-800 text-white rounded-full px-6 py-2 transition-colors disabled:opacity-60 disabled:cursor-not-allowed`}
             >
-              {status ? "View" : "Generate Now"}
+              {status ? (
+                "View"
+              ) : isLoading ? (
+                <>
+                  <svg
+                    className="animate-spin h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    ></path>
+                  </svg>
+                  Generating...
+                </>
+              ) : (
+                "Generate Now"
+              )}
             </button>
           </div>
         </div>
