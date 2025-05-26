@@ -1,7 +1,8 @@
 "use client";
-import { useState, useRef, ChangeEvent } from "react";
+import { useState, useRef, ChangeEvent, useEffect } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { readUserMe, updateUserMe, User, UserUpdate } from "../../../Services/api/user";
 
 const SettingsPage = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -59,11 +60,28 @@ const SettingsPage = () => {
 // Account Tab Component
 const AccountTab = () => {
   const t = useTranslations("Settings");
-  const [name, setName] = useState(t("account.fields.name.placeholder"));
-  const [email, setEmail] = useState(t("account.fields.email.placeholder"));
-  const [bio, setBio] = useState(t("account.profile.default_bio"));
+  const [userData, setUserData] = useState<User | null>(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [profilePic, setProfilePic] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const user = await readUserMe();
+        setUserData(user);
+        setName(user.full_name || "");
+        setEmail(user.email || "");
+      } catch (error) {
+        console.error("Failed to fetch user data:", error);
+        // Handle error (e.g., show a notification to the user)
+      }
+    };
+    fetchUserData();
+  }, []);
 
   const handleProfilePicChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -78,6 +96,44 @@ const AccountTab = () => {
 
   const triggerFileInput = () => {
     fileInputRef.current?.click();
+  };
+
+  const handleSaveChanges = async () => {
+    if (!userData) return;
+
+    if (newPassword && newPassword !== confirmNewPassword) {
+      alert("New passwords do not match!"); // Replace with a better notification
+      return;
+    }
+
+    const payload: UserUpdate = {};
+    if (name !== (userData.full_name || "")) {
+      payload.full_name = name;
+    }
+    if (email !== userData.email) {
+      payload.email = email;
+    }
+    if (newPassword) {
+      payload.password = newPassword;
+    }
+
+    if (Object.keys(payload).length === 0) {
+      alert("No changes to save."); // Replace with a better notification
+      return;
+    }
+
+    try {
+      const updatedUser = await updateUserMe(payload);
+      setUserData(updatedUser);
+      setName(updatedUser.full_name || "");
+      setEmail(updatedUser.email || "");
+      setNewPassword("");
+      setConfirmNewPassword("");
+      alert("Changes saved successfully!"); // Replace with a better notification
+    } catch (error) {
+      console.error("Failed to update user data:", error);
+      alert("Failed to save changes."); // Replace with a better notification
+    }
   };
 
   return (
@@ -178,24 +234,51 @@ const AccountTab = () => {
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#3800b3] focus:ring-[#3800b3] sm:text-sm p-2 border"
           />
         </div>
-        <div>
-          <label
-            htmlFor="bio"
-            className="block text-sm font-medium text-gray-700"
-          >
-            {t("account.fields.bio.label")}
-          </label>
-          <textarea
-            id="bio"
-            rows={3}
-            value={bio}
-            onChange={(e) => setBio(e.target.value)}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#3800b3] focus:ring-[#3800b3] sm:text-sm p-2 border"
-          />
+
+        {/* Password Change Section */}
+        <div className="pt-6 mt-6 border-t border-gray-200">
+          <h3 className="text-lg font-medium text-gray-900">Change Password</h3>
+          <div className="mt-4 space-y-4">
+            <div>
+              <label
+                htmlFor="newPassword"
+                className="block text-sm font-medium text-gray-700"
+              >
+                New Password
+              </label>
+              <input
+                type="password"
+                id="newPassword"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#3800b3] focus:ring-[#3800b3] sm:text-sm p-2 border"
+                placeholder="Enter new password"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="confirmNewPassword"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Confirm New Password
+              </label>
+              <input
+                type="password"
+                id="confirmNewPassword"
+                value={confirmNewPassword}
+                onChange={(e) => setConfirmNewPassword(e.target.value)}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#3800b3] focus:ring-[#3800b3] sm:text-sm p-2 border"
+                placeholder="Confirm new password"
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <div className="flex justify-end">
-        <button className="px-4 py-2 bg-[#3800b3] text-white rounded-md hover:bg-[#2d0091] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3800b3]">
+      <div className="flex justify-end pt-6">
+        <button
+          onClick={handleSaveChanges}
+          className="px-4 py-2 bg-[#3800b3] text-white rounded-md hover:bg-[#2d0091] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3800b3]"
+        >
           {t("account.save_button")}
         </button>
       </div>
