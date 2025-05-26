@@ -89,7 +89,7 @@ export default function CoursePage() {
       title: "Q&A",
       description: "A beginner-focused ",
       imageUrl: "/q&a.svg",
-      url: "/",
+      url: "/youtube-chat",
       status: false,
     },
   ];
