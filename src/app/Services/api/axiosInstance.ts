@@ -14,6 +14,7 @@ axiosInstance.interceptors.request.use(
   async (config) => {
     if (typeof window !== "undefined") {
       const session = await getSession();
+      console.log("Session in axios interceptor:", session);
       if (session?.accessToken) {
         config.headers.Authorization = `Bearer ${session.accessToken}`;
       }
