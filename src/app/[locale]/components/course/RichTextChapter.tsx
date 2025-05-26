@@ -1,15 +1,17 @@
 "use client";
 import React, { forwardRef, useImperativeHandle, useRef } from "react";
 import RichText from "./RichText";
+import { JSONContent } from "@tiptap/core";
 
 interface RichTextChapterProps {
-  content: string;
-  setContent: React.Dispatch<React.SetStateAction<string>>;
+  content: JSONContent;
+  setContent: React.Dispatch<React.SetStateAction<JSONContent>>;
   onSendPrompt?: (prompt: string) => Promise<string>;
+  isEditable?: boolean;
 }
 
 const RichTextChapter: React.ForwardRefRenderFunction<any, RichTextChapterProps> = (
-  { content, setContent, onSendPrompt },
+  { content, setContent, onSendPrompt, isEditable },
   ref
 ) => {
   const richTextRef = useRef<any>(null);
@@ -27,6 +29,7 @@ const RichTextChapter: React.ForwardRefRenderFunction<any, RichTextChapterProps>
         content={content}
         setContent={setContent}
         onSendPrompt={onSendPrompt}
+        isEditable={isEditable}
       />
     </div>
   );
