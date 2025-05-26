@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useCallback, memo, useState } from "react";
+import { useMemo, useCallback, memo, useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
@@ -43,6 +43,11 @@ export const Sidebar = memo(function Sidebar({
   const s = useTranslations("Header");
   const [collapsed, setCollapsed] = useState(false);
   const [languageSearchTerm, setLanguageSearchTerm] = useState("");
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const router = useRouter();
   const pathname = usePathname();
@@ -155,12 +160,16 @@ export const Sidebar = memo(function Sidebar({
           key={item.path}
           item={item}
           isActive={isActive(item.matchPattern)}
-          collapsed={collapsed}
+          collapsed={isClient ? collapsed : false}
           withLocale={withLocale}
         />
       )),
-    [navItems, isActive, collapsed, withLocale]
+    [navItems, isActive, collapsed, withLocale, isClient]
   );
+
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <>
@@ -173,16 +182,16 @@ export const Sidebar = memo(function Sidebar({
 
       <aside
         className={`absolute z-[52] lg:sticky top-0 lg:flex flex-col h-screen items-start gap-8 p-8 ${
-          collapsed ? "px-4" : "px-8"
+          isClient && collapsed ? "px-4" : "px-8"
         } bg-white border-r border-gray-100 z-50 transition-all duration-200 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0`}
-        style={{ width: collapsed ? "80px" : "300px" }}
+        style={{ width: isClient && collapsed ? "80px" : "300px" }}
       >
         {/* <MobileCloseButton onClose={onClose} t={t} /> */}
 
         <LogoSection
-          collapsed={collapsed}
+          collapsed={isClient ? collapsed : false}
           t={t}
           toggleCollapse={toggleCollapse}
         />
@@ -190,17 +199,17 @@ export const Sidebar = memo(function Sidebar({
         <Button
           onClick={handleNewModuleClick}
           className={`w-full bg-gradient-to-r p-5 from-purple-600 to-[#3800b3] hover:bg-indigo-800 rounded-full text-white font-medium text-sm ${
-            collapsed ? "justify-center" : ""
+            isClient && collapsed ? "justify-center" : ""
           }`}
         >
           <div className="p-1 bg-white/20 rounded-full">
             <PlusIcon className="w-4 h-4" />
           </div>
-          {!collapsed && t("buttons.newModule")}
+          {!(isClient && collapsed) && t("buttons.newModule")}
         </Button>
 
         <nav className="flex flex-col items-start justify-center gap-2 w-full rounded">
-          {!collapsed && (
+          {!isClient && collapsed && (
             <div className="text-gray-500 text-sm font-medium mt-4">
               {t("quickNav")}
             </div>
@@ -225,6 +234,7 @@ export const NavItemComponent = memo(function NavItemComponent({
   isActive: boolean;
   collapsed: boolean;
   withLocale: (path: string) => string;
+  isClient?: boolean;
 }) {
   const router = useRouter();
   // console.log("item", item.path);

@@ -1,20 +1,27 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useParams } from "next/navigation";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import CtaCard from "../cards/CtaCard";
 import CardMaterial from "../cards/CardMaterial";
 import ShimmerCta from "../cards/ShimmerCta";
 import ChaptersShimmer from "../cards/ChaptersShimmer";
 import ShimmerCard from "../cards/ShimmerCard";
+import {
+  getCourseLearningPathOutline,
+  getLearningPathByCourseId,
+} from "@/app/Services/api/learningPath";
 
 export default function CoursePage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [learningPath, setLearningPath] = useState([]);
+  const [learningPath, setLearningPath] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [expandedChapters, setExpandedChapters] = useState<
     Record<number, boolean>
   >({});
+
+  const { id } = useParams() as { id: string }; // ✅ Extract from URL
 
   const scrollLeft = () => {
     scrollContainerRef.current?.scrollBy({ left: -200, behavior: "smooth" });
@@ -32,36 +39,22 @@ export default function CoursePage() {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      const mockData = [
-        {
-          materialTitle: "Introduction to Data Science with Python",
-          materialDescription:
-            "A beginner-focused guide to understanding the fundamentals of data science using Python, with real-world examples.",
-          progress: 0,
-          chapters: [
-            {
-              title: "Chapter 1: What is Data Science?",
-              description:
-                "Explore the foundations of data science, its role in the modern world, and how data is used to solve real-life problems.",
-            },
-            {
-              title: "Chapter 2: Python Basics for Data Science",
-              description:
-                "Learn essential Python skills including variables, data types, and control flow — all tailored for data science beginners.",
-            },
-            {
-              title: "Chapter 3: Data Wrangling & Cleaning",
-              description:
-                "Dive into the process of preparing messy data for analysis using libraries like Pandas and NumPy.",
-            },
-          ],
-        },
-      ];
-      setLearningPath(mockData);
-      setLoading(false);
-    }, 1000);
-  }, []);
+    if (!id) return;
+
+    const fetchData = async () => {
+      try {
+        const data = await getCourseLearningPathOutline(id);
+        console.log("Materials  Data:", data);
+        setLearningPath([data]);
+      } catch (error) {
+        console.error("Failed to fetch learning path:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [id]);
 
   const cardData = [
     {
@@ -69,10 +62,10 @@ export default function CoursePage() {
       description: "A beginner-focused ",
       imageUrl: "/note.svg",
       url: "/note",
-      status: true,
+      status: false,
     },
     {
-      title: "Quize",
+      title: "Quiz",
       description: "A beginner-focused ",
       imageUrl: "/quize.svg",
       url: "/quiz",
@@ -97,7 +90,7 @@ export default function CoursePage() {
   return (
     <>
       {/* Header */}
-      {loading ? (
+      {loading || !learningPath[0] ? (
         <ShimmerCta />
       ) : (
         <CtaCard
@@ -128,37 +121,32 @@ export default function CoursePage() {
               →
             </button>
           </div>
-          {loading ? (
-            <div
-              ref={scrollContainerRef}
-              className="flex overflow-x-auto pb-4 gap-4 snap-x scrollbar-hide"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            >
-              <ShimmerCard />
-              <ShimmerCard />
-              <ShimmerCard />
-              <ShimmerCard />
-            </div>
-          ) : (
-            <div
-              ref={scrollContainerRef}
-              className="flex overflow-x-auto pb-4 gap-4 snap-x scrollbar-hide"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            >
-              {cardData.map((data, index) => (
-                <CardMaterial key={index} {...data} />
-              ))}
-            </div>
-          )}
+          <div
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto pb-4 gap-4 snap-x scrollbar-hide"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {loading
+              ? [1, 2, 3, 4].map((i) => <ShimmerCard key={i} />)
+              : cardData.map((data, index) => (
+                  <CardMaterial
+                    key={index}
+                    id={index}
+                    {...data}
+                    courseData={learningPath}
+                  />
+                ))}
+          </div>
         </div>
       </div>
 
       {/* Chapters Section */}
       <div>
         <h2 className="text-xl font-bold mb-4">
-          Chapters {`(${!loading ? learningPath[0].chapters.length : 0})`}
+          Chapters (
+          {!loading && learningPath[0] ? learningPath[0].chapters.length : 0})
         </h2>
-        {loading ? (
+        {loading || !learningPath[0] ? (
           <ChaptersShimmer />
         ) : (
           <div>

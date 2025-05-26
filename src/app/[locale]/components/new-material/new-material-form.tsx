@@ -20,7 +20,7 @@ import { createCourse } from "@/app/Services/api/course";
 import {
   generateLearningPathOutline,
   createLearningPathFromOutline,
-} from "@/app/Services/api/learningpath";
+} from "@/app/Services/api/learningPath";
 
 export function NewMaterialForm() {
   const [prompt, setPrompt] = useState("");
