@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Eye } from "lucide-react";
+import { useSearchParams } from "next/navigation";
+import { getContentById } from "@/app/Services/api/content";
 
 // Mock quiz data
-const quizData = [
+const quizDatas = [
   {
     id: 1,
     question: "What is the first step in a data science project?",
@@ -60,10 +62,38 @@ export default function QuizComponent() {
   const [revealAnswer, setRevealAnswer] = useState(false);
   const [userAnswers, setUserAnswers] = useState<Record<number, string>>({});
   const [showScore, setShowScore] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [quizData, setQuizData] = useState<any[]>([]);
   const [score, setScore] = useState(0);
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");
 
-  const currentQuestion = quizData[currentQuestionIndex];
-  const progress = ((currentQuestionIndex + 1) / quizData.length) * 100;
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchCards = async () => {
+      try {
+        const data = await getContentById(id);
+        const rawContent = data?.content ?? "";
+
+        // Remove ```json and ``` from content
+        const cleaned = rawContent.replace(/```json|```/g, "").trim();
+
+        // Try parsing JSON
+        const parsed = JSON.parse(cleaned);
+
+        console.log("Parsed quiz data:", parsed);
+        setQuizData(parsed);
+        // Check structure
+      } catch (err) {
+        console.error("Error fetching quiz data:", err);
+        console.error("Flashcard fetch error:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    if (id) fetchCards();
+  }, [id]);
 
   const handlePrevious = () => {
     if (currentQuestionIndex > 0) {
@@ -129,6 +159,17 @@ export default function QuizComponent() {
       alert("Please select an answer before submitting");
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="text-center py-20 text-gray-500">
+        Loading quiz data...
+      </div>
+    );
+  }
+
+  const currentQuestion = quizData[currentQuestionIndex];
+  const progress = ((currentQuestionIndex + 1) / quizData.length) * 100;
 
   const getOptionClass = (optionId: string) => {
     if (!revealAnswer) {
@@ -248,11 +289,11 @@ export default function QuizComponent() {
 
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-8">
-              Q{currentQuestionIndex + 1}: {currentQuestion.question}
+              Q{currentQuestionIndex + 1}: {currentQuestion?.question}
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {currentQuestion.options.map((option) => (
+              {currentQuestion?.options.map((option) => (
                 <div
                   key={option.id}
                   onClick={() => !revealAnswer && handleOptionSelect(option.id)}
