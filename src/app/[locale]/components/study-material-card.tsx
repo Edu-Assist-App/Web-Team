@@ -45,7 +45,7 @@ export function StudyMaterialCard({
       setViewText("Generating...");
       const outline = await generateLearningPathOutline(id);
 
-      if (!outline?.materialTitle) {
+      if (!outline) {
         throw new Error("Failed to generate learning path outline");
       }
 
