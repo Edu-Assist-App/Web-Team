@@ -123,3 +123,37 @@ export async function getContentById(
   );
   return data;
 }
+
+// New interfaces for generate-from-outline endpoint
+export interface OutlineContentRequest {
+  outline: string;
+  course_id?: string; // Optional course ID
+  provider: "gemini" | "openai" | "anthropic"; // Assuming provider can be one of these
+}
+
+export interface ContentChapterSection {
+  title: string;
+  content: string;
+  key_points: string[];
+  examples: string[];
+}
+
+export interface ContentChapter {
+  title: string;
+  sections: ContentChapterSection[];
+}
+
+export interface GenerateFromOutlineResponse {
+  chapters: ContentChapter[];
+}
+
+// 🚀 POST: Generate Comprehensive Content from Outline
+export async function generateContentFromOutline(
+  payload: OutlineContentRequest
+): Promise<GenerateFromOutlineResponse> {
+  const { data } = await axiosInstance.post<GenerateFromOutlineResponse>(
+    "/api/v1/content/generate-from-outline",
+    payload
+  );
+  return data;
+}
