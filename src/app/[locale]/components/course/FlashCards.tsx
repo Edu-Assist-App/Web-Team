@@ -1,50 +1,54 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Eye, RotateCw } from "lucide-react";
-
-// Mock flashcard data
-const flashcardData = [
-  {
-    id: 1,
-    question: "What is Data Science?",
-    answer:
-      "Data science is an interdisciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from structured and unstructured data.",
-  },
-  {
-    id: 2,
-    question: "What is Machine Learning?",
-    answer:
-      "Machine learning is a subset of artificial intelligence that provides systems the ability to automatically learn and improve from experience without being explicitly programmed.",
-  },
-  {
-    id: 3,
-    question: "What is Deep Learning?",
-    answer:
-      "Deep learning is a subset of machine learning that uses neural networks with multiple layers (deep neural networks) to analyze various factors of data.",
-  },
-  {
-    id: 4,
-    question: "What is Natural Language Processing?",
-    answer:
-      "Natural Language Processing (NLP) is a field of AI that gives computers the ability to understand, interpret, and manipulate human language.",
-  },
-  {
-    id: 5,
-    question: "What is Big Data?",
-    answer:
-      "Big Data refers to extremely large data sets that may be analyzed computationally to reveal patterns, trends, and associations, especially relating to human behavior and interactions.",
-  },
-];
+import { getContentById } from "@/app/Services/api/content";
+import { useSearchParams } from "next/navigation";
 
 export default function FlashcardComponent() {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [flashcardData, setFlashcardData] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setError] = useState("");
 
-  const currentCard = flashcardData[currentCardIndex];
-  const progress = ((currentCardIndex + 1) / flashcardData.length) * 100;
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");
+
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchCards = async () => {
+      try {
+        const data = await getContentById(id);
+        const rawContent = data?.content ?? "";
+
+        // Remove ```json and ``` from content
+        const cleaned = rawContent.replace(/```json|```/g, "").trim();
+
+        // Try parsing JSON
+        const parsed = JSON.parse(cleaned);
+
+        // Check structure
+        if (
+          Array.isArray(parsed) &&
+          parsed.every((card) => card.front && card.back)
+        ) {
+          setFlashcardData(parsed);
+        } else {
+          throw new Error("Invalid flashcard format.");
+        }
+      } catch (err) {
+        setError("Failed to fetch flashcards.");
+        console.error("Flashcard fetch error:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    if (id) fetchCards();
+  }, [id]);
 
   const handlePrevious = () => {
     if (currentCardIndex > 0) {
@@ -64,7 +68,7 @@ export default function FlashcardComponent() {
     if (!isAnimating) {
       setIsAnimating(true);
       setIsFlipped(!isFlipped);
-      setTimeout(() => setIsAnimating(false), 500); // Match the duration of the flip animation
+      setTimeout(() => setIsAnimating(false), 500);
     }
   };
 
@@ -72,6 +76,29 @@ export default function FlashcardComponent() {
     setCurrentCardIndex(0);
     setIsFlipped(false);
   };
+
+  const currentCard = flashcardData[currentCardIndex] || {
+    front: "No question available.",
+    back: "No answer available.",
+  };
+
+  const progress = ((currentCardIndex + 1) / flashcardData.length) * 100;
+
+  if (isLoading) {
+    return (
+      <div className="text-center py-20 text-gray-500">
+        Loading flashcards...
+      </div>
+    );
+  }
+
+  if (isError || flashcardData.length === 0) {
+    return (
+      <div className="text-center py-20 text-red-500">
+        {isError || "No flashcards found for this content."}
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
@@ -133,32 +160,31 @@ export default function FlashcardComponent() {
             isFlipped ? "Click to see question" : "Click to see answer"
           }
         >
-          {/* Flashcard container with flip animation */}
           <div
             className={`relative w-full h-full transition-transform duration-500 transform-style-preserve-3d ${
               isFlipped ? "rotate-y-180" : ""
             }`}
           >
-            {/* Front of card (Question) */}
+            {/* Front */}
             <div className="absolute w-full h-full bg-indigo-700 rounded-2xl flex flex-col items-center justify-center p-8 backface-hidden shadow-xl">
               <div className="absolute top-4 left-4 text-white/70 text-sm">
                 Question
               </div>
               <h2 className="text-2xl md:text-3xl font-bold text-white text-center">
-                {currentCard.question}
+                {currentCard.front}
               </h2>
               <div className="absolute bottom-4 text-white/50 text-sm">
                 Click to reveal answer
               </div>
             </div>
 
-            {/* Back of card (Answer) */}
+            {/* Back */}
             <div className="absolute w-full h-full bg-white border-2 border-indigo-700 rounded-2xl flex flex-col items-center justify-center p-8 rotate-y-180 backface-hidden shadow-xl">
               <div className="absolute top-4 left-4 text-indigo-700/70 text-sm">
                 Answer
               </div>
               <p className="text-lg md:text-xl text-gray-800 text-center">
-                {currentCard.answer}
+                {currentCard.back}
               </p>
               <div className="absolute bottom-4 text-indigo-700/50 text-sm">
                 Click to see question

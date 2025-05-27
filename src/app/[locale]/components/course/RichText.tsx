@@ -24,16 +24,16 @@ import { MdOutlineSend } from 'react-icons/md';
 import Code from '@tiptap/extension-code';
 import BulletList from '@tiptap/extension-bullet-list';
 import OrderedList from '@tiptap/extension-ordered-list';
-import Youtube from '@tiptap/extension-youtube';
 import TextAlign from '@tiptap/extension-text-align';
 import CodeBlock from '@tiptap/extension-code-block';
-import { Extension } from '@tiptap/core';
+import { Extension, JSONContent, posToDOMRect } from '@tiptap/core';
 import '../../../TextEditor.css'
 
 interface RichTextProps {
-  content: string;
-  setContent: React.Dispatch<React.SetStateAction<string>>;
+  content: JSONContent;
+  setContent: React.Dispatch<React.SetStateAction<JSONContent>>;
   onSendPrompt?: (prompt: string) => Promise<string>;
+  isEditable?: boolean;
 }
 
 // Cast icons to any to resolve type issues
@@ -269,14 +269,6 @@ const extensions = [
   ListItem,
   BulletList,
   OrderedList,
-  Youtube.configure({
-    controls: false,
-    nocookie: true,
-    inline: false,
-    HTMLAttributes: {
-      class: "youtube-iframe",
-    },
-  }),
   TextAlign.configure({
     types: ["heading", "paragraph"],
   }),
@@ -293,73 +285,66 @@ const CustomBubbleMenu = ({ editor, onSendPrompt }) => {
     const updateMenu = () => {
       if (!editor) return;
 
-      if (editor.state.selection.empty) {
+      const { view, state } = editor;
+
+      if (state.selection.empty) {
         setVisible(false);
         return;
       }
 
+      if (!view.dom.parentNode) {
+        setVisible(false);
+        return;
+      }
+      
       setVisible(true);
 
-      // Get position from selection
-      const { from, to } = editor.state.selection;
-      const domFrom = editor.view.domAtPos(from);
-      const domTo = editor.view.domAtPos(to);
-      const nodeFrom = domFrom.node;
-      const nodeTo = domTo.node;
+      try {
+        const { from, to } = state.selection;
+        const selectionRect = posToDOMRect(view, from, to);
 
-      if (nodeFrom && nodeTo) {
-        try {
-          const range = document.createRange();
-          const startNode =
-            nodeFrom.nodeType === Node.TEXT_NODE
-              ? nodeFrom
-              : nodeFrom.childNodes[0];
-          const endNode =
-            nodeTo.nodeType === Node.TEXT_NODE ? nodeTo : nodeTo.childNodes[0];
+        const editorRect = view.dom.getBoundingClientRect();
+        const menuHeight = menuRef.current
+          ? menuRef.current.offsetHeight
+          : 50;
 
-          if (startNode && endNode) {
-            range.setStart(startNode, domFrom.offset);
-            range.setEnd(endNode, domTo.offset);
-            const rect = range.getBoundingClientRect();
+        const spaceAbove = selectionRect.top - editorRect.top;
+        const shouldShowAbove = spaceAbove > menuHeight + 20;
 
-            const editorRect = editor.view.dom.getBoundingClientRect();
-            const menuHeight = menuRef.current
-              ? menuRef.current.offsetHeight
-              : 50;
+        setShowAbove(shouldShowAbove);
 
-            // Check if there's enough space above the selection
-            const spaceAbove = rect.top - editorRect.top;
-            const shouldShowAbove = spaceAbove > menuHeight + 20;
-
-            setShowAbove(shouldShowAbove);
-
-            if (shouldShowAbove) {
-              // Position above the selected text
-              setPosition({
-                top: rect.top - editorRect.top - (menuHeight + 10),
-                left: rect.left + rect.width / 2 - editorRect.left,
-              });
-            } else {
-              // Position below the selected text
-              setPosition({
-                top: rect.bottom - editorRect.top + 10,
-                left: rect.left + rect.width / 2 - editorRect.left,
-              });
-            }
-          }
-        } catch (error) {
-          console.error("Error calculating position:", error);
+        let topPosition;
+        if (shouldShowAbove) {
+          topPosition = selectionRect.top - editorRect.top - (menuHeight + 10);
+        } else {
+          topPosition = selectionRect.bottom - editorRect.top + 10;
         }
+        
+        const leftPosition = selectionRect.left + selectionRect.width / 2 - editorRect.left;
+
+        setPosition({
+          top: topPosition,
+          left: leftPosition,
+        });
+
+      } catch (error) {
+        console.error("Error calculating bubble menu position:", error);
+        setVisible(false);
       }
     };
 
     if (editor) {
       editor.on("selectionUpdate", updateMenu);
+      editor.on("focus", updateMenu);
+      editor.on("blur", () => setVisible(false));
+      updateMenu();
     }
 
     return () => {
       if (editor) {
         editor.off("selectionUpdate", updateMenu);
+        editor.off("focus", updateMenu);
+        editor.off("blur", () => setVisible(false));
       }
     };
   }, [editor]);
@@ -393,10 +378,8 @@ const CustomBubbleMenu = ({ editor, onSendPrompt }) => {
       const response = await onSendPrompt(promptWithContext);
       setPrompt("");
 
-      // Insert the AI response at the current cursor position
       editor.chain().focus().insertContent(response).run();
 
-      // Hide the menu after sending
       setVisible(false);
     } catch (error) {
       console.error("Error sending prompt:", error);
@@ -441,7 +424,7 @@ const CustomBubbleMenu = ({ editor, onSendPrompt }) => {
 };
 
 const RichText: React.ForwardRefRenderFunction<any, RichTextProps> = (
-  { content, setContent, onSendPrompt },
+  { content, setContent, onSendPrompt, isEditable = true },
   ref
 ) => {
   const editorRef = useRef<any>(null);
@@ -453,17 +436,29 @@ const RichText: React.ForwardRefRenderFunction<any, RichTextProps> = (
     },
   }));
 
+  useEffect(() => {
+    if (editor) {
+      const currentEditable = (editor as any).isEditable;
+      if (currentEditable !== isEditable) {
+         (editor as any).setEditable(isEditable);
+      }
+    }
+  }, [editor, isEditable, content]);
+
   return (
     <div className="rounded-md shadow-md p-2 sm:p-4 bg-white relative">
       <EditorProvider
-        slotBefore={<MenuBar />}
+        slotBefore={isEditable ? <MenuBar /> : undefined}
         extensions={extensions}
         content={content}
-        onUpdate={({ editor }) => setContent(editor.getHTML())}
+        onUpdate={({ editor }) => setContent(editor.getJSON())}
         onTransaction={({ editor }) => setEditor(editor)}
-        onCreate={({ editor }) => setEditor(editor)}
+        onCreate={({ editor }) => {
+          setEditor(editor);
+          (editor as any).setEditable(isEditable);
+        }}
       >
-        <div className="tiptap prose max-w-none prose-sm sm:prose-base lg:prose-lg xl:prose-xl focus:outline-none">
+        <div className={`tiptap prose max-w-none prose-sm sm:prose-base lg:prose-lg xl:prose-xl focus:outline-none ${!isEditable ? 'is-readonly' : ''}`}>
           <EditorContent editor={editor} ref={editorRef} />
         </div>
       </EditorProvider>
