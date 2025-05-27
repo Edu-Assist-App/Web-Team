@@ -9,7 +9,7 @@ const axiosInstance = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
-  timeout: 10000, // 10 second timeout
+  timeout: 1000000, // 10 second timeout
 });
 
 // Request interceptor to add token from NextAuth client session
