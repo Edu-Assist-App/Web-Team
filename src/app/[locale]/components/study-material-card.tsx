@@ -3,7 +3,7 @@ import {
   createLearningPathFromOutline,
   generateLearningPathOutline,
   getLearningPathByCourseId,
-} from "../../Services/api/learningpath";
+} from "../../Services/api/learning";
 
 import { LoaderCircle, MoreVerticalIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
