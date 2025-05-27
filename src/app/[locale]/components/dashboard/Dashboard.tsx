@@ -8,6 +8,7 @@ import { useTranslations } from "next-intl";
 import ShimmerCourse from "../cards/ShimmerCourse";
 import Link from "next/link";
 import { listCourses } from "@/app/Services/api/course";
+import { PieChart } from "recharts";
 
 export default function Dashboard() {
   const t = useTranslations("Dashboard");
@@ -60,7 +61,7 @@ export default function Dashboard() {
         <h2 className="text-xl font-medium mb-4">{t("sections.activities")}</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <ActivityChart />
-          <ActivityChart />
+          <PieChart />
         </div>
       </div>
       {/* Study Materials Section */}
