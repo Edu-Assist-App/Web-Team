@@ -20,7 +20,7 @@ import { createCourse } from "@/app/Services/api/course";
 import {
   generateLearningPathOutline,
   createLearningPathFromOutline,
-} from "@/app/Services/api/learningPath";
+} from "@/app/Services/api/learningpath";
 import { set } from "react-hook-form";
 
 export function NewMaterialForm() {

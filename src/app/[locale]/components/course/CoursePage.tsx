@@ -8,7 +8,7 @@ import CardMaterial from "../cards/CardMaterial";
 import ShimmerCta from "../cards/ShimmerCta";
 import ChaptersShimmer from "../cards/ChaptersShimmer";
 import ShimmerCard from "../cards/ShimmerCard";
-import { getCourseLearningPathOutline } from "@/app/Services/api/learningPath";
+import { getCourseLearningPathOutline } from "@/app/Services/api/learningpath";
 
 export default function CoursePage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
