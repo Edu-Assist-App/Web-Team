@@ -177,7 +177,10 @@ export const Header = (): JSX.Element => {
                   {t("buttons.dashboard")}
                 </Button>
                 <Button
-                  onClick={() => signOut()}
+                  onClick={() => {
+                    signOut({ callbackUrl: "https://eduassist.netlify.app/" });
+                    return;
+                  }}
                   variant="outline"
                   className="px-6 py-2 font-['Ubuntu',Helvetica] font-normal text-black text-base"
                 >
@@ -231,7 +234,10 @@ export const Header = (): JSX.Element => {
                 {t("buttons.dashboard")}
               </Button>
               <Button
-                onClick={() => signOut()}
+                onClick={() => {
+                  signOut({ callbackUrl: "https://eduassist.netlify.app/" });
+                  return;
+                }}
                 variant="outline"
                 className="px-6 py-2 font-['Ubuntu',Helvetica] font-normal text-black text-base w-full"
               >
