@@ -117,10 +117,10 @@ export const Sidebar = memo(function Sidebar({
         matchPattern: "/resource",
       },
       {
-        name: t("navItems.chats"),
+        name: t("navItems.youtube-chat"),
         icon: <MessageSquareIcon className="w-[18px] h-[18px]" />,
-        path: "/chats",
-        matchPattern: "/chats",
+        path: "/youtube-chat",
+        matchPattern: "/youtube-chat",
       },
       {
         name: t("navItems.settings"),

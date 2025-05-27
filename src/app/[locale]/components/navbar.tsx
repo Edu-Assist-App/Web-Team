@@ -69,10 +69,10 @@ export const Navbar = (): JSX.Element => {
       matchPattern: "/resource",
     },
     {
-      name: tSidebar("navItems.chats"),
+      name: tSidebar("navItems.youtube-chat"),
       icon: <MessageSquareIcon className="w-4 h-4" />,
-      path: "/chats",
-      matchPattern: "/chats",
+      path: "/youtube-chat",
+      matchPattern: "/youtube-chat",
     },
     {
       name: tSidebar("navItems.settings"),

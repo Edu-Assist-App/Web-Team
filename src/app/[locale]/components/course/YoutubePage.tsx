@@ -464,7 +464,7 @@ export default function YouTubeProcessor() {
               <Button
                 onClick={handleDownload}
                 disabled={loading}
-                className="w-full"
+                className="w-full bg-[#3800b3] text-white hover:bg-[#4a00d4]"
               >
                 {loading ? (
                   <Loader2 className="w-4 h-4 animate-spin mr-2" />
@@ -519,7 +519,7 @@ export default function YouTubeProcessor() {
               <Button
                 onClick={handleTranscript}
                 disabled={loading}
-                className="w-full"
+                className="w-full bg-[#3800b3] text-white hover:bg-[#4a00d4]"
               >
                 {loading ? (
                   <Loader2 className="w-4 h-4 animate-spin mr-2" />
@@ -583,7 +583,7 @@ export default function YouTubeProcessor() {
               <Button
                 onClick={handleChannelVideos}
                 disabled={loading}
-                className="w-full"
+                className="w-full bg-[#3800b3] text-white hover:bg-[#4a00d4]"
               >
                 {loading ? (
                   <Loader2 className="w-4 h-4 animate-spin mr-2" />
@@ -644,7 +644,7 @@ export default function YouTubeProcessor() {
               <Button
                 onClick={handleThumbnail}
                 disabled={loading}
-                className="w-full"
+                className="w-full bg-[#3800b3] text-white hover:bg-[#4a00d4]"
               >
                 {loading ? (
                   <Loader2 className="w-4 h-4 animate-spin mr-2" />
@@ -763,7 +763,7 @@ export default function YouTubeProcessor() {
                     onClick={handleChat}
                     disabled={loading || !selectedVideo}
                     size="icon"
-                    className="h-[60px]"
+                    className="h-[60px] bg-[#3800b3] text-white hover:bg-[#4a00d4]"
                   >
                     {loading ? (
                       <Loader2 className="w-4 h-4 animate-spin" />
